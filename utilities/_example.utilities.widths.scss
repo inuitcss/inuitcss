@@ -1,0 +1,15 @@
+/**
+ * #WIDTHS
+ * ========================================================================== */
+
+/**
+ * A series of width helper classes that you can use to size things like grid
+ * systems. Classes can take a fraction-like format (e.g. `.u-2/3`) or a spoken-
+ * word format (e.g. `.u-2-of-3`). Use these in your markup:
+ *
+ * <div class="u-7/12">
+ *
+ * The following will generate a 12 and a 16 column grid system.
+ */
+
+@include widths(12 16);

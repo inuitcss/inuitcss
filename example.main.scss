@@ -1,0 +1,21 @@
+/**
+ * INUITCSS
+ * ========================================================================== */
+
+@import "settings/example.settings.config";
+@import "settings/example.settings.global";
+
+@import "tools/tools.functions";
+@import "tools/tools.mixins";
+@import "tools/tools.widths";
+
+@import "generic/generic.box-sizing";
+@import "generic/generic.normalize";
+@import "generic/generic.reset";
+@import "generic/generic.shared";
+
+@import "elements/elements.page";
+
+@import "objects/objects.layout";
+
+@import "utilities/example.utilities.widths";

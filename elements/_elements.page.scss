@@ -1,0 +1,12 @@
+/**
+ * #PAGE
+ * ========================================================================== */
+
+/**
+ * Simple page-level setup.
+ */
+
+html {
+  font-size: ($global-font-size / 16px) * 1em;
+  line-height: $global-line-height / $global-font-size;
+}
