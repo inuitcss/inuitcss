@@ -42,13 +42,13 @@
 
   &:hover,
   &:focus {
-    background-color: darken(#4a8ec2, 5%);
+    background-color: #3774a2;
   }
 
 }
 
 .c-btn--secondary {
-  background-color: #333;
+  background-color: #2f4054;
 
   &,
   &:hover,
@@ -60,10 +60,14 @@
 
   &:hover,
   &:focus {
-    background-color: darken(#333, 5%);
+    background-color: #1d2733;
   }
 
 }
+
+
+
+
 
 /**
  * Button size variants.
