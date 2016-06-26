@@ -2,26 +2,109 @@
  * INUITCSS
  * ========================================================================== */
 
+/**
+ * This is an example inuitcss manifest file. DO NOT MODIFY THIS FILE DIRECTLY.
+ * Instead, copy and paste it into your own CSS directory and make additions,
+ * extension, and modifications there.
+ */
+
+/**
+ * CONTENTS
+ *
+ * SETTINGS
+ * Config...............Project-level configuration and feature switches.
+ * Global...............Globally-available project settings.
+ *
+ * TOOLS
+ * Functions............A small collection of useful functions.
+ * Mixins...............Globally-available mixins.
+ * Widths...............A mixin to quickly generate an arbitrary number of width
+ *                      classes for use alongside our grid system.
+ *
+ * GENERIC
+ * Box-sizing...........Better default `box-sizing`.
+ * Normalize.css........A level playing field using @necolas’ Normalize.css.
+ * Reset................A tiny reset to complement Normalize.css.
+ * Shared...............Sensibly and tersely share some global commonalities
+ *                      (particularly useful when managing vertical rhythm).
+ *
+ * ELEMENTS
+ * Page.................Set up our document’s default `font-size` and
+ *                      `line-height`.
+ * Headings.............Very minimal (i.e. only font-size information) for
+ *                      headings 1 through 6.
+ * Images...............Base image styles.
+ *
+ * OBJECTS
+ * Layout...............Generic layout module.
+ *
+ * COMPONENTS
+ * Buttons..............An example button component, and how it fits into the
+ *                      inuitcss framework.
+ *
+ * UTILITIES
+ * Clearfix.............Bind our clearfix onto a utility class.
+ * Widths...............Simple width helper classes.
+ * Headings.............Reassigning our heading styles to helper classes.
+ * Spacing..............Nudge bits of the DOM around with these spacing
+ *                      classes..
+ */
+
+// SETTINGS
 @import "settings/example.settings.config";
 @import "settings/example.settings.global";
 
+
+
+
+
+// TOOLS
 @import "tools/tools.functions";
 @import "tools/tools.mixins";
 @import "tools/tools.widths";
 
+
+
+
+
+// GENERIC
 @import "generic/generic.box-sizing";
 @import "generic/generic.normalize";
 @import "generic/generic.reset";
 @import "generic/generic.shared";
 
+
+
+
+
+// ELEMENTS
 @import "elements/elements.page";
 @import "elements/elements.headings";
 @import "elements/elements.images";
 
+
+
+
+
+// OBJECTS
+//
+// Uncomment and add to this section as necessary.
 @import "objects/objects.layout";
 
+
+
+
+
+// COMPONENTS
+//
+// Build and include your project’s UI Compoments here.
 @import "components/example.components.buttons";
 
+
+
+
+
+// UTILITIES
 @import "utilities/utilities.clearfix";
 @import "utilities/example.utilities.widths";
 @import "utilities/utilities.headings";
