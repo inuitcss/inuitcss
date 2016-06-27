@@ -17,10 +17,10 @@ hr,
 table,
 fieldset, figure,
 pre {
-  margin-bottom: inuit-rem($inuit-global-spacing-unit);
+  margin-bottom: $inuit-global-spacing-unit;
 }
 
 ul, ol,
 dd {
-  margin-left: inuit-rem($inuit-global-spacing-unit);
+  margin-left: $inuit-global-spacing-unit;
 }
