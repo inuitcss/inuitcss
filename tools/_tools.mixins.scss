@@ -72,7 +72,7 @@
 
   &:after {
     content: "" $important;
-    display: table $important;
+    display: block $important;
     clear: both $important;
   }
 
