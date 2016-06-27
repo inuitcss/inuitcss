@@ -36,7 +36,8 @@
 
 
 
-// Mixin to create a declaration whose value is a rem unit. Also provide pixel fallback.
+// Mixin to create a declaration whose value is a rem unit. Also provide pixel
+// fallback.
 //
 // .simple-usage {
 //   @include inuit-rem(padding, 10px);
@@ -51,7 +52,8 @@
 
 
 
-// Mixin to drop micro clearfix into a selector.
+// Mixin to drop micro clearfix into a selector. Further reading:
+// http://www.cssmojo.com/the-very-latest-clearfix-reloaded/
 //
 // .simple-usage {
 //   @include inuit-clearfix();
@@ -72,7 +74,7 @@
 
   &:after {
     content: "" $important;
-    display: table $important;
+    display: block $important;
     clear: both $important;
   }
 
