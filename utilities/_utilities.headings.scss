@@ -12,25 +12,25 @@
  */
 
 .u-h1 {
-  @include font-size($font-size-h1);
+  @include inuit-font-size($inuit-font-size-h1);
 }
 
 .u-h2 {
-  @include font-size($font-size-h2);
+  @include inuit-font-size($inuit-font-size-h2);
 }
 
 .u-h3 {
-  @include font-size($font-size-h3);
+  @include inuit-font-size($inuit-font-size-h3);
 }
 
 .u-h4 {
-  @include font-size($font-size-h4);
+  @include inuit-font-size($inuit-font-size-h4);
 }
 
 .u-h5 {
-  @include font-size($font-size-h5);
+  @include inuit-font-size($inuit-font-size-h5);
 }
 
 .u-h6 {
-  @include font-size($font-size-h6);
+  @include inuit-font-size($inuit-font-size-h6);
 }

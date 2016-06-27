@@ -8,7 +8,7 @@
 //
 // @include widths(3 4, -sm);
 
-@mixin widths($columns, $breakpoint: null) {
+@mixin inuit-widths($columns, $breakpoint: null) {
 
   // Loop through the number of columns for each denominator of our fractions.
   @each $denominator in $columns {

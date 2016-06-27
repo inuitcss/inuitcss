@@ -57,7 +57,7 @@
 // By default we use the `font-size: 0;` trick to remove whitespace between.
 // Set this to true in order to use a markup-based strategy like commenting out
 // whitespace or minifying HTML.
-$use-markup-fix: false !default;
+$inuit-use-markup-fix: false !default;
 
 
 
@@ -70,9 +70,9 @@ $use-markup-fix: false !default;
   padding: 0;
   list-style: none;
   box-sizing: border-box;
-  margin-left: -$global-spacing-unit;
+  margin-left: -$inuit-global-spacing-unit;
 
-  @if ($use-markup-fix == false) {
+  @if ($inuit-use-markup-fix == false) {
     font-size: 0;
   }
 
@@ -83,9 +83,9 @@ $use-markup-fix: false !default;
   vertical-align: top;
   width: 100%;
   box-sizing: border-box;
-  padding-left: $global-spacing-unit;
+  padding-left: $inuit-global-spacing-unit;
 
-  @if ($use-markup-fix == false) {
+  @if ($inuit-use-markup-fix == false) {
     font-size: 1rem;
   }
 
@@ -102,10 +102,10 @@ $use-markup-fix: false !default;
  * Smaller gutters between items.
  */
 .o-layout--narrow {
-  margin-left: $global-spacing-unit-small;
+  margin-left: $inuit-global-spacing-unit-small;
 
   > .o-layout__item {
-    padding-left: $global-spacing-unit-small;
+    padding-left: $inuit-global-spacing-unit-small;
   }
 
 }
@@ -114,10 +114,10 @@ $use-markup-fix: false !default;
  * Larger gutters between items.
  */
 .o-layout--wide {
-  margin-left: -$global-spacing-unit-large;
+  margin-left: -$inuit-global-spacing-unit-large;
 
   > .o-layout__item {
-    padding-left: $global-spacing-unit-large;
+    padding-left: $inuit-global-spacing-unit-large;
   }
 
 }

@@ -24,9 +24,9 @@
   margin:  0; /* [4] */
   cursor: pointer; /* [5] */
   overflow: visible; /* [6] */
-  padding: $global-spacing-unit-small $global-spacing-unit;
-  transition: $global-transition;
-  border-radius: $global-radius;
+  padding: $inuit-global-spacing-unit-small $inuit-global-spacing-unit;
+  transition: $inuit-global-transition;
+  border-radius: $inuit-global-radius;
 }
 
 .c-btn--primary {
@@ -74,9 +74,9 @@
  */
 
 .c-btn--small {
-  padding: rem($global-spacing-unit-tiny) rem($global-spacing-unit-small);
+  padding: inuit-rem($inuit-global-spacing-unit-tiny) inuit-rem($inuit-global-spacing-unit-small);
 }
 
 .c-btn--large {
-  padding: rem($global-spacing-unit) rem($global-spacing-unit-large);
+  padding: inuit-rem($inuit-global-spacing-unit) inuit-rem($inuit-global-spacing-unit-large);
 }
