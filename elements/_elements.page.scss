@@ -7,6 +7,6 @@
  */
 
 html {
-  font-size: ($global-font-size / 16px) * 1em;
-  line-height: $global-line-height / $global-font-size;
+  font-size: ($inuit-global-font-size / 16px) * 1em;
+  line-height: $inuit-global-line-height / $inuit-global-font-size;
 }

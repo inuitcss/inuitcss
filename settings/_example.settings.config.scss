@@ -5,7 +5,7 @@
 // A map of global config settings. Define any project-level configuration,
 // feature switches, etc. in here.
 
-$config: (
+$inuit-config: (
   env: dev,
   healthcheck: false,
   debug: true,
@@ -17,8 +17,8 @@ $config: (
 //
 // Example usage:
 //
-// @if (config(debug) == true) { ...  }
+// @if (inuit-config(debug) == true) { ...  }
 
-@function config($key) {
-  @return map-get($config, $key);
+@function inuit-config($key) {
+  @return map-get($inuit-config, $key);
 }

@@ -13,7 +13,7 @@
  *   .u-padding-right-none {}
  */
 
-$spacing-directions: (
+$inuit-spacing-directions: (
   null,
   '-top',
   '-right',
@@ -21,24 +21,24 @@ $spacing-directions: (
   '-left',
 );
 
-$spacing-properties: (
+$inuit-spacing-properties: (
   'padding',
   'margin'
 );
 
-$spacing-sizes: (
-  null: $global-spacing-unit,
-  '-tiny': $global-spacing-unit-tiny,
-  '-small': $global-spacing-unit-small,
-  '-large': $global-spacing-unit-large,
-  '-huge': $global-spacing-unit-huge,
+$inuit-spacing-sizes: (
+  null: $inuit-global-spacing-unit,
+  '-tiny': $inuit-global-spacing-unit-tiny,
+  '-small': $inuit-global-spacing-unit-small,
+  '-large': $inuit-global-spacing-unit-large,
+  '-huge': $inuit-global-spacing-unit-huge,
 ) !default;
 
-@each $property in $spacing-properties {
+@each $property in $inuit-spacing-properties {
 
-  @each $direction in $spacing-directions {
+  @each $direction in $inuit-spacing-directions {
 
-    @each $size, $value in $spacing-sizes {
+    @each $size, $value in $inuit-spacing-sizes {
 
       .u-#{$property}#{$direction}#{$size} {
         #{$property}#{$direction}: $value !important;

@@ -10,12 +10,12 @@
 
 
 // Generate a font-size and baseline-compatible line-height.
-@mixin font-size($font-size, $line-height: auto) {
+@mixin inuit-font-size($font-size, $line-height: auto) {
   font-size: $font-size;
-  font-size: ($font-size / $global-font-size) * 1rem;
+  font-size: ($font-size / $inuit-global-font-size) * 1rem;
 
   @if $line-height == auto {
-    line-height: ceil($font-size / $global-line-height) * ($global-line-height / $font-size);
+    line-height: ceil($font-size / $inuit-global-line-height) * ($inuit-global-line-height / $font-size);
   }
 
   @else {
@@ -39,10 +39,10 @@
 // Mixin to create a declaration whose value is a rem unit. Also provide pixel fallback.
 //
 // .simple-usage {
-//   @include rem(padding, 10px);
+//   @include inuit-rem(padding, 10px);
 // }
 
-@mixin rem($property, $value) {
+@mixin inuit-rem($property, $value) {
   #{$property}: $value;
   #{$property}: rem($value);
 }
@@ -54,14 +54,14 @@
 // Mixin to drop micro clearfix into a selector.
 //
 // .simple-usage {
-//   @include clearfix();
+//   @include inuit-clearfix();
 // }
 //
 // .detailed-usage {
-//   @include clearfix(important);
+//   @include inuit-clearfix(important);
 // }
 
-@mixin clearfix($important: false) {
+@mixin inuit-clearfix($important: false) {
 
   // Determine whether or not to make declarations important.
   @if ($important == false) {
@@ -83,7 +83,7 @@
 
 
 // Generate `:hover` and `:focus` styles in one go.
-@mixin hocus() {
+@mixin inuit-hocus() {
   &:hover,
   &:focus {
     @content;
