@@ -5,12 +5,12 @@
 // Project-level settings and setup.
 
 // Base typographical styles and baseline grid.
-$global-font-size:    16px;
-$global-line-height:  24px;
+$inuit-global-font-size:    16px;
+$inuit-global-line-height:  24px;
 
 // Standardise some UI treatments.
-$global-radius:       3px;
-$global-transition:   (1/3) + s;
+$inuit-global-radius:       3px;
+$inuit-global-transition:   (1/3) + s;
 
 
 
@@ -23,11 +23,11 @@ $global-transition:   (1/3) + s;
 ////////////////////////////////////////////////////////////////////////////////
 
 // Private/framework-only reassignment. Do not alter anything below.
-$global-spacing-unit:       round($global-line-height);
-$global-spacing-unit-tiny:  round($global-spacing-unit / 4);
-$global-spacing-unit-small: round($global-spacing-unit / 2);
-$global-spacing-unit-large: round($global-spacing-unit * 2);
-$global-spacing-unit-huge:  round($global-spacing-unit * 4);
+$inuit-global-spacing-unit:       round($inuit-global-line-height);
+$inuit-global-spacing-unit-tiny:  round($inuit-global-spacing-unit / 4);
+$inuit-global-spacing-unit-small: round($inuit-global-spacing-unit / 2);
+$inuit-global-spacing-unit-large: round($inuit-global-spacing-unit * 2);
+$inuit-global-spacing-unit-huge:  round($inuit-global-spacing-unit * 4);
 
 
 
@@ -1029,6 +1029,6 @@ $global-spacing-unit-huge:  round($global-spacing-unit * 4);
 
 
 
-@if ($global-spacing-unit != $global-line-height) {
-  @error "The value of `$global-spacing-unit` must not be changed.";
+@if ($inuit-global-spacing-unit != $inuit-global-line-height) {
+  @error "The value of `$inuit-global-spacing-unit` must not be changed.";
 }
