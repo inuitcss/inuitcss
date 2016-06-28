@@ -4,7 +4,8 @@
 
 // Project-level settings and setup.
 
-// Base typographical styles and baseline grid.
+// Base typographical styles and baseline grid. You need to define these values
+// in pixels: inuitcss will convert them to more appropriate units.
 $inuit-global-font-size:    16px;
 $inuit-global-line-height:  24px;
 
