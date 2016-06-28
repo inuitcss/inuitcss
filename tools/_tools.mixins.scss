@@ -45,7 +45,7 @@
 
 @mixin inuit-rem($property, $value) {
   #{$property}: $value;
-  #{$property}: rem($value);
+  #{$property}: inuit-rem($value);
 }
 
 
