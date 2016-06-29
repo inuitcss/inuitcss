@@ -29,6 +29,13 @@
   border-radius: $inuit-global-radius;
 }
 
+
+
+
+
+/* Style variants
+   ========================================================================== */
+
 .c-btn--primary {
   background-color: #4a8ec2;
 
@@ -69,9 +76,8 @@
 
 
 
-/**
- * Button size variants.
- */
+/* Size variants
+   ========================================================================== */
 
 .c-btn--small {
   padding: inuit-rem($inuit-global-spacing-unit-tiny) inuit-rem($inuit-global-spacing-unit-small);
