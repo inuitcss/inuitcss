@@ -41,20 +41,20 @@ $inuit-global-spacing-unit-factor-huge:   4    !default;
 ////////////////////////////////////////////////////////////////////////////////
 
 // Check that the chosen size factors are unitless numbers.
-@each $inuit-spacing-unit in
+@each $_inuit-spacing-unit in
       $inuit-global-spacing-unit-factor-tiny
       $inuit-global-spacing-unit-factor-small
       $inuit-global-spacing-unit-factor-large
       $inuit-global-spacing-unit-factor-huge {
 
-  @if (type-of($inuit-spacing-unit) == number) {
+  @if (type-of($_inuit-spacing-unit) == number) {
 
-    @if (unitless($inuit-spacing-unit) == false) {
-      @error "#{$inuit-spacing-unit} is not unitless.";
+    @if (unitless($_inuit-spacing-unit) == false) {
+      @error "#{$_inuit-spacing-unit} is not unitless.";
     }
 
   } @else {
-    @error "#{$inuit-spacing-unit} is not a number.";
+    @error "#{$_inuit-spacing-unit} is not a number.";
   }
 
 }
