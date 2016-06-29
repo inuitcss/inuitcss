@@ -66,12 +66,19 @@ $inuit-use-markup-fix: false !default;
 /* Default/mandatory classes.
    ========================================================================== */
 
+/**
+ * 1. Allows us to use the layout object on any type of element.
+ * 2. We need to defensively reset any box-model properties.
+ * 3. Use the negative margin trick for multi-row grids:
+ *    http://csswizardry.com/2011/08/building-better-grid-systems/
+ */
+
 .o-layout {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  box-sizing: border-box;
-  margin-left: -$inuit-global-spacing-unit;
+  display: block; /* [1] */
+  margin:  0; /* [2] */
+  padding: 0; /* [2] */
+  list-style: none; /* [1] */
+  margin-left: -$inuit-global-spacing-unit; /* [3] */
 
   @if ($inuit-use-markup-fix == false) {
     font-size: 0;
@@ -79,18 +86,29 @@ $inuit-use-markup-fix: false !default;
 
 }
 
-.o-layout__item {
-  display: inline-block;
-  vertical-align: top;
-  width: 100%;
-  box-sizing: border-box;
-  padding-left: $inuit-global-spacing-unit;
+  /**
+   * 1. Allows us to manipulate grids vertically, with text-level properties,
+   *    etc.
+   * 2. Default item alignment is with the tops of each other, like most
+   *    traditional grid/layout systems.
+   * 3. By default, all layout items are full-width (mobile first).
+   * 4. Gutters provided by left padding:
+   *    http://csswizardry.com/2011/08/building-better-grid-systems/
+   */
+  .o-layout__item {
+    display: inline-block; /* [1] */
+    vertical-align: top; /* [2] */
+    width: 100%; /* [3] */
+    padding-left: $inuit-global-spacing-unit; /* [4] */
 
-  @if ($inuit-use-markup-fix == false) {
-    font-size: 1rem;
+    @if ($inuit-use-markup-fix == false) {
+      @if ($inuit-oldIE == true) {
+        font-size: $inuit-global-font-size;
+      }
+      font-size: 1rem;
+    }
+
   }
-
-}
 
 
 
