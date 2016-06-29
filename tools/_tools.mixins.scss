@@ -18,17 +18,17 @@
 
   font-size: ($font-size / $inuit-global-font-size) * 1rem;
 
-  @if ($line-height == auto) {
+  @if ($line-height == 'auto') {
     line-height: ceil($font-size / $inuit-global-line-height) * ($inuit-global-line-height / $font-size);
   }
 
   @else {
 
-    @if (type-of($line-height) == number or $line-height == inherit or $line-height == normal) {
+    @if (type-of($line-height) == number or $line-height == 'inherit' or $line-height == 'normal') {
       line-height: $line-height;
     }
 
-    @elseif ($line-height != none and $line-height != false) {
+    @elseif ($line-height != 'none' and $line-height != false) {
       @warn "D’oh! ‘#{$line-height}’ is not a valid value for `line-height`."
     }
 
