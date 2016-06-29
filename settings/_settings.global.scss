@@ -70,7 +70,7 @@ $inuit-global-spacing-unit-factor-huge:   4    !default;
   @if (type-of($_inuit-spacing-unit) == number) {
 
     @if (unitless($_inuit-spacing-unit) == false) {
-      @error "#{$_inuit-spacing-unit} needs to be a unitless.";
+      @error "#{$_inuit-spacing-unit} needs to be unitless.";
     }
 
   } @else {
