@@ -99,9 +99,21 @@ $inuit-use-markup-fix: false !default;
    =========================================== */
 
 /**
- * Smaller gutters between items.
+ * Tiny gutters between items.
  */
-.o-layout--narrow {
+.o-layout--tiny {
+  margin-left: -$inuit-global-spacing-unit-tiny;
+
+  > .o-layout__item {
+    padding-left: $inuit-global-spacing-unit-tiny;
+  }
+
+}
+
+/**
+ * Small gutters between items.
+ */
+.o-layout--small {
   margin-left: $inuit-global-spacing-unit-small;
 
   > .o-layout__item {
@@ -111,13 +123,25 @@ $inuit-use-markup-fix: false !default;
 }
 
 /**
- * Larger gutters between items.
+ * Large gutters between items.
  */
-.o-layout--wide {
+.o-layout--large {
   margin-left: -$inuit-global-spacing-unit-large;
 
   > .o-layout__item {
     padding-left: $inuit-global-spacing-unit-large;
+  }
+
+}
+
+/**
+ * Huge gutters between items.
+ */
+.o-layout--huge {
+  margin-left: -$inuit-global-spacing-unit-huge;
+
+  > .o-layout__item {
+    padding-left: $inuit-global-spacing-unit-huge;
   }
 
 }
