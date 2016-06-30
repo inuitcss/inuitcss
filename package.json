@@ -18,6 +18,12 @@
     "css"
   ],
   "author": "Harry Roberts <csswizardry@gmail.com>",
+  "contributors": [
+    "Anselm Hannemann",
+    "Dennis Heibült",
+    "Florian Bouvot",
+    "Nenad Jelovac"
+  ],
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/inuitcss/inuitcss/issues"
