@@ -18,6 +18,7 @@ hr {
   padding: 0;
 }
 
+
 /**
  * Remove trailing margins from nested lists.
  */
@@ -28,4 +29,13 @@ li > {
     margin-bottom: 0;
   }
 
+}
+
+
+/**
+ * Remove default table spacing.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }

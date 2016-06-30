@@ -48,6 +48,7 @@
  * Media................Image- and text-like content side by side. The
  *                      poster-child of OOCSS.
  * Box..................Simple boxing abstraction.
+ * Block................Image-on-top-of-text object.
  *
  * COMPONENTS
  * Buttons..............An example button component, and how it fits into the
@@ -105,6 +106,7 @@
 @import "objects/objects.list-bare";
 @import "objects/objects.media";
 @import "objects/objects.box";
+@import "objects/objects.block";
 
 
 
