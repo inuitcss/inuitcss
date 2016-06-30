@@ -61,6 +61,7 @@
  * Headings.............Reassigning our heading styles to helper classes.
  * Spacing..............Nudge bits of the DOM around with these spacing
  *                      classes..
+ * Hide.................Helper classes to hide content
  */
 
 // SETTINGS
@@ -128,3 +129,4 @@
 @import "utilities/example.utilities.widths";
 @import "utilities/utilities.headings";
 @import "utilities/utilities.spacing";
+@import "utilities/utilities.hide";
