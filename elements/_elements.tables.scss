@@ -4,10 +4,7 @@
 
 /**
  * 1. Ensure tables fill up as much space as possible.
- * 2. Semi-opinionated, but tables render faster if we can force all of their
- *    columns to be the same width.
  */
 table {
   width: 100%; /* [1] */
-  table-layout: fixed; /* [2] */
 }
