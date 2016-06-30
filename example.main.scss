@@ -40,12 +40,14 @@
  * Headings.............Very minimal (i.e. only font-size information) for
  *                      headings 1 through 6.
  * Images...............Base image styles.
+ * Tables...............Simple table styles.
  *
  * OBJECTS
  * Layout...............Generic layout module.
  * List-bare............Lists with no bullets or indents.
  * Media................Image- and text-like content side by side. The
  *                      poster-child of OOCSS.
+ * Box..................Simple boxing abstraction.
  *
  * COMPONENTS
  * Buttons..............An example button component, and how it fits into the
@@ -90,6 +92,7 @@
 @import "elements/elements.page";
 @import "elements/elements.headings";
 @import "elements/elements.images";
+@import "elements/elements.tables";
 
 
 
@@ -101,6 +104,7 @@
 @import "objects/objects.layout";
 @import "objects/objects.list-bare";
 @import "objects/objects.media";
+@import "objects/objects.box";
 
 
 
