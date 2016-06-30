@@ -44,6 +44,8 @@
  * OBJECTS
  * Layout...............Generic layout module.
  * List-bare............Lists with no bullets or indents.
+ * Media................Image- and text-like content side by side. The
+ *                      poster-child of OOCSS.
  *
  * COMPONENTS
  * Buttons..............An example button component, and how it fits into the
@@ -98,6 +100,7 @@
 // Uncomment and add to this section as necessary.
 @import "objects/objects.layout";
 @import "objects/objects.list-bare";
+@import "objects/objects.media";
 
 
 

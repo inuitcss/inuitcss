@@ -1,0 +1,175 @@
+/* ==========================================================================
+   #MEDIA
+   ========================================================================== */
+
+/**
+ * Place any image- and text-like content side-by-side, as per:
+ * stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+ */
+
+.o-media {
+  @include inuit-clearfix();
+  display: block;
+}
+
+  .o-media__img {
+    float: left;
+    margin-right: $inuit-global-spacing-unit;
+
+    > img {
+      display: block;
+    }
+
+  }
+
+  .o-media__body {
+    overflow: hidden;
+    display: block;
+
+    &,
+    > :last-child {
+      margin-bottom: 0;
+    }
+
+  }
+
+
+
+
+
+
+/**
+ * Tiny media objects.
+ */
+
+.o-media--tiny {
+
+  > .o-media__img {
+    margin-right: $inuit-global-spacing-unit-tiny;
+  }
+
+
+  /**
+    * Tiny reversed media objects.
+    */
+
+  &.o-media--reverse {
+
+    > .o-media__img {
+      margin-right: 0;
+      margin-left:  $inuit-global-spacing-unit-tiny;
+    }
+
+  }
+
+}
+
+
+/**
+ * Small media objects.
+ */
+
+.o-media--small {
+
+  > .o-media__img {
+    margin-right: $inuit-global-spacing-unit-small;
+  }
+
+
+  /**
+    * Small reversed media objects.
+    */
+
+  &.o-media--reverse {
+
+    > .o-media__img {
+      margin-right: 0;
+      margin-left:  $inuit-global-spacing-unit-small;
+    }
+
+  }
+
+}
+
+
+/**
+ * Large media objects.
+ */
+
+.o-media--large {
+
+  > .o-media__img {
+    margin-right: $inuit-global-spacing-unit-large;
+  }
+
+
+  /**
+    * Large reversed media objects.
+    */
+
+  &.o-media--reverse {
+
+    > .o-media__img {
+      margin-right: 0;
+      margin-left:  $inuit-global-spacing-unit-large;
+    }
+
+  }
+
+}
+
+
+/**
+ * Huge media objects.
+ */
+
+.o-media--huge {
+
+  > .o-media__img {
+    margin-right: $inuit-global-spacing-unit-huge;
+  }
+
+
+  /**
+    * Huge reversed media objects.
+    */
+
+  &.o-media--reverse {
+
+    > .o-media__img {
+      margin-right: 0;
+      margin-left:  $inuit-global-spacing-unit-huge;
+    }
+
+  }
+
+}
+
+
+/**
+ * Reversed image location (right instead of left). Extends `.o-media`.
+ */
+
+.o-media--reverse {
+
+  > .o-media__img {
+    float: right;
+    margin-right: 0;
+    margin-left: $inuit-global-spacing-unit;
+  }
+
+}
+
+
+/**
+ * Flush media objects have no space between the image- and text-content.
+ */
+
+.o-media--flush {
+
+  > .o-media__img {
+    margin-right: 0;
+    margin-left:  0;
+  }
+
+}
