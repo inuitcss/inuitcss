@@ -6,7 +6,7 @@
  * The box object simply boxes off content. Extend with cosmetic styles in the
  * Components layer.
  *
- * 1. So we can apply the `.box` class to naturally-inline elements.
+ * 1. So we can apply the `.o-box` class to naturally-inline elements.
  */
 .o-box {
   @include inuit-clearfix();
