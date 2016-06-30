@@ -32,6 +32,7 @@ $inuit-spacing-sizes: (
   '-small': $inuit-global-spacing-unit-small,
   '-large': $inuit-global-spacing-unit-large,
   '-huge': $inuit-global-spacing-unit-huge,
+  '-none': 0
 ) !default;
 
 @each $property in $inuit-spacing-properties {
@@ -44,10 +45,6 @@ $inuit-spacing-sizes: (
         #{$property}#{$direction}: $value !important;
       }
 
-    }
-
-    .u-#{$property}#{$direction}-none {
-      #{$property}#{$direction}: 0 !important;
     }
 
   }
