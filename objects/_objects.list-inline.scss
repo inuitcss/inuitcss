@@ -19,27 +19,6 @@
 
 
 
-/* Zero-spaced list.
-   ========================================================================== */
-
-.o-list-inline--flush {
-  font-size: 0;
-
-  > .o-list-inline__item {
-
-    @if ($inuit-oldIE == true) {
-      font-size: $inuit-global-font-size;
-    }
-    font-size: 1rem;
-
-  }
-
-}
-
-
-
-
-
 /* Delimited list.
    ========================================================================== */
 
