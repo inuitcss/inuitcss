@@ -45,6 +45,7 @@
  * OBJECTS
  * Layout...............Generic layout module.
  * List-bare............Lists with no bullets or indents.
+ * List-inline..........A list whose items all site in a line.
  * Box..................Simple boxing abstraction.
  * Block................Image-on-top-of-text object.
  *
@@ -102,6 +103,7 @@
 // Uncomment and add to this section as necessary.
 @import "objects/objects.layout";
 @import "objects/objects.list-bare";
+@import "objects/objects.list-inline";
 @import "objects/objects.box";
 @import "objects/objects.block";
 
