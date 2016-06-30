@@ -4,7 +4,7 @@
 
 /**
  * Place any image- and text-like content side-by-side, as per:
- * stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+ * http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
  */
 
 .o-media {
@@ -37,9 +37,12 @@
 
 
 
+/* Size variants
+   ========================================================================== */
 
 /**
- * Tiny media objects.
+ * Modify the amount of space between our image and our text. We also have
+ * reversible options for all available sizes.
  */
 
 .o-media--tiny {
@@ -47,11 +50,6 @@
   > .o-media__img {
     margin-right: $inuit-global-spacing-unit-tiny;
   }
-
-
-  /**
-    * Tiny reversed media objects.
-    */
 
   &.o-media--reverse {
 
@@ -65,20 +63,11 @@
 }
 
 
-/**
- * Small media objects.
- */
-
 .o-media--small {
 
   > .o-media__img {
     margin-right: $inuit-global-spacing-unit-small;
   }
-
-
-  /**
-    * Small reversed media objects.
-    */
 
   &.o-media--reverse {
 
@@ -92,20 +81,11 @@
 }
 
 
-/**
- * Large media objects.
- */
-
 .o-media--large {
 
   > .o-media__img {
     margin-right: $inuit-global-spacing-unit-large;
   }
-
-
-  /**
-    * Large reversed media objects.
-    */
 
   &.o-media--reverse {
 
@@ -119,20 +99,11 @@
 }
 
 
-/**
- * Huge media objects.
- */
-
 .o-media--huge {
 
   > .o-media__img {
     margin-right: $inuit-global-spacing-unit-huge;
   }
-
-
-  /**
-    * Huge reversed media objects.
-    */
 
   &.o-media--reverse {
 
@@ -146,9 +117,11 @@
 }
 
 
-/**
- * Reversed image location (right instead of left). Extends `.o-media`.
- */
+
+
+
+/* Reversed media objects
+   ========================================================================== */
 
 .o-media--reverse {
 
@@ -161,9 +134,11 @@
 }
 
 
-/**
- * Flush media objects have no space between the image- and text-content.
- */
+
+
+
+/* Gutterless media objects
+   ========================================================================== */
 
 .o-media--flush {
 
