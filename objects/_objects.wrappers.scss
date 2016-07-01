@@ -2,8 +2,8 @@
    #WRAPPERS
    ========================================================================== */
 
-$inuit-wrqpper-fluid: true !default;
-$inuit-wrqpper-width: 1200px !default;
+$inuit-wrapper-fluid: true !default;
+$inuit-wrapper-width: 1200px !default;
 
 .o-wrapper {
   @include inuit-clearfix();
@@ -12,10 +12,10 @@ $inuit-wrqpper-width: 1200px !default;
   margin-right: auto;
   margin-left:  auto;
 
-  @if ($inuit-wrqpper-fluid == false) {
-    width: $inuit-wrqpper-width;
+  @if ($inuit-wrapper-fluid == false) {
+    width: $inuit-wrapper-width;
   } @else {
-    max-width: $inuit-wrqpper-width;
+    max-width: $inuit-wrapper-width;
   }
 
 }
