@@ -64,27 +64,16 @@
 // Mixin to drop micro clearfix into a selector. Further reading:
 // http://www.cssmojo.com/the-very-latest-clearfix-reloaded/
 //
-// .simple-usage {
+// .usage {
 //   @include inuit-clearfix();
 // }
-//
-// .detailed-usage {
-//   @include inuit-clearfix(important);
-// }
 
-@mixin inuit-clearfix($important: false) {
-
-  // Determine whether or not to make declarations important.
-  @if ($important == false) {
-    $important: null;
-  } @else {
-    $important: !important;
-  }
+@mixin inuit-clearfix() {
 
   &:after {
-    content: "" $important;
-    display: block $important;
-    clear: both $important;
+    content: "" !important;
+    display: block !important;
+    clear: both !important;
   }
 
 }
