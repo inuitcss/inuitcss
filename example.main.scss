@@ -43,6 +43,7 @@
  * Tables...............Simple table styles.
  *
  * OBJECTS
+ * Wrappers.............Page constraint object.
  * Layout...............Generic layout module.
  * Media................Image- and text-like content side by side. The
  *                      poster-child of OOCSS.
@@ -106,6 +107,7 @@
 // OBJECTS
 //
 // Uncomment and add to this section as necessary.
+@import "objects/objects.wrapper";
 @import "objects/objects.layout";
 @import "objects/objects.media";
 @import "objects/objects.list-bare";
