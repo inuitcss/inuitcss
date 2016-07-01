@@ -63,6 +63,8 @@
  * Spacing..............Nudge bits of the DOM around with these spacing
  *                      classes.
  * Print................Reset-like styles taken from the HTML5 Boilerplate.
+ *                      classes..
+ * Hide.................Helper classes to hide content
  */
 
 // SETTINGS
@@ -132,3 +134,4 @@
 @import "utilities/utilities.headings";
 @import "utilities/utilities.spacing";
 @import "utilities/utilities.print";
+@import "utilities/utilities.hide";
