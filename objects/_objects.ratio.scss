@@ -1,0 +1,53 @@
+/*------------------------------------*\
+  #RATIO
+\*------------------------------------*/
+
+/**
+ * http://alistapart.com/article/creating-intrinsic-ratios-for-video
+ */
+
+.o-ratio {
+  overflow: hidden;
+  position: relative;
+  display: block;
+}
+
+.o-ratio:before {
+  content: "";
+  display: block;
+  width: 100%;
+  padding-bottom: 100%;
+}
+
+/**
+ * Aspect ratio modifiers
+ */
+
+.o-ratio--3\:1:before {
+  padding-bottom: percentage(100% / 3);
+  padding-bottom: calc(100% / 3);
+}
+
+.o-ratio--2\:1:before {
+  padding-bottom: 50%;
+}
+
+.o-ratio--16\:9:before {
+  padding-bottom: 56.25%;
+}
+
+.o-ratio--4\:3:before {
+  padding-bottom: 75%;
+}
+
+.o-ratio__item,
+.o-ratio iframe,
+.o-ratio embed,
+.o-ratio object {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
