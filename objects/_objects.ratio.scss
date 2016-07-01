@@ -19,17 +19,17 @@
   padding-bottom: 100%;
 }
 
-.o-ratio__item,
-.o-ratio iframe,
-.o-ratio embed,
-.o-ratio object {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-}
+  .o-ratio__item,
+  .o-ratio iframe,
+  .o-ratio embed,
+  .o-ratio object {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
 
 
 
@@ -39,7 +39,7 @@
    ========================================================================== */
 
 .o-ratio--3\:1:before {
-  padding-bottom: percentage(100% / 3);
+  padding-bottom: percentage(100 / 3);
   padding-bottom: calc(100% / 3);
 }
 
