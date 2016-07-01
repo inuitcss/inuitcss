@@ -2,12 +2,22 @@
    #WRAPPERS
    ========================================================================== */
 
+$inuit-wrqpper-fluid: true !default;
+$inuit-wrqpper-width: 1200px !default;
+
 .o-wrapper {
   @include inuit-clearfix();
   padding-right: $inuit-global-spacing-unit;
   padding-left:  $inuit-global-spacing-unit;
   margin-right: auto;
   margin-left:  auto;
+
+  @if ($inuit-wrqpper-fluid == false) {
+    width: $inuit-wrqpper-width;
+  } @else {
+    max-width: $inuit-wrqpper-width;
+  }
+
 }
 
 
