@@ -1,6 +1,6 @@
-/*------------------------------------*\
-  #RATIO
-\*------------------------------------*/
+/* ==========================================================================
+   #RATIO
+   ========================================================================== */
 
 /**
  * http://alistapart.com/article/creating-intrinsic-ratios-for-video
@@ -19,9 +19,24 @@
   padding-bottom: 100%;
 }
 
-/**
- * Aspect ratio modifiers
- */
+.o-ratio__item,
+.o-ratio iframe,
+.o-ratio embed,
+.o-ratio object {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+
+
+
+
+/* Ratios variants
+   ========================================================================== */
 
 .o-ratio--3\:1:before {
   padding-bottom: percentage(100% / 3);
@@ -38,16 +53,4 @@
 
 .o-ratio--4\:3:before {
   padding-bottom: 75%;
-}
-
-.o-ratio__item,
-.o-ratio iframe,
-.o-ratio embed,
-.o-ratio object {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
 }
