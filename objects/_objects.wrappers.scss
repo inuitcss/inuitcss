@@ -6,7 +6,6 @@
  * Page-level constraining and wrapping elements.
  */
 
-$inuit-wrapper-fluid: true !default;
 $inuit-wrapper-width: 1200px !default;
 
 @if (type-of($inuit-wrapper-width) != number) {
@@ -19,13 +18,7 @@ $inuit-wrapper-width: 1200px !default;
   padding-left:  $inuit-global-spacing-unit;
   margin-right: auto;
   margin-left:  auto;
-
-  @if ($inuit-wrapper-fluid == false) {
-    width: $inuit-wrapper-width;
-  } @else {
-    max-width: $inuit-wrapper-width;
-  }
-
+  max-width: $inuit-wrapper-width;
 }
 
 
