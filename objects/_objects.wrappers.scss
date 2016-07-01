@@ -2,8 +2,16 @@
    #WRAPPERS
    ========================================================================== */
 
+/**
+ * Page-level constraining and wrapping elements.
+ */
+
 $inuit-wrapper-fluid: true !default;
 $inuit-wrapper-width: 1200px !default;
+
+@if (type-of($inuit-wrapper-width) != number) {
+  @error "#{$inuit-wrapper-width} needs to be a number."
+}
 
 .o-wrapper {
   @include inuit-clearfix();
