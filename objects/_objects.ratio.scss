@@ -10,13 +10,14 @@
   overflow: hidden;
   position: relative;
   display: block;
-}
 
-.o-ratio:before {
-  content: "";
-  display: block;
-  width: 100%;
-  padding-bottom: 100%;
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-bottom: 100%;
+  }
+
 }
 
   .o-ratio__item,
