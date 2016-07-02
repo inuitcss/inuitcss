@@ -7,16 +7,14 @@
  * their correct aspect ratios.
  *
  * http://alistapart.com/article/creating-intrinsic-ratios-for-video
- */
-
-/**
+ *
  * 1. Default cropping is a 1:1 ratio (i.e. a perfect square).
  */
 
 .o-ratio {
-  overflow: hidden;
   position: relative;
   display: block;
+  overflow: hidden;
 
   &:before {
     content: "";
