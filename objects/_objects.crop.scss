@@ -35,10 +35,6 @@
    * We can position the media in different locations within the cropping area.
    */
 
-  .o-crop__content--top {
-    top: 0;
-  }
-
   .o-crop__content--right {
     right: 0;
     left: auto;
@@ -47,10 +43,6 @@
   .o-crop__content--bottom {
     top: auto;
     bottom: 0;
-  }
-
-  .o-crop__content--left {
-    left: 0;
   }
 
   .o-crop__content--center {
