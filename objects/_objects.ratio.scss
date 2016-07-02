@@ -3,6 +3,9 @@
    ========================================================================== */
 
 /**
+ * Create ratio-bound content blocks, to keep media (e.g. images, videos) in
+ * their correct aspect ratios.
+ *
  * http://alistapart.com/article/creating-intrinsic-ratios-for-video
  */
 
@@ -25,11 +28,11 @@
   .o-ratio embed,
   .o-ratio object {
     position: absolute;
-    top: 0;
+    top:    0;
     bottom: 0;
-    left: 0;
+    left:   0;
     height: 100%;
-    width: 100%;
+    width:  100%;
   }
 
 
@@ -38,6 +41,13 @@
 
 /* Ratio variants.
    ========================================================================== */
+
+/**
+ * Generate a series of ratio classes to be used like so:
+ *
+ *   <div class="o-ratio  o-ratio--16:9">
+ *
+ */
 
 $inuit-ratios: (
   1:1,
