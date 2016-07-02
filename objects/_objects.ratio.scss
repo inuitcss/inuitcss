@@ -9,6 +9,10 @@
  * http://alistapart.com/article/creating-intrinsic-ratios-for-video
  */
 
+/**
+ * 1. Default cropping is a 1:1 ratio (i.e. a perfect square).
+ */
+
 .o-ratio {
   overflow: hidden;
   position: relative;
@@ -18,7 +22,7 @@
     content: "";
     display: block;
     width: 100%;
-    padding-bottom: 100%;
+    padding-bottom: 100%; /* [1] */
   }
 
 }
@@ -50,7 +54,6 @@
  */
 
 $inuit-ratios: (
-  1:1,
   2:1,
   4:3,
   16:9,
