@@ -51,7 +51,8 @@
  * List-inline..........A list whose items all site in a line.
  * Box..................Simple boxing abstraction.
  * Block................Image-on-top-of-text object.
- * Ratio................A container for maintaing aspect ratio of content.
+ * Ratio................A container for maintaining aspect ratio of content.
+ * Crop.................Provide a cropping context for media (images, etc.).
  *
  * COMPONENTS
  * Buttons..............An example button component, and how it fits into the
@@ -116,6 +117,7 @@
 @import "objects/objects.box";
 @import "objects/objects.block";
 @import "objects/objects.ratio";
+@import "objects/objects.crop";
 
 
 
