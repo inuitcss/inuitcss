@@ -21,6 +21,7 @@ hr {
 /**
  * Remove trailing margins from nested lists.
  */
+
 li > {
 
   ul,
@@ -34,6 +35,7 @@ li > {
 /**
  * Remove default table spacing.
  */
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
