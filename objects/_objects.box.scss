@@ -8,6 +8,7 @@
  *
  * 1. So we can apply the `.o-box` class to naturally-inline elements.
  */
+
 .o-box {
   @include inuit-clearfix();
   display: block; /* [1] */
@@ -30,21 +31,17 @@
   padding: 0;
 }
 
-
 .o-box--tiny {
   padding: $inuit-global-spacing-unit-tiny;
 }
-
 
 .o-box--small {
   padding: $inuit-global-spacing-unit-small;
 }
 
-
 .o-box--large {
   padding: $inuit-global-spacing-unit-large;
 }
-
 
 .o-box--huge {
   padding: $inuit-global-spacing-unit-huge;
