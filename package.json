@@ -1,6 +1,6 @@
 {
   "name": "inuitcss",
-  "version": "6.0.0-beta",
+  "version": "6.0.0-beta.1",
   "description": "Extensible, scalable, Sass-based, OOCSS framework for large and long-lasting UI projects.",
   "main": "example.main.scss",
   "scripts": {
