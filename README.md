@@ -1,4 +1,4 @@
-# inuitcss
+# ![inuitcss](http://inuitcss.com/img/logo-small.png)
 
 **Extensible, scalable, Sass-based, OOCSS framework for large and long-lasting
 UI projects.**
