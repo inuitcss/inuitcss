@@ -35,9 +35,13 @@
 
   /**
    * Flag images have a space between them and the body of the object.
+   *
+   * 1. Force `.flag__img` to take up as little space as possible:
+   *    https://pixelsvsbytes.com/2012/02/this-css-layout-grid-is-no-holy-grail/
    */
 
   .o-flag__img {
+    width: 1px; /* [1] */
     padding-right: $inuit-global-spacing-unit;
 
 
@@ -59,7 +63,7 @@
    */
 
   .o-flag__body {
-    width: 100%; /* [1] */
+    width: auto; /* [1] */
 
     &,
     > :last-child {
