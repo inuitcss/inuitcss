@@ -89,3 +89,16 @@ Copy this file into your own `css/settings/` directory and rename it
 
 **N.B.** If you downloaded inuitcss, you do not need to move this this file; you
 can simply rename it.
+
+### [`_example.components.buttons.scss`](https://github.com/inuitcss/inuitcss/blob/master/components/_example.components.buttons.scss)
+
+You don’t need to really do much with this file other than ensure you don’t let
+it into your final project!
+
+This file exists to show you how you might build components into an inuitcss
+project, because components are the one thing that inuitcss purposefully refuses
+to provide.
+
+You can, if you wish, copy this file to your own `css/components/` directory and
+rename it `_components.buttons.scss`. You can now use this file as the basis for
+your own buttons component.
