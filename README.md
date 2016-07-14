@@ -70,7 +70,7 @@ Once you’ve done this, you should be able to run the following command on that
 file and get a compiled stylesheet without any errors:
 
 ```
-path/to/css/ $ sass --watch main.scss:main.css
+path/to/css/$ sass main.scss:main.css
 ```
 
 **N.B.** If you downloaded inuitcss, you do not need to move this this; you can
