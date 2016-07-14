@@ -53,7 +53,7 @@ utilities/_example.utilities.widths.scss
 
 Here’s what we need to do with them:
 
-### `example.main.scss`
+### [`example.main.scss`](https://github.com/inuitcss/inuitcss/blob/master/example.main.scss)
 
 This is your main, or _manifest_, file. This is the backbone of any inuitcss
 project, and it is responsible for `@import`ing all other files. This is the
