@@ -73,5 +73,19 @@ file and get a compiled stylesheet without any errors:
 path/to/css/$ sass main.scss:main.css
 ```
 
-**N.B.** If you downloaded inuitcss, you do not need to move this this; you can
-simply rename it.
+**N.B.** If you downloaded inuitcss, you do not need to move this this file; you
+can simply rename it.
+
+### [`_example.settings.config.scss`](https://github.com/inuitcss/inuitcss/blob/master/settings/_example.settings.config.scss)
+
+This is a configuration file that inuitcss uses to handle the state, location,
+or environment of your project. This handles very high-level settings that don’t
+necessarily affect the CSS itself, but can be used to manipulate things
+depending on where you are running things (e.g. turning a debugging mode on, or
+telling your CI sever that you’re compiling for production).
+
+Copy this file into your own `css/settings/` directory and rename it
+`_settings.config.scss`.
+
+**N.B.** If you downloaded inuitcss, you do not need to move this this file; you
+can simply rename it.
