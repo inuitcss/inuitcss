@@ -28,5 +28,8 @@
   "bugs": {
     "url": "https://github.com/inuitcss/inuitcss/issues"
   },
-  "homepage": "https://github.com/inuitcss/inuitcss#readme"
+  "homepage": "https://github.com/inuitcss/inuitcss#readme",
+  "dependencies": {
+    "sass-mq": "^3.2.9"
+  }
 }
