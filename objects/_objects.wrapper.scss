@@ -9,7 +9,7 @@
 $inuit-wrapper-width: 1200px !default;
 
 @if (type-of($inuit-wrapper-width) != number) {
-  @error "#{$inuit-wrapper-width} needs to be a number."
+  @error "`#{$inuit-wrapper-width}` needs to be a number."
 }
 
 .o-wrapper {

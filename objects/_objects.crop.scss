@@ -75,11 +75,11 @@ $inuit-crops: (
 @each $antecedent, $consequent in $inuit-crops {
 
   @if (type-of($antecedent) != number) {
-    @error "#{$antecedent} needs to be a number."
+    @error "`#{$antecedent}` needs to be a number."
   }
 
   @if (type-of($consequent) != number) {
-    @error "#{$consequent} needs to be a number."
+    @error "`#{$consequent}` needs to be a number."
   }
 
   .o-crop--#{$antecedent}\:#{$consequent} {

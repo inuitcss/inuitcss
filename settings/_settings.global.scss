@@ -63,11 +63,11 @@ $inuit-global-spacing-unit-factor-huge:   4    !default;
   @if (type-of($_inuit-font-globals) == number) {
 
     @if (unit($_inuit-font-globals) != "px") {
-      @error "#{$_inuit-font-globals} needs to be a pixel value.";
+      @error "`#{$_inuit-font-globals}` needs to be a pixel value.";
     }
 
   } @else {
-    @error "#{$_inuit-font-globals} needs to be a number.";
+    @error "`#{$_inuit-font-globals}` needs to be a number.";
   }
 
 }
@@ -84,11 +84,11 @@ $inuit-global-spacing-unit-factor-huge:   4    !default;
   @if (type-of($_inuit-spacing-unit) == number) {
 
     @if (unitless($_inuit-spacing-unit) == false) {
-      @error "#{$_inuit-spacing-unit} needs to be unitless.";
+      @error "`#{$_inuit-spacing-unit}` needs to be unitless.";
     }
 
   } @else {
-    @error "#{$_inuit-spacing-unit} needs to be a number.";
+    @error "`#{$_inuit-spacing-unit}` needs to be a number.";
   }
 
 }
