@@ -19,7 +19,7 @@
  *
  * SETTINGS
  * Config...............Project-level configuration and feature switches.
- * Global...............Globally-available project settings.
+ * Core.................inuitcss’ core and setup settings.
  *
  * TOOLS
  * Functions............A small collection of useful functions.
@@ -72,7 +72,7 @@
 
 // SETTINGS
 @import "settings/example.settings.config";
-@import "settings/settings.global";
+@import "settings/settings.core";
 
 
 

@@ -1,5 +1,5 @@
 ///* ========================================================================
-//   #GLOBAL
+//   #CORE
 //   ======================================================================== */
 
 // Project-level settings and setup.
@@ -11,10 +11,6 @@ $inuit-global-line-height:  24px !default;
 
 // Do we need to support IE8?
 $inuit-oldIE: false !default;
-
-// Standardise some UI treatments.
-$inuit-global-radius:       3px !default;
-$inuit-global-transition:   (1/3) + s !default;
 
 
 
