@@ -133,7 +133,7 @@ $inuit-use-markup-fix: false !default;
  * Small gutters between items.
  */
 .o-layout--small {
-  margin-left: $inuit-global-spacing-unit-small;
+  margin-left: -$inuit-global-spacing-unit-small;
 
   > .o-layout__item {
     padding-left: $inuit-global-spacing-unit-small;
