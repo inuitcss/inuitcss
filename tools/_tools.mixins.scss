@@ -18,7 +18,7 @@
   } @elseif ($important == false) {
     $important: null;
   } @else {
-    @error "#{$important} needs to be `true` or `false`."
+    @error "`#{$important}` needs to be `true` or `false`."
   }
 
   @if ($inuit-oldIE == true) {
@@ -38,7 +38,7 @@
     }
 
     @elseif ($line-height != 'none' and $line-height != false) {
-      @error "D’oh! ‘#{$line-height}’ is not a valid value for `line-height`."
+      @error "D’oh! `#{$line-height}` is not a valid value for `$line-height`."
     }
 
   }

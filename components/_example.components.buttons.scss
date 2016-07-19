@@ -16,6 +16,7 @@
  * 5. Force all button-styled elements to appear clickable.
  * 6. Fixes odd inner spacing in IE7.
  */
+
 .c-btn {
   display: inline-block; /* [1] */
   vertical-align: middle; /* [2] */
@@ -72,6 +73,25 @@
 
 }
 
+.c-btn--tertiary {
+  background-color: #fff;
+  color: #4a8ec2;
+
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
+    color: #4a8ec2;
+  }
+
+  &:hover,
+  &:focus {
+    color: #3774a2;
+  }
+
+}
+
 
 
 
@@ -85,4 +105,68 @@
 
 .c-btn--large {
   padding: inuit-rem($inuit-global-spacing-unit) inuit-rem($inuit-global-spacing-unit-large);
+}
+
+
+
+
+
+/* Ghost buttons
+   ========================================================================== */
+
+/**
+ * Ghost buttons have see-through backgrounds and are bordered.
+ */
+
+$btn-ghost-border-width: 2px;
+
+.c-btn--ghost {
+  border: $btn-ghost-border-width solid currentColor;
+  padding: ($inuit-global-spacing-unit-small - $btn-ghost-border-width) ($inuit-global-spacing-unit - $btn-ghost-border-width);
+
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    background: none;
+  }
+
+  &.c-btn--small {
+    padding: ($inuit-global-spacing-unit-tiny - $btn-ghost-border-width) ($inuit-global-spacing-unit-small - $btn-ghost-border-width);
+  }
+
+  &.c-btn--large {
+    padding: ($inuit-global-spacing-unit - $btn-ghost-border-width) ($inuit-global-spacing-unit-large - $btn-ghost-border-width);
+  }
+
+  &.c-btn--primary {
+    color: #4a8ec2;
+
+    &:hover,
+    &:focus {
+      color: #3774a2;
+    }
+
+  }
+
+  &.c-btn--secondary {
+    color: #2f4054;
+
+    &:hover,
+    &:focus {
+      color: #1d2733;
+    }
+
+  }
+
+  &.c-btn--tertiary {
+    color: #fff;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+    }
+
+  }
+
 }

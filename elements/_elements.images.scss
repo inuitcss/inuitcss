@@ -9,6 +9,7 @@
  *    elements when they are dropped into a page as-is. Safer alternative to
  *    using `display: block;`.
  */
+
 img {
   max-width: 100%; /* [1] */
   font-style: italic; /* [2] */
@@ -16,11 +17,11 @@ img {
 }
 
 
-
 /**
  * 1. If a `width` and/or `height` attribute have been explicitly defined, let’s
  *    not make the image fluid.
  */
+
 img[width], /* [1] */
 img[height] {  /* [1] */
   max-width: none;

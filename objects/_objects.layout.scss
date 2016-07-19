@@ -50,10 +50,6 @@
  * There are plenty more options available to us: explore them below.
  */
 
-
-
-
-
 // By default we use the `font-size: 0;` trick to remove whitespace between.
 // Set this to true in order to use a markup-based strategy like commenting out
 // whitespace or minifying HTML.
@@ -86,6 +82,7 @@ $inuit-use-markup-fix: false !default;
 
 }
 
+
   /**
    * 1. Allows us to manipulate grids vertically, with text-level properties,
    *    etc.
@@ -95,6 +92,7 @@ $inuit-use-markup-fix: false !default;
    * 4. Gutters provided by left padding:
    *    http://csswizardry.com/2011/08/building-better-grid-systems/
    */
+
   .o-layout__item {
     display: inline-block; /* [1] */
     vertical-align: top; /* [2] */
@@ -117,9 +115,6 @@ $inuit-use-markup-fix: false !default;
 /* Gutter size modifiers.
    ========================================================================== */
 
-/**
- * Tiny gutters between items.
- */
 .o-layout--tiny {
   margin-left: -$inuit-global-spacing-unit-tiny;
 
@@ -129,9 +124,7 @@ $inuit-use-markup-fix: false !default;
 
 }
 
-/**
- * Small gutters between items.
- */
+
 .o-layout--small {
   margin-left: -$inuit-global-spacing-unit-small;
 
@@ -141,9 +134,7 @@ $inuit-use-markup-fix: false !default;
 
 }
 
-/**
- * Large gutters between items.
- */
+
 .o-layout--large {
   margin-left: -$inuit-global-spacing-unit-large;
 
@@ -153,9 +144,7 @@ $inuit-use-markup-fix: false !default;
 
 }
 
-/**
- * Huge gutters between items.
- */
+
 .o-layout--huge {
   margin-left: -$inuit-global-spacing-unit-huge;
 
@@ -165,9 +154,7 @@ $inuit-use-markup-fix: false !default;
 
 }
 
-/**
- * No gutters between items.
- */
+
 .o-layout--flush {
   margin-left: 0;
 
@@ -186,23 +173,8 @@ $inuit-use-markup-fix: false !default;
 
 /**
  * Align all grid items to the middles of each other.
- *
- * Input:
- *
- *   1 2 3 4 5
- *   1 2 - 4 5
- *   1 2 - 4 5
- *   - 2 - - 5
- *   - 2 - - 5
- *
- * Output:
- *
- *   - 2 - - 5
- *   1 2 - 4 5
- *   1 2 3 4 5
- *   1 2 - 4 5
- *   - 2 - - 5
  */
+
 .o-layout--middle {
 
   > .o-layout__item {
@@ -211,25 +183,11 @@ $inuit-use-markup-fix: false !default;
 
 }
 
+
 /**
  * Align all grid items to the bottoms of each other.
- *
- * Input:
- *
- *   1 2 3 4 5
- *   1 2 - 4 5
- *   1 2 - 4 5
- *   - 2 - - 5
- *   - 2 - - 5
- *
- * Output:
- *
- *   - 2 - - 5
- *   - 2 - - 5
- *   1 2 - 4 5
- *   1 2 - 4 5
- *   1 2 3 4 5
  */
+
 .o-layout--bottom {
 
   > .o-layout__item {
@@ -247,15 +205,8 @@ $inuit-use-markup-fix: false !default;
 
 /**
  * Fill up the layout system from the centre.
- *
- * Input:
- *
- *   1 2 3 - -
- *
- * Output:
- *
- *   - 1 2 3 -
  */
+
 .o-layout--center {
   text-align: center;
 
@@ -265,17 +216,11 @@ $inuit-use-markup-fix: false !default;
 
 }
 
+
 /**
  * Fill up the layout system from the right-hand side.
- *
- * Input:
- *
- *   1 2 3 - -
- *
- * Output:
- *
- *   - - 1 2 3
  */
+
 .o-layout--right {
   text-align: right;
 
@@ -285,17 +230,11 @@ $inuit-use-markup-fix: false !default;
 
 }
 
+
 /**
  * Reverse the rendered order of the grid system.
- *
- * Input:
- *
- *   1 2 3 4 5
- *
- * Output:
- *
- *   5 4 3 2 1
  */
+
 .o-layout--reverse {
   direction: rtl;
 
