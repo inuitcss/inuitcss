@@ -1,0 +1,30 @@
+///* ========================================================================
+//   #COLORS
+//   ======================================================================== */
+
+// Literal palette
+
+$color-brand-primary:             #4a8ec2;
+$color-brand-primary-highlight:   lighten($color-brand-primary, 10%);
+$color-brand-primary-shadow:      darken( $color-brand-primary, 10%);
+
+$color-brand-secondary: #2f4054;
+$color-brand-secondary-highlight: lighten($color-brand-secondary, 10%);
+$color-brand-secondary-shadow:    darken($color-brand-secondary, 10%);
+
+
+
+
+
+// Semantic color variables are daisy-chained onto their literal names.
+
+$color-link:        $color-brand-primary;
+$color-link-hover:  $color-brand-primary-shadow;
+
+$color-btn:                     #fff;
+$color-btn-bg:                  $color-brand-primary;
+$color-btn-hover-bg:            $color-brand-primary-shadow;
+
+$color-btn-secondary:           #fff;
+$color-btn-secondary-bg:        $color-brand-secondary;
+$color-btn-secondary-hover-bg:  $color-brand-secondary-shadow;
