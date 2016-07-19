@@ -8,19 +8,19 @@
 // Base typographical styles and baseline grid. You need to define these values
 // in pixels: inuitcss will convert them to more appropriate units.
 
-$inuit-global-font-size:    16px !default;
-$inuit-global-line-height:  24px !default;
+$inuit-global-font-size: 16px !default;
+$inuit-global-line-height: 24px !default;
 
 
-// Do we need to support IE8?
+// If you need support for IE8, override this to `true`
 
 $inuit-oldIE: false !default;
 
 
 // Standardise some UI treatments.
 
-$inuit-global-radius:       3px !default;
-$inuit-global-transition:   (1/3) + s !default;
+$inuit-global-radius: 3px !default;
+$inuit-global-transition: (1/3) + s !default;
 
 
 
@@ -36,10 +36,10 @@ $inuit-global-spacing-unit: round($inuit-global-line-height) !default;
 // How many times larger/smaller than the default should our spacing unit
 // variants be?
 
-$inuit-global-spacing-unit-factor-tiny:   0.25 !default;
-$inuit-global-spacing-unit-factor-small:  0.5  !default;
-$inuit-global-spacing-unit-factor-large:  2    !default;
-$inuit-global-spacing-unit-factor-huge:   4    !default;
+$inuit-global-spacing-unit-factor-tiny: 0.25 !default;
+$inuit-global-spacing-unit-factor-small: 0.5 !default;
+$inuit-global-spacing-unit-factor-large: 2 !default;
+$inuit-global-spacing-unit-factor-huge: 4 !default;
 
 
 
@@ -96,7 +96,7 @@ $inuit-global-spacing-unit-factor-huge:   4    !default;
 
 // Private/framework-only reassignment. Do not alter anything below.
 
-$inuit-global-spacing-unit-tiny:  round($inuit-global-spacing-unit * $inuit-global-spacing-unit-factor-tiny);
+$inuit-global-spacing-unit-tiny: round($inuit-global-spacing-unit * $inuit-global-spacing-unit-factor-tiny);
 $inuit-global-spacing-unit-small: round($inuit-global-spacing-unit * $inuit-global-spacing-unit-factor-small);
 $inuit-global-spacing-unit-large: round($inuit-global-spacing-unit * $inuit-global-spacing-unit-factor-large);
-$inuit-global-spacing-unit-huge:  round($inuit-global-spacing-unit * $inuit-global-spacing-unit-factor-huge);
+$inuit-global-spacing-unit-huge: round($inuit-global-spacing-unit * $inuit-global-spacing-unit-factor-huge);
