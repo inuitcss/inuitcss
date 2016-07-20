@@ -47,9 +47,3 @@ complex, obscure, or monolithic code should always be avoided where possible.
 discuss a feature/addition _before_ submitting a pull request. This way we can
 assess code’s suitability and its likelihood of inclusion _before_ your go to the
 effort of writing anything.**
-
-## New modules
-
-If you would like to suggest a module to add to inuitcss, please [open a new
-issue](https://github.com/inuitcss/CONTRIBUTING/issues/new) against this
-repository.
