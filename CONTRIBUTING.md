@@ -45,7 +45,7 @@ complex, obscure, or monolithic code should always be avoided where possible.
 
 **If you are in doubt, please open an issue on the relevant repository to
 discuss a feature/addition _before_ submitting a pull request. This way we can
-asses code’s suitability and its likelihood of inclusion _before_ your go to the
+assess code’s suitability and its likelihood of inclusion _before_ your go to the
 effort of writing anything.**
 
 ## New modules
