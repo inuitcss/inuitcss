@@ -43,7 +43,7 @@ Kinds of code we do not want:
 Sass provides us with a lot of fantastic features, but the introduction of
 complex, obscure, or monolithic code should always be avoided where possible.
 
-**If you are in doubt, please open an issue on the relevant repository to
-discuss a feature/addition _before_ submitting a pull request. This way we can
-assess code’s suitability and its likelihood of inclusion _before_ your go to the
-effort of writing anything.**
+**If you are in doubt, please open an issue to discuss a feature/addition 
+_before_ submitting a pull request. This way we can assess code’s suitability 
+and its likelihood of inclusion _before_ your go to the effort of writing 
+anything.**
