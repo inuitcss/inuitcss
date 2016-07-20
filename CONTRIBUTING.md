@@ -7,7 +7,7 @@ to before code is eligible for inclusion in the project.
 ## Simplicity is paramount.
 
 inuitcss is written in Sass, which provides us with a lot of incredibly powerful
-features. However, I do not want inuitcss to become a platform for Sass’
+features. However, we do not want inuitcss to become a platform for Sass’
 capabilities—all code that comes into inuitcss should be as simple and CSS-like
 as possible.
 
