@@ -47,3 +47,26 @@ complex, obscure, or monolithic code should always be avoided where possible.
 _before_ submitting a pull request. This way we can assess code’s suitability 
 and its likelihood of inclusion _before_ your go to the effort of writing 
 anything.**
+
+## Git(Hub) Workflow
+
+If you would like to submit a pull request, please follow the below Git
+process/workflow. It helps to give us a better paper-trail, and allows us to
+follow work through the issue/pull request process.
+
+1. **Create a new issue for the proposed addition/change/fix.** This allows us
+   to discuss the suitability of the proposal before you begin work.
+2. **Create a new branch entitled `tkt-<issue-number>`.** Look at the URL of
+   your new issue; take its number (e.g. 99) and create a branch called
+  `tkt-0099` (with leading zeroes). Do all of your work in this branch.
+3. **Start all commit messages with `[refs #<issue-number>]`.** If you’re
+   working on issue 99, all of your commits should begin with `[refs #0099]`.
+  This allows us to link every commit back to both an issue and a branch.
+
+Example:
+[f000350](https://github.com/inuitcss/inuitcss/commit/f000350dd23b92cb403142f4a8af84d92d300cf7).
+Here I can see that the ‘Implement proposed flag object fix’ commit happened
+against [issue 76](https://github.com/inuitcss/inuitcss/issues/76), and took
+place in a branch named `tkt-0076`. This means that I can find any discussions
+around this piece of work, and I know in which branch I should commit and
+further, related work.
