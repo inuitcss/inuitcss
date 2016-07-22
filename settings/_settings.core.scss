@@ -90,7 +90,7 @@ $inuit-global-spacing-unit-factor-huge:   4    !default;
 }
 
 
-// Private/framework-only reassignment. Do not alter anything below.
+// Private/framework-only reassignment.
 
 $inuit-global-spacing-unit-tiny:  round($inuit-global-spacing-unit * $inuit-global-spacing-unit-factor-tiny);
 $inuit-global-spacing-unit-small: round($inuit-global-spacing-unit * $inuit-global-spacing-unit-factor-small);
