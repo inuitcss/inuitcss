@@ -67,7 +67,7 @@ follow work through the issue/pull request process.
    branch only.
 
 Example:
-[f000350](https://github.com/inuitcss/inuitcss/commit/f000350dd23b92cb403142f4a8af84d92d300cf7).
+[`f000350`](https://github.com/inuitcss/inuitcss/commit/f000350dd23b92cb403142f4a8af84d92d300cf7).
 Here I can see that the ‘Implement proposed flag object fix’ commit happened
 against [issue 76](https://github.com/inuitcss/inuitcss/issues/76), and took
 place in a branch named `tkt-0076`. This means that I can find any discussions
