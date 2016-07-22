@@ -90,6 +90,16 @@ Copy this file into your own `css/settings/` directory and rename it
 **N.B.** If you downloaded inuitcss, you do not need to move this this file; you
 can simply rename it.
 
+### [`_example.settings.global.scss`](https://github.com/inuitcss/inuitcss/blob/master/components/_example.settings.global.scss)
+
+This is an example globals file; it contains any settings that are available to
+your entire project. These variables and settings could be font families,
+colours, border radius values, etc.
+
+Copy this file into your own `css/settings/` directory and rename it
+`_settings.global.scss`. Now you can begin adding your own project-wide
+settings.
+
 ### [`_example.components.buttons.scss`](https://github.com/inuitcss/inuitcss/blob/master/components/_example.components.buttons.scss)
 
 You don’t need to really do much with this file other than ensure you don’t let
