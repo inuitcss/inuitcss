@@ -61,7 +61,10 @@ follow work through the issue/pull request process.
   `tkt-0099` (with leading zeroes). Do all of your work in this branch.
 3. **Start all commit messages with `[refs #<issue-number>]`.** If you’re
    working on issue 99, all of your commits should begin with `[refs #0099]`.
-  This allows us to link every commit back to both an issue and a branch.
+   This allows us to link every commit back to both an issue and a branch.
+4. **Open a pull request into `develop`.** Our main branch is `develop`, and
+   this is where we want new work to be merged into. `master` is a release
+   branch only.
 
 Example:
 [f000350](https://github.com/inuitcss/inuitcss/commit/f000350dd23b92cb403142f4a8af84d92d300cf7).
