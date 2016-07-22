@@ -5,9 +5,9 @@
 /**
  * Grid-like layout system.
  *
- * The Layout object provides us with a column-style layout system. This file
+ * The layout object provides us with a column-style layout system. This file
  * contains the basic structural elements, but classes should be complemented
- * with width Utilities, for example:
+ * with width utilities, for example:
  *
  *   <div class="o-layout">
  *     <div class="o-layout__item  u-width-1/2">
@@ -34,8 +34,8 @@
  * second and third items will be 50% of their parent, until they also become
  * 33.333% width at the medium breakpoint.
  *
- * We can also manipulate entire layout systems by adding a series of Modifiers
- * to the `.o-layout` Block. For example:
+ * We can also manipulate entire layout systems by adding a series of modifiers
+ * to the `.o-layout` block. For example:
  *
  *   <div class="o-layout  o-layout--reverse">
  *
