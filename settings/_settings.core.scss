@@ -1,8 +1,10 @@
 ///* ========================================================================
-//   #GLOBAL
+//   #CORE
 //   ======================================================================== */
 
-// The global settings file contains any project-wide variables.
+// This core file sets up inuitcss’ most important setup variables. They
+// underpin a lot of how the framework functions and should be modified and
+// preconfigured with caution.
 
 
 // Base typographical styles and baseline grid. You need to define these values
@@ -15,12 +17,6 @@ $inuit-global-line-height:  24px !default;
 // Do we need to support IE8?
 
 $inuit-oldIE: false !default;
-
-
-// Standardise some UI treatments.
-
-$inuit-global-radius:       3px !default;
-$inuit-global-transition:   (1/3) + s !default;
 
 
 
