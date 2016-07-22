@@ -26,8 +26,8 @@
   cursor: pointer; /* [5] */
   overflow: visible; /* [6] */
   padding: $inuit-global-spacing-unit-small $inuit-global-spacing-unit;
-  transition: 0.333333333s;
-  border-radius: 3px;
+  transition: $inuit-global-transition;
+  border-radius: $inuit-global-radius;
 }
 
 
