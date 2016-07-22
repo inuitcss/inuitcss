@@ -70,3 +70,24 @@ against [issue 76](https://github.com/inuitcss/inuitcss/issues/76), and took
 place in a branch named `tkt-0076`. This means that I can find any discussions
 around this piece of work, and I know in which branch I should commit and
 further, related work.
+
+The one downside to this workflow is that branches no longer have descriptive
+names, so running `$ git branch` might leave you looking at something like this:
+
+```
+develop
+master
+tkt-0014
+tkt-0021
+tkt-0058
+tkt-0080
+tkt-0083
+tkt-0089
+```
+
+Use [ghi](https://github.com/stephencelis/ghi) to get detailed information about
+a particular branch and its related issue, e.g.:
+
+```
+$ ghi 14
+```
