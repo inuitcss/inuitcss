@@ -31,7 +31,7 @@ $ bower install --save-dev inuitcss
 **Copy/paste (not recommended):**
 
 You can download inuitcss and save it into your project’s `css/` directory. This
-method is not recommended because you love the ability to easily and quickly
+method is not recommended because you lose the ability to easily and quickly
 manage and update inuitcss as a dependency.
 
 ## Getting Started
