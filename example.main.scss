@@ -27,6 +27,7 @@
  * Mixins...............Globally-available mixins.
  * Widths...............A mixin to quickly generate an arbitrary number of width
  *                      classes for use alongside our grid system.
+ * Sass MQ..............inuitcss’ default media query manager.
  *
  * GENERIC
  * Box-sizing...........Better default `box-sizing`.
@@ -83,6 +84,7 @@
 @import "tools/tools.functions";
 @import "tools/tools.mixins";
 @import "tools/tools.widths";
+@import "node_modules/sass-mq/mq";
 
 
 
@@ -137,7 +139,7 @@
 
 // UTILITIES
 @import "utilities/utilities.clearfix";
-@import "utilities/example.utilities.widths";
+@import "utilities/utilities.widths";
 @import "utilities/utilities.headings";
 @import "utilities/utilities.spacing";
 @import "utilities/utilities.print";
