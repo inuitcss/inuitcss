@@ -2,6 +2,11 @@
    #WIDTHS
    ========================================================================== */
 
+// How many columns would you like in your grid system(s)? By default, inuitcss
+// builds you a 12 and a 16 column grid.
+$inuit-columns: 12 16 !default;
+
+
 /**
  * A series of width helper classes that you can use to size things like grid
  * systems. Classes can take a fraction-like format (e.g. `.u-2/3`) or a spoken-
@@ -12,19 +17,24 @@
  * The following will generate a 12 and a 16 column grid system.
  */
 
-@include inuit-widths(12 16);
+@include inuit-widths($inuit-columns);
+
 
 
 
 
 
 /**
- * Create a 12 and a 16 column grid system on screens over 1200px wide, and give
- * them a Responsive Suffix of `@lg`, e.g.:
+ * Auto-generate grid system(s) for each of our defined breakpoints, and give them
+ * a Responsive Suffix, e.g.:
  *
- * <div class="u-3/12@lg">
+ * <div class="u-3/12@mobile">
  */
 
-@media screen and (min-width: 75em) {
-  @include inuit-widths(12 16, \@lg);
+@each $inuit-bp-name, $inuit-bp-value in $mq-breakpoints {
+
+  @include mq($from: $inuit-bp-name) {
+    @include inuit-widths(12, \@#{$inuit-bp-name});
+  }
+
 }
