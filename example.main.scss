@@ -56,6 +56,7 @@
  * Block................Image-on-top-of-text object.
  * Ratio................A container for maintaining aspect ratio of content.
  * Crop.................Provide a cropping context for media (images, etc.).
+ * Pack.................Pack items into available horizontal space.
  *
  * COMPONENTS
  * Buttons..............An example button component, and how it fits into the
@@ -124,6 +125,7 @@
 @import "objects/objects.block";
 @import "objects/objects.ratio";
 @import "objects/objects.crop";
+@import "objects/objects.pack";
 
 
 
