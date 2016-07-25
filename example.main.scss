@@ -84,6 +84,13 @@
 @import "tools/tools.functions";
 @import "tools/tools.mixins";
 @import "tools/tools.widths";
+
+$mq-breakpoints: (
+  sm: 320px,
+  md: 740px,
+  lg: 980px,
+  xl: 1300px
+) !default;
 @import "node_modules/sass-mq/mq";
 
 
