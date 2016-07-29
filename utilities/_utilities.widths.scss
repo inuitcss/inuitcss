@@ -4,7 +4,7 @@
 
 // How many columns would you like in your grid system(s)? By default, inuitcss
 // builds you a 12 and a 16 column grid.
-$inuit-columns: 12 16 !default;
+$inuit-fractions: 12 16 !default;
 
 
 /**
@@ -17,7 +17,7 @@ $inuit-columns: 12 16 !default;
  * The following will generate a 12 and a 16 column grid system.
  */
 
-@include inuit-widths($inuit-columns);
+@include inuit-widths($inuit-fractions);
 
 
 
@@ -34,7 +34,7 @@ $inuit-columns: 12 16 !default;
 @each $inuit-bp-name, $inuit-bp-value in $mq-breakpoints {
 
   @include mq($from: $inuit-bp-name) {
-    @include inuit-widths($inuit-columns, \@#{$inuit-bp-name});
+    @include inuit-widths($inuit-fractions, \@#{$inuit-bp-name});
   }
 
 }
