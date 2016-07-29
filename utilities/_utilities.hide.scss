@@ -8,7 +8,7 @@
  */
 
 .u-hidden-visually {
-  @include hidden-visually();
+  @include inuit-hidden-visually();
 }
 
 
