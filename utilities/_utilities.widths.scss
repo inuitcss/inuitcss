@@ -6,7 +6,6 @@
 // builds you a 12 and a 16 column grid.
 $inuit-columns: 12 16 !default;
 
-
 /**
  * A series of width helper classes that you can use to size things like grid
  * systems. Classes take a fraction-like format (e.g. `.u-2/3`). Use these in
@@ -18,7 +17,6 @@ $inuit-columns: 12 16 !default;
  */
 
 @include inuit-widths($inuit-columns);
-
 
 
 
