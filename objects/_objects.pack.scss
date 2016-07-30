@@ -7,14 +7,15 @@
  * automatically fill an equal, fluid width of their parent.
  *
  * 1. Fill all available space.
- * 2. Cause children to be automatically equally sized.
+ * 2. Remove any leftover styling from lists.
+ * 3. Cause children to be automatically equally sized.
  */
 
 .o-pack {
   width: 100%; /* [1] */
-  margin-left: 0;
+  margin-left: 0; /* [2] */
   display: table;
-  table-layout: fixed; /* [2] */
+  table-layout: fixed; /* [3] */
 }
 
 
