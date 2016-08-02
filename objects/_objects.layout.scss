@@ -74,7 +74,7 @@ $inuit-use-markup-fix: false !default;
   margin:  0; /* [2] */
   padding: 0; /* [2] */
   list-style: none; /* [1] */
-  margin-left: -$inuit-global-spacing-unit; /* [3] */
+  @include inuit-rem(margin-left, -$inuit-global-spacing-unit); /* [3] */
 
   @if ($inuit-use-markup-fix == false) {
     font-size: 0;
@@ -99,7 +99,7 @@ $inuit-use-markup-fix: false !default;
     display: inline-block; /* [2] */
     vertical-align: top; /* [3] */
     width: 100%; /* [4] */
-    padding-left: $inuit-global-spacing-unit; /* [5] */
+    @include inuit-rem(padding-left, $inuit-global-spacing-unit); /* [5] */
 
     @if ($inuit-use-markup-fix == false) {
       @if ($inuit-oldIE == true) {
@@ -118,40 +118,40 @@ $inuit-use-markup-fix: false !default;
    ========================================================================== */
 
 .o-layout--tiny {
-  margin-left: -$inuit-global-spacing-unit-tiny;
+  @include inuit-rem(margin-left, -$inuit-global-spacing-unit-tiny);
 
   > .o-layout__item {
-    padding-left: $inuit-global-spacing-unit-tiny;
+    @include inuit-rem(padding-left, $inuit-global-spacing-unit-tiny);
   }
 
 }
 
 
 .o-layout--small {
-  margin-left: -$inuit-global-spacing-unit-small;
+  @include inuit-rem(margin-left, -$inuit-global-spacing-unit-small);
 
   > .o-layout__item {
-    padding-left: $inuit-global-spacing-unit-small;
+    @include inuit-rem(padding-left, $inuit-global-spacing-unit-small);
   }
 
 }
 
 
 .o-layout--large {
-  margin-left: -$inuit-global-spacing-unit-large;
+  @include inuit-rem(margin-left, -$inuit-global-spacing-unit-large);
 
   > .o-layout__item {
-    padding-left: $inuit-global-spacing-unit-large;
+    @include inuit-rem(padding-left, $inuit-global-spacing-unit-large);
   }
 
 }
 
 
 .o-layout--huge {
-  margin-left: -$inuit-global-spacing-unit-huge;
+  @include inuit-rem(margin-left, -$inuit-global-spacing-unit-huge);
 
   > .o-layout__item {
-    padding-left: $inuit-global-spacing-unit-huge;
+    @include inuit-rem(padding-left, $inuit-global-spacing-unit-huge);
   }
 
 }

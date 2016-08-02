@@ -14,7 +14,7 @@
 
 
   .o-block__img {
-    margin-bottom: $inuit-global-spacing-unit;
+    @include inuit-rem(margin-bottom, $inuit-global-spacing-unit);
 
 
     /* Size variants.
@@ -25,19 +25,19 @@
     }
 
     .o-block--tiny > & {
-      margin-bottom: $inuit-global-spacing-unit-tiny;
+      @include inuit-rem(margin-bottom, $inuit-global-spacing-unit-tiny);
     }
 
     .o-block--small > & {
-      margin-bottom: $inuit-global-spacing-unit-small
+      @include inuit-rem(margin-bottom, $inuit-global-spacing-unit-small);
     }
 
     .o-block--large > & {
-      margin-bottom: $inuit-global-spacing-unit-large;
+      @include inuit-rem(margin-bottom, $inuit-global-spacing-unit-large);
     }
 
     .o-block--huge > & {
-      margin-bottom: $inuit-global-spacing-unit-huge;
+      @include inuit-rem(margin-bottom, $inuit-global-spacing-unit-huge);
     }
 
   }

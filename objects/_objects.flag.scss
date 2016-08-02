@@ -42,7 +42,7 @@
 
   .o-flag__img {
     width: 1px; /* [1] */
-    padding-right: $inuit-global-spacing-unit;
+    @include inuit-rem(padding-right, $inuit-global-spacing-unit);
 
 
     /**
@@ -82,14 +82,14 @@
 .o-flag--tiny {
 
   > .o-flag__img {
-    padding-right: $inuit-global-spacing-unit-tiny;
+    @include inuit-rem(padding-right, $inuit-global-spacing-unit-tiny);
   }
 
   &.o-flag--rev {
 
     > .o-flag__img {
       padding-right: 0;
-      padding-left: $inuit-global-spacing-unit-tiny;
+      @include inuit-rem(padding-left, $inuit-global-spacing-unit-tiny);
     }
 
   }
@@ -99,14 +99,14 @@
 .o-flag--small {
 
   > .o-flag__img {
-    padding-right: $inuit-global-spacing-unit-small;
+    @include inuit-rem(padding-right, $inuit-global-spacing-unit-small);
   }
 
   &.o-flag--rev {
 
     > .o-flag__img {
       padding-right: 0;
-      padding-left: $inuit-global-spacing-unit-small;
+      @include inuit-rem(padding-left, $inuit-global-spacing-unit-small);
     }
 
   }
@@ -116,14 +116,14 @@
 .o-flag--large {
 
   > .o-flag__img {
-    padding-right: $inuit-global-spacing-unit-large;
+    @include inuit-rem(padding-right, $inuit-global-spacing-unit-large);
   }
 
   &.o-flag--rev {
 
     > .o-flag__img {
       padding-right: 0;
-      padding-left: $inuit-global-spacing-unit-large;
+      @include inuit-rem(padding-left, $inuit-global-spacing-unit-large);
     }
 
   }
@@ -133,14 +133,14 @@
 .o-flag--huge {
 
   > .o-flag__img {
-    padding-right: $inuit-global-spacing-unit-huge;
+    @include inuit-rem(padding-right, $inuit-global-spacing-unit-huge);
   }
 
   &.o-flag--rev {
 
     > .o-flag__img {
       padding-right: 0;
-      padding-left: $inuit-global-spacing-unit-huge;
+      @include inuit-rem(padding-left, $inuit-global-spacing-unit-huge);
     }
 
   }

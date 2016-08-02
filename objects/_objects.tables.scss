@@ -41,7 +41,7 @@
 
   th,
   td {
-    padding: $inuit-global-spacing-unit-tiny;
+    @include inuit-rem(padding, $inuit-global-spacing-unit-tiny);
   }
 
 }
@@ -50,7 +50,7 @@
 
   th,
   td {
-    padding: $inuit-global-spacing-unit-small;
+    @include inuit-rem(padding, $inuit-global-spacing-unit-small);
   }
 
 }
@@ -59,7 +59,7 @@
 
   th,
   td {
-    padding: $inuit-global-spacing-unit-large;
+    @include inuit-rem(padding, $inuit-global-spacing-unit-large);
   }
 
 }
@@ -68,7 +68,7 @@
 
   th,
   td {
-    padding: $inuit-global-spacing-unit-huge;
+    @include inuit-rem(padding, $inuit-global-spacing-unit-huge);
   }
 
 }

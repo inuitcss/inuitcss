@@ -14,11 +14,11 @@ $inuit-wrapper-width: 1200px !default;
 
 .o-wrapper {
   @include inuit-clearfix();
-  padding-right: $inuit-global-spacing-unit;
-  padding-left:  $inuit-global-spacing-unit;
+  @include inuit-rem(padding-right, $inuit-global-spacing-unit);
+  @include inuit-rem(padding-left,  $inuit-global-spacing-unit);
   margin-right: auto;
   margin-left:  auto;
-  max-width: $inuit-wrapper-width;
+  @include inuit-rem(max-width, $inuit-wrapper-width);
 }
 
 
@@ -29,21 +29,21 @@ $inuit-wrapper-width: 1200px !default;
    ========================================================================== */
 
 .o-wrapper--tiny {
-  padding-right: $inuit-global-spacing-unit-tiny;
-  padding-left:  $inuit-global-spacing-unit-tiny;
+  @include inuit-rem(padding-right, $inuit-global-spacing-unit-tiny);
+  @include inuit-rem(padding-left, $inuit-global-spacing-unit-tiny);
 }
 
 .o-wrapper--small {
-  padding-right: $inuit-global-spacing-unit-small;
-  padding-left:  $inuit-global-spacing-unit-small;
+  @include inuit-rem(padding-right, $inuit-global-spacing-unit-small);
+  @include inuit-rem(padding-left, $inuit-global-spacing-unit-small);
 }
 
 .o-wrapper--large {
-  padding-right: $inuit-global-spacing-unit-large;
-  padding-left:  $inuit-global-spacing-unit-large;
+  @include inuit-rem(padding-right, $inuit-global-spacing-unit-large);
+  @include inuit-rem(padding-left, $inuit-global-spacing-unit-large);
 }
 
 .o-wrapper--huge {
-  padding-right: $inuit-global-spacing-unit-huge;
-  padding-left:  $inuit-global-spacing-unit-huge;
+  @include inuit-rem(padding-right, $inuit-global-spacing-unit-huge);
+  @include inuit-rem(padding-left, $inuit-global-spacing-unit-huge);
 }

@@ -18,7 +18,7 @@ hr,
 table,
 fieldset, figure,
 pre {
-  margin-bottom: $inuit-global-spacing-unit;
+  @include inuit-rem(margin-bottom, $inuit-global-spacing-unit);
 }
 
 
@@ -28,5 +28,5 @@ pre {
 
 ul, ol,
 dd {
-  margin-left: $inuit-global-spacing-unit;
+  @include inuit-rem(margin-left, $inuit-global-spacing-unit);
 }
