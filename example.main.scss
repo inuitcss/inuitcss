@@ -23,8 +23,12 @@
  * Global...............Project-wide variables and settings.
  *
  * TOOLS
- * Functions............A small collection of useful functions.
- * Mixins...............Globally-available mixins.
+ * Rem..................A function to convert a px-input into a rem-unit.
+ * Halve................Halve values and round them browser-friendly.
+ * Font-size............A mixin which guarantees baseline-friendly line-heights.
+ * Clearfix.............Micro clearfix mixin.
+ * Hocus................A mixin to combine :hover and :focus styling.
+ * Hidden-visually......Hiding elements but keeping accessibility.
  * Widths...............A mixin to quickly generate an arbitrary number of width
  *                      classes for use alongside our grid system.
  * Sass MQ..............inuitcss’ default media query manager.
@@ -83,8 +87,12 @@
 
 
 // TOOLS
-@import "tools/tools.functions";
-@import "tools/tools.mixins";
+@import "tools/tools.rem";
+@import "tools/tools.halve";
+@import "tools/tools.font-size";
+@import "tools/tools.clearfix";
+@import "tools/tools.hocus";
+@import "tools/tools.hidden-visually";
 @import "tools/tools.widths";
 @import "node_modules/sass-mq/mq";
 
