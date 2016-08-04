@@ -23,8 +23,9 @@
  * Global...............Project-wide variables and settings.
  *
  * TOOLS
- * Functions............A small collection of useful functions.
- * Mixins...............Globally-available mixins.
+ * Font-size............A mixin which guarantees baseline-friendly line-heights.
+ * Clearfix.............Micro clearfix mixin.
+ * Hidden...............Mixin for hiding elements.
  * Sass MQ..............inuitcss’ default media query manager.
  *
  * GENERIC
@@ -81,8 +82,9 @@
 
 
 // TOOLS
-@import "tools/tools.functions";
-@import "tools/tools.mixins";
+@import "tools/tools.font-size";
+@import "tools/tools.clearfix";
+@import "tools/tools.hidden";
 @import "node_modules/sass-mq/mq";
 
 
