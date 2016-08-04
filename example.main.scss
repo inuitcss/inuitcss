@@ -24,7 +24,6 @@
  *
  * TOOLS
  * Rem..................A function to convert a px-input into a rem-unit.
- * Halve................Halve values and round them browser-friendly.
  * Font-size............A mixin which guarantees baseline-friendly line-heights.
  * Clearfix.............Micro clearfix mixin.
  * Hocus................A mixin to combine :hover and :focus styling.
@@ -88,7 +87,6 @@
 
 // TOOLS
 @import "tools/tools.rem";
-@import "tools/tools.halve";
 @import "tools/tools.font-size";
 @import "tools/tools.clearfix";
 @import "tools/tools.hocus";
