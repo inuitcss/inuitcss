@@ -26,7 +26,6 @@
  * Rem..................A function to convert a px-input into a rem-unit.
  * Font-size............A mixin which guarantees baseline-friendly line-heights.
  * Clearfix.............Micro clearfix mixin.
- * Hocus................A mixin to combine :hover and :focus styling.
  * Hidden...............Mixin for hiding elements.
  * Widths...............A mixin to quickly generate an arbitrary number of width
  *                      classes for use alongside our grid system.
@@ -89,7 +88,6 @@
 @import "tools/tools.rem";
 @import "tools/tools.font-size";
 @import "tools/tools.clearfix";
-@import "tools/tools.hocus";
 @import "tools/tools.hidden";
 @import "tools/tools.widths";
 @import "node_modules/sass-mq/mq";
