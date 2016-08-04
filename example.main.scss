@@ -23,7 +23,6 @@
  * Global...............Project-wide variables and settings.
  *
  * TOOLS
- * Rem..................A function to convert a px-input into a rem-unit.
  * Font-size............A mixin which guarantees baseline-friendly line-heights.
  * Clearfix.............Micro clearfix mixin.
  * Hidden...............Mixin for hiding elements.
@@ -85,7 +84,6 @@
 
 
 // TOOLS
-@import "tools/tools.rem";
 @import "tools/tools.font-size";
 @import "tools/tools.clearfix";
 @import "tools/tools.hidden";
