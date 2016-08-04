@@ -26,8 +26,6 @@
  * Font-size............A mixin which guarantees baseline-friendly line-heights.
  * Clearfix.............Micro clearfix mixin.
  * Hidden...............Mixin for hiding elements.
- * Widths...............A mixin to quickly generate an arbitrary number of width
- *                      classes for use alongside our grid system.
  * Sass MQ..............inuitcss’ default media query manager.
  *
  * GENERIC
@@ -87,7 +85,6 @@
 @import "tools/tools.font-size";
 @import "tools/tools.clearfix";
 @import "tools/tools.hidden";
-@import "tools/tools.widths";
 @import "node_modules/sass-mq/mq";
 
 
