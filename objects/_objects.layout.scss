@@ -102,6 +102,7 @@ $inuit-use-markup-fix: false !default;
     padding-left: $inuit-global-spacing-unit; /* [5] */
 
     @if ($inuit-use-markup-fix == false) {
+      font-size: $inuit-global-font-size;
       font-size: 1rem;
     }
 

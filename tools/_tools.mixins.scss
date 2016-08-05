@@ -21,6 +21,7 @@
     @error "`#{$important}` needs to be `true` or `false`."
   }
 
+  font-size: $font-size $important;
   font-size: ($font-size / $inuit-global-font-size) * 1rem $important;
 
   @if ($line-height == 'auto') {
