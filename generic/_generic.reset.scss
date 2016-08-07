@@ -8,11 +8,11 @@
 
 body,
 h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
+blockquote, p, pre,
 dl, dd, ol, ul,
-fieldset, legend,
 figure,
-hr {
+hr,
+fieldset, legend {
   margin:  0;
   padding: 0;
 }
@@ -24,8 +24,8 @@ hr {
 
 li > {
 
-  ul,
-  ol {
+  ol,
+  ul {
     margin-bottom: 0;
   }
 

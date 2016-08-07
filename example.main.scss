@@ -23,10 +23,9 @@
  * Global...............Project-wide variables and settings.
  *
  * TOOLS
- * Functions............A small collection of useful functions.
- * Mixins...............Globally-available mixins.
- * Widths...............A mixin to quickly generate an arbitrary number of width
- *                      classes for use alongside our grid system.
+ * Font-size............A mixin which guarantees baseline-friendly line-heights.
+ * Clearfix.............Micro clearfix mixin.
+ * Hidden...............Mixin for hiding elements.
  * Sass MQ..............inuitcss’ default media query manager.
  *
  * GENERIC
@@ -57,6 +56,7 @@
  * Ratio................A container for maintaining aspect ratio of content.
  * Crop.................Provide a cropping context for media (images, etc.).
  * Tables...............Classes for manipulating `table`s.
+ * Pack.................Pack items into available horizontal space.
  *
  * COMPONENTS
  * Buttons..............An example button component, and how it fits into the
@@ -83,9 +83,9 @@
 
 
 // TOOLS
-@import "tools/tools.functions";
-@import "tools/tools.mixins";
-@import "tools/tools.widths";
+@import "tools/tools.font-size";
+@import "tools/tools.clearfix";
+@import "tools/tools.hidden";
 @import "node_modules/sass-mq/mq";
 
 
@@ -126,6 +126,7 @@
 @import "objects/objects.ratio";
 @import "objects/objects.crop";
 @import "objects/objects.tables";
+@import "objects/objects.pack";
 
 
 
