@@ -1,8 +1,9 @@
-///* ==========================================================================
+///* ========================================================================
 //   #REM
-//   ========================================================================== */
+//   ======================================================================== */
 
 // Convert any px value into its rem equivalent.
+
 @function inuit-rem($value) {
 
   @if (type-of($value) == number) {
@@ -19,12 +20,14 @@
 
 }
 
+
 // Mixin to create a declaration whose value is a rem unit. Also provide pixel
 // fallback.
 //
 // .simple-usage {
 //   @include inuit-rem(padding, 10px);
 // }
+
 @mixin inuit-rem($property, $value) {
 
   @if (type-of($value) == number) {
@@ -42,4 +45,5 @@
   }
 
   #{$property}: inuit-rem($value);
+
 }
