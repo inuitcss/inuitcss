@@ -12,7 +12,7 @@
 .o-box {
   @include inuit-clearfix();
   display: block; /* [1] */
-  @include inuit-rem(padding, $inuit-global-spacing-unit);
+  padding: $inuit-global-spacing-unit;
 
   > :last-child {
     margin-bottom: 0;
@@ -32,17 +32,17 @@
 }
 
 .o-box--tiny {
-  @include inuit-rem(padding, $inuit-global-spacing-unit-tiny);
+  padding: $inuit-global-spacing-unit-tiny;
 }
 
 .o-box--small {
-  @include inuit-rem(padding, $inuit-global-spacing-unit-small);
+  padding: $inuit-global-spacing-unit-small;
 }
 
 .o-box--large {
-  @include inuit-rem(padding, $inuit-global-spacing-unit-large);
+  padding: $inuit-global-spacing-unit-large;
 }
 
 .o-box--huge {
-  @include inuit-rem(padding, $inuit-global-spacing-unit-huge);
+  padding: $inuit-global-spacing-unit-huge;
 }

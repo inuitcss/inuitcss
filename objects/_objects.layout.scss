@@ -74,7 +74,7 @@ $inuit-use-markup-fix: false !default;
   margin:  0; /* [2] */
   padding: 0; /* [2] */
   list-style: none; /* [1] */
-  @include inuit-rem(margin-left, -$inuit-global-spacing-unit); /* [3] */
+  margin-left: -$inuit-global-spacing-unit; /* [3] */
 
   @if ($inuit-use-markup-fix == false) {
     font-size: 0;
@@ -99,7 +99,7 @@ $inuit-use-markup-fix: false !default;
     display: inline-block; /* [2] */
     vertical-align: top; /* [3] */
     width: 100%; /* [4] */
-    @include inuit-rem(padding-left, $inuit-global-spacing-unit); /* [5] */
+    padding-left: $inuit-global-spacing-unit; /* [5] */
 
     @if ($inuit-use-markup-fix == false) {
       @if ($inuit-oldIE == true) {
@@ -118,40 +118,40 @@ $inuit-use-markup-fix: false !default;
    ========================================================================== */
 
 .o-layout--tiny {
-  @include inuit-rem(margin-left, -$inuit-global-spacing-unit-tiny);
+  margin-left: -$inuit-global-spacing-unit-tiny;
 
   > .o-layout__item {
-    @include inuit-rem(padding-left, $inuit-global-spacing-unit-tiny);
+    padding-left: $inuit-global-spacing-unit-tiny;
   }
 
 }
 
 
 .o-layout--small {
-  @include inuit-rem(margin-left, -$inuit-global-spacing-unit-small);
+  margin-left: -$inuit-global-spacing-unit-small;
 
   > .o-layout__item {
-    @include inuit-rem(padding-left, $inuit-global-spacing-unit-small);
+    padding-left: $inuit-global-spacing-unit-small;
   }
 
 }
 
 
 .o-layout--large {
-  @include inuit-rem(margin-left, -$inuit-global-spacing-unit-large);
+  margin-left: -$inuit-global-spacing-unit-large;
 
   > .o-layout__item {
-    @include inuit-rem(padding-left, $inuit-global-spacing-unit-large);
+    padding-left: $inuit-global-spacing-unit-large;
   }
 
 }
 
 
 .o-layout--huge {
-  @include inuit-rem(margin-left, -$inuit-global-spacing-unit-huge);
+  margin-left: -$inuit-global-spacing-unit-huge;
 
   > .o-layout__item {
-    @include inuit-rem(padding-left, $inuit-global-spacing-unit-huge);
+    padding-left: $inuit-global-spacing-unit-huge;
   }
 
 }
