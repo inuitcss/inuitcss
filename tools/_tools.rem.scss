@@ -1,0 +1,23 @@
+///* ==========================================================================
+//   #REM
+//   ========================================================================== */
+
+// Convert any px value into its rem equivalent.
+@function inuit-rem($number) {
+  @return $number / $inuit-global-font-size * 1rem;
+}
+
+// Mixin to create a declaration whose value is a rem unit. Also provide pixel
+// fallback.
+//
+// .simple-usage {
+//   @include inuit-rem(padding, 10px);
+// }
+@mixin inuit-rem($property, $value) {
+
+  @if ($inuit-oldIE == true) {
+    #{$property}: $value;
+  }
+
+  #{$property}: inuit-rem($value);
+}
