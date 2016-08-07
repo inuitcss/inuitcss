@@ -25,16 +25,20 @@ $inuit-columns: 12 16 !default;
 
 
 /**
- * Auto-generate grid system(s) for each of our defined breakpoints, and give them
- * a Responsive Suffix, e.g.:
+ * If we’re using Sass-MQ, automatically generate grid system(s) for each of our
+ * defined breakpoints, and give them a Responsive Suffix, e.g.:
  *
  * <div class="u-3/12@mobile">
  */
 
-@each $inuit-bp-name, $inuit-bp-value in $mq-breakpoints {
+@if (variable-exists(mq-breakpoints)) {
 
-  @include mq($from: $inuit-bp-name) {
-    @include inuit-widths($inuit-columns, \@#{$inuit-bp-name});
+  @each $inuit-bp-name, $inuit-bp-value in $mq-breakpoints {
+
+    @include mq($from: $inuit-bp-name) {
+      @include inuit-widths($inuit-columns, \@#{$inuit-bp-name});
+    }
+
   }
 
 }
