@@ -2,6 +2,16 @@
    #WIDTHS
    ========================================================================== */
 
+// Which fractions would you like in your grid system(s)? By default, inuitcss
+// provides you fractions of one whole (1/1), halves (1/2, 2/2), thirds (1/3,
+// 2/3, 3/3), quarters (1/4, 2/4, 3/4, 4/4) and fifths (1/5, 2/5, 3/5, 4/5,
+// 5/5).
+$inuit-fractions: 1 2 3 4 5 !default;
+
+
+
+
+
 // A mixin to spit out our width classes. Pass in the columns we want the widths
 // to have, and an optional suffix for responsive widths. E.g. to create thirds
 // and quarters for a small breakpoint:
@@ -50,23 +60,18 @@
 
 
 
-// How many columns would you like in your grid system(s)? By default, inuitcss
-// builds you a 12 and a 16 column grid.
-$inuit-columns: 12 16 !default;
-
-
 /**
  * A series of width helper classes that you can use to size things like grid
- * systems. Classes can take a fraction-like format (e.g. `.u-2/3`) or a spoken-
- * word format (e.g. `.u-2-of-3`). Use these in your markup:
+ * systems. Classes take a fraction-like format (e.g. `.u-2/3`). Use these in
+ * your markup:
  *
  * <div class="u-7/12">
  *
- * The following will generate a 12 and a 16 column grid system.
+ * The following will generate widths helper classes based on the fractions
+ * defined in the `$inuit-fractions` list.
  */
 
-@include inuit-widths($inuit-columns);
-
+@include inuit-widths($inuit-fractions);
 
 
 
@@ -84,7 +89,7 @@ $inuit-columns: 12 16 !default;
   @each $inuit-bp-name, $inuit-bp-value in $mq-breakpoints {
 
     @include mq($from: $inuit-bp-name) {
-      @include inuit-widths($inuit-columns, \@#{$inuit-bp-name});
+      @include inuit-widths($inuit-fractions, \@#{$inuit-bp-name});
     }
 
   }
