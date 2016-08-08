@@ -146,6 +146,8 @@
 
 // UTILITIES
 @import "utilities/utilities.clearfix";
+
+$inuit-offsets: true;
 @import "utilities/utilities.widths";
 @import "utilities/utilities.headings";
 @import "utilities/utilities.spacing";

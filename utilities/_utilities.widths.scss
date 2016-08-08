@@ -6,7 +6,17 @@
 // provides you fractions of one whole (1/1), halves (1/2, 2/2), thirds (1/3,
 // 2/3, 3/3), quarters (1/4, 2/4, 3/4, 4/4) and fifths (1/5, 2/5, 3/5, 4/5,
 // 5/5).
+
 $inuit-fractions: 1 2 3 4 5 !default;
+
+
+
+
+
+// Optionally, inuitcss can generate classes to offset items by a certain width.
+// Would you like to generate these types of class as well?
+
+$inuit-offsets: false !default;
 
 
 
@@ -32,22 +42,26 @@ $inuit-fractions: 1 2 3 4 5 !default;
         width: ($numerator / $denominator) * 100% !important;
       }
 
-      /**
-       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
-       */
+      @if ($inuit-offsets == true) {
 
-      // Build a class in the format `.u-push-1/2[@<breakpoint>]`.
-      .u-push-#{$numerator}\/#{$denominator}#{$breakpoint} {
-        position: relative;
-        right: auto; /* [1] */
-        left: ($numerator / $denominator) * 100% !important;
-      }
+        /**
+        * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+        */
 
-      // Build a class in the format `.u-pull-5/6[@<breakpoint>]`.
-      .u-pull-#{$numerator}\/#{$denominator}#{$breakpoint} {
-        position: relative;
-        right: ($numerator / $denominator) * 100% !important;
-        left: auto; /* [1] */
+        // Build a class in the format `.u-push-1/2[@<breakpoint>]`.
+        .u-push-#{$numerator}\/#{$denominator}#{$breakpoint} {
+          position: relative;
+          right: auto; /* [1] */
+          left: ($numerator / $denominator) * 100% !important;
+        }
+
+        // Build a class in the format `.u-pull-5/6[@<breakpoint>]`.
+        .u-pull-#{$numerator}\/#{$denominator}#{$breakpoint} {
+          position: relative;
+          right: ($numerator / $denominator) * 100% !important;
+          left: auto; /* [1] */
+        }
+
       }
 
     }
