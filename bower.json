@@ -20,6 +20,12 @@
     "itcss",
     "css"
   ],
+  "ignore": [
+    "**/.*",
+    "test",
+    "package.json",
+    "CONTRIBUTING.md"
+  ],
   "license": "Apache-2.0",
   "dependencies": {
     "sass-mq": "^3.2.9"
