@@ -12,5 +12,6 @@ test:
   override:
     - sass example.main.scss test/example.main.css --sourcemap=none
     - true-cli test/tests.scss
+    - npm rebuild node-sass
     - node-sass example.main.scss -o test/
     - npm test
