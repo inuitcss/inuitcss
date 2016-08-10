@@ -1,0 +1,76 @@
+@import "true";
+
+@import "../settings/settings.core";
+@import "../tools/tools.font-size";
+
+
+@mixin test-inuit-old-ie-before() {
+  $inuit-oldIE: true !global;
+}
+
+
+@include test-module("[mixin] inuit-font-size") {
+
+  @include test("it should output a font-size and line-height based on a given input") {
+
+    @include assert() {
+
+      @include output {
+        @include inuit-font-size(16px);
+      }
+
+      @include expect {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  @include test("it should output a font-size and line-height when specifying a line-height") {
+
+    @include assert() {
+
+      @include output {
+        @include inuit-font-size(18px, 2);
+      }
+
+      @include expect {
+        font-size: 1.125rem;
+        line-height: 2;
+      }
+    }
+  }
+
+  @include test("it should output a font-size as important when passing true") {
+
+    @include assert() {
+
+      @include output {
+        @include inuit-font-size(21px, $important: true);
+      }
+
+      @include expect {
+        font-size: 1.3125rem !important;
+        line-height: 1.14286 !important;
+      }
+    }
+  }
+
+  @include test("it should output a font-size and line-height when supporting old ie") {
+    @include test-inuit-old-ie-before;
+
+    @include assert() {
+
+      @include output {
+        @include inuit-font-size(21px);
+      }
+
+      @include expect {
+        font-size: 21px;
+        font-size: 1.3125rem;
+        line-height: 1.14286;
+      }
+    }
+  }
+}
+
