@@ -35,6 +35,7 @@
   "devDependencies": {
     "glob": "^7.0.5",
     "mocha": "^3.0.2",
+    "node-sass": "^3.8.0",
     "sass-true": "^2.1.3"
   }
 }
