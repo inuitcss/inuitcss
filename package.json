@@ -2,7 +2,7 @@
   "name": "inuitcss",
   "version": "6.0.0-beta.2",
   "description": "Extensible, scalable, Sass-based, OOCSS framework for large and long-lasting UI projects.",
-  "main": "example.main.scss",
+  "main": "src/example.main.scss",
   "scripts": {
     "test": "mocha test/run.js"
   },
