@@ -1,7 +1,7 @@
 @import "true";
 
-@import "../settings/settings.core";
-@import "../tools/tools.rem";
+@import "../src/settings/settings.core";
+@import "../src/tools/tools.rem";
 
 
 @include test-module("[function] inuit-rem") {

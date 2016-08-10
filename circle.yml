@@ -10,8 +10,8 @@ dependencies:
     - npm install
 test:
   override:
-    - sass example.main.scss test/example.main.css --sourcemap=none
+    - sass src/example.main.scss test/example.main.css --sourcemap=none
     - true-cli test/tests.scss
     - npm rebuild node-sass
-    - node-sass example.main.scss -o test/
+    - node-sass src/example.main.scss -o test/
     - npm test

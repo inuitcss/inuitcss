@@ -1,7 +1,7 @@
 @import "true";
 
-@import "../settings/settings.core";
-@import "../tools/tools.font-size";
+@import "../src/settings/settings.core";
+@import "../src/tools/tools.font-size";
 
 
 @mixin test-inuit-old-ie-before() {
