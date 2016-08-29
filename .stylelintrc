@@ -7,7 +7,6 @@
     "./generic/_generic.reset.scss",
     "./tools/*.scss",
     "./settings/_settings.core.scss",
-    "./utilities/_utilities.widths.scss",
     "./test/*.scss"
   ],
   "rules": {
@@ -113,7 +112,9 @@
 
     "root-no-standard-properties": true,
 
-    "rule-nested-empty-line-before": "always",
+    "rule-nested-empty-line-before": ["always", {
+      ignore: ["after-comment"]
+    }],
 
     "selector-attribute-brackets-space-inside": "never",
     "selector-attribute-operator-space-after": "never",
