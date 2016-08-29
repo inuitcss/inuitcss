@@ -6,7 +6,7 @@
     "./generic/_generic.normalize.scss",
     "./generic/_generic.reset.scss",
     "./tools/*.scss",
-    "./settings/_settings.core.scss",
+    "./settings/*.scss",
     "./test/*.scss"
   ],
   "rules": {
