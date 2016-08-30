@@ -1,3 +1,7 @@
 example.html
 *.css
 *.gz
+node_modules/
+bower_components/
+test/*.css
+.sass-cache

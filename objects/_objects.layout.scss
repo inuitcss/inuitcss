@@ -5,14 +5,14 @@
 /**
  * Grid-like layout system.
  *
- * The Layout object provides us with a column-style layout system. This file
+ * The layout object provides us with a column-style layout system. This file
  * contains the basic structural elements, but classes should be complemented
- * with width Utilities, for example:
+ * with width utilities, for example:
  *
  *   <div class="o-layout">
- *     <div class="o-layout__item  u-width-1/2">
+ *     <div class="o-layout__item  u-1/2">
  *     </div>
- *     <div class="o-layout__item  u-width-1/2">
+ *     <div class="o-layout__item  u-1/2">
  *     </div>
  *   </div>
  *
@@ -21,11 +21,11 @@
  * systems:
  *
  *   <div class="o-layout">
- *     <div class="o-layout__item  u-width-1/1  u-width-1/3@medium">
+ *     <div class="o-layout__item  u-1/1  u-1/3@medium">
  *     </div>
- *     <div class="o-layout__item  u-width-1/2  u-width-1/3@medium">
+ *     <div class="o-layout__item  u-1/2  u-1/3@medium">
  *     </div>
- *     <div class="o-layout__item  u-width-1/2  u-width-1/3@medium">
+ *     <div class="o-layout__item  u-1/2  u-1/3@medium">
  *     </div>
  *   </div>
  *
@@ -34,8 +34,8 @@
  * second and third items will be 50% of their parent, until they also become
  * 33.333% width at the medium breakpoint.
  *
- * We can also manipulate entire layout systems by adding a series of Modifiers
- * to the `.o-layout` Block. For example:
+ * We can also manipulate entire layout systems by adding a series of modifiers
+ * to the `.o-layout` block. For example:
  *
  *   <div class="o-layout  o-layout--reverse">
  *
@@ -50,9 +50,9 @@
  * There are plenty more options available to us: explore them below.
  */
 
-// By default we use the `font-size: 0;` trick to remove whitespace between.
-// Set this to true in order to use a markup-based strategy like commenting out
-// whitespace or minifying HTML.
+// By default we use the `font-size: 0;` trick to remove whitespace between
+// items. Set this to true in order to use a markup-based strategy like
+// commenting out whitespace or minifying HTML.
 $inuit-use-markup-fix: false !default;
 
 
@@ -84,20 +84,22 @@ $inuit-use-markup-fix: false !default;
 
 
   /**
-   * 1. Allows us to manipulate grids vertically, with text-level properties,
+   * 1. Required in order to combine fluid widths with fixed gutters.
+   * 2. Allows us to manipulate grids vertically, with text-level properties,
    *    etc.
-   * 2. Default item alignment is with the tops of each other, like most
+   * 3. Default item alignment is with the tops of each other, like most
    *    traditional grid/layout systems.
-   * 3. By default, all layout items are full-width (mobile first).
-   * 4. Gutters provided by left padding:
+   * 4. By default, all layout items are full-width (mobile first).
+   * 5. Gutters provided by left padding:
    *    http://csswizardry.com/2011/08/building-better-grid-systems/
    */
 
   .o-layout__item {
-    display: inline-block; /* [1] */
-    vertical-align: top; /* [2] */
-    width: 100%; /* [3] */
-    padding-left: $inuit-global-spacing-unit; /* [4] */
+    box-sizing: border-box; /* [1] */
+    display: inline-block; /* [2] */
+    vertical-align: top; /* [3] */
+    width: 100%; /* [4] */
+    padding-left: $inuit-global-spacing-unit; /* [5] */
 
     @if ($inuit-use-markup-fix == false) {
       @if ($inuit-oldIE == true) {

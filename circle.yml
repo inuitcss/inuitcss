@@ -1,0 +1,17 @@
+machine:
+  node:
+    version: 4.4.7
+  ruby:
+    version: 2.3.1
+dependencies:
+  pre:
+    - npm install npm -g
+    - gem install sass true
+    - npm install
+test:
+  override:
+    - sass example.main.scss test/example.main.css --sourcemap=none
+    - true-cli test/tests.scss
+    - npm rebuild node-sass
+    - node-sass example.main.scss -o test/
+    - npm test

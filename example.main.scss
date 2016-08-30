@@ -11,7 +11,7 @@
 /**
  * This is an example inuitcss manifest file. DO NOT MODIFY THIS FILE DIRECTLY.
  * Instead, copy and paste it into your own CSS directory and make additions,
- * extension, and modifications there.
+ * extensions, and modifications there.
  */
 
 /**
@@ -19,13 +19,16 @@
  *
  * SETTINGS
  * Config...............Project-level configuration and feature switches.
- * Global...............Globally-available project settings.
+ * Core.................inuitcss’ core and setup settings.
+ * Global...............Project-wide variables and settings.
  *
  * TOOLS
- * Functions............A small collection of useful functions.
- * Mixins...............Globally-available mixins.
- * Widths...............A mixin to quickly generate an arbitrary number of width
- *                      classes for use alongside our grid system.
+ * Rem..................Tools for converting pixel inputs into their rem
+ *                      equivalents.
+ * Font-size............A mixin which guarantees baseline-friendly line-heights.
+ * Clearfix.............Micro clearfix mixin.
+ * Hidden...............Mixin for hiding elements.
+ * Sass MQ..............inuitcss’ default media query manager.
  *
  * GENERIC
  * Box-sizing...........Better default `box-sizing`.
@@ -54,6 +57,8 @@
  * Block................Image-on-top-of-text object.
  * Ratio................A container for maintaining aspect ratio of content.
  * Crop.................Provide a cropping context for media (images, etc.).
+ * Tables...............Classes for manipulating `table`s.
+ * Pack.................Pack items into available horizontal space.
  *
  * COMPONENTS
  * Buttons..............An example button component, and how it fits into the
@@ -66,22 +71,24 @@
  * Spacing..............Nudge bits of the DOM around with these spacing
  *                      classes.
  * Print................Reset-like styles taken from the HTML5 Boilerplate.
- *                      classes..
  * Hide.................Helper classes to hide content
  */
 
 // SETTINGS
 @import "settings/example.settings.config";
-@import "settings/settings.global";
+@import "settings/settings.core";
+@import "settings/example.settings.global";
 
 
 
 
 
 // TOOLS
-@import "tools/tools.functions";
-@import "tools/tools.mixins";
-@import "tools/tools.widths";
+@import "tools/tools.rem";
+@import "tools/tools.font-size";
+@import "tools/tools.clearfix";
+@import "tools/tools.hidden";
+@import "node_modules/sass-mq/mq";
 
 
 
@@ -120,6 +127,8 @@
 @import "objects/objects.block";
 @import "objects/objects.ratio";
 @import "objects/objects.crop";
+@import "objects/objects.tables";
+@import "objects/objects.pack";
 
 
 
@@ -136,7 +145,9 @@
 
 // UTILITIES
 @import "utilities/utilities.clearfix";
-@import "utilities/example.utilities.widths";
+
+$inuit-offsets: true;
+@import "utilities/utilities.widths";
 @import "utilities/utilities.headings";
 @import "utilities/utilities.spacing";
 @import "utilities/utilities.print";
