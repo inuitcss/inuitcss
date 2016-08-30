@@ -1,10 +1,10 @@
 {
   "name": "inuitcss",
-  "version": "6.0.0-beta.2",
+  "version": "6.0.0-beta.3",
   "description": "Extensible, scalable, Sass-based, OOCSS framework for large and long-lasting UI projects.",
   "main": "example.main.scss",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/run.js"
   },
   "repository": {
     "type": "git",
@@ -31,5 +31,11 @@
   "homepage": "https://github.com/inuitcss/inuitcss#readme",
   "dependencies": {
     "sass-mq": "^3.2.9"
+  },
+  "devDependencies": {
+    "glob": "^7.0.5",
+    "mocha": "^3.0.2",
+    "node-sass": "^3.8.0",
+    "sass-true": "^2.1.3"
   }
 }

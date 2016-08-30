@@ -1,0 +1,15 @@
+/* ==========================================================================
+   INUITCSS Ruby Main Test File
+   ========================================================================== */
+
+/**
+ * To run Ruby Sass Tests, we need to import all the test spec files here
+ */
+
+@import 'true';
+
+@import '_tools.font-size.scss';
+@import '_tools.rem.scss';
+@import '_utilities.widths.scss';
+
+@include report();
