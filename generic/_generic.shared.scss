@@ -11,6 +11,8 @@
  * csswizardry.com/2012/06/single-direction-margin-declarations
  */
 
+/* stylelint-disable selector-list-comma-newline-after */
+
 address,
 h1, h2, h3, h4, h5, h6,
 blockquote, p, pre
@@ -30,3 +32,5 @@ fieldset {
 dd, ol, ul {
   @include inuit-rem(margin-left, $inuit-global-spacing-unit);
 }
+
+/* stylelint-enable selector-list-comma-newline-after */

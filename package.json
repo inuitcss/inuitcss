@@ -4,7 +4,8 @@
   "description": "Extensible, scalable, Sass-based, OOCSS framework for large and long-lasting UI projects.",
   "main": "example.main.scss",
   "scripts": {
-    "test": "mocha test/run.js"
+    "test": "npm run lint && mocha test/run.js",
+    "lint": "./node_modules/.bin/stylelint \"**/*.scss\" --syntax scss"
   },
   "repository": {
     "type": "git",
@@ -36,6 +37,8 @@
     "glob": "^7.0.5",
     "mocha": "^3.0.2",
     "node-sass": "^3.8.0",
-    "sass-true": "^2.1.3"
+    "sass-true": "^2.1.3",
+    "stylelint": "^7.1.0",
+    "stylelint-scss": "^1.3.4"
   }
 }

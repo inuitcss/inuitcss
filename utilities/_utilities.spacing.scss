@@ -13,6 +13,8 @@
  *   .u-padding-right-none {}
  */
 
+/* stylelint-disable string-quotes */
+
 $inuit-spacing-directions: (
   null,
   '-top',
@@ -51,3 +53,5 @@ $inuit-spacing-sizes: (
   }
 
 }
+
+/* stylelint-enable string-quotes */
