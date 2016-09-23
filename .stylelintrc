@@ -43,7 +43,6 @@
 
     "declaration-bang-space-after": "never",
 
-    "declaration-block-no-duplicate-properties": true,
     "declaration-block-no-ignored-properties": true,
     "declaration-block-no-shorthand-property-overrides": true,
 
