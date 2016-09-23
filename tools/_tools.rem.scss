@@ -40,10 +40,6 @@
     @error "`#{$value}` needs to be a number.";
   }
 
-  @if ($inuit-oldIE == true) {
-    #{$property}: $value;
-  }
-
   #{$property}: inuit-rem($value);
 
 }
