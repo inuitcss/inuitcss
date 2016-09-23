@@ -13,6 +13,7 @@
     @error "`#{$important}` needs to be `true` or `false`."
   }
 
+  // We provide a `px` fallback for old IEs not supporting `rem` values.
   font-size: $font-size $important;
   font-size: ($font-size / $inuit-global-font-size) * 1rem $important;
 
