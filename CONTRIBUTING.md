@@ -58,11 +58,14 @@ follow work through the issue/pull request process.
    to discuss the suitability of the proposal before you begin work.
 2. **Create a new branch entitled `tkt-<issue-number>`.** Look at the URL of
    your new issue; take its number (e.g. 99) and create a branch called
-  `tkt-0099` (with leading zeroes). Do all of your work in this branch.
-3. **Start all commit messages with `[refs #<issue-number>]`.** If you’re
+   `tkt-0099` (with leading zeroes). Do all of your work in this branch.
+3. **Ensure that all unit tests are passing**, and tests are added or updated
+   appropriately for any new functions and *parameterised* mixins.
+   [See below](#unit-tests)
+4. **Start all commit messages with `[refs #<issue-number>]`.** If you’re
    working on issue 99, all of your commits should begin with `[refs #0099]`.
    This allows us to link every commit back to both an issue and a branch.
-4. **Open a pull request into `develop`.** Our main branch is `develop`, and
+5. **Open a pull request into `develop`.** Our main branch is `develop`, and
    this is where we want new work to be merged into. `master` is a release
    branch only.
 
@@ -94,3 +97,13 @@ a particular branch and its related issue, e.g.:
 ```
 $ ghi 14
 ```
+
+## Unit Tests
+
+To run the unit tests, ensure you have previously run `npm install`.
+Then you will be able to run `npm test`.
+
+We use the awesome [oddbird/true](https://github.com/oddbird/true) package to
+write the tests.
+
+You can find the documentation over on their [homepage](http://oddbird.net/true/).

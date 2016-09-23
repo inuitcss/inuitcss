@@ -14,7 +14,6 @@
  *    buttons).
  * 4. Reset/normalize some styles.
  * 5. Force all button-styled elements to appear clickable.
- * 6. Fixes odd inner spacing in IE7.
  */
 
 .c-btn {
@@ -22,9 +21,8 @@
   vertical-align: middle; /* [2] */
   font: inherit; /* [3] */
   text-align: center; /* [4] */
-  margin:  0; /* [4] */
+  margin: 0; /* [4] */
   cursor: pointer; /* [5] */
-  overflow: visible; /* [6] */
   padding: $inuit-global-spacing-unit-small $inuit-global-spacing-unit;
   transition: $global-transition;
   border-radius: $global-radius;

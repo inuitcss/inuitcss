@@ -11,14 +11,17 @@
  * csswizardry.com/2012/06/single-direction-margin-declarations
  */
 
+/* stylelint-disable selector-list-comma-newline-after */
+
+address,
 h1, h2, h3, h4, h5, h6,
-ul, ol, dl,
-blockquote, p, address,
+blockquote, p, pre,
+dl, ol, ul,
+figure,
 hr,
 table,
-fieldset, figure,
-pre {
-  margin-bottom: $inuit-global-spacing-unit;
+fieldset {
+  @include inuit-rem(margin-bottom, $inuit-global-spacing-unit);
 }
 
 
@@ -26,7 +29,8 @@ pre {
  * Consistent indentation for lists.
  */
 
-ul, ol,
-dd {
-  margin-left: $inuit-global-spacing-unit;
+dd, ol, ul {
+  @include inuit-rem(margin-left, $inuit-global-spacing-unit);
 }
+
+/* stylelint-enable selector-list-comma-newline-after */

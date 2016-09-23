@@ -2,6 +2,16 @@
    #RATIO
    ========================================================================== */
 
+// A list of aspect ratios that get generated as modifier classes.
+
+$inuit-ratios: (
+  2:1,
+  4:3,
+  16:9,
+) !default;
+
+
+
 /**
  * Create ratio-bound content blocks, to keep media (e.g. images, videos) in
  * their correct aspect ratios.
@@ -40,7 +50,7 @@
 
 
 
-
+/* stylelint-disable */
 
 /* Ratio variants.
    ========================================================================== */
@@ -51,12 +61,6 @@
  *   <div class="o-ratio  o-ratio--16:9">
  *
  */
-
-$inuit-ratios: (
-  2:1,
-  4:3,
-  16:9,
-) !default;
 
 @each $antecedent, $consequent in $inuit-ratios {
 
@@ -73,3 +77,5 @@ $inuit-ratios: (
   }
 
 }
+
+/* stylelint-enable */

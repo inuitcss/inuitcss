@@ -2,6 +2,16 @@
    #CROP
    ========================================================================== */
 
+// A list of cropping ratios that get generated as modifier classes.
+
+$inuit-crops: (
+  2:1,
+  4:3,
+  16:9,
+) !default;
+
+
+
 /**
  * Provide a cropping container in order to display media (usually images)
  * cropped to certain ratios.
@@ -54,7 +64,7 @@
 
 
 
-
+/* stylelint-disable */
 
 /* Crop-ratio variants.
    ========================================================================== */
@@ -65,12 +75,6 @@
  *   <div class="o-crop  o-crop--16:9">
  *
  */
-
-$inuit-crops: (
-  2:1,
-  4:3,
-  16:9,
-) !default;
 
 @each $antecedent, $consequent in $inuit-crops {
 
@@ -87,3 +91,5 @@ $inuit-crops: (
   }
 
 }
+
+/* stylelint-enable */
