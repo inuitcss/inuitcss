@@ -4,10 +4,6 @@
 @import "../tools/tools.font-size";
 
 
-@mixin test-inuit-old-ie-before() {
-  $inuit-oldIE: true !global;
-}
-
 
 @include test-module("[mixin] inuit-font-size") {
 
@@ -20,6 +16,7 @@
       }
 
       @include expect {
+        font-size: 16px;
         font-size: 1rem;
         line-height: 1.5;
       }
@@ -35,6 +32,7 @@
       }
 
       @include expect {
+        font-size: 18px;
         font-size: 1.125rem;
         line-height: 2;
       }
@@ -50,25 +48,9 @@
       }
 
       @include expect {
+        font-size: 21px !important;
         font-size: 1.3125rem !important;
         line-height: 1.14286 !important;
-      }
-    }
-  }
-
-  @include test("it should output a font-size and line-height when supporting old ie") {
-    @include test-inuit-old-ie-before;
-
-    @include assert() {
-
-      @include output {
-        @include inuit-font-size(21px);
-      }
-
-      @include expect {
-        font-size: 21px;
-        font-size: 1.3125rem;
-        line-height: 1.14286;
       }
     }
   }
