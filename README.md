@@ -180,6 +180,17 @@ Following this structure allows you to intersperse inuitcss’ code with your ow
 
 Having your own and inuitcss’ partials interlaced like this is one of the real strengths of inuitcss.
 
+## Core functionality
+
+Before iunitcss can do anything, it needs to know your base `font-size` and `line-height`. These settings are stored in `settings.core` (as `$inuit-global-font-size` and `$inuit-global-line-height`), and can be overridden in the same way you’d [override any of inuitcss’ config](#modifying-inuitcss).
+
+Probably the most opinionated thing inuitcss will ever do is reassign your `$inuit-global-line-height` variable to `$inuit-global-spacing-unit`. This value then becomes the cornerstone of your UI, acting as the default margin and padding value for any components that require it.
+
+While this might seem overly opinionated, it does mean that:
+
+1. **You get a free vertical rhythm** because everything sits on a multiple of your baseline, and…
+2. **We reduce the amount of [magic numbers](http://csswizardry.com/2012/11/code-smells-in-css/#magic-numbers) in our codebase** because we can rationalise where the majority of values in our CSS came from.
+
 ## Modifying inuitcss
 
 inuitcss is highly configurable, but **should not be edited directly**. The correct way to make changes to inuitcss is to pass in variables **before** you `@import` the specific file. Let’s take [`settings.core`](https://github.com/inuitcss/inuitcss/blob/develop/settings/_settings.core.scss) as an example—in this file we can see the variables `$inuit-global-font-size` and `$inuit-global-line-height`. If we want to keep these as-is then we needn’t do anything other than `@import` the file. If we wanted to change these values to `12px` and `18px` respectively (don’t worry, inuitcss will convert these pixel values to rems for you) then we just need to pass those values in before the `@import`, thus:
