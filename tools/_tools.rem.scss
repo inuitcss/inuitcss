@@ -40,6 +40,9 @@
     @error "`#{$value}` needs to be a number.";
   }
 
+  // We provide a `px` fallback for old IEs not supporting `rem` values.
+  #{$property}: $value;
+
   #{$property}: inuit-rem($value);
 
 }
