@@ -281,6 +281,13 @@ The one opinionated decision we made was adding [Sass-MQ](https://github.com/sas
 
 If you want to use another media-query library like [@include-media](http://include-media.com/) or [sass-mediaqueries](https://github.com/paranoida/sass-mediaqueries), feel free to do so. But in this case you have to manage your [responsive widths classes](https://github.com/inuitcss/inuitcss/blob/develop/utilities/_utilities.widths.scss) yourself.
 
+## Providing plugins for inuitcss
+
+Since inuitcss just provides very generic modules, there are probably modules you will write anew in every project. Although these modules might seem generic enough to you to be integrated into the core framework, we probably will consider it as not generic enough ([we'd appreciate every idea](https://github.com/inuitcss/inuitcss/blob/develop/CONTRIBUTING.md), though!).
+But just because we are not willing to include a module you consider being useful, does not mean other inuitcss users shall not benefit from such an useful module. Due to inuitcss’ modular architecture, it's totally possible and we even welcome it, that these modules are published as kind of inuitcss plugins by you in a separate repository.
+
+We'd love to see that the framework gets extended through the contribution of you and your plugins!
+
 ## Prerequisities
 
 Make sure you have at least Sass v3.3 installed.
