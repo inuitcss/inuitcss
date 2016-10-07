@@ -189,3 +189,45 @@ The one opinionated decision we made was adding [Sass-MQ](https://github.com/sas
 **NOTE: If you've installed inuitcss neither with npm nor with bower, make sure that Sass-MQ is properly imported in your `main.scss` in the tools layer.**
 
 If you want to use another media-query library like [@include-media](http://include-media.com/) or [sass-mediaqueries](https://github.com/paranoida/sass-mediaqueries), feel free to do so. But in this case you have to manage your [responsive widths classes](https://github.com/inuitcss/inuitcss/blob/develop/utilities/_utilities.widths.scss) yourself.
+
+## Extending inuitcss
+
+To extend inuitcss with your own code, simply create a partial in the `<section>.<file>` format, put it into the [appropriate directory](#css-directory-structure) and `@import` it in your `main.scss`.
+
+But extending inuitcss does not only mean adding your own partials to the project. Due to inuitcss’ modular nature, you can also omit those partials of inuitcss you don't need. But be aware that there are a few interdependencies between various inuitcss partials. The only partial that is indispensable for the framework to work properly is `settings.core`, though. But we recommend using all partials from the `/settings`, `/tools` and `/generic` layer.
+
+### Aliases
+
+In order to avoid clashes with your own code, all of inuitcss’ mixins and
+variables are namespaced with `inuit-`, for example: `$inuit-global-spacing-unit`.
+These variables and mixins can become very tedious and time consuming to type
+over and over, so it is recommended that you alias them to something a little
+shorter. You can do this by creating a `tools.aliases` file
+(`tools/_tools.aliases.scss`) which would be populated with code like this:
+
+```scss
+// Reassign `$inuit-global-spacing-unit` to `$unit`.
+$unit: $inuit-global-spacing-unit;
+
+// Reassign lengthy font-size mixin to `font-size()`.
+@mixin font-size($args...) {
+  @include inuit-font-size($args...);
+}
+```
+
+You can now use your own aliases onto inuitcss’ defaults throughout your
+project.
+
+### Components
+
+inuitcss is a design-free, OOCSS framework—it does its best to provide zero
+cosmetic styling. This means that inuitcss can be used on any and all types of
+project (and it has been) without dictating (or even suggesting) a
+look-and-feel. If you do require a UI out of the box, then inuitcss is probably
+not the best tool for you. I’d recommend looking at a UI Toolkit such as
+[Bootstrap](http://getbootstrap.com/).
+
+Because inuitcss does no cosmetic styling, it is up to you to author the
+Components layer. Components are small partials that contain discrete chunks of
+UI that utilise the layers that came before it, for example, a carousel, or a
+dropdown nav, or an image gallery, and so on.
