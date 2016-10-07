@@ -5,6 +5,14 @@
 // Generate a font-size and baseline-compatible line-height.
 @mixin inuit-font-size($font-size, $line-height: auto, $important: false) {
 
+  @if (type-of($font-size) == number) {
+    @if (unit($font-size) != "px") {
+      @error "`#{$font-size}` needs to be a pixel value.";
+    }
+  } @else {
+    @error "`#{$font-size}` needs to be a number.";
+  }
+
   @if ($important == true) {
     $important: !important;
   } @elseif ($important == false) {
