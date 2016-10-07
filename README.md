@@ -180,15 +180,31 @@ Following this structure allows you to intersperse inuitcss’ code with your ow
 
 Having your own and inuitcss’ partials interlaced like this is one of the real strengths of inuitcss.
 
-## Responsive
+## Modifying inuitcss
 
-inuitcss is built with as much extensibility as possible in mind. Adding full responsive functionality for every kind of module would pretty much kill the intended generic concept behind the framework.
+inuitcss is highly configurable, but **should not be edited directly**. The correct way to make changes to inuitcss is to pass in variables **before** you `@import` the specific file. Let’s take [`settings.core`](https://github.com/inuitcss/inuitcss/blob/develop/settings/_settings.core.scss) as an example—in this file we can see the variables `$inuit-global-font-size` and `$inuit-global-line-height`. If we want to keep these as-is then we needn’t do anything other than `@import` the file. If we wanted to change these values to `12px` and `18px` respectively (don’t worry, inuitcss will convert these pixel values to rems for you) then we just need to pass those values in before the `@import`, thus:
 
-The one opinionated decision we made was adding [Sass-MQ](https://github.com/sass-mq/sass-mq) as a dependency, to provide at least a full working responsive grid off-the-shelf. So if you need media-query support in your own Sass code, have a look at the [Sass-MQ documentation on how to use it](https://github.com/sass-mq/sass-mq#how-to-use-it) properly.
+```scss
+$inuit-global-font-size:   12px;
+$inuit-global-line-height: 18px;
+@import "node_modules/inuitcss/settings/settings.core";
+```
 
-**NOTE: If you've installed inuitcss neither with npm nor with bower, make sure that Sass-MQ is properly imported in your `main.scss` in the tools layer.**
+The same goes for any inuitcss module: you can configure it by predefining any
+of its variables immediately before the `@import`:
 
-If you want to use another media-query library like [@include-media](http://include-media.com/) or [sass-mediaqueries](https://github.com/paranoida/sass-mediaqueries), feel free to do so. But in this case you have to manage your [responsive widths classes](https://github.com/inuitcss/inuitcss/blob/develop/utilities/_utilities.widths.scss) yourself.
+```scss
+$inuit-wrapper-width: 1480px;
+@import "node_modules/inuitcss/objects/objects.wrapper";
+
+$inuit-fractions: 1 2 3 4 12;
+@import "node_modules/inuitcss/utilities/utilities.widths";
+```
+
+This method of modifying the framework means that you don’t need to edit any
+files directly (thus making it easier to update the framework), but also means
+that you’re not left with huge, bloated, monolithic variables files from which
+you need to configure an entire library.
 
 ## Extending inuitcss
 
@@ -231,3 +247,13 @@ Because inuitcss does no cosmetic styling, it is up to you to author the
 Components layer. Components are small partials that contain discrete chunks of
 UI that utilise the layers that came before it, for example, a carousel, or a
 dropdown nav, or an image gallery, and so on.
+
+## Responsive
+
+inuitcss is built with as much extensibility as possible in mind. Adding full responsive functionality for every kind of module would pretty much kill the intended generic concept behind the framework.
+
+The one opinionated decision we made was adding [Sass-MQ](https://github.com/sass-mq/sass-mq) as a dependency, to provide at least a full working responsive grid off-the-shelf. So if you need media-query support in your own Sass code, have a look at the [Sass-MQ documentation on how to use it](https://github.com/sass-mq/sass-mq#how-to-use-it) properly.
+
+**NOTE: If you've installed inuitcss neither with npm nor with bower, make sure that Sass-MQ is properly imported in your `main.scss` in the tools layer.**
+
+If you want to use another media-query library like [@include-media](http://include-media.com/) or [sass-mediaqueries](https://github.com/paranoida/sass-mediaqueries), feel free to do so. But in this case you have to manage your [responsive widths classes](https://github.com/inuitcss/inuitcss/blob/develop/utilities/_utilities.widths.scss) yourself.
