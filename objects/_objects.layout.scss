@@ -92,6 +92,7 @@ $inuit-use-markup-fix: false !default;
    * 4. By default, all layout items are full-width (mobile first).
    * 5. Gutters provided by left padding:
    *    http://csswizardry.com/2011/08/building-better-grid-systems/
+   * 6. Fallback for old IEs not supporting `rem` values.
    */
 
   .o-layout__item {
@@ -102,9 +103,7 @@ $inuit-use-markup-fix: false !default;
     padding-left: $inuit-global-spacing-unit; /* [5] */
 
     @if ($inuit-use-markup-fix == false) {
-      @if ($inuit-oldIE == true) {
-        font-size: $inuit-global-font-size;
-      }
+      font-size: $inuit-global-font-size; /* [6] */
       font-size: 1rem;
     }
 
