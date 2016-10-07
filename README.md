@@ -280,3 +280,7 @@ The one opinionated decision we made was adding [Sass-MQ](https://github.com/sas
 **NOTE: If you've installed inuitcss neither with npm nor with bower, make sure that Sass-MQ is properly imported in your `main.scss` in the tools layer.**
 
 If you want to use another media-query library like [@include-media](http://include-media.com/) or [sass-mediaqueries](https://github.com/paranoida/sass-mediaqueries), feel free to do so. But in this case you have to manage your [responsive widths classes](https://github.com/inuitcss/inuitcss/blob/develop/utilities/_utilities.widths.scss) yourself.
+
+## Prerequisities
+
+Make sure you have at least Sass v3.3 installed.
