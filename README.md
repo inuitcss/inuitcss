@@ -259,6 +259,18 @@ Components layer. Components are small partials that contain discrete chunks of
 UI that utilise the layers that came before it, for example, a carousel, or a
 dropdown nav, or an image gallery, and so on.
 
+## Namespaces
+
+You may have stumbled upon the “odd” way inuitcss’ classes are prefixed. There are three different namespaces directly relevant to inuitcss:
+
+* `.o-`: Objects
+* `.c-`: Components
+* `.u-`: Utilities
+
+In short: Every class in either of these three directories gets the appropriate prefix in its classname. All of inuitcss’ classes in one of these three layers has this kind of prefix. Be sure to follow this convention in your own code as well to keep a consistent naming convention across your code base.
+
+If you want to dive deeper into namespacing classes and want to know why this is a great idea, have a look at [this article](http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/).
+
 ## Responsive
 
 inuitcss is built with as much extensibility as possible in mind. Adding full responsive functionality for every kind of module would pretty much kill the intended generic concept behind the framework.
