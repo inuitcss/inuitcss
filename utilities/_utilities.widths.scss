@@ -61,6 +61,12 @@ $inuit-offsets: false !default;
 
 
 
+// Override the separator between the fractions
+$inuit-space-separator: \/ !default;
+
+
+
+
 
 // A mixin to spit out our width classes. Pass in the columns we want the widths
 // to have, and an optional suffix for responsive widths. E.g. to create thirds
@@ -71,14 +77,18 @@ $inuit-offsets: false !default;
 @mixin inuit-widths($columns, $breakpoint: null) {
 
   // Loop through the number of columns for each denominator of our fractions.
-  @each $denominator in $columns {
+  @for $denominator from 1 through length($columns) {
 
     // Begin creating a numerator for our fraction up until we hit the
     // denominator.
     @for $numerator from 1 through $denominator {
 
+      $numerator-word: nth($columns, $numerator);
+      $denominator-word: nth($columns, $denominator);
+      $inuit-width-suffix: #{$numerator-word}#{$inuit-space-separator}#{$denominator-word}#{$breakpoint};
+
       // Build a class in the format `.u-3/4[@<breakpoint>]`.
-      .u-#{$numerator}\/#{$denominator}#{$breakpoint} {
+      .u-#{$inuit-width-suffix} {
         width: ($numerator / $denominator) * 100% !important;
       }
 
@@ -89,14 +99,14 @@ $inuit-offsets: false !default;
         */
 
         // Build a class in the format `.u-push-1/2[@<breakpoint>]`.
-        .u-push-#{$numerator}\/#{$denominator}#{$breakpoint} {
+        .u-push-#{$inuit-width-suffix} {
           position: relative;
           right: auto; /* [1] */
           left: ($numerator / $denominator) * 100% !important;
         }
 
         // Build a class in the format `.u-pull-5/6[@<breakpoint>]`.
-        .u-pull-#{$numerator}\/#{$denominator}#{$breakpoint} {
+        .u-pull-#{$inuit-width-suffix} {
           position: relative;
           right: ($numerator / $denominator) * 100% !important;
           left: auto; /* [1] */
