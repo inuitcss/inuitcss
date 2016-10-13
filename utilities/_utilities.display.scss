@@ -1,0 +1,78 @@
+/* ==========================================================================
+   #DISPLAYS
+   ========================================================================== */
+
+/**
+ * Display helpers, with responsive support.
+ */
+
+
+// inuitcss generates display helper classes. E.g.:
+//
+//   .u-display-block
+//   .u-display-inline-block
+//   .u-display-none
+
+// You can predefine the map bellow to add or remove display values, if needed.
+
+$inuit-display-values: (
+  none,
+  inline,
+  inline-block,
+  block
+) !default;
+
+
+
+
+
+// A mixin to spit out our display classes.
+@mixin inuit-displays($values, $breakpoint: null) {
+
+  // Loop through the display values.
+  @each $value in $values {
+
+    .u-display-#{$value}#{$breakpoint} { display: $value !important; }
+
+  }
+
+}
+
+
+
+
+
+/**
+ * A serie of display helper classes.
+ *
+ * <div class="u-display-block">
+ * <div class="u-display-inline">
+ */
+
+@include inuit-displays($inuit-display-values);
+
+
+
+
+
+/**
+ * If we’re using Sass-MQ, automatically generate each display class, 
+ * and give them a Responsive Suffix, e.g.:
+ *
+ * <div class="u-display-none@mobile">
+ * <div class="u-display-inline-block@desk">
+ */
+
+@if (variable-exists(mq-breakpoints)) {
+  
+  @each $inuit-bp-name, $inuit-bp-value in $mq-breakpoints {
+    
+    @include mq($from: $inuit-bp-name) {
+
+      @include inuit-displays($inuit-display-values, \@#{$inuit-bp-name});
+
+    }
+
+  }
+
+}
