@@ -32,7 +32,9 @@ $inuit-display-values: (
   // Loop through the display values.
   @each $value in $values {
 
-    .u-display-#{$value}#{$breakpoint} { display: $value !important; }
+    .u-display-#{$value}#{$breakpoint} {
+      display: $value !important;
+    }
 
   }
 
@@ -56,7 +58,7 @@ $inuit-display-values: (
 
 
 /**
- * If we’re using Sass-MQ, automatically generate each display class, 
+ * If we’re using Sass-MQ, automatically generate each display class,
  * and give them a Responsive Suffix, e.g.:
  *
  * <div class="u-display-none@mobile">
@@ -64,9 +66,9 @@ $inuit-display-values: (
  */
 
 @if (variable-exists(mq-breakpoints)) {
-  
+
   @each $inuit-bp-name, $inuit-bp-value in $mq-breakpoints {
-    
+
     @include mq($from: $inuit-bp-name) {
 
       @include inuit-displays($inuit-display-values, \@#{$inuit-bp-name});
