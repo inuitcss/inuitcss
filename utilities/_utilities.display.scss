@@ -1,5 +1,5 @@
 /* ==========================================================================
-   #DISPLAYS
+   #DISPLAY
    ========================================================================== */
 
 /**
@@ -13,7 +13,7 @@
 //   .u-display-inline-block
 //   .u-display-none
 
-// You can predefine the map bellow to add or remove display values, if needed.
+// You can predefine the map below to add or remove display values, if needed.
 
 $inuit-display-values: (
   none,
@@ -27,6 +27,7 @@ $inuit-display-values: (
 
 
 // A mixin to spit out our display classes.
+
 @mixin inuit-displays($values, $breakpoint: null) {
 
   // Loop through the display values.
@@ -45,7 +46,7 @@ $inuit-display-values: (
 
 
 /**
- * A serie of display helper classes.
+ * A series of display helper classes.
  *
  * <div class="u-display-block">
  * <div class="u-display-inline">
@@ -62,7 +63,7 @@ $inuit-display-values: (
  * and give them a Responsive Suffix, e.g.:
  *
  * <div class="u-display-none@mobile">
- * <div class="u-display-inline-block@desk">
+ * <div class="u-display-inline-block@desktop">
  */
 
 @if (variable-exists(mq-breakpoints)) {
