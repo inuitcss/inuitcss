@@ -9,10 +9,6 @@ inuitcss is a framework in its truest sense: it does not provide you with UI and
 design out of the box, instead, it provides you with a solid architectural
 baseline upon which to complete your own work.
 
-## Full Documentation
-
-You can find full documentation at [inuitcss.com](http://inuitcss.com).
-
 ## Installation
 
 You can use inuitcss in your project by installing it using a package manager
