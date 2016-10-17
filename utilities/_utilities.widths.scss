@@ -103,13 +103,13 @@ $inuit-widths-breakpoint-separator: \@ !default;
       @if ($inuit-offsets == true) {
 
         /**
-        * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+        * 1. Reset any leftover or conflicting `left`/`right` values.
         */
 
         // Build a class in the format `.u-push-1/2[@<breakpoint>]`.
         .u-push-#{$numerator}#{$inuit-widths-delimiter}#{$denominator}#{$breakpoint} {
           position: relative;
-          right: auto; /* [1] */
+          right: auto !important; /* [1] */
           left: ($numerator / $denominator) * 100% !important;
         }
 
@@ -117,7 +117,7 @@ $inuit-widths-breakpoint-separator: \@ !default;
         .u-pull-#{$numerator}#{$inuit-widths-delimiter}#{$denominator}#{$breakpoint} {
           position: relative;
           right: ($numerator / $denominator) * 100% !important;
-          left: auto; /* [1] */
+          left: auto !important; /* [1] */
         }
 
       }
