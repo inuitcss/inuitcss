@@ -40,9 +40,8 @@
     @error "`#{$value}` needs to be a number.";
   }
 
-  @if ($inuit-oldIE == true) {
-    #{$property}: $value;
-  }
+  // We provide a `px` fallback for old IEs not supporting `rem` values.
+  #{$property}: $value;
 
   #{$property}: inuit-rem($value);
 
