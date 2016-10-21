@@ -36,15 +36,6 @@ $inuit-global-spacing-unit-factor-huge:   4    !default;
 
 
 
-////////////////////////////////////////////////////////////////////////////////
-//                                                                            //
-//                               W A R N I N G                                //
-//                                                                            //
-//                  DO NOT MODIFY ANYTHING BEYOND THIS POINT                  //
-//                                                                            //
-////////////////////////////////////////////////////////////////////////////////
-
-
 // Check that the chosen font rules are pixel numbers.
 
 @each $_inuit-font-globals in
