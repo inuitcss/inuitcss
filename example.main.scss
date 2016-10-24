@@ -57,7 +57,7 @@
  * Block................Image-on-top-of-text object.
  * Ratio................A container for maintaining aspect ratio of content.
  * Crop.................Provide a cropping context for media (images, etc.).
- * Tables...............Classes for manipulating `table`s.
+ * Table................Classes for manipulating `table`s.
  * Pack.................Pack items into available horizontal space.
  *
  * COMPONENTS
@@ -127,7 +127,7 @@
 @import "objects/objects.block";
 @import "objects/objects.ratio";
 @import "objects/objects.crop";
-@import "objects/objects.tables";
+@import "objects/objects.table";
 @import "objects/objects.pack";
 
 
