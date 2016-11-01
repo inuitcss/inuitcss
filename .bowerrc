@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "postinstall": "cp ./bower_components/normalize.css/normalize.css ./generic/_generic.normalize.scss"
+  }
+}
