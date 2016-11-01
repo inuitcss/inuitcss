@@ -31,6 +31,7 @@
   },
   "homepage": "https://github.com/inuitcss/inuitcss#readme",
   "dependencies": {
+    "normalize.css": "^5.0.0",
     "sass-mq": "^3.2.9"
   },
   "devDependencies": {
