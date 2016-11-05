@@ -88,7 +88,7 @@ Copy this file into your own `css/settings/` directory and rename it
 **N.B.** If you downloaded inuitcss, you do not need to move this this file; you
 can simply rename it.
 
-### [`_example.settings.global.scss`](https://github.com/inuitcss/inuitcss/blob/master/components/_example.settings.global.scss)
+### [`_example.settings.global.scss`](https://github.com/inuitcss/inuitcss/blob/master/settings/_example.settings.global.scss)
 
 This is an example globals file; it contains any settings that are available to
 your entire project. These variables and settings could be font families,
