@@ -17,13 +17,13 @@ You can use inuitcss in your project by installing it using a package manager
 **npm:**
 
 ```
-$ npm install --save inuitcss
+$ npm install inuitcss
 ```
 
 **Bower:**
 
 ```
-$ bower install --save inuitcss
+$ bower install inuitcss
 ```
 
 **Copy/paste (not recommended):**
