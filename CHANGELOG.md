@@ -3,13 +3,12 @@
 ==================
 
 ## Possible breaking changes
-  There are no breaking changes in that version.
+  * [[PR #211]](https://github.com/inuitcss/inuitcss/pull/211) - Rename tables objects: use singular
 
 ## Other fixes or features
   * [[PR #229]](https://github.com/inuitcss/inuitcss/pull/229) - Create this changelog file
   * [[PR #215]](https://github.com/inuitcss/inuitcss/pull/215) and [[PR #216]](https://github.com/inuitcss/inuitcss/pull/216) - Use simpler value for example global transitions variable
   * [[PR #213]](https://github.com/inuitcss/inuitcss/pull/213) - add some rules to the `inuit-hidden-visually` mixin
-  * [[PR #211]](https://github.com/inuitcss/inuitcss/pull/211) - Rename tables objects: use singular
   * [[PR #209]](https://github.com/inuitcss/inuitcss/pull/209) - Fix typo in the title banner in `objects.wrapper`
   * [[PR #205]](https://github.com/inuitcss/inuitcss/pull/205) - Remove warning banner from `settings.core`
 
