@@ -21,6 +21,10 @@ $inuit-spacing-directions: (
   '-right': '-right',
   '-bottom': '-bottom',
   '-left': '-left',
+
+  // You can use these variations on project level
+  // '-horizontal': '-left' '-right',
+  // '-vertical'  : '-top' '-bottom',
 ) !default;
 
 $inuit-spacing-properties: (
