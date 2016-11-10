@@ -45,7 +45,14 @@ $inuit-spacing-sizes: (
     @each $size-namespace, $size in $inuit-spacing-sizes {
 
       .u-#{$property-namespace}#{$direction-namespace}#{$size-namespace} {
-        #{$property}#{$direction}: $size !important;
+        @if type-of($direction) == 'list' {
+          @each $sub-direction in $direction {
+            #{$property}#{$sub-direction}: $size !important;
+          }
+        }
+        @else {
+          #{$property}#{$direction}: $size !important;
+        }
       }
 
     }
