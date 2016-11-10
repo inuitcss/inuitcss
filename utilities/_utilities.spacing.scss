@@ -38,14 +38,14 @@ $inuit-spacing-sizes: (
 ) !default;
 
 
-@each $property, $property-namespace in $inuit-spacing-properties {
+@each $property-namespace, $property in $inuit-spacing-properties {
 
-  @each $direction, $direction-namespace in $inuit-spacing-directions {
+  @each $direction-namespace, $direction in $inuit-spacing-directions {
 
-    @each $size, $value in $inuit-spacing-sizes {
+    @each $size-namespace, $size in $inuit-spacing-sizes {
 
-      .u-#{$property-namespace}#{$direction-namespace}#{$size} {
-        #{$property}#{$direction}: $value !important;
+      .u-#{$property-namespace}#{$direction-namespace}#{$size-namespace} {
+        #{$property}#{$direction}: $size !important;
       }
 
     }
