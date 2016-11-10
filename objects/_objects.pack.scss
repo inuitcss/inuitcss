@@ -21,9 +21,12 @@
 
   /**
    * 1. Cause children to adopt table-like structure.
+   * 2. Default item alignment is with the tops of each other.
    */
+
   .o-pack__item {
     display: table-cell; /* [1] */
+    vertical-align: top; /* [2] */
 
 
     /* Vertical alignment variants.
