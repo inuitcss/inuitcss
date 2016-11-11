@@ -11,20 +11,20 @@
  *   .u-margin-right-small {}
  *   .u-padding {}
  *   .u-padding-right-none {}
+ *   .u-padding-horizontal {}
+ *   .u-padding-vertical-small {}
  */
 
 /* stylelint-disable string-quotes */
 
 $inuit-spacing-directions: (
-  null: null,
-  '-top': '-top',
-  '-right': '-right',
-  '-bottom': '-bottom',
-  '-left': '-left',
-
-  // You can use these variations on project level
-  // '-horizontal': '-left' '-right',
-  // '-vertical'  : '-top' '-bottom',
+        null: null,
+        '-top': '-top',
+        '-right': '-right',
+        '-bottom': '-bottom',
+        '-left': '-left',
+        '-horizontal': '-left' '-right',
+        '-vertical': '-top' '-bottom',
 ) !default;
 
 $inuit-spacing-properties: (
@@ -49,14 +49,11 @@ $inuit-spacing-sizes: (
     @each $size-namespace, $size in $inuit-spacing-sizes {
 
       .u-#{$property-namespace}#{$direction-namespace}#{$size-namespace} {
-        @if type-of($direction) == 'list' {
-          @each $sub-direction in $direction {
-            #{$property}#{$sub-direction}: $size !important;
-          }
+
+        @each $sub-direction in $direction {
+          #{$property}#{$sub-direction}: $size !important;
         }
-        @else {
-          #{$property}#{$direction}: $size !important;
-        }
+
       }
 
     }
