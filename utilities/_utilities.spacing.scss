@@ -51,7 +51,7 @@ $inuit-spacing-sizes: (
       .u-#{$property-namespace}#{$direction-namespace}#{$size-namespace} {
 
         @each $direction in $direction-rules {
-          #{$property}#{$sub-direction}: $size !important;
+          #{$property}#{$direction}: $size !important;
         }
 
       }
