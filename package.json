@@ -4,7 +4,7 @@
   "description": "Extensible, scalable, Sass-based, OOCSS framework for large and long-lasting UI projects.",
   "main": "example.main.scss",
   "scripts": {
-    "postinstall": "cp ./node_modules/normalize.css/normalize.css ./generic/_generic.normalize.scss",
+    "postinstall": "cp ./node_modules/normalize.css/normalize.css ./node_modules/inuitcss/generic/_generic.normalize.scss",
     "test": "npm run lint && mocha test/run.js",
     "lint": "./node_modules/.bin/stylelint \"**/*.scss\" --syntax scss"
   },
