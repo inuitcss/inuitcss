@@ -18,13 +18,13 @@
 /* stylelint-disable string-quotes */
 
 $inuit-spacing-directions: (
-        null: null,
-        '-top': '-top',
-        '-right': '-right',
-        '-bottom': '-bottom',
-        '-left': '-left',
-        '-horizontal': '-left' '-right',
-        '-vertical': '-top' '-bottom',
+  null: null,
+  '-top': '-top',
+  '-right': '-right',
+  '-bottom': '-bottom',
+  '-left': '-left',
+  '-horizontal': '-left' '-right',
+  '-vertical': '-top' '-bottom',
 ) !default;
 
 $inuit-spacing-properties: (
@@ -41,7 +41,6 @@ $inuit-spacing-sizes: (
   '-none': 0
 ) !default;
 
-
 @each $property-namespace, $property in $inuit-spacing-properties {
 
   @each $direction-namespace, $direction-rules in $inuit-spacing-directions {
@@ -51,7 +50,7 @@ $inuit-spacing-sizes: (
       .u-#{$property-namespace}#{$direction-namespace}#{$size-namespace} {
 
         @each $direction in $direction-rules {
-          #{$property}#{$sub-direction}: $size !important;
+          #{$property}#{$direction}: $size !important;
         }
 
       }
