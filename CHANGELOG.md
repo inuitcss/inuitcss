@@ -7,10 +7,12 @@
 
 ## Possible breaking changes
   * [[PR #211]](https://github.com/inuitcss/inuitcss/pull/211) - Rename the tables object: use singular
+  * [[PR #221]](https://github.com/inuitcss/inuitcss/pull/221) - The vertical alignment of the pack object's itens now default to top
 
 ## Other, safer changes
+  * [[PR #226]](https://github.com/inuitcss/inuitcss/pull/226) - Change the `npm` and `bower` instructions in the README, to advocate installing inuitcss as a `dependency`
   * [[PR #215]](https://github.com/inuitcss/inuitcss/pull/215) and [[PR #216]](https://github.com/inuitcss/inuitcss/pull/216) - Use simpler value for example `$global-transition` variable
-  * [[PR #213]](https://github.com/inuitcss/inuitcss/pull/213) - add some rules to the `inuit-hidden-visually` mixin
+  * [[PR #213]](https://github.com/inuitcss/inuitcss/pull/213) - Add some rules to the `inuit-hidden-visually` mixin
   * [[PR #209]](https://github.com/inuitcss/inuitcss/pull/209) - Fix typo in the title banner in `objects.wrapper`
   * [[PR #205]](https://github.com/inuitcss/inuitcss/pull/205) - Remove warning banner from `settings.core`
 
