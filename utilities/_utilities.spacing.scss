@@ -49,9 +49,11 @@ $inuit-spacing-sizes: (
     @each $size-namespace, $size in $inuit-spacing-sizes {
 
       .u-#{$property-namespace}#{$direction-namespace}#{$size-namespace} {
+
         @each $sub-direction in $direction {
           #{$property}#{$sub-direction}: $size !important;
         }
+
       }
 
     }
