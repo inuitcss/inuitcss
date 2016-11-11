@@ -15,39 +15,3 @@
   .o-list-inline__item {
     display: inline-block;
   }
-
-
-
-
-
-/* Delimited list.
-   ========================================================================== */
-
-/**
- * By default, applying this class will comma separate your list items. You can
- * change the delimiter by predefining the following variable:
- */
-
-$inuit-list-inline-delimiter:   ",\00A0" !default;
-
-/**
- * 1. Fallback for old IEs not supporting `rem` values.
- */
-
-.o-list-inline--delimited {
-  font-size: 0;
-
-  > .o-list-inline__item {
-    font-size: $inuit-global-font-size; /* [1] */
-    font-size: 1rem;
-  }
-
-  > .o-list-inline__item + .o-list-inline__item {
-
-    &:before {
-      content: "#{$inuit-list-inline-delimiter}";
-    }
-
-  }
-
-}
