@@ -44,13 +44,13 @@ $inuit-spacing-sizes: (
 
 @each $property-namespace, $property in $inuit-spacing-properties {
 
-  @each $direction-namespace, $direction in $inuit-spacing-directions {
+  @each $direction-namespace, $direction-rules in $inuit-spacing-directions {
 
     @each $size-namespace, $size in $inuit-spacing-sizes {
 
       .u-#{$property-namespace}#{$direction-namespace}#{$size-namespace} {
 
-        @each $sub-direction in $direction {
+        @each $direction in $direction-rules {
           #{$property}#{$sub-direction}: $size !important;
         }
 
