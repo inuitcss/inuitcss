@@ -20,6 +20,8 @@
  * SETTINGS
  * Config...............Project-level configuration and feature switches.
  * Core.................inuitcss’ core and setup settings.
+ * Widths...............Confugurable settings used by tools.widths and 
+ *                      utilities.widths
  * Global...............Project-wide variables and settings.
  *
  * TOOLS
@@ -28,6 +30,7 @@
  * Font-size............A mixin which guarantees baseline-friendly line-heights.
  * Clearfix.............Micro clearfix mixin.
  * Hidden...............Mixin for hiding elements.
+ * Widths...............Mixin for creating width helper classes.
  * Sass MQ..............inuitcss’ default media query manager.
  *
  * GENERIC
@@ -77,6 +80,7 @@
 // SETTINGS
 @import "settings/example.settings.config";
 @import "settings/settings.core";
+@import "settings/settings.widths";
 @import "settings/example.settings.global";
 
 
@@ -88,6 +92,7 @@
 @import "tools/tools.font-size";
 @import "tools/tools.clearfix";
 @import "tools/tools.hidden";
+@import "tools/tools.widths";
 @import "node_modules/sass-mq/mq";
 
 
