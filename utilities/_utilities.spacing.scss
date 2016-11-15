@@ -33,10 +33,12 @@ $inuit-responsive-spacing: false !default;
 
 
 
+/* stylelint-disable string-quotes */
+
 // Furthermore, you can choose to generate responsive versions of only
 // a specific set of classes, by predefining this config map:
 
-$inuit-responsive-spacing-config : (
+$inuit-responsive-spacing-config: (
   properties: 'padding' 'margin',
   directions: '-top' '-right' '-bottom' '-left' '-horizontal' '-vertical',
   sizes: null '-tiny' '-small' '-large' '-huge' '-none'
@@ -58,8 +60,6 @@ $inuit-spacing-breakpoint-separator: \@ !default;
 
 
 
-
-/* stylelint-disable string-quotes */
 
 $inuit-spacing-directions: (
   null: null,
@@ -91,53 +91,87 @@ $inuit-spacing-sizes: (
 
 
 
-@each $property-namespace, $property in $inuit-spacing-properties {
+@mixin inuit-spacing() {
 
-  @each $direction-namespace, $direction-rules in $inuit-spacing-directions {
+  @include inuit-spacing-properties($inuit-spacing-properties);
 
-    @each $size-namespace, $size in $inuit-spacing-sizes {
-
-      .u-#{$property-namespace}#{$direction-namespace}#{$size-namespace} {
-
-        @each $direction in $direction-rules {
-          #{$property}#{$direction}: $size !important;
-        }
-
-      }
+}
 
 
-      @if (variable-exists(mq-breakpoints) and $inuit-responsive-spacing == true) {
-        
-        @if (
-          index(map-get($inuit-responsive-spacing-config, properties), $property-namespace) and
-          index(map-get($inuit-responsive-spacing-config, directions), $direction-namespace) and
-          index(map-get($inuit-responsive-spacing-config, sizes), $size-namespace)
-        ) {
-          
-          @each $inuit-bp-name, $inuit-bp-value in $mq-breakpoints {
-      
-            @include mq($from: $inuit-bp-name) {
-              
-              .u-#{$property-namespace}#{$direction-namespace}#{$size-namespace}#{$inuit-spacing-breakpoint-separator}#{$inuit-bp-name} {
+@mixin inuit-spacing-properties($properties) {
 
-                @each $direction in $direction-rules {
-                  #{$property}#{$direction}: $size !important;
-                }
-        
-              }
-              
-            }
-        
-          } 
-          
-        }
-      
-      }
+  @each $property-namespace, $property in $properties {
+    @include inuit-spacing-directions($property, $inuit-spacing-directions);
+  }
+
+}
+
+
+@mixin inuit-spacing-directions($property, $directions) {
+
+  @each $direction, $direction-rules in $directions {
+    @include inuit-spacing-sizes($property, $direction, $direction-rules, $inuit-spacing-sizes);
+  }
+
+}
+
+
+@mixin inuit-spacing-sizes($property, $direction, $direction-rules, $sizes) {
+
+  @each $size, $size-namespace in $sizes {
+    @include inuit-spacing-class($property, $direction, $direction-rules, $size);
+  }
+
+}
+
+
+@mixin inuit-spacing-class($property, $direction, $direction-rules, $size, $breakpoint: null) {
+
+  .u-#{$property}#{$direction}#{$size}#{$breakpoint} {
+
+    @each $rule in $direction-rules {
+      #{$property}#{$rule}: map-get($inuit-spacing-sizes, $size) !important;
+    }
+
+  }
+
+  $has-responsive: false;
+
+  $responsive-property: index(map-get($inuit-responsive-spacing-config, properties), $property);
+  $responsive-direction: index(map-get($inuit-responsive-spacing-config, directions), $direction);
+  $responsive-size: index(map-get($inuit-responsive-spacing-config, sizes), $size);
+
+  @if ($inuit-responsive-spacing == true and $responsive-property and $responsive-direction and $responsive-size) {
+
+    $has-responsive: true;
+
+  }
+
+
+  @if (variable-exists(mq-breakpoints) and $breakpoint == null and $has-responsive) {
+
+    @include inuit-spacing-responsive($property, $direction, $direction-rules, $size);
+
+  }
+
+}
+
+
+@mixin inuit-spacing-responsive($property, $direction, $direction-rules, $size) {
+
+  @each $inuit-bp-name, $inuit-bp-value in $mq-breakpoints {
+
+    @include mq($from: $inuit-bp-name) {
+
+      @include inuit-spacing-class($property, $direction, $direction-rules, $size, #{$inuit-spacing-breakpoint-separator}#{$inuit-bp-name});
 
     }
 
   }
 
 }
+
+
+@include inuit-spacing();
 
 /* stylelint-enable string-quotes */
