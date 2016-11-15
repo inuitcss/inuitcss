@@ -21,6 +21,34 @@
 
 /* stylelint-disable string-quotes */
 
+// You can customize the classes inuitcss will generate, by predefining the 
+// next 3 maps. The keys are namespaces, used in the classes names. E.g:
+//
+// The following maps...
+//
+//   $inuit-spacing-directions: (
+//     null: null,
+//     'h': '-left' '-right',
+//     'v': '-top' '-bottom'
+//   );
+// 
+//   $inuit-spacing-properties: (
+//     'p': 'padding'
+//   ) !default;
+// 
+//   $inuit-spacing-sizes: (
+//     null: $inuit-global-spacing-unit,
+//     '-': $inuit-global-spacing-unit-small,
+//     \+: $inuit-global-spacing-unit-large
+//   ) !default;
+//
+// ...would generate only horizontal and vertical padding classes, with only
+// normal, small and large sizes, with this name pattern:
+//
+// .u-p\+ {}
+// .u-pv {}
+// .u-ph- {}
+
 $inuit-spacing-directions: (
   null: null,
   '-top': '-top',
@@ -28,13 +56,13 @@ $inuit-spacing-directions: (
   '-bottom': '-bottom',
   '-left': '-left',
   '-horizontal': '-left' '-right',
-  '-vertical': '-top' '-bottom',
+  '-vertical': '-top' '-bottom'
 ) !default;
 
 
 $inuit-spacing-properties: (
   'padding': 'padding',
-  'margin': 'margin',
+  'margin': 'margin'
 ) !default;
 
 
@@ -105,6 +133,13 @@ $inuit-spacing-breakpoint-separator: \@ !default;
 
 
 
+// The following mixins are called in chain, in order to format and create
+// each of the spacing classes, including responsive versions is the feature
+// was switched on. Each of them extract one aspect of the classes and pass it 
+// to the next step.
+
+// Only for code organization. Start the chain:
+
 @mixin inuit-spacing() {
 
   @include inuit-spacing-properties($inuit-spacing-properties);
@@ -152,6 +187,16 @@ $inuit-spacing-breakpoint-separator: \@ !default;
 
   }
 
+
+  // Here we make some tests to make sure this class should have responsive 
+  // versions:
+  //
+  // 1. If all 3 aspects (property, direction and size) are listed in the 
+  //    $inuit-responsive-spacing-config map;
+  // 2. If Sass-MQ is available;
+  // 3. If the responsive feature switch ($inuit-responsive-spacing) is true;
+  // 4. if the $breakpoint parameter is null, which means the responsive 
+  //    version were not created yet.
 
   $inuit-has-responsive-property: index(map-get($inuit-responsive-spacing-config, properties), $inuit-spacing-property-namespace);
   $inuit-has-responsive-direction: index(map-get($inuit-responsive-spacing-config, directions), $direction);
