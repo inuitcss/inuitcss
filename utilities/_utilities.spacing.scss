@@ -19,47 +19,7 @@
 
 
 
-// Optionally, inuitcss can generate responsive versions of this classes.
-// Would you like to generate these types of class as well? E.g.:
-//
-//   .u-padding-large@desktop
-//   .u-padding-tiny@mobile
-//   .u-margin-huge@tablet
-//   .u-margin-none@wide
-
-$inuit-responsive-spacing: false !default;
-
-
-
-
-
 /* stylelint-disable string-quotes */
-
-// Furthermore, you can choose to generate responsive versions of only
-// a specific set of classes, by predefining this config map:
-
-$inuit-responsive-spacing-config: (
-  properties: 'padding' 'margin',
-  directions: '-top' '-right' '-bottom' '-left' '-horizontal' '-vertical',
-  sizes: null '-tiny' '-small' '-large' '-huge' '-none'
-) !default;
-
-
-
-
-
-// When using Sass-MQ, this defines the separator for the breakpoints suffix
-// in the class name. By default, we are generating the responsive suffixes
-// for the classes with a `@` symbol so you get classes like:
-// 
-// u-padding@mobile
-// u-margin-tiny@desktop
-
-$inuit-spacing-breakpoint-separator: \@ !default;
-
-
-
-
 
 $inuit-spacing-directions: (
   null: null,
@@ -87,6 +47,60 @@ $inuit-spacing-sizes: (
   '-none': 0
 ) !default;
 
+/* stylelint-enable string-quotes */
+
+
+
+
+
+// Optionally, inuitcss can generate responsive versions of this classes.
+// Would you like to generate these types of class as well? E.g.:
+//
+//   .u-padding-large@desktop
+//   .u-padding-tiny@mobile
+//   .u-margin-huge@tablet
+//   .u-margin-none@wide
+
+$inuit-responsive-spacing: false !default;
+
+
+
+
+
+// Furthermore, you can choose to generate responsive versions of only
+// a specific set of classes, by predefining this config with spaces
+// separated lists of namespaces. E.g.:
+//
+// $inuit-responsive-spacing-config : (
+//   properties: 'padding',  
+//   directions: '-horizontal' '-vertical',
+//   sizes: null '-small' '-large' '-none'
+// );
+//
+// Note that the namespaces have to be the same as defined by the keys in: 
+// $inuit-spacing-properties
+// $inuit-spacing-directions
+// $inuit-spacing-sizes
+
+$inuit-responsive-spacing-config: (
+  properties: map-keys($inuit-spacing-properties),
+  directions: map-keys($inuit-spacing-directions),
+  sizes: map-keys($inuit-spacing-sizes)
+) !default;
+
+
+
+
+
+// When using Sass-MQ, this defines the separator for the breakpoints suffix
+// in the class name. By default, we are generating the responsive suffixes
+// for the classes with a `@` symbol so you get classes like:
+// 
+// u-padding@mobile
+// u-margin-tiny@desktop
+
+$inuit-spacing-breakpoint-separator: \@ !default;
+
 
 
 
@@ -100,7 +114,7 @@ $inuit-spacing-sizes: (
 
 @mixin inuit-spacing-properties($properties) {
 
-  @each $property-namespace, $property in $properties {
+  @each $property in $properties {
     @include inuit-spacing-directions($property, $inuit-spacing-directions);
   }
 
@@ -127,30 +141,29 @@ $inuit-spacing-sizes: (
 
 @mixin inuit-spacing-class($property, $direction, $direction-rules, $size, $breakpoint: null) {
 
-  .u-#{$property}#{$direction}#{$size}#{$breakpoint} {
+  $inuit-spacing-property-namespace: nth($property, 1);
+  $inuit-spacing-property-type: nth($property, 2);
 
-    @each $rule in $direction-rules {
-      #{$property}#{$rule}: map-get($inuit-spacing-sizes, $size) !important;
+  .u-#{$inuit-spacing-property-namespace}#{$direction}#{$size}#{$breakpoint} {
+
+    @each $property-rule in $direction-rules {
+      #{$inuit-spacing-property-type}#{$property-rule}: map-get($inuit-spacing-sizes, $size) !important;
     }
 
   }
 
-  $has-responsive: false;
 
-  $responsive-property: index(map-get($inuit-responsive-spacing-config, properties), $property);
-  $responsive-direction: index(map-get($inuit-responsive-spacing-config, directions), $direction);
-  $responsive-size: index(map-get($inuit-responsive-spacing-config, sizes), $size);
+  $inuit-has-responsive-property: index(map-get($inuit-responsive-spacing-config, properties), $inuit-spacing-property-namespace);
+  $inuit-has-responsive-direction: index(map-get($inuit-responsive-spacing-config, directions), $direction);
+  $inuit-has-responsive-size: index(map-get($inuit-responsive-spacing-config, sizes), $size);
 
-  @if ($inuit-responsive-spacing == true and $responsive-property and $responsive-direction and $responsive-size) {
+  @if ($inuit-has-responsive-property and $inuit-has-responsive-direction and $inuit-has-responsive-size) {
 
-    $has-responsive: true;
+    @if (variable-exists(mq-breakpoints) and $inuit-responsive-spacing == true and $breakpoint == null) {
 
-  }
+      @include inuit-spacing-responsive($property, $direction, $direction-rules, $size);
 
-
-  @if (variable-exists(mq-breakpoints) and $breakpoint == null and $has-responsive) {
-
-    @include inuit-spacing-responsive($property, $direction, $direction-rules, $size);
+    }
 
   }
 
@@ -163,7 +176,9 @@ $inuit-spacing-sizes: (
 
     @include mq($from: $inuit-bp-name) {
 
-      @include inuit-spacing-class($property, $direction, $direction-rules, $size, #{$inuit-spacing-breakpoint-separator}#{$inuit-bp-name});
+      $inuit-spacing-breakpoint: #{$inuit-spacing-breakpoint-separator}#{$inuit-bp-name};
+
+      @include inuit-spacing-class($property, $direction, $direction-rules, $size, $inuit-spacing-breakpoint);
 
     }
 
@@ -173,5 +188,3 @@ $inuit-spacing-sizes: (
 
 
 @include inuit-spacing();
-
-/* stylelint-enable string-quotes */
