@@ -98,11 +98,11 @@
    ========================================================================== */
 
 .c-btn--small {
-  padding: inuit-rem($inuit-global-spacing-unit-tiny) inuit-rem($inuit-global-spacing-unit-small);
+  padding: $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit-small;
 }
 
 .c-btn--large {
-  padding: inuit-rem($inuit-global-spacing-unit) inuit-rem($inuit-global-spacing-unit-large);
+  padding: $inuit-global-spacing-unit $inuit-global-spacing-unit-large;
 }
 
 
