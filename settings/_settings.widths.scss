@@ -1,0 +1,53 @@
+///* ========================================================================
+//   #WIDTHS-SETTINGS
+//   ======================================================================== */
+
+// Confugurable settings used by tools.widths and utilities.widths
+
+// Which fractions would you like in your grid system(s)? By default, inuitcss
+// provides you fractions of one whole, halves, thirds, quarters and fifths,
+// e.g.:
+//
+//   .u-1/2
+//   .u-2/5
+//   .u-3/4
+//   .u-2/3
+
+$inuit-fractions: 1 2 3 4 5 !default;
+
+
+
+
+
+// Optionally, inuitcss can generate classes to offset items by a certain width.
+// Would you like to generate these types of class as well? E.g.:
+//
+//   .u-push-1/3
+//   .u-pull-2/4
+//   .u-pull-1/5
+//   .u-push-2/3
+
+$inuit-offsets: false !default;
+
+
+
+
+
+// By default, inuitcss uses fractions-like classes like `<div class="u-1/4">`.
+// You can change the `/` to whatever you fancy with this variable.
+
+$inuit-widths-delimiter: \/ !default;
+
+
+
+
+
+// When using Sass-MQ, this defines the separator for the breakpoints suffix
+// in the class name. By default, we are generating the responsive suffixes
+// for the classes with a `@` symbol so you get classes like:
+// 
+//   .u-3/5@mobile
+//   .u-2/3@desktop
+//   .u-1/2@tablet
+
+$inuit-widths-breakpoint-separator: \@ !default;
