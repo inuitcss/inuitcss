@@ -7,7 +7,7 @@
  * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
 
-.u-hidden-visually {
+.u-visually-hidden {
   @include visually-hidden();
 }
 
