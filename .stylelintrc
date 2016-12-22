@@ -10,8 +10,6 @@
   ],
   "rules": {
     "scss/at-extend-no-missing-placeholder": true,
-    "scss/at-function-pattern": "inuit-.+",
-    "scss/at-mixin-pattern": "inuit-.+",
     "scss/dollar-variable-colon-space-before": "never",
     "scss/partial-no-import": true,
     "scss/selector-no-redundant-nesting-selector": true,

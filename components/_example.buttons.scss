@@ -23,7 +23,7 @@
   text-align: center; /* [4] */
   margin: 0; /* [4] */
   cursor: pointer; /* [5] */
-  padding: $inuit-global-spacing-unit-small $inuit-global-spacing-unit;
+  padding: $global-spacing-unit-small $global-spacing-unit;
   transition: $global-transition;
   border-radius: $global-radius;
 }
@@ -98,11 +98,11 @@
    ========================================================================== */
 
 .c-btn--small {
-  padding: $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit-small;
+  padding: $global-spacing-unit-xsmall $global-spacing-unit-small;
 }
 
 .c-btn--large {
-  padding: $inuit-global-spacing-unit $inuit-global-spacing-unit-large;
+  padding: $global-spacing-unit $global-spacing-unit-large;
 }
 
 
@@ -120,7 +120,7 @@ $btn-ghost-border-width: 2px;
 
 .c-btn--ghost {
   border: $btn-ghost-border-width solid currentColor;
-  padding: ($inuit-global-spacing-unit-small - $btn-ghost-border-width) ($inuit-global-spacing-unit - $btn-ghost-border-width);
+  padding: ($global-spacing-unit-small - $btn-ghost-border-width) ($global-spacing-unit - $btn-ghost-border-width);
 
   &,
   &:hover,
@@ -130,11 +130,11 @@ $btn-ghost-border-width: 2px;
   }
 
   &.c-btn--small {
-    padding: ($inuit-global-spacing-unit-tiny - $btn-ghost-border-width) ($inuit-global-spacing-unit-small - $btn-ghost-border-width);
+    padding: ($global-spacing-unit-xsmall - $btn-ghost-border-width) ($global-spacing-unit-small - $btn-ghost-border-width);
   }
 
   &.c-btn--large {
-    padding: ($inuit-global-spacing-unit - $btn-ghost-border-width) ($inuit-global-spacing-unit-large - $btn-ghost-border-width);
+    padding: ($global-spacing-unit - $btn-ghost-border-width) ($global-spacing-unit-large - $btn-ghost-border-width);
   }
 
   &.c-btn--primary {

@@ -17,7 +17,7 @@
 
 /* stylelint-disable string-quotes */
 
-$inuit-spacing-directions: (
+$spacing-directions: (
   null: null,
   '-top': '-top',
   '-right': '-right',
@@ -27,25 +27,25 @@ $inuit-spacing-directions: (
   '-vertical': '-top' '-bottom',
 ) !default;
 
-$inuit-spacing-properties: (
+$spacing-properties: (
   'padding': 'padding',
   'margin': 'margin',
 ) !default;
 
-$inuit-spacing-sizes: (
-  null: $inuit-global-spacing-unit,
-  '-tiny': $inuit-global-spacing-unit-tiny,
-  '-small': $inuit-global-spacing-unit-small,
-  '-large': $inuit-global-spacing-unit-large,
-  '-huge': $inuit-global-spacing-unit-huge,
+$spacing-sizes: (
+  null: $global-spacing-unit,
+  '-tiny': $global-spacing-unit-xsmall,
+  '-small': $global-spacing-unit-small,
+  '-large': $global-spacing-unit-large,
+  '-huge': $global-spacing-unit-xlarge,
   '-none': 0
 ) !default;
 
-@each $property-namespace, $property in $inuit-spacing-properties {
+@each $property-namespace, $property in $spacing-properties {
 
-  @each $direction-namespace, $direction-rules in $inuit-spacing-directions {
+  @each $direction-namespace, $direction-rules in $spacing-directions {
 
-    @each $size-namespace, $size in $inuit-spacing-sizes {
+    @each $size-namespace, $size in $spacing-sizes {
 
       .u-#{$property-namespace}#{$direction-namespace}#{$size-namespace} {
 

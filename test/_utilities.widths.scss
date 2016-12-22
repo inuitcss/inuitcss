@@ -10,7 +10,7 @@
     @include assert() {
 
       @include output {
-        // @include inuit-widths(1 2 3);
+        // @include widths(1 2 3);
       }
 
       @include expect {

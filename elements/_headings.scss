@@ -10,38 +10,38 @@
 
 
 // We have all of our heading font sizes defined here. Passing these pixel
-// values into our `inuit-font-size()` mixin will generate a rem-based
+// values into our `font-size()` mixin will generate a rem-based
 // `font-size` with a pixel fallback, as well as generating a `line-height` that
 // will sit on our baseline grid.
 
-$inuit-font-size-h1:  36px !default;
-$inuit-font-size-h2:  28px !default;
-$inuit-font-size-h3:  24px !default;
-$inuit-font-size-h4:  20px !default;
-$inuit-font-size-h5:  18px !default;
-$inuit-font-size-h6:  16px !default;
+$font-size-h1:  36px !default;
+$font-size-h2:  28px !default;
+$font-size-h3:  24px !default;
+$font-size-h4:  20px !default;
+$font-size-h5:  18px !default;
+$font-size-h6:  16px !default;
 
 
 h1 {
-  @include inuit-font-size($inuit-font-size-h1);
+  @include font-size($font-size-h1);
 }
 
 h2 {
-  @include inuit-font-size($inuit-font-size-h2);
+  @include font-size($font-size-h2);
 }
 
 h3 {
-  @include inuit-font-size($inuit-font-size-h3);
+  @include font-size($font-size-h3);
 }
 
 h4 {
-  @include inuit-font-size($inuit-font-size-h4);
+  @include font-size($font-size-h4);
 }
 
 h5 {
-  @include inuit-font-size($inuit-font-size-h5);
+  @include font-size($font-size-h5);
 }
 
 h6 {
-  @include inuit-font-size($inuit-font-size-h6);
+  @include font-size($font-size-h6);
 }

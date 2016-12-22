@@ -6,21 +6,21 @@
  * Page-level constraining and wrapping elements.
  */
 
-$inuit-wrapper-width: 1200px !default;
+$wrapper-width: 1200px !default;
 
 /* stylelint-disable */
-@if (type-of($inuit-wrapper-width) != number) {
-  @error "`#{$inuit-wrapper-width}` needs to be a number."
+@if (type-of($wrapper-width) != number) {
+  @error "`#{$wrapper-width}` needs to be a number."
 }
 /* stylelint-enable */
 
 .o-wrapper {
-  @include inuit-clearfix();
-  padding-right: $inuit-global-spacing-unit;
-  padding-left:  $inuit-global-spacing-unit;
+  @include clearfix();
+  padding-right: $global-spacing-unit;
+  padding-left: $global-spacing-unit;
   margin-right: auto;
   margin-left:  auto;
-  max-width: $inuit-wrapper-width;
+  max-width: $wrapper-width;
 }
 
 
@@ -31,21 +31,21 @@ $inuit-wrapper-width: 1200px !default;
    ========================================================================== */
 
 .o-wrapper--tiny {
-  padding-right: $inuit-global-spacing-unit-tiny;
-  padding-left:  $inuit-global-spacing-unit-tiny;
+  padding-right: $global-spacing-unit-xsmall;
+  padding-left: $global-spacing-unit-xsmall;
 }
 
 .o-wrapper--small {
-  padding-right: $inuit-global-spacing-unit-small;
-  padding-left:  $inuit-global-spacing-unit-small;
+  padding-right: $global-spacing-unit-small;
+  padding-left: $global-spacing-unit-small;
 }
 
 .o-wrapper--large {
-  padding-right: $inuit-global-spacing-unit-large;
-  padding-left:  $inuit-global-spacing-unit-large;
+  padding-right: $global-spacing-unit-large;
+  padding-left: $global-spacing-unit-large;
 }
 
 .o-wrapper--huge {
-  padding-right: $inuit-global-spacing-unit-huge;
-  padding-left:  $inuit-global-spacing-unit-huge;
+  padding-right: $global-spacing-unit-xlarge;
+  padding-left: $global-spacing-unit-xlarge;
 }

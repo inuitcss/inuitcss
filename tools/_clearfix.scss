@@ -6,9 +6,9 @@
 // http://www.cssmojo.com/the-very-latest-clearfix-reloaded/
 //
 // .usage {
-//   @include inuit-clearfix();
+//   @include clearfix();
 // }
-@mixin inuit-clearfix() {
+@mixin clearfix() {
 
   &:after {
     content: "" !important;

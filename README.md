@@ -180,9 +180,9 @@ Having your own and inuitcss’ partials interlaced like this is one of the real
 
 ## Core functionality
 
-Before inuitcss can do anything, it needs to know your base `font-size` and `line-height`. These settings are stored in `settings.core` (as `$inuit-global-font-size` and `$inuit-global-line-height`), and can be overridden in the same way you’d [override any of inuitcss’ config](#modifying-inuitcss).
+Before inuitcss can do anything, it needs to know your base `font-size` and `line-height`. These settings are stored in `settings.core` (as `$global-font-size` and `$global-line-height`), and can be overridden in the same way you’d [override any of inuitcss’ config](#modifying-inuitcss).
 
-Probably the most opinionated thing inuitcss will ever do is reassign your `$inuit-global-line-height` variable to `$inuit-global-spacing-unit`. This value then becomes the cornerstone of your UI, acting as the default margin and padding value for any components that require it.
+Probably the most opinionated thing inuitcss will ever do is reassign your `$global-line-height` variable to `$global-spacing-unit`. This value then becomes the cornerstone of your UI, acting as the default margin and padding value for any components that require it.
 
 While this might seem overly opinionated, it does mean that:
 
@@ -191,11 +191,11 @@ While this might seem overly opinionated, it does mean that:
 
 ## Modifying inuitcss
 
-inuitcss is highly configurable, but **should not be edited directly**. The correct way to make changes to inuitcss is to pass in variables **before** you `@import` the specific file. Let’s take [`settings.core`](https://github.com/inuitcss/inuitcss/blob/develop/settings/_settings.core.scss) as an example—in this file we can see the variables `$inuit-global-font-size` and `$inuit-global-line-height`. If we want to keep these as-is then we needn’t do anything other than `@import` the file. If we wanted to change these values to `12px` and `18px` respectively (don’t worry, inuitcss will convert these pixel values to rems for you) then we just need to pass those values in before the `@import`, thus:
+inuitcss is highly configurable, but **should not be edited directly**. The correct way to make changes to inuitcss is to pass in variables **before** you `@import` the specific file. Let’s take [`settings.core`](https://github.com/inuitcss/inuitcss/blob/develop/settings/_settings.core.scss) as an example—in this file we can see the variables `$global-font-size` and `$global-line-height`. If we want to keep these as-is then we needn’t do anything other than `@import` the file. If we wanted to change these values to `12px` and `18px` respectively (don’t worry, inuitcss will convert these pixel values to rems for you) then we just need to pass those values in before the `@import`, thus:
 
 ```scss
-$inuit-global-font-size:   12px;
-$inuit-global-line-height: 18px;
+$global-font-size:   12px;
+$global-line-height: 18px;
 @import "node_modules/inuitcss/settings/settings.core";
 ```
 
@@ -203,10 +203,10 @@ The same goes for any inuitcss module: you can configure it by predefining any
 of its variables immediately before the `@import`:
 
 ```scss
-$inuit-wrapper-width: 1480px;
+$wrapper-width: 1480px;
 @import "node_modules/inuitcss/objects/objects.wrapper";
 
-$inuit-fractions: 1 2 3 4 12;
+$width-fractions: 1 2 3 4 12;
 @import "node_modules/inuitcss/utilities/utilities.widths";
 ```
 
@@ -220,28 +220,6 @@ you need to configure an entire library.
 To extend inuitcss with your own code, simply create a partial in the `<section>.<file>` format, put it into the [appropriate directory](#css-directory-structure) and `@import` it in your `main.scss`.
 
 But extending inuitcss does not only mean adding your own partials to the project. Due to inuitcss’ modular nature, you can also omit those partials of inuitcss you don't need. But be aware that there are a few interdependencies between various inuitcss partials. The only partial that is indispensable for the framework to work properly is `settings.core`, though. But we recommend using all partials from the `/settings`, `/tools` and `/generic` layer.
-
-### Aliases
-
-In order to avoid clashes with your own code, all of inuitcss’ mixins and
-variables are namespaced with `inuit-`, for example: `$inuit-global-spacing-unit`.
-These variables and mixins can become very tedious and time consuming to type
-over and over, so it is recommended that you alias them to something a little
-shorter. You can do this by creating a `tools.aliases` file
-(`tools/_tools.aliases.scss`) which would be populated with code like this:
-
-```scss
-// Reassign `$inuit-global-spacing-unit` to `$unit`.
-$unit: $inuit-global-spacing-unit;
-
-// Reassign lengthy font-size mixin to `font-size()`.
-@mixin font-size($args...) {
-  @include inuit-font-size($args...);
-}
-```
-
-You can now use your own aliases onto inuitcss’ defaults throughout your
-project.
 
 ### Components
 

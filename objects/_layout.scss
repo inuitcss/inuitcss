@@ -53,7 +53,7 @@
 // By default we use the `font-size: 0;` trick to remove whitespace between
 // items. Set this to true in order to use a markup-based strategy like
 // commenting out whitespace or minifying HTML.
-$inuit-use-markup-fix: false !default;
+$layout-enable-markup-fix: false !default;
 
 
 
@@ -74,9 +74,9 @@ $inuit-use-markup-fix: false !default;
   margin:  0; /* [2] */
   padding: 0; /* [2] */
   list-style: none; /* [1] */
-  margin-left: -$inuit-global-spacing-unit; /* [3] */
+  margin-left: -$global-spacing-unit; /* [3] */
 
-  @if ($inuit-use-markup-fix == false) {
+  @if ($layout-enable-markup-fix == false) {
     font-size: 0;
   }
 
@@ -100,10 +100,10 @@ $inuit-use-markup-fix: false !default;
     display: inline-block; /* [2] */
     vertical-align: top; /* [3] */
     width: 100%; /* [4] */
-    padding-left: $inuit-global-spacing-unit; /* [5] */
+    padding-left: $global-spacing-unit; /* [5] */
 
-    @if ($inuit-use-markup-fix == false) {
-      font-size: $inuit-global-font-size; /* [6] */
+    @if ($layout-enable-markup-fix == false) {
+      font-size: $global-font-size; /* [6] */
       font-size: 1rem;
     }
 
@@ -117,40 +117,40 @@ $inuit-use-markup-fix: false !default;
    ========================================================================== */
 
 .o-layout--tiny {
-  margin-left: -$inuit-global-spacing-unit-tiny;
+  margin-left: -$global-spacing-unit-xsmall;
 
   > .o-layout__item {
-    padding-left: $inuit-global-spacing-unit-tiny;
+    padding-left: $global-spacing-unit-xsmall;
   }
 
 }
 
 
 .o-layout--small {
-  margin-left: -$inuit-global-spacing-unit-small;
+  margin-left: -$global-spacing-unit-small;
 
   > .o-layout__item {
-    padding-left: $inuit-global-spacing-unit-small;
+    padding-left: $global-spacing-unit-small;
   }
 
 }
 
 
 .o-layout--large {
-  margin-left: -$inuit-global-spacing-unit-large;
+  margin-left: -$global-spacing-unit-large;
 
   > .o-layout__item {
-    padding-left: $inuit-global-spacing-unit-large;
+    padding-left: $global-spacing-unit-large;
   }
 
 }
 
 
 .o-layout--huge {
-  margin-left: -$inuit-global-spacing-unit-huge;
+  margin-left: -$global-spacing-unit-xlarge;
 
   > .o-layout__item {
-    padding-left: $inuit-global-spacing-unit-huge;
+    padding-left: $global-spacing-unit-xlarge;
   }
 
 }

@@ -42,7 +42,7 @@
 //   .u-3/4
 //   .u-2/3
 
-$inuit-fractions: 1 2 3 4 5 !default;
+$width-fractions: 1 2 3 4 5 !default;
 
 
 
@@ -56,7 +56,7 @@ $inuit-fractions: 1 2 3 4 5 !default;
 //   .u-pull-1/5
 //   .u-push-2/3
 
-$inuit-offsets: false !default;
+$width-enable-offsets: false !default;
 
 
 
@@ -64,7 +64,7 @@ $inuit-offsets: false !default;
 
 // By default, inuitcss uses fractions-like classes like `<div class="u-1/4">`.
 // You can change the `/` to whatever you fancy with this variable.
-$inuit-widths-delimiter: \/ !default;
+$width-delimiter: \/ !default;
 
 
 
@@ -74,7 +74,7 @@ $inuit-widths-delimiter: \/ !default;
 // in the class name. By default, we are generating the responsive suffixes
 // for the classes with a `@` symbol so you get classes like:
 // <div class="u-3/12@mobile">
-$inuit-widths-breakpoint-separator: \@ !default;
+$width-breakpoint-separator: \@ !default;
 
 
 
@@ -86,7 +86,7 @@ $inuit-widths-breakpoint-separator: \@ !default;
 //
 // @include widths(3 4, -sm);
 
-@mixin inuit-widths($columns, $breakpoint: null) {
+@mixin widths($columns, $breakpoint: null) {
 
   // Loop through the number of columns for each denominator of our fractions.
   @each $denominator in $columns {
@@ -96,25 +96,25 @@ $inuit-widths-breakpoint-separator: \@ !default;
     @for $numerator from 1 through $denominator {
 
       // Build a class in the format `.u-3/4[@<breakpoint>]`.
-      .u-#{$numerator}#{$inuit-widths-delimiter}#{$denominator}#{$breakpoint} {
+      .u-#{$numerator}#{$width-delimiter}#{$denominator}#{$breakpoint} {
         width: ($numerator / $denominator) * 100% !important;
       }
 
-      @if ($inuit-offsets == true) {
+      @if ($width-enable-offsets == true) {
 
         /**
         * 1. Reset any leftover or conflicting `left`/`right` values.
         */
 
         // Build a class in the format `.u-push-1/2[@<breakpoint>]`.
-        .u-push-#{$numerator}#{$inuit-widths-delimiter}#{$denominator}#{$breakpoint} {
+        .u-push-#{$numerator}#{$width-delimiter}#{$denominator}#{$breakpoint} {
           position: relative !important;
           right: auto !important; /* [1] */
           left: ($numerator / $denominator) * 100% !important;
         }
 
         // Build a class in the format `.u-pull-5/6[@<breakpoint>]`.
-        .u-pull-#{$numerator}#{$inuit-widths-delimiter}#{$denominator}#{$breakpoint} {
+        .u-pull-#{$numerator}#{$width-delimiter}#{$denominator}#{$breakpoint} {
           position: relative !important;
           right: ($numerator / $denominator) * 100% !important;
           left: auto !important; /* [1] */
@@ -139,10 +139,10 @@ $inuit-widths-breakpoint-separator: \@ !default;
  * <div class="u-7/12">
  *
  * The following will generate widths helper classes based on the fractions
- * defined in the `$inuit-fractions` list.
+ * defined in the `$width-fractions` list.
  */
 
-@include inuit-widths($inuit-fractions);
+@include widths($width-fractions);
 
 
 
@@ -156,10 +156,10 @@ $inuit-widths-breakpoint-separator: \@ !default;
 
 @if (variable-exists(mq-breakpoints)) {
 
-  @each $inuit-bp-name, $inuit-bp-value in $mq-breakpoints {
+  @each $breakpoint-name, $breakpoint-value in $mq-breakpoints {
 
-    @include mq($from: $inuit-bp-name) {
-      @include inuit-widths($inuit-fractions, #{$inuit-widths-breakpoint-separator}#{$inuit-bp-name});
+    @include mq($from: $breakpoint-name) {
+      @include widths($width-fractions, #{$width-breakpoint-separator}#{$breakpoint-name});
     }
 
   }
