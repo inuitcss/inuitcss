@@ -3,6 +3,7 @@ example.html
 
 ### Built files
 *.css
+*.css.map
 *.gz
 test/*.css
 
