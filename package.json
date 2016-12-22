@@ -1,7 +1,7 @@
 {
-  "name": "inuitcss",
-  "version": "6.0.0-beta.4",
-  "description": "Extensible, scalable, Sass-based, OOCSS framework for large and long-lasting UI projects.",
+  "name": "sushi-framework",
+  "version": "0.0.1",
+  "description": "Extensible, scalable, Sass-based, OOCSS framework for large and long-lasting UI projects based on inuitcss.",
   "main": "example.main.scss",
   "scripts": {
     "test": "npm run lint && mocha test/run.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/inuitcss/inuitcss.git"
+    "url": "git+https://github.com/dogandpony/inuitcss.git"
   },
   "keywords": [
     "oocss",
@@ -18,18 +18,15 @@
     "itcss",
     "css"
   ],
-  "author": "Harry Roberts <csswizardry@gmail.com>",
+  "author": "Caio Costa <caio@dogandponystudios.com>",
   "contributors": [
-    "Anselm Hannemann",
-    "Dennis Heibült",
-    "Florian Bouvot",
-    "Nenad Jelovac"
+    "Bill Addison <bill@dogandponystudios.com>"
   ],
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/inuitcss/inuitcss/issues"
+    "url": "https://github.com/dogandpony/inuitcss/issues"
   },
-  "homepage": "https://github.com/inuitcss/inuitcss#readme",
+  "homepage": "https://github.com/dogandpony/inuitcss#readme",
   "dependencies": {
     "sass-mq": "^3.2.9"
   },
