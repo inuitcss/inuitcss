@@ -30,7 +30,7 @@ $wrapper-width: 1200px !default;
 /* Size variants.
    ========================================================================== */
 
-.o-wrapper--tiny {
+.o-wrapper--xsmall {
   padding-right: $global-spacing-unit-xsmall;
   padding-left: $global-spacing-unit-xsmall;
 }
@@ -45,7 +45,7 @@ $wrapper-width: 1200px !default;
   padding-left: $global-spacing-unit-large;
 }
 
-.o-wrapper--huge {
+.o-wrapper--xlarge {
   padding-right: $global-spacing-unit-xlarge;
   padding-left: $global-spacing-unit-xlarge;
 }

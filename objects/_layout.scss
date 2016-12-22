@@ -116,7 +116,7 @@ $layout-enable-markup-fix: false !default;
 /* Gutter size modifiers.
    ========================================================================== */
 
-.o-layout--tiny {
+.o-layout--xsmall {
   margin-left: -$global-spacing-unit-xsmall;
 
   > .o-layout__item {
@@ -146,7 +146,7 @@ $layout-enable-markup-fix: false !default;
 }
 
 
-.o-layout--huge {
+.o-layout--xlarge {
   margin-left: -$global-spacing-unit-xlarge;
 
   > .o-layout__item {

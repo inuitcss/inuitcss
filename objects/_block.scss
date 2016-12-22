@@ -24,7 +24,7 @@
       margin-bottom: 0;
     }
 
-    .o-block--tiny > & {
+    .o-block--xsmall > & {
       margin-bottom: $global-spacing-unit-xsmall;
     }
 
@@ -36,7 +36,7 @@
       margin-bottom: $global-spacing-unit-large;
     }
 
-    .o-block--huge > & {
+    .o-block--xlarge > & {
       margin-bottom: $global-spacing-unit-xlarge;
     }
 
