@@ -71,9 +71,7 @@
  */
 
 // SETTINGS
-@import "settings/example.config";
 @import "settings/core";
-@import "settings/example.global";
 @import "settings/width";
 @import "settings/breakpoint";
 
@@ -132,9 +130,6 @@
 
 
 // COMPONENTS
-//
-// Build and include your project’s UI Compoments here.
-@import "components/example.button";
 
 
 
