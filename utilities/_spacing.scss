@@ -6,39 +6,39 @@
  * Utility classes to put specific spacing values onto elements. The below loop
  * will generate us a suite of classes like:
  *
- *   .u-margin-top {}
- *   .u-padding-left-large {}
- *   .u-margin-right-small {}
- *   .u-padding {}
- *   .u-padding-right-none {}
- *   .u-padding-horizontal {}
- *   .u-padding-vertical-small {}
+ *   .u-mt {}
+ *   .u-pl4 {}
+ *   .u-mr2 {}
+ *   .u-p {}
+ *   .u-pr0 {}
+ *   .u-ph {}
+ *   .u-pv2 {}
  */
 
 /* stylelint-disable string-quotes */
 
 $spacing-directions: (
   null: null,
-  '-top': '-top',
-  '-right': '-right',
-  '-bottom': '-bottom',
-  '-left': '-left',
-  '-horizontal': '-left' '-right',
-  '-vertical': '-top' '-bottom',
+  't': '-top',
+  'r': '-right',
+  'b': '-bottom',
+  'l': '-left',
+  'h': '-left' '-right',
+  'v': '-top' '-bottom',
 ) !default;
 
 $spacing-properties: (
-  'padding': 'padding',
-  'margin': 'margin',
+  'p': 'padding',
+  'm': 'margin',
 ) !default;
 
 $spacing-sizes: (
-  null: $global-spacing-unit,
-  '-tiny': $global-spacing-unit-xsmall,
-  '-small': $global-spacing-unit-small,
-  '-large': $global-spacing-unit-large,
-  '-huge': $global-spacing-unit-xlarge,
-  '-none': 0
+  '1': $global-spacing-unit-xsmall,
+  '2': $global-spacing-unit-small,
+  '3': $global-spacing-unit,
+  '4': $global-spacing-unit-large,
+  '5': $global-spacing-unit-xlarge,
+  '0': 0
 ) !default;
 
 @each $property-namespace, $property in $spacing-properties {
