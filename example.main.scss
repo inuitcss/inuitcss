@@ -101,9 +101,9 @@
 
 // ELEMENTS
 @import "elements/page";
-@import "elements/headings";
-@import "elements/images";
-@import "elements/tables";
+@import "elements/heading";
+@import "elements/image";
+@import "elements/table";
 
 
 
@@ -132,7 +132,7 @@
 // COMPONENTS
 //
 // Build and include your project’s UI Compoments here.
-@import "components/example.buttons";
+@import "components/example.button";
 
 
 
@@ -142,8 +142,8 @@
 @import "utilities/clearfix";
 
 $offsets: true;
-@import "utilities/widths";
-@import "utilities/headings";
+@import "utilities/width";
+@import "utilities/heading";
 @import "utilities/spacing";
 @import "utilities/print";
 @import "utilities/hide";
