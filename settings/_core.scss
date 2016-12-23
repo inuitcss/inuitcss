@@ -11,7 +11,7 @@
 // in pixels: inuitcss will convert them to more appropriate units.
 
 $global-font-size:    16px !default;
-$global-line-height:  24px !default;
+$global-line-height:  8px !default;
 
 
 
@@ -21,7 +21,7 @@ $global-line-height:  24px !default;
 // your baseline grid). It is not recommended that you modify these following
 // variables (it can break your vertical rhythm), but if you need to, you can.
 
-$global-spacing-unit: round($global-line-height) !default;
+$global-spacing-unit: 24px !default;
 
 
 // How many times larger/smaller than the default should our spacing unit
