@@ -15,7 +15,7 @@
  *   .u-pv2 {}
  */
 
-/* stylelint-disable string-quotes */
+/* stylelint-disable string-quotes, max-nesting-depth */
 
 $spacing-directions: (
   null: null,
@@ -41,24 +41,78 @@ $spacing-sizes: (
   '0': 0
 ) !default;
 
-@each $property-namespace, $property in $spacing-properties {
+// When using Sass-MQ, this defines the separator for the breakpoints suffix
+// in the class name. By default, we are generating the responsive suffixes
+// for the classes with a `@` symbol so you get classes like:
+// <div class="u-p2@tablet">
+$spacing-breakpoint-separator: \@ !default;
 
-  @each $direction-namespace, $direction-rules in $spacing-directions {
+@mixin spacing(
+	$properties: $spacing-properties,
+	$directions: $spacing-directions,
+	$sizes: $spacing-sizes,
+	$breakpoint: null
+) {
 
-    @each $size-namespace, $size in $spacing-sizes {
+	@each $property-namespace, $property in $properties {
 
-      .u-#{$property-namespace}#{$direction-namespace}#{$size-namespace} {
+		@each $direction-namespace, $direction-rules in $directions {
 
-        @each $direction in $direction-rules {
-          #{$property}#{$direction}: $size !important;
-        }
+			@each $size-namespace, $size in $sizes {
 
-      }
+				.u-#{$property-namespace}#{$direction-namespace}#{$size-namespace}#{$breakpoint} {
 
-    }
+					@each $direction in $direction-rules {
+						#{$property}#{$direction}: $size !important;
+					}
 
-  }
+				}
+
+			}
+
+		}
+
+	}
 
 }
 
-/* stylelint-enable string-quotes */
+/**
+ * A series of spacing helper classes that you can use to give spacing.
+ * Use these in your markup:
+ *
+ * <div class="u-pl4">
+ *
+ * The following will generate spacing helper classes.
+ */
+
+@include spacing();
+
+/**
+ * If we’re using Sass-MQ, automatically generate responsive helpers for each of our
+ * defined breakpoints, and give them a Responsive Suffix, e.g.:
+ *
+ * <div class="u-m5@tablet">
+ */
+
+$spacing-responsive: false !default;
+
+$spacing-responsive-properties: $spacing-properties !default;
+
+$spacing-responsive-directions: $spacing-directions !default;
+
+$spacing-responsive-sizes: $spacing-sizes !default;
+
+@if (variable-exists(mq-breakpoints) and $spacing-responsive == true) {
+	@each $breakpoint-name, $breakpoint-value in $mq-breakpoints {
+		@include mq($from: $breakpoint-name) {
+			@include inuit-spacing(
+					$spacing-responsive-properties,
+					$spacing-responsive-directions,
+					$spacing-responsive-sizes,
+					#{$spacing-breakpoint-separator}#{$breakpoint-name}
+			);
+		}
+	}
+}
+
+/* stylelint-enable string-quotes, max-nesting-depth */
