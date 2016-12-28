@@ -15,7 +15,39 @@
  *   .u-padding-vertical-small {}
  */
 
+
+
+
+
 /* stylelint-disable string-quotes */
+
+// You can customize the classes inuitcss will generate, by predefining the 
+// next 3 maps. The keys are namespaces, used in the classes names. E.g:
+//
+// The following maps...
+//
+//   $inuit-spacing-directions: (
+//     null: null,
+//     'h': '-left' '-right',
+//     'v': '-top' '-bottom'
+//   );
+// 
+//   $inuit-spacing-properties: (
+//     'p': 'padding'
+//   ) !default;
+// 
+//   $inuit-spacing-sizes: (
+//     null: $inuit-global-spacing-unit,
+//     '-': $inuit-global-spacing-unit-small,
+//     \+: $inuit-global-spacing-unit-large
+//   ) !default;
+//
+// ...would generate only horizontal and vertical padding classes, with only
+// normal, small and large sizes, with this name pattern:
+//
+// .u-p\+ {}
+// .u-pv {}
+// .u-ph- {}
 
 $inuit-spacing-directions: (
   null: null,
@@ -24,13 +56,15 @@ $inuit-spacing-directions: (
   '-bottom': '-bottom',
   '-left': '-left',
   '-horizontal': '-left' '-right',
-  '-vertical': '-top' '-bottom',
+  '-vertical': '-top' '-bottom'
 ) !default;
+
 
 $inuit-spacing-properties: (
   'padding': 'padding',
-  'margin': 'margin',
+  'margin': 'margin'
 ) !default;
+
 
 $inuit-spacing-sizes: (
   null: $inuit-global-spacing-unit,
@@ -41,19 +75,138 @@ $inuit-spacing-sizes: (
   '-none': 0
 ) !default;
 
-@each $property-namespace, $property in $inuit-spacing-properties {
+/* stylelint-enable string-quotes */
 
-  @each $direction-namespace, $direction-rules in $inuit-spacing-directions {
 
-    @each $size-namespace, $size in $inuit-spacing-sizes {
 
-      .u-#{$property-namespace}#{$direction-namespace}#{$size-namespace} {
 
-        @each $direction in $direction-rules {
-          #{$property}#{$direction}: $size !important;
-        }
 
-      }
+// Optionally, inuitcss can generate responsive versions of this classes.
+// Would you like to generate these types of class as well? E.g.:
+//
+//   .u-padding-large@desktop
+//   .u-padding-tiny@mobile
+//   .u-margin-huge@tablet
+//   .u-margin-none@wide
+
+$inuit-responsive-spacing: false !default;
+
+
+
+
+
+// Furthermore, you can choose to generate responsive versions of only
+// a specific set of classes, by predefining this config with spaces
+// separated lists of namespaces. E.g.:
+//
+// $inuit-responsive-spacing-config : (
+//   properties: 'padding',  
+//   directions: '-horizontal' '-vertical',
+//   sizes: null '-small' '-large' '-none'
+// );
+//
+// Note that the namespaces have to be the same as defined by the keys in: 
+// $inuit-spacing-properties
+// $inuit-spacing-directions
+// $inuit-spacing-sizes
+
+$inuit-responsive-spacing-config: (
+  properties: map-keys($inuit-spacing-properties),
+  directions: map-keys($inuit-spacing-directions),
+  sizes: map-keys($inuit-spacing-sizes)
+) !default;
+
+
+
+
+
+// When using Sass-MQ, this defines the separator for the breakpoints suffix
+// in the class name. By default, we are generating the responsive suffixes
+// for the classes with a `@` symbol so you get classes like:
+// 
+// u-padding@mobile
+// u-margin-tiny@desktop
+
+$inuit-spacing-breakpoint-separator: \@ !default;
+
+
+
+
+
+// The following mixins are called in chain, in order to format and create
+// each of the spacing classes, including responsive versions is the feature
+// was switched on. Each of them extract one aspect of the classes and pass it 
+// to the next step.
+
+// Only for code organization. Start the chain:
+
+@mixin inuit-spacing() {
+
+  @include inuit-spacing-properties($inuit-spacing-properties);
+
+}
+
+
+@mixin inuit-spacing-properties($properties) {
+
+  @each $property in $properties {
+    @include inuit-spacing-directions($property, $inuit-spacing-directions);
+  }
+
+}
+
+
+@mixin inuit-spacing-directions($property, $directions) {
+
+  @each $direction, $direction-rules in $directions {
+    @include inuit-spacing-sizes($property, $direction, $direction-rules, $inuit-spacing-sizes);
+  }
+
+}
+
+
+@mixin inuit-spacing-sizes($property, $direction, $direction-rules, $sizes) {
+
+  @each $size, $size-namespace in $sizes {
+    @include inuit-spacing-class($property, $direction, $direction-rules, $size);
+  }
+
+}
+
+
+@mixin inuit-spacing-class($property, $direction, $direction-rules, $size, $breakpoint: null) {
+
+  $inuit-spacing-property-namespace: nth($property, 1);
+  $inuit-spacing-property-type: nth($property, 2);
+
+  .u-#{$inuit-spacing-property-namespace}#{$direction}#{$size}#{$breakpoint} {
+
+    @each $property-rule in $direction-rules {
+      #{$inuit-spacing-property-type}#{$property-rule}: map-get($inuit-spacing-sizes, $size) !important;
+    }
+
+  }
+
+
+  // Here we make some tests to make sure this class should have responsive 
+  // versions:
+  //
+  // 1. If all 3 aspects (property, direction and size) are listed in the 
+  //    $inuit-responsive-spacing-config map;
+  // 2. If Sass-MQ is available;
+  // 3. If the responsive feature switch ($inuit-responsive-spacing) is true;
+  // 4. if the $breakpoint parameter is null, which means the responsive 
+  //    version were not created yet.
+
+  $inuit-has-responsive-property: index(map-get($inuit-responsive-spacing-config, properties), $inuit-spacing-property-namespace);
+  $inuit-has-responsive-direction: index(map-get($inuit-responsive-spacing-config, directions), $direction);
+  $inuit-has-responsive-size: index(map-get($inuit-responsive-spacing-config, sizes), $size);
+
+  @if ($inuit-has-responsive-property and $inuit-has-responsive-direction and $inuit-has-responsive-size) {
+
+    @if (variable-exists(mq-breakpoints) and $inuit-responsive-spacing == true and $breakpoint == null) {
+
+      @include inuit-spacing-responsive($property, $direction, $direction-rules, $size);
 
     }
 
@@ -61,4 +214,22 @@ $inuit-spacing-sizes: (
 
 }
 
-/* stylelint-enable string-quotes */
+
+@mixin inuit-spacing-responsive($property, $direction, $direction-rules, $size) {
+
+  @each $inuit-bp-name, $inuit-bp-value in $mq-breakpoints {
+
+    @include mq($from: $inuit-bp-name) {
+
+      $inuit-spacing-breakpoint: #{$inuit-spacing-breakpoint-separator}#{$inuit-bp-name};
+
+      @include inuit-spacing-class($property, $direction, $direction-rules, $size, $inuit-spacing-breakpoint);
+
+    }
+
+  }
+
+}
+
+
+@include inuit-spacing();
