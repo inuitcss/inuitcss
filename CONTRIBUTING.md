@@ -74,7 +74,7 @@ Example:
 Here I can see that the ‘Implement proposed flag object fix’ commit happened
 against [issue 76](https://github.com/inuitcss/inuitcss/issues/76), and took
 place in a branch named `tkt-0076`. This means that I can find any discussions
-around this piece of work, and I know in which branch I should commit and
+around this piece of work, and I know in which branch I should commit any
 further, related work.
 
 The one downside to this workflow is that branches no longer have descriptive
