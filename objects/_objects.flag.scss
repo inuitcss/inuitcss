@@ -12,11 +12,13 @@
  * 1. Allows us to control vertical alignments.
  * 2. Force the object to be the full width of its parent. Combined with [1],
  *    this makes the object behave in a quasi-`display: block;` manner.
+ * 3. Reset inherited `border-spacing` declarations.
  */
 
 .o-flag {
   display: table; /* [1] */
   width: 100%; /* [2] */
+  border-spacing: 0; /* [3] */
 }
 
 
