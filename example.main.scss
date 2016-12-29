@@ -66,7 +66,7 @@
  * Clearfix.............Bind our clearfix onto a utility class.
  * Widths...............Simple width helper classes.
  * Headings.............Reassigning our heading styles to helper classes.
- * Spacing..............Nudge bits of the DOM around with these spacing
+ * Spacings.............Nudge bits of the DOM around with these spacing
  *                      classes.
  * Print................Reset-like styles taken from the HTML5 Boilerplate.
  * Hide.................Helper classes to hide content
@@ -146,6 +146,6 @@
 $inuit-offsets: true;
 @import "utilities/utilities.widths";
 @import "utilities/utilities.headings";
-@import "utilities/utilities.spacing";
+@import "utilities/utilities.spacings";
 @import "utilities/utilities.print";
 @import "utilities/utilities.hide";
