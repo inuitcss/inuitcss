@@ -171,7 +171,7 @@ Following this structure allows you to intersperse inuitcss’ code with your ow
 // UTILITIES
 @import "node_modules/inuitcss/utilities/utilities.widths";
 @import "node_modules/inuitcss/utilities/utilities.headings";
-@import "node_modules/inuitcss/utilities/utilities.spacing";
+@import "node_modules/inuitcss/utilities/utilities.spacings";
 ```
 
 **NOTE:** Every `@import` above which begins with "node_modules" is inuitcss core. When you installed inuitcss via bower, these imports would begin with "bower_components".
