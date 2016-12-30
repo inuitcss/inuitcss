@@ -198,6 +198,21 @@ $inuit-use-markup-fix: false !default;
 }
 
 
+/**
+ * Stretch all grid items to have an equal-height.
+ */
+
+.o-layout--stretch {
+  display: flex;
+  flex-wrap: wrap;
+
+  > .o-layout__item {
+    display: flex;
+  }
+
+}
+
+
 
 
 
