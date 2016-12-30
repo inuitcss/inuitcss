@@ -259,3 +259,22 @@ $inuit-use-markup-fix: false !default;
   }
 
 }
+
+
+
+
+
+/* Auto-widths modifier.
+   ========================================================================== */
+
+/**
+ * Cause layout items to take up a non-explicit amount of width.
+ */
+
+.o-layout--auto {
+
+  > .o-layout__item {
+    width: auto;
+  }
+
+}
