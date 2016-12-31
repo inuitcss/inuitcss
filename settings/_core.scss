@@ -1,81 +1,52 @@
-///* ========================================================================
-//   #CORE
-//   ======================================================================== */
-
-// This core file sets up inuitcss’ most important setup variables. They
-// underpin a lot of how the framework functions and should be modified and
-// preconfigured with caution.
-
-
-// Base typographical styles and baseline grid. You need to define these values
-// in pixels: inuitcss will convert them to more appropriate units.
-
-$global-font-size:    16px !default;
-$global-line-height:  8px !default;
+/* =========================================================================
+ * #CORE
+ * ========================================================================= */
+ 
+ /**
+ * This file contains core settings for the framework to function including
+ * base typography and spacing units. 
+ */
 
 
+// Size declared in rems for maximum flexibility.
+// HTML font size set to 62.5% (elements/_html.sass) so that 1rem is 
+// generally equal to 10px.
+
+$base-font-size:    1.8rem !default;
+$base-line-height:  1.6 !default;
 
 
+// Spacing units measured in rems for more control over the spacing scale.
+// For example: default spacing unit is appx. 30px, instead of calculating
+// the large spacing unit in multiples of the default spacing unit, 
+// i.e. 1.33333*3rem = 4rem we can simply state 4rems instead.
 
-// Spacing values are determined based on your project’s global line height (i.e
-// your baseline grid). It is not recommended that you modify these following
-// variables (it can break your vertical rhythm), but if you need to, you can.
-
-$global-spacing-unit: 24px !default;
-
-
-// How many times larger/smaller than the default should our spacing unit
-// variants be?
-
-$global-spacing-unit-factor-xsmall: 0.25 !default;
-$global-spacing-unit-factor-small:  0.5  !default;
-$global-spacing-unit-factor-large:  2    !default;
-$global-spacing-unit-factor-xlarge: 4    !default;
+$spacing-none: 0 !default;
+$spacing-xxs:  0.5rem !default;
+$spacing-xs:   1rem !default;
+$spacing-s:    2rem !default;
+$spacing:      3rem !default;
+$spacing-l:    4rem !default;
+$spacing-xl:   6rem !default;
+$spacing-xxl:  8rem !default;
 
 
+// Validate base-font/spacing values as rem numbers
 
+@each $_rem-value in
+      $base-font-size
+      $spacing $spacing-none 
+      $spacing-s $spacing-xs $spacing-xxs
+      $spacing-l $spacing-xl $spacing-xxl {
 
+  @if (type-of($_rem-value) == number) {
 
-// Check that the chosen font rules are pixel numbers.
-
-@each $_font-globals in
-      $global-font-size $global-line-height {
-
-  @if (type-of($_font-globals) == number) {
-
-    @if (unit($_font-globals) != "px") {
-      @error "`#{$_font-globals}` needs to be a pixel value.";
+    @if (unit($_rem-value) != "rem") {
+      @error "`#{$_rem-value}` requires a rem value.";
     }
 
   } @else {
-    @error "`#{$_font-globals}` needs to be a number.";
+    @error "`#{$_rem-value}` requires a number.";
   }
 
 }
-
-
-// Check that the chosen size factors are unitless numbers.
-
-@each $_spacing-unit in
-      $global-spacing-unit-factor-xsmall $global-spacing-unit-factor-small
-      $global-spacing-unit-factor-large $global-spacing-unit-factor-xlarge {
-
-  @if (type-of($_spacing-unit) == number) {
-
-    @if (unitless($_spacing-unit) == false) {
-      @error "`#{$_spacing-unit}` needs to be unitless.";
-    }
-
-  } @else {
-    @error "`#{$_spacing-unit}` needs to be a number.";
-  }
-
-}
-
-
-// Private/framework-only reassignment. Do not alter anything below.
-
-$global-spacing-unit-xsmall: round($global-spacing-unit * $global-spacing-unit-factor-xsmall);
-$global-spacing-unit-small:  round($global-spacing-unit * $global-spacing-unit-factor-small);
-$global-spacing-unit-large:  round($global-spacing-unit * $global-spacing-unit-factor-large);
-$global-spacing-unit-xlarge: round($global-spacing-unit * $global-spacing-unit-factor-xlarge);

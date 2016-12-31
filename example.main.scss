@@ -21,21 +21,18 @@
  * Global...............Project-wide variables and settings.
  *
  * TOOLS
- * Font-size............A mixin which guarantees baseline-friendly line-heights.
  * Clearfix.............Micro clearfix mixin.
- * Hidden...............Mixin for hiding elements.
+ * Hide...............Mixin for hiding elements.
  * Sass MQ..............inuitcss’ default media query manager.
  *
  * GENERIC
  * Box-sizing...........Better default `box-sizing`.
  * Normalize.css........A level playing field using @necolas’ Normalize.css.
  * Reset................A tiny reset to complement Normalize.css.
- * Shared...............Sensibly and tersely share some global commonalities
- *                      (particularly useful when managing vertical rhythm).
+ * Margins..............Set typography rhythm with global margins
+ * Page.................Setup default 'font-size' and 'line-height'.
  *
  * ELEMENTS
- * Page.................Set up our document’s default `font-size` and
- *                      `line-height`.
  * Headings.............Very minimal (i.e. only font-size information) for
  *                      headings 1 through 6.
  * Images...............Base image styles.
@@ -70,13 +67,10 @@
  * Hide.................Helper classes to hide content
  */
 
+
 // SETTINGS
 @import "settings/core";
-@import "settings/width";
 @import "settings/breakpoint";
-
-
-
 
 
 // TOOLS
@@ -86,31 +80,21 @@
 @import "node_modules/sass-mq/mq";
 
 
-
-
-
 // GENERIC
 @import "generic/box-sizing";
 @import "generic/normalize";
 @import "generic/reset";
-@import "generic/shared";
-
-
-
+@import "generic/margins";
+@import "generic/page";
 
 
 // ELEMENTS
-@import "elements/page";
-@import "elements/heading";
-@import "elements/image";
-@import "elements/table";
-
-
-
+@import "elements/headings";
+@import "elements/images";
+@import "elements/tables";
 
 
 // OBJECTS
-//
 // Uncomment and add to this section as necessary.
 @import "objects/wrapper";
 @import "objects/layout";
@@ -126,13 +110,8 @@
 @import "objects/pack";
 
 
-
-
-
 // COMPONENTS
-
-
-
+// Add custom components to this section as necessary.
 
 
 // UTILITIES

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   #SHARED
+   #MARGINS
    ========================================================================== */
 
 /**
@@ -21,7 +21,7 @@ figure,
 hr,
 table,
 fieldset {
-  margin-bottom: $global-spacing-unit;
+  margin-bottom: $spacing;
 }
 
 
@@ -30,7 +30,7 @@ fieldset {
  */
 
 dd, ol, ul {
-  margin-left: $global-spacing-unit;
+  margin-left: $spacing;
 }
 
 /* stylelint-enable selector-list-comma-newline-after */

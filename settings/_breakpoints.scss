@@ -1,0 +1,14 @@
+/* =========================================================================
+ * #BREAKPOINTS
+ * ========================================================================= */
+
+
+// Breakpoints are declared in rems for maximum flexibility
+// HTML font size set to 62.5% so that 1rem is generally equal to 10px
+
+$mq-breakpoints: (
+	tablet-v: 60rem,
+	tablet-h: 90rem,
+	desktop: 120rem,
+	wide: 180rem
+);
