@@ -1,0 +1,47 @@
+/* =========================================================================
+ * HEADING UTILITIES
+ * ========================================================================= */
+
+/**
+ * Convert heading element styles to utility classes for when we semantically
+ * require an h2 tag but visually require h1 styling.
+ *
+ *   <h2 class="u-h1"></h2>
+ *
+ */
+
+
+.u-h1 {
+  font-size: $font-size-h1;
+}
+
+.u-h2 {
+  font-size: $font-size-h2;
+}
+
+.u-h3 {
+  font-size: $font-size-h3;
+}
+
+.u-h4 {
+  font-size: $font-size-h4;
+}
+
+.u-h5 {
+  font-size: $font-size-h5;
+}
+
+.u-h6 {
+  font-size: $font-size-h6;
+}
+
+
+// Hero utility classes for supersized headings or hero banners.
+
+.u-hero1 {
+  font-size: $font-size-hero1;
+}
+
+.u-hero2 {
+  font-size: $font-size-hero2;
+}

@@ -21,6 +21,14 @@ $font-size-h5:  1.8rem !default;
 $font-size-h6:  1.6rem !default;
 
 
+// Supersized heading sizes for hero-banners.
+// These variables are used in 'utilities/_headings.sass' however declared
+// here to easily reference the full scale of heading sizes.
+
+$font-size-hero1: 6.4rem !default;
+$font-size-hero2: 4.8rem !default;
+
+
 h1 {
   font-size: $font-size-h1;
 }
