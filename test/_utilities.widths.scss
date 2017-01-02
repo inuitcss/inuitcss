@@ -1,23 +1,79 @@
 @import "true";
 
-// @import "../utilities/utilities.widths";
+@import "../settings/settings.widths";
+@import "../tools/tools.widths";
 
 
-@include test-module("[mixin] widths") {
+@include test-module("[mixin] inuit-widths") {
 
   @include test("it should output fractional width classes for a given set of denominations") {
 
     @include assert() {
 
       @include output {
-        // @include inuit-widths(1 2 3);
+        @include inuit-widths(1 2 3);
       }
 
       @include expect {
-        // .u-1\/1 { width: 100%; }
-        // .u-1\/2 { width: 50%; }
-        // .u-1\/3 { width: 33.3333%; }
-        // .u-2\/3 { width: 66.6666%; }
+        .u-1\/1 {
+          width: 100% !important;
+        }
+
+        .u-1\/2 {
+          width: 50% !important;
+        }
+
+        .u-2\/2 {
+          width: 100% !important;
+        }
+
+        .u-1\/3 {
+          width: 33.33333% !important;
+        }
+
+        .u-2\/3 {
+          width: 66.66667% !important;
+        }
+
+        .u-3\/3 {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+
+  @include test("it should append a suffix for responsive widths if any is given") {
+
+    @include assert() {
+
+      @include output {
+        @include inuit-widths(1 2 3, \@mobile);
+      }
+
+      @include expect {
+        .u-1\/1\@mobile {
+          width: 100% !important;
+        }
+
+        .u-1\/2\@mobile {
+          width: 50% !important;
+        }
+
+        .u-2\/2\@mobile {
+          width: 100% !important;
+        }
+
+        .u-1\/3\@mobile {
+          width: 33.33333% !important;
+        }
+
+        .u-2\/3\@mobile {
+          width: 66.66667% !important;
+        }
+
+        .u-3\/3\@mobile {
+          width: 100% !important;
+        }
       }
     }
   }
