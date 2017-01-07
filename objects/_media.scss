@@ -3,8 +3,16 @@
    ========================================================================== */
 
 /**
- * Place any image- and text-like content side-by-side, as per:
- * http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+ * Place image and body content side-by-side:
+ * http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
+ * Examples: http://v4-alpha.getbootstrap.com/layout/media-object/
+ * 
+ * <div class="o-media">
+ *   <img class="o-media__img" />
+ *   <div class="o-media__body">
+ *     <p>Body Content</p>
+ *   </div>
+ * </div>
  */
 
 .o-media {
@@ -15,7 +23,7 @@
 
   .o-media__img {
     float: left;
-    margin-right: $global-spacing-unit;
+    margin-right: $spacing;
 
     > img {
       display: block;
@@ -43,79 +51,32 @@
    ========================================================================== */
 
 /**
- * Modify the amount of space between our image and our text. We also have
- * reversible options for all available sizes.
+ * Modify the amount of space between the image and body. Also include
+ * the reverse modifier for all size variants.
  */
 
-.o-media--xsmall {
+// Generates the following classes:
+// .o-media--flush .o-media--xxs .o-media--xs etc.
 
-  > .o-media__img {
-    margin-right: $global-spacing-unit-xsmall;
-  }
-
-  &.o-media--reverse {
-
+@each $spacing-name, $spacing-size in $spacing-sizes {
+  
+  .o-media#{$spacing-name} {
+    
     > .o-media__img {
-      margin-right: 0;
-      margin-left: $global-spacing-unit-xsmall;
+      margin-right: $spacing-size;
     }
 
-  }
+    &.o-media--reverse {
 
-}
+      > .o-media__img {
+        margin-right: 0;
+        margin-left: $spacing-size;
+      }
 
-
-.o-media--small {
-
-  > .o-media__img {
-    margin-right: $global-spacing-unit-small;
-  }
-
-  &.o-media--reverse {
-
-    > .o-media__img {
-      margin-right: 0;
-      margin-left: $global-spacing-unit-small;
     }
-
+    
   }
-
-}
-
-
-.o-media--large {
-
-  > .o-media__img {
-    margin-right: $global-spacing-unit-large;
-  }
-
-  &.o-media--reverse {
-
-    > .o-media__img {
-      margin-right: 0;
-      margin-left: $global-spacing-unit-large;
-    }
-
-  }
-
-}
-
-
-.o-media--xlarge {
-
-  > .o-media__img {
-    margin-right: $global-spacing-unit-xlarge;
-  }
-
-  &.o-media--reverse {
-
-    > .o-media__img {
-      margin-right: 0;
-      margin-left: $global-spacing-unit-xlarge;
-    }
-
-  }
-
+   
 }
 
 
@@ -130,23 +91,7 @@
   > .o-media__img {
     float: right;
     margin-right: 0;
-    margin-left: $global-spacing-unit;
-  }
-
-}
-
-
-
-
-
-/* Gutterless media objects
-   ========================================================================== */
-
-.o-media--flush {
-
-  > .o-media__img {
-    margin-right: 0;
-    margin-left:  0;
+    margin-left: $spacing;
   }
 
 }

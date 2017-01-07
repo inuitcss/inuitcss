@@ -29,7 +29,7 @@
  * Box-sizing...........Better default `box-sizing`.
  * Normalize.css........A level playing field using @necolas’ Normalize.css.
  * Reset................A tiny reset to complement Normalize.css.
- * Margins..............Set typography rhythm with global margins
+ * Spacing..............Set typography rhythm with global margin spacing
  * Page.................Setup default 'font-size' and 'line-height'.
  *
  * ELEMENTS
@@ -41,16 +41,15 @@
  * OBJECTS
  * Wrapper..............Page constraint object.
  * Layout...............Generic layout module.
- * Media................Image- and text-like content side by side. The
- *                      poster-child of OOCSS.
- * Flag.................Table-layout-based advancement on the Media object.
+ * Media................Image- and text-like content side by side.
+ * Media Valign.........Table-layout-based advancement on the Media object.
+ * Media Stacked........Image-on-top-of-text object.
  * List-bare............Lists with no bullets or indents.
  * List-inline..........A list whose items all site in a line.
  * Box..................Simple boxing abstraction.
- * Block................Image-on-top-of-text object.
  * Ratio................A container for maintaining aspect ratio of content.
  * Crop.................Provide a cropping context for media (images, etc.).
- * Table................Classes for manipulating `table`s.
+ * Table................Classes for manipulating tables.
  * Pack.................Pack items into available horizontal space.
  *
  * COMPONENTS
@@ -61,8 +60,7 @@
  * Clearfix.............Bind our clearfix onto a utility class.
  * Widths...............Simple width helper classes.
  * Headings.............Reassigning our heading styles to helper classes.
- * Spacing..............Nudge bits of the DOM around with these spacing
- *                      classes.
+ * Spacing..............Padding/margin u-classes based on spacing settings.
  * Print................Reset-like styles taken from the HTML5 Boilerplate.
  * Hide.................Helper classes to hide content
  */
@@ -84,7 +82,7 @@
 @import "generic/box-sizing";
 @import "generic/normalize";
 @import "generic/reset";
-@import "generic/margins";
+@import "generic/spacing";
 @import "generic/page";
 
 
@@ -99,11 +97,11 @@
 @import "objects/wrapper";
 @import "objects/layout";
 @import "objects/media";
-@import "objects/flag";
+@import "objects/media-valign";
+@import "objects/media-stacked";
 @import "objects/list-bare";
 @import "objects/list-inline";
 @import "objects/box";
-@import "objects/block";
 @import "objects/ratio";
 @import "objects/crop";
 @import "objects/table";

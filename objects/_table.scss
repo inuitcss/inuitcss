@@ -3,13 +3,12 @@
    ========================================================================== */
 
 /**
- * A simple object for manipulating the structure of HTML `table`s.
+ * A simple object for manipulating the structure of HTML tables.
  */
 
 .o-table {
   width: 100%;
 }
-
 
 
 
@@ -24,6 +23,8 @@
  * does not need to (re)calculate cell dimensions based on content it discovers,
  * the table can be rendered very quickly. Further reading:
  * https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout#Values
+ * 
+ * <table class="o-table o-table--fixed">
  */
 
 .o-table--fixed {
@@ -37,38 +38,15 @@
 /* Size variants.
    ========================================================================== */
 
-.o-table--xsmall {
+// Generates the following classes:
+// .o-table--flush .o-table--xxs .o-table--xs etc.
 
-  th,
-  td {
-    padding: $global-spacing-unit-xsmall;
+@each $spacing-name, $spacing-size in $spacing-sizes {
+  
+  .o-table#{$spacing-name} {
+    th, td {
+      padding: $spacing-size;
+    }
   }
-
-}
-
-.o-table--small {
-
-  th,
-  td {
-    padding: $global-spacing-unit-small;
-  }
-
-}
-
-.o-table--large {
-
-  th,
-  td {
-    padding: $global-spacing-unit-large;
-  }
-
-}
-
-.o-table--xlarge {
-
-  th,
-  td {
-    padding: $global-spacing-unit-xlarge;
-  }
-
+   
 }

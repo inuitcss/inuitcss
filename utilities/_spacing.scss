@@ -3,19 +3,24 @@
    ========================================================================== */
 
 /**
- * Utility classes to put specific spacing values onto elements. The below loop
- * will generate us a suite of classes like:
+ * Utility classes for spacing (margin/padding) mapped to spacing variables
+ * list in the /settings/_core.scss file. Generates classes as follows:
  *
- *   .u-mt {}
- *   .u-pl4 {}
- *   .u-mr2 {}
- *   .u-p {}
- *   .u-pr0 {}
- *   .u-ph {}
- *   .u-pv2 {}
+ *   .u-mt {}       = margin-top: $spacing;
+ *   .u-pl--l {}    = padding-left: $spacing-l;
+ *   .u-mr--xs {}   = margin-right: $spacing-xs
+ *   .u-p {}        = padding: $spacing;
+ *   .u-pr--flush {} = padding-right: 0;
+ *   .u-ph {}       = padding-right: $spacing; padding-left: $spacing;
+ *   .u-pv--xl {}   = padding-top: $spacing-xl; padding-bottom: $spacing-xl;
  */
 
 /* stylelint-disable string-quotes, max-nesting-depth */
+
+$spacing-properties: (
+  'p': 'padding',
+  'm': 'margin',
+) !default;
 
 $spacing-directions: (
   null: null,
@@ -27,25 +32,26 @@ $spacing-directions: (
   'v': '-top' '-bottom',
 ) !default;
 
-$spacing-properties: (
-  'p': 'padding',
-  'm': 'margin',
-) !default;
-
 $spacing-sizes: (
-  '1': $global-spacing-unit-xsmall,
-  '2': $global-spacing-unit-small,
-  '3': $global-spacing-unit,
-  '4': $global-spacing-unit-large,
-  '5': $global-spacing-unit-xlarge,
-  '0': 0
+  '--flush': 0,
+  '--xxs':   $spacing-xxs,
+  '--xs':    $spacing-xs,
+  '--s':     $spacing-s,
+  null:      $spacing,
+  '--l':     $spacing-l,
+  '--xl':    $spacing-xl,
+  '--xxl':   $spacing-xxl
 ) !default;
 
-// When using Sass-MQ, this defines the separator for the breakpoints suffix
-// in the class name. By default, we are generating the responsive suffixes
-// for the classes with a `@` symbol so you get classes like:
-// <div class="u-p2@tablet">
-$spacing-breakpoint-separator: \@ !default;
+
+
+
+// If using Sass-MQ for breakpoints, define the separator for breakpoints
+// in class names. Default separator for breakpoint classes is an '@'
+// symbol. For example: 
+// <div class="u-p--s@desktop">
+
+$breakpoint-separator: \@ !default;
 
 @mixin spacing(
 	$properties: $spacing-properties,
@@ -56,13 +62,13 @@ $spacing-breakpoint-separator: \@ !default;
 
 	@each $property-namespace, $property in $properties {
 
-		@each $direction-namespace, $direction-rules in $directions {
+		@each $direction-namespace, $direction-rule in $directions {
 
 			@each $size-namespace, $size in $sizes {
 
 				.u-#{$property-namespace}#{$direction-namespace}#{$size-namespace}#{$breakpoint} {
 
-					@each $direction in $direction-rules {
+					@each $direction in $direction-rule {
 						#{$property}#{$direction}: $size !important;
 					}
 
@@ -77,42 +83,53 @@ $spacing-breakpoint-separator: \@ !default;
 }
 
 /**
- * A series of spacing helper classes that you can use to give spacing.
+ * Initiate the spacing mixin to generate spacing classes. 
  * Use these in your markup:
  *
- * <div class="u-pl4">
- *
- * The following will generate spacing helper classes.
+ * <div class="u-pl--l"> = padding-left: $spacing-large;
  */
 
 @include spacing();
 
+
+
+
+
 /**
- * If we’re using Sass-MQ, automatically generate responsive helpers for each of our
- * defined breakpoints, and give them a Responsive Suffix, e.g.:
+ * If using Sass-MQ for breakpoints, generate responsive spacing
+ * classes with breakpoint suffix. Note: breakpoints are all
+ * mobile-up, i.e. mobile-first.
+ * 
+ * For example: 
  *
- * <div class="u-m5@tablet">
+ * <div class="u-m--s@desktop">
  */
 
-$spacing-responsive: false !default;
+$responsive-spacing: false !default;
 
-$spacing-responsive-properties: $spacing-properties !default;
+$responsive-spacing-properties: $spacing-properties !default;
+$responsive-spacing-directions: $spacing-directions !default;
+$responsive-spacing-sizes: $spacing-sizes !default;
 
-$spacing-responsive-directions: $spacing-directions !default;
 
-$spacing-responsive-sizes: $spacing-sizes !default;
 
-@if (variable-exists(mq-breakpoints) and $spacing-responsive == true) {
+@if (variable-exists(mq-breakpoints) and $responsive-spacing == true) {
+	
 	@each $breakpoint-name, $breakpoint-value in $mq-breakpoints {
+		
 		@include mq($from: $breakpoint-name) {
-			@include inuit-spacing(
-					$spacing-responsive-properties,
-					$spacing-responsive-directions,
-					$spacing-responsive-sizes,
-					#{$spacing-breakpoint-separator}#{$breakpoint-name}
+			
+			@include spacing(
+				$responsive-spacing-properties,
+				$responsive-spacing-directions,
+				$responsive-spacing-sizes,
+				#{$breakpoint-separator}#{$breakpoint-name}
 			);
+			
 		}
+		
 	}
+	
 }
 
 /* stylelint-enable string-quotes, max-nesting-depth */

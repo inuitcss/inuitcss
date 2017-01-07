@@ -23,7 +23,7 @@
   text-align: center; /* [4] */
   margin: 0; /* [4] */
   cursor: pointer; /* [5] */
-  padding: $global-spacing-unit-small $global-spacing-unit;
+  padding: $spacing-s $spacing;
   transition: $global-transition;
   border-radius: $global-radius;
 }
@@ -97,12 +97,12 @@
 /* Size variants
    ========================================================================== */
 
-.c-btn--small {
-  padding: $global-spacing-unit-xsmall $global-spacing-unit-small;
+.c-btn--s {
+  padding: $spacing-xs $spacing-s;
 }
 
-.c-btn--large {
-  padding: $global-spacing-unit $global-spacing-unit-large;
+.c-btn--l {
+  padding: $spacing $spacing-l;
 }
 
 
@@ -120,7 +120,7 @@ $btn-ghost-border-width: 2px;
 
 .c-btn--ghost {
   border: $btn-ghost-border-width solid currentColor;
-  padding: ($global-spacing-unit-small - $btn-ghost-border-width) ($global-spacing-unit - $btn-ghost-border-width);
+  padding: ($spacing-s - $btn-ghost-border-width) ($spacing - $btn-ghost-border-width);
 
   &,
   &:hover,
@@ -129,12 +129,12 @@ $btn-ghost-border-width: 2px;
     background: none;
   }
 
-  &.c-btn--small {
-    padding: ($global-spacing-unit-xsmall - $btn-ghost-border-width) ($global-spacing-unit-small - $btn-ghost-border-width);
+  &.c-btn--s {
+    padding: ($spacing-xs - $btn-ghost-border-width) ($spacing-s - $btn-ghost-border-width);
   }
 
-  &.c-btn--large {
-    padding: ($global-spacing-unit - $btn-ghost-border-width) ($global-spacing-unit-large - $btn-ghost-border-width);
+  &.c-btn--l {
+    padding: ($spacing - $btn-ghost-border-width) ($spacing-l - $btn-ghost-border-width);
   }
 
   &.c-btn--primary {

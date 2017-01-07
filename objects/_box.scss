@@ -6,43 +6,19 @@
  * The box object simply boxes off content. Extend with cosmetic styles in the
  * Components layer.
  *
- * 1. So we can apply the `.o-box` class to naturally-inline elements.
+ * 1. So we can apply the '.o-box' class to naturally-inline elements.
+ * 2. Applies default padding. Recommended way to override padding would be 
+ *    to use a spacing utility class, for example to change padding to xs:
+ *    <div class="o-box u-p--xs">
  */
 
 .o-box {
   @include clearfix();
   display: block; /* [1] */
-  padding: $global-spacing-unit;
+  padding: $spacing; /* [2] */
 
   > :last-child {
     margin-bottom: 0;
   }
 
-}
-
-
-
-
-
-/* Size variants
-   ========================================================================== */
-
-.o-box--flush {
-  padding: 0;
-}
-
-.o-box--xsmall {
-  padding: $global-spacing-unit-xsmall;
-}
-
-.o-box--small {
-  padding: $global-spacing-unit-small;
-}
-
-.o-box--large {
-  padding: $global-spacing-unit-large;
-}
-
-.o-box--xlarge {
-  padding: $global-spacing-unit-xlarge;
 }

@@ -13,7 +13,7 @@
 // generally equal to 10px.
 
 $base-font-size:    1.8rem !default;
-$base-line-height:  1.6 !default;
+$base-line-height:  1.8 !default;
 
 
 // Spacing units measured in rems for more control over the spacing scale.
@@ -21,7 +21,7 @@ $base-line-height:  1.6 !default;
 // the large spacing unit in multiples of the default spacing unit, 
 // i.e. 1.33333*3rem = 4rem we can simply state 4rems instead.
 
-$spacing-none: 0 !default;
+$spacing-flush: 0 !default;
 $spacing-xxs:  0.5rem !default;
 $spacing-xs:   1rem !default;
 $spacing-s:    2rem !default;
@@ -35,7 +35,7 @@ $spacing-xxl:  8rem !default;
 
 @each $_rem-value in
       $base-font-size
-      $spacing $spacing-none 
+      $spacing $spacing-flush 
       $spacing-s $spacing-xs $spacing-xxs
       $spacing-l $spacing-xl $spacing-xxl {
 

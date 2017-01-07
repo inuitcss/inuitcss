@@ -3,21 +3,15 @@
    ========================================================================== */
 
 /**
- * Page-level constraining and wrapping elements.
+ * Page-level constraining and wrapping elements. Default padding is flush.
+ * 
+ * 1. Set to rems, where 1rem ~= 10px, for scalability.
  */
 
-$wrapper-width: 1200px !default;
-
-/* stylelint-disable */
-@if (type-of($wrapper-width) != number) {
-  @error "`#{$wrapper-width}` needs to be a number."
-}
-/* stylelint-enable */
+$wrapper-width: 140rem !default; /* [1] */
 
 .o-wrapper {
   @include clearfix();
-  padding-right: $global-spacing-unit;
-  padding-left: $global-spacing-unit;
   margin-right: auto;
   margin-left:  auto;
   max-width: $wrapper-width;
@@ -29,23 +23,15 @@ $wrapper-width: 1200px !default;
 
 /* Size variants.
    ========================================================================== */
+   
+// Generates the following classes:
+// .o-wrapper--flush .o-wrapper--xxs .o-wrapper--xs etc.
 
-.o-wrapper--xsmall {
-  padding-right: $global-spacing-unit-xsmall;
-  padding-left: $global-spacing-unit-xsmall;
-}
-
-.o-wrapper--small {
-  padding-right: $global-spacing-unit-small;
-  padding-left: $global-spacing-unit-small;
-}
-
-.o-wrapper--large {
-  padding-right: $global-spacing-unit-large;
-  padding-left: $global-spacing-unit-large;
-}
-
-.o-wrapper--xlarge {
-  padding-right: $global-spacing-unit-xlarge;
-  padding-left: $global-spacing-unit-xlarge;
+@each $spacing-name, $spacing-size in $spacing-sizes {
+  
+  .o-wrapper#{$spacing-name} {
+    padding-right: $spacing-size;
+    padding-left: $spacing-size;
+  }
+   
 }

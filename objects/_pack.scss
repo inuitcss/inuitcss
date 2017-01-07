@@ -3,12 +3,20 @@
    ========================================================================== */
 
 /**
- * The pack object simply causes any number of elements pack up horizontally to
- * automatically fill an equal, fluid width of their parent.
+ * The pack object creates a single row of packed items containing equal 
+ * widths and heights. The child items automatically fill the full width of 
+ * the parent object.
+ * 
+ * Includes modifiers for applying auto-widths and gutter sizing variants to 
+ * pack items, useful for fluid columns in footers for example.
+ * 
+ * <ul class="o-pack o-pack--xs o-pack--auto">
+ *   <li class="o-pack__item"></li>
+ * </ul>
  *
- * 1. Fill all available space.
+ * 1. Fill width of parent.
  * 2. Remove any leftover styling from lists.
- * 3. Cause children to be automatically equally sized.
+ * 3. Apply equal widths to pack items.
  */
 
 .o-pack {
@@ -20,8 +28,8 @@
 
 
   /**
-   * 1. Cause children to adopt table-like structure.
-   * 2. Default item alignment is with the tops of each other.
+   * 1. Apply table-cell properties to pack items.
+   * 2. Default cell alignment to top of cell.
    */
 
   .o-pack__item {
@@ -46,7 +54,7 @@
 
 
 
-/* Unequal-width items.
+/* Auto widths for cells.
    ========================================================================== */
 
 .o-pack--auto {
@@ -60,27 +68,28 @@
 /* Size variants.
    ========================================================================== */
 
-.o-pack--xsmall {
-  border-spacing: $global-spacing-unit-xsmall;
+// Generates the following classes:
+// .o-pack--flush .o-pack--xxs .o-pack--xs etc.
+
+ /**
+   * 1. Creates perfectly equal gutters around all pack items.
+   */
+  
+@each $spacing-name, $spacing-size in $spacing-sizes {
+  
+  .o-pack#{$spacing-name} {
+    > .o-pack__item {
+      border-spacing: $spacing-size; /* [1] */
+    }
+  }
+   
 }
 
-.o-pack--small {
-  border-spacing: $global-spacing-unit-small;
-}
-
-.o-pack--large {
-  border-spacing: $global-spacing-unit-large;
-}
-
-.o-pack--xlarge {
-  border-spacing: $global-spacing-unit-xlarge;
-}
 
 
 
 
-
-/* Reversed order packs
+/* Reversed pack cell order.
    ========================================================================== */
 
 .o-pack--reverse {

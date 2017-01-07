@@ -50,14 +50,6 @@
  * There are plenty more options available to us: explore them below.
  */
 
-// By default we use the `font-size: 0;` trick to remove whitespace between
-// items. Set this to true in order to use a markup-based strategy like
-// commenting out whitespace or minifying HTML.
-$layout-enable-markup-fix: false !default;
-
-
-
-
 
 /* Default/mandatory classes.
    ========================================================================== */
@@ -67,6 +59,7 @@ $layout-enable-markup-fix: false !default;
  * 2. We need to defensively reset any box-model properties.
  * 3. Use the negative margin trick for multi-row grids:
  *    http://csswizardry.com/2011/08/building-better-grid-systems/
+ * 4. Use `font-size: 0;` trick to remove whitespace between items
  */
 
 .o-layout {
@@ -74,12 +67,8 @@ $layout-enable-markup-fix: false !default;
   margin:  0; /* [2] */
   padding: 0; /* [2] */
   list-style: none; /* [1] */
-  margin-left: -$global-spacing-unit; /* [3] */
-
-  @if ($layout-enable-markup-fix == false) {
-    font-size: 0;
-  }
-
+  margin-left: -$spacing; /* [3] */
+  font-size: 0; /* [4] */
 }
 
 
@@ -92,7 +81,7 @@ $layout-enable-markup-fix: false !default;
    * 4. By default, all layout items are full-width (mobile first).
    * 5. Gutters provided by left padding:
    *    http://csswizardry.com/2011/08/building-better-grid-systems/
-   * 6. Fallback for old IEs not supporting `rem` values.
+   * 6. Set base font size to revert 'font-size: 0;' setting above
    */
 
   .o-layout__item {
@@ -100,14 +89,10 @@ $layout-enable-markup-fix: false !default;
     display: inline-block; /* [2] */
     vertical-align: top; /* [3] */
     width: 100%; /* [4] */
-    padding-left: $global-spacing-unit; /* [5] */
-
-    @if ($layout-enable-markup-fix == false) {
-      font-size: $global-font-size; /* [6] */
-      font-size: 1rem;
-    }
-
+    padding-left: $spacing; /* [5] */
+    font-size: $base-font-size; /* [6] */
   }
+
 
 
 
@@ -116,41 +101,61 @@ $layout-enable-markup-fix: false !default;
 /* Gutter size modifiers.
    ========================================================================== */
 
-.o-layout--xsmall {
-  margin-left: -$global-spacing-unit-xsmall;
+.o-layout--xxs {
+  margin-left: -$spacing-xxs;
 
   > .o-layout__item {
-    padding-left: $global-spacing-unit-xsmall;
+    padding-left: $spacing-xxs;
   }
 
 }
 
 
-.o-layout--small {
-  margin-left: -$global-spacing-unit-small;
+.o-layout--xs {
+  margin-left: -$spacing-xs;
 
   > .o-layout__item {
-    padding-left: $global-spacing-unit-small;
+    padding-left: $spacing-xs;
   }
 
 }
 
 
-.o-layout--large {
-  margin-left: -$global-spacing-unit-large;
+.o-layout--s {
+  margin-left: -$spacing-s;
 
   > .o-layout__item {
-    padding-left: $global-spacing-unit-large;
+    padding-left: $spacing-s;
   }
 
 }
 
 
-.o-layout--xlarge {
-  margin-left: -$global-spacing-unit-xlarge;
+.o-layout--l {
+  margin-left: -$spacing-l;
 
   > .o-layout__item {
-    padding-left: $global-spacing-unit-xlarge;
+    padding-left: $spacing-l;
+  }
+
+}
+
+
+.o-layout--xl {
+  margin-left: -$spacing-xl;
+
+  > .o-layout__item {
+    padding-left: $spacing-xl;
+  }
+
+}
+
+
+.o-layout--xxl {
+  margin-left: -$spacing-xxl;
+
+  > .o-layout__item {
+    padding-left: $spacing-xxl;
   }
 
 }

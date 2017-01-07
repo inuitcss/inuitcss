@@ -1,0 +1,24 @@
+/* =========================================================================
+ * #COLORS
+ * ========================================================================= */
+
+
+// Breakpoints are declared in rems for maximum flexibility
+// HTML font size set to 62.5% so that 1rem is generally equal to 10px
+
+$primary: black;
+$secondary: black;
+
+$highlight: black; // Usually referred to as 'alert'
+$neutral: black; // Usually a dull color like grey used for backgrounds
+$type: black; // Maybe a variable for the default typography color?
+
+/* 
+ * Want a loop here to create the dark/light versions of each of the above
+ * color variables mixed at a fix percentage that can be overriden or
+ * customized on an item-per-item basis if needed
+ * For example: 
+ * '$mix-percentage: 10%;'
+ * $primary-darker: mix(black, $color-1, 10%);
+ * $primary-lighter: mix(white, $color-1, 10%);
+ */
