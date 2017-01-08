@@ -24,7 +24,7 @@
     margin-bottom: $spacing;
 
 
-    /* Size variants
+    /* Spacing modifiers (margin-bottom).
        ========================================================================== */
 
     /**
@@ -32,7 +32,9 @@
      */
 
     // Generates the following classes:
-    // .o-media-stacked--flush .o-media-stacked--xxs .o-media-stacked--xs etc.
+    // .o-media-stacked--flush 
+    // .o-media-stacked--xxs 
+    // .o-media-stacked--xs etc.
 
     @each $spacing-name, $spacing-size in $spacing-sizes {
       
@@ -55,7 +57,7 @@
 
 
 
-/* Alignment variants.
+/* Alignment modifiers.
    ========================================================================== */
 
 .o-media-stacked--right {

@@ -22,7 +22,7 @@
  *
  * TOOLS
  * Clearfix.............Micro clearfix mixin.
- * Hide...............Mixin for hiding elements.
+ * Hide.................Mixin for hiding elements.
  * Sass MQ..............inuitcss’ default media query manager.
  *
  * GENERIC
@@ -72,9 +72,8 @@
 
 
 // TOOLS
-@import "tools/font-size";
 @import "tools/clearfix";
-@import "tools/hidden";
+@import "tools/hide";
 @import "node_modules/sass-mq/mq";
 
 
@@ -114,8 +113,6 @@
 
 // UTILITIES
 @import "utilities/clearfix";
-
-$offsets: true;
 @import "utilities/width";
 @import "utilities/heading";
 @import "utilities/spacing";

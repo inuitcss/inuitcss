@@ -47,7 +47,7 @@
 
 
 
-/* Size variants
+/* Spacing modifiers (margin-horizontal).
    ========================================================================== */
 
 /**
@@ -56,7 +56,9 @@
  */
 
 // Generates the following classes:
-// .o-media--flush .o-media--xxs .o-media--xs etc.
+// .o-media--flush
+// .o-media--xxs
+// .o-media--xs etc.
 
 @each $spacing-name, $spacing-size in $spacing-sizes {
   
@@ -83,7 +85,7 @@
 
 
 
-/* Reversed media objects
+/* Reversed modifier.
    ========================================================================== */
 
 .o-media--reverse {

@@ -37,7 +37,7 @@
     vertical-align: top; /* [2] */
 
 
-    /* Vertical alignment variants.
+    /* Vertical alignment modifiers.
        ====================================================================== */
 
     .o-pack--middle > & {
@@ -65,11 +65,13 @@
 
 
 
-/* Size variants.
+/* Spacing modifiers (border-spacing, i.e. gutters).
    ========================================================================== */
 
 // Generates the following classes:
-// .o-pack--flush .o-pack--xxs .o-pack--xs etc.
+// .o-pack--flush
+// .o-pack--xxs
+// .o-pack--xs etc.
 
  /**
    * 1. Creates perfectly equal gutters around all pack items.
@@ -89,7 +91,7 @@
 
 
 
-/* Reversed pack cell order.
+/* Reversed modifier.
    ========================================================================== */
 
 .o-pack--reverse {

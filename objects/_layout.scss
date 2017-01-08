@@ -97,77 +97,25 @@
 
 
 
-
-/* Gutter size modifiers.
+/* Spacing modifiers (gutter padding).
    ========================================================================== */
 
-.o-layout--xxs {
-  margin-left: -$spacing-xxs;
+// Generates the following classes:
+// .o-layout--flush
+// .o-layout--xxs
+// .o-layout--xs etc.
 
-  > .o-layout__item {
-    padding-left: $spacing-xxs;
+@each $spacing-name, $spacing-size in $spacing-sizes {
+  
+  .o-layout#{$spacing-name} {
+    padding: $spacing-size;
+    
+    > .o-layout__item {
+      padding-left: $spacing-size;
+    }
+    
   }
-
-}
-
-
-.o-layout--xs {
-  margin-left: -$spacing-xs;
-
-  > .o-layout__item {
-    padding-left: $spacing-xs;
-  }
-
-}
-
-
-.o-layout--s {
-  margin-left: -$spacing-s;
-
-  > .o-layout__item {
-    padding-left: $spacing-s;
-  }
-
-}
-
-
-.o-layout--l {
-  margin-left: -$spacing-l;
-
-  > .o-layout__item {
-    padding-left: $spacing-l;
-  }
-
-}
-
-
-.o-layout--xl {
-  margin-left: -$spacing-xl;
-
-  > .o-layout__item {
-    padding-left: $spacing-xl;
-  }
-
-}
-
-
-.o-layout--xxl {
-  margin-left: -$spacing-xxl;
-
-  > .o-layout__item {
-    padding-left: $spacing-xxl;
-  }
-
-}
-
-
-.o-layout--flush {
-  margin-left: 0;
-
-  > .o-layout__item {
-    padding-left: 0;
-  }
-
+   
 }
 
 

@@ -7,9 +7,8 @@
  * Components layer.
  *
  * 1. So we can apply the '.o-box' class to naturally-inline elements.
- * 2. Applies default padding. Recommended way to override padding would be 
- *    to use a spacing utility class, for example to change padding to xs:
- *    <div class="o-box u-p--xs">
+ * 2. Applies default padding. Override with size modifier classes.
+ *    <div class="o-box o-box--xs">
  */
 
 .o-box {
@@ -21,4 +20,24 @@
     margin-bottom: 0;
   }
 
+}
+
+
+
+
+
+/* Spacing modifiers (padding).
+   ========================================================================== */
+
+// Generates the following classes:
+// .o-box--flush
+// .o-box--xxs
+// .o-box--xs etc.
+
+@each $spacing-name, $spacing-size in $spacing-sizes {
+  
+  .o-box#{$spacing-name} {
+    padding: $spacing-size;
+  }
+   
 }

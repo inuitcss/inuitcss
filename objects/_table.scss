@@ -35,11 +35,13 @@
 
 
 
-/* Size variants.
+/* Spacing modifiers (cell padding).
    ========================================================================== */
 
 // Generates the following classes:
-// .o-table--flush .o-table--xxs .o-table--xs etc.
+// .o-table--flush
+// .o-table--xxs
+// .o-table--xs etc.
 
 @each $spacing-name, $spacing-size in $spacing-sizes {
   

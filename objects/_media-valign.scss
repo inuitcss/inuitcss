@@ -87,7 +87,7 @@
 
 
 
-/* Size variants.
+/* Spacing modifiers (padding-horizontal).
    ========================================================================== */
    
 /**
@@ -96,7 +96,9 @@
  */
 
 // Generates the following classes:
-// .o-media-valign--flush .o-media-valign--xxs .o-media-valign--xs etc.
+// .o-media-valign--flush
+// .o-media-valign--xxs
+// .o-media-valign--xs etc.
    
 @each $spacing-name, $spacing-size in $spacing-sizes {
   
@@ -123,7 +125,7 @@
 
 
 
-/* Reversed media-valign.
+/* Reversed modifier.
    ========================================================================== */
 
 /**

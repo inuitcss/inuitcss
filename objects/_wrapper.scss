@@ -3,15 +3,17 @@
    ========================================================================== */
 
 /**
- * Page-level constraining and wrapping elements. Default padding is flush.
+ * Page-level constraining and wrapping elements.
  * 
- * 1. Set to rems, where 1rem ~= 10px, for scalability.
+ * 1. Set to rems, where 1rem ~= 10px, for scalability. Defaults to 1400px.
  */
 
 $wrapper-width: 140rem !default; /* [1] */
 
 .o-wrapper {
   @include clearfix();
+  padding-right: $spacing;
+  padding-left:  $spacing;
   margin-right: auto;
   margin-left:  auto;
   max-width: $wrapper-width;
@@ -21,17 +23,19 @@ $wrapper-width: 140rem !default; /* [1] */
 
 
 
-/* Size variants.
+/* Spacing modifiers (padding outer gutters).
    ========================================================================== */
-   
+
 // Generates the following classes:
-// .o-wrapper--flush .o-wrapper--xxs .o-wrapper--xs etc.
+// .o-wrapper--flush
+// .o-wrapper--xxs
+// .o-wrapper--xs etc.
 
 @each $spacing-name, $spacing-size in $spacing-sizes {
   
   .o-wrapper#{$spacing-name} {
     padding-right: $spacing-size;
-    padding-left: $spacing-size;
+  	padding-left:  $spacing-size;
   }
    
 }
