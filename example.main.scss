@@ -18,19 +18,22 @@
  * SETTINGS
  * Config...............Project-level configuration and feature switches.
  * Core.................inuitcss’ core and setup settings.
+ * Breakpoints..........Project-wide breakpoint definitions.
+ * Colors...............Project-level colour settings (includes popular
+ * 						social media colours).
  * Global...............Project-wide variables and settings.
  *
  * TOOLS
  * Clearfix.............Micro clearfix mixin.
  * Hide.................Mixin for hiding elements.
+ * Position.............Mixins for advanced element positioning.
+ * Forms................Mixin for resetting native inputs and buttons.
  * Sass MQ..............inuitcss’ default media query manager.
  *
  * GENERIC
- * Box-sizing...........Better default `box-sizing`.
  * Normalize.css........A level playing field using @necolas’ Normalize.css.
  * Reset................A tiny reset to complement Normalize.css.
- * Spacing..............Set typography rhythm with global margin spacing
- * Page.................Setup default 'font-size' and 'line-height'.
+ * Base.................Base settings for page, typography, box-sizing etc.
  *
  * ELEMENTS
  * Headings.............Very minimal (i.e. only font-size information) for
@@ -62,27 +65,34 @@
  * Headings.............Reassigning our heading styles to helper classes.
  * Spacing..............Padding/margin u-classes based on spacing settings.
  * Print................Reset-like styles taken from the HTML5 Boilerplate.
- * Hide.................Helper classes to hide content
+ * Display..............Helper classes for display attributes including hidden.
+ * Floats...............Helper classes for floating elements.
+ * Position.............Helper classes for positioning elements.
+ * Shadows..............Google material design shadows with depth values 1-6.
+ * Typography...........Various helper classes for advanced typesetting.
+ * Zindex...............Helper classes for consistent z-indexing levels.
+ * 
  */
 
 
 // SETTINGS
 @import "settings/core";
-@import "settings/breakpoint";
+@import "settings/breakpoints";
+@import "settings/colors";
 
 
 // TOOLS
 @import "tools/clearfix";
 @import "tools/hide";
+@import "tools/position";
+@import "tools/forms";
 @import "node_modules/sass-mq/mq";
 
 
 // GENERIC
-@import "generic/box-sizing";
 @import "generic/normalize";
 @import "generic/reset";
-@import "generic/spacing";
-@import "generic/page";
+@import "generic/base";
 
 
 // ELEMENTS
@@ -114,7 +124,13 @@
 // UTILITIES
 @import "utilities/clearfix";
 @import "utilities/width";
-@import "utilities/heading";
+@import "utilities/headings";
 @import "utilities/spacing";
 @import "utilities/print";
 @import "utilities/hide";
+@import "utilities/display";
+@import "utilities/floats";
+@import "utilities/position";
+@import "utilities/shadows";
+@import "utilities/typography";
+@import "utilities/zindex";

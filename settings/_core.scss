@@ -35,9 +35,14 @@ $spacing-xxl:  8rem !default;
 
 @each $_rem-value in
       $base-font-size
-      $spacing $spacing-flush 
-      $spacing-s $spacing-xs $spacing-xxs
-      $spacing-l $spacing-xl $spacing-xxl {
+      $spacing-flush 
+      $spacing-xxs
+      $spacing-xs
+      $spacing-s
+      $spacing
+      $spacing-l
+      $spacing-xl
+      $spacing-xxl {
 
   @if (type-of($_rem-value) == number) {
 

@@ -1,6 +1,6 @@
-/* =========================================================================
- * HEADING UTILITIES
- * ========================================================================= */
+/* ==========================================================================
+   #HEADINGS
+   ========================================================================== */
 
 /**
  * Convert heading element styles to utility classes for when we semantically
@@ -12,36 +12,36 @@
 
 
 .u-h1 {
-  font-size: $font-size-h1;
+  font-size: $font-size-h1 !important;
 }
 
 .u-h2 {
-  font-size: $font-size-h2;
+  font-size: $font-size-h2 !important;
 }
 
 .u-h3 {
-  font-size: $font-size-h3;
+  font-size: $font-size-h3 !important;
 }
 
 .u-h4 {
-  font-size: $font-size-h4;
+  font-size: $font-size-h4 !important;
 }
 
 .u-h5 {
-  font-size: $font-size-h5;
+  font-size: $font-size-h5 !important;
 }
 
 .u-h6 {
-  font-size: $font-size-h6;
+  font-size: $font-size-h6 !important;
 }
 
 
 // Hero utility classes for supersized headings or hero banners.
 
 .u-hero1 {
-  font-size: $font-size-hero1;
+  font-size: $font-size-hero1 !important;
 }
 
 .u-hero2 {
-  font-size: $font-size-hero2;
+  font-size: $font-size-hero2 !important;
 }

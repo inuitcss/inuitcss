@@ -1,0 +1,55 @@
+/* ==========================================================================
+   #POSITION
+   ========================================================================== */
+
+
+/* Position States
+   ========================================================================== */
+
+/**
+ * 1. Browser support for position sticky is still lacking:
+ *    http://caniuse.com/#feat=css-sticky
+ */
+
+.u-static {   position: static !important; }
+.u-relative { position: relative !important; }
+.u-absolute { position: absolute !important; }
+.u-fixed {    position: fixed !important; }
+.u-sticky {   position: sticky !important; } /* [1] */
+
+
+
+
+
+/* Position Directions/Sizes
+   ========================================================================== */
+
+// Utility classes for position direction values, for example:
+// .u-top--xxs
+// .u-top--xs
+// .u-top--s
+// .u-right-neg--l
+// .u-right-neg--xl etc. – "neg" generating negative values.
+
+$position-directions: (
+  'top',
+  'right',
+  'bottom',
+  'left'
+) !default;
+
+@each $direction in $position-directions {
+  
+  @each $spacing-name, $spacing-size in $spacing-sizes {
+    
+    .u-#{$direction}#{$spacing-name} {
+      #{$direction}: #{$spacing-size} !important;
+    }
+    
+    .u-#{$direction}-neg#{$spacing-name} {
+      #{$direction}: -#{$spacing-size} !important;
+    }
+     
+  }
+
+}

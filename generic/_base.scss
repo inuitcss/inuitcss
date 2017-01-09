@@ -1,0 +1,114 @@
+/* ==========================================================================
+   #BASE
+   ========================================================================== */
+
+
+/* Page-level settings
+   ========================================================================== */
+
+/**
+ * 1. Set sitewide rem value to approximately 10px given that most browsers
+ *    are set to 16px default font size, i.e. 62.5% of 16px equals 10px.
+ * 2. Set sitewide `line-height` to a unit-less value (settings/_core.sass).
+ * 3. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
+ *    navigating between pages that do/do not have enough content to produce
+ *    scrollbars naturally.
+ * 4. Ensure the page always fills at least the entire height of the viewport.
+ * 5. Set sitewide `font-size` (settings/_core.sass).
+ */
+
+html {
+  font-size: 62.5%; /* [1] */
+  line-height: $base-line-height; /* [2] */
+  overflow-y: scroll; /* [3] */
+  min-height: 100%; /* [4] */
+}
+
+body {
+	font-size: $base-font-size; /* [5] */
+}
+
+
+
+
+
+/* Typography vertical rhythm
+   ========================================================================== */
+
+/**
+ * Always declare margins in the same direction:
+ * csswizardry.com/2012/06/single-direction-margin-declarations
+ */
+
+/* stylelint-disable selector-list-comma-newline-after */
+
+address,
+h1, h2, h3, h4, h5, h6,
+blockquote, p, pre,
+dl, dd, ol, ul,
+figure,
+hr,
+table,
+fieldset {
+  margin-bottom: $spacing;
+}
+
+
+/**
+ * Consistent indentation for lists.
+ */
+
+dd, ol, ul {
+  margin-left: $spacing;
+}
+
+/* stylelint-enable selector-list-comma-newline-after */
+
+
+
+
+
+/* Box sizing
+   ========================================================================== */
+   
+/**
+ * More sensible default box-sizing:
+ * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+ */
+
+html {
+  box-sizing: border-box;
+}
+
+* {
+
+  &,
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
+
+}
+
+
+
+
+
+/* Background Images
+   ========================================================================== */
+   
+/**
+ * Remove default behaviour of repeating image backgrounds in 
+ * all browsers (opinionated).
+ * https://github.com/jonathantneal/sanitize.css/blob/master/sanitize.css
+ */
+
+* {
+
+  &,
+  &:before,
+  &:after {
+    background-repeat: no-repeat; /* [1] */
+  }
+
+}

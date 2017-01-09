@@ -7,8 +7,20 @@
 // HTML font size set to 62.5% so that 1rem is generally equal to 10px
 
 $mq-breakpoints: (
-	tablet-v: 60rem,
-	tablet-h: 90rem,
-	desktop: 120rem,
-	wide: 180rem
+	phone   : 0 !default,
+	tablet-v: 60rem !default,
+	tablet-h: 90rem !default,
+	desktop : 120rem !default,
+	wide    : 180rem !default
 );
+
+
+
+
+
+// If using Sass-MQ for breakpoints, define the separator for breakpoints
+// in class names. Default separator for breakpoint classes is an '@'
+// symbol. For example: 
+// <div class="u-p--l@desktop">
+
+$breakpoint-separator: \@ !default;

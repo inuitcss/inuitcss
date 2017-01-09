@@ -57,8 +57,10 @@
 /**
  * 1. Allows us to use the layout object on any type of element.
  * 2. We need to defensively reset any box-model properties.
- * 3. Use the negative margin trick for multi-row grids:
- *    http://csswizardry.com/2011/08/building-better-grid-systems/
+ * 3. The layout object and child items include padded gutters equal to half
+ *    a spacing unit because they sit up against each other resulting in a 
+ *    gutter of a full spacing unit both for inner and outer gutters:
+ *    http://alistapart.com/article/learning-from-lego-a-step-forward-in-modular-web-design/
  * 4. Use `font-size: 0;` trick to remove whitespace between items
  */
 
@@ -67,7 +69,7 @@
   margin:  0; /* [2] */
   padding: 0; /* [2] */
   list-style: none; /* [1] */
-  margin-left: -$spacing; /* [3] */
+  padding: $spacing/2; /* [3] */
   font-size: 0; /* [4] */
 }
 
@@ -79,8 +81,10 @@
    * 3. Default item alignment is with the tops of each other, like most
    *    traditional grid/layout systems.
    * 4. By default, all layout items are full-width (mobile first).
-   * 5. Gutters provided by left padding:
-   *    http://csswizardry.com/2011/08/building-better-grid-systems/
+   * 5. The layout object and child items include padded gutters equal to half
+   *    a spacing unit because they sit up against each other resulting in a 
+   *    gutter of a full spacing unit both for inner and outer gutters:
+   *    http://alistapart.com/article/learning-from-lego-a-step-forward-in-modular-web-design/
    * 6. Set base font size to revert 'font-size: 0;' setting above
    */
 
@@ -89,7 +93,7 @@
     display: inline-block; /* [2] */
     vertical-align: top; /* [3] */
     width: 100%; /* [4] */
-    padding-left: $spacing; /* [5] */
+    padding: $spacing/2; /* [5] */
     font-size: $base-font-size; /* [6] */
   }
 
@@ -108,10 +112,10 @@
 @each $spacing-name, $spacing-size in $spacing-sizes {
   
   .o-layout#{$spacing-name} {
-    margin-left: -$spacing-size;
+    padding: $spacing-size/2;
     
     > .o-layout__item {
-      padding-left: $spacing-size;
+      padding: $spacing-size/2;
     }
     
   }
@@ -202,7 +206,6 @@
 
 
 
-
 /* Auto-widths modifier.
    ========================================================================== */
 
@@ -244,10 +247,10 @@ $responsive-layout: false !default;
       @each $spacing-name, $spacing-size in $spacing-sizes {
         
         .o-layout#{$spacing-name}#{$breakpoint-separator}#{$breakpoint-name} {
-          margin-left: -$spacing-size;
+          padding: $spacing-size/2;
           
           > .o-layout__item {
-            padding-left: $spacing-size;
+            padding: $spacing-size/2;
           }
           
         }

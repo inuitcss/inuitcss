@@ -1,0 +1,72 @@
+/* ==========================================================================
+   #DISPLAY
+   ========================================================================== */
+
+/**
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.u-hidden {
+  @include hide();
+}
+
+
+/**
+ * Display utility classes
+ * 
+ * Base:
+ *  d = display
+ * Modifiers:
+ *  n     = none
+ *  b     = block
+ *  ib    = inline-block
+ *  
+ *  https://github.com/tachyons-css/tachyons/blob/master/src/_display.css
+ */
+
+.u-dn  { display: none !important; }
+.u-db  { display: block !important; }
+.u-dib { display: inline-block !important; }
+
+
+/**
+ * If using Sass-MQ for breakpoints, generate responsive hide
+ * classes with breakpoint suffix. Note: breakpoints are all
+ * mobile-up, i.e. mobile-first.
+ * 
+ * For example: 
+ *
+ * <div class="u-db@desktop">
+ */
+
+$responsive-hide: false !default;
+
+
+@if (variable-exists(mq-breakpoints) and $responsive-hide == true) {
+  
+  @each $breakpoint-name, $breakpoint-value in $mq-breakpoints {
+    
+    @include mq($from: $breakpoint-name) {
+        
+      .u-hidden#{$breakpoint-separator}#{$breakpoint-name} {
+  		  @include hide();
+  		}
+  		
+  		.u-dn#{$breakpoint-separator}#{$breakpoint-name} {
+  		  display: none !important;
+  		}
+      
+      .u-db#{$breakpoint-separator}#{$breakpoint-name} {
+        display: none !important;
+      }
+      
+      .u-dib#{$breakpoint-separator}#{$breakpoint-name} {
+        display: none !important;
+      }
+         
+    }
+    
+  }
+  
+}

@@ -6,12 +6,12 @@
 // Breakpoints are declared in rems for maximum flexibility
 // HTML font size set to 62.5% so that 1rem is generally equal to 10px
 
-$primary: black;
-$secondary: black;
+$primary: black !default;
+$secondary: black !default;
 
-$highlight: black; // Usually referred to as 'alert'
-$neutral: black; // Usually a dull color like grey used for backgrounds
-$type: black; // Maybe a variable for the default typography color?
+$highlight: black !default; // Usually referred to as 'alert'
+$neutral: black !default; // Usually a dull color like grey used for backgrounds
+$type: black !default; // Maybe a variable for the default typography color?
 
 /* 
  * Want a loop here to create the dark/light versions of each of the above
@@ -22,3 +22,16 @@ $type: black; // Maybe a variable for the default typography color?
  * $primary-darker: mix(black, $color-1, 10%);
  * $primary-lighter: mix(white, $color-1, 10%);
  */
+
+
+
+
+
+/* Social Media Colours
+   ========================================================================== */
+
+$facebook:  #4c66a4 !default;
+$twitter:   #2fc2ef !default;
+$google:    #dd4b39 !default;
+$pintrest:  #cb2027 !default;
+$instagram: #003569 !default;

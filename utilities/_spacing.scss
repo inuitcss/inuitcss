@@ -7,12 +7,12 @@
  * list in the /settings/_core.scss file. Generates classes as follows:
  *
  *   .u-mt {}       = margin-top: $spacing;
- *   .u-pl--l {}    = padding-left: $spacing-l;
- *   .u-mr--xs {}   = margin-right: $spacing-xs
+ *   .u-pl--l {}     = padding-left: $spacing-l;
+ *   .u-mr--xs {}    = margin-right: $spacing-xs
  *   .u-p {}        = padding: $spacing;
  *   .u-pr--flush {} = padding-right: 0;
  *   .u-ph {}       = padding-right: $spacing; padding-left: $spacing;
- *   .u-pv--xl {}   = padding-top: $spacing-xl; padding-bottom: $spacing-xl;
+ *   .u-pv--xl {}    = padding-top: $spacing-xl; padding-bottom: $spacing-xl;
  */
 
 /* stylelint-disable string-quotes, max-nesting-depth */
@@ -37,7 +37,7 @@ $spacing-sizes: (
   '--xxs':   $spacing-xxs,
   '--xs':    $spacing-xs,
   '--s':     $spacing-s,
-  null:      $spacing,
+  null:     $spacing,
   '--l':     $spacing-l,
   '--xl':    $spacing-xl,
   '--xxl':   $spacing-xxl
@@ -46,12 +46,15 @@ $spacing-sizes: (
 
 
 
-// If using Sass-MQ for breakpoints, define the separator for breakpoints
-// in class names. Default separator for breakpoint classes is an '@'
-// symbol. For example: 
-// <div class="u-p--s@desktop">
 
-$breakpoint-separator: \@ !default;
+// Spacing mixin generates the spacing classes
+// for example:
+// .u-p
+// .u-p--xs
+// .u-pv--l
+// .u-m
+// .u-m--xxl
+// .u-mb--s etc.
 
 @mixin spacing(
 	$properties: $spacing-properties,

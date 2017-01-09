@@ -1,0 +1,111 @@
+/* ==========================================================================
+   #TYPOGRAPHY
+   ========================================================================== */
+
+
+/* Text Align
+   ========================================================================== */
+
+.u-tl { text-align: left !important; }
+.u-tr { text-align: right !important; }
+.u-tc { text-align: center !important; }
+
+
+
+
+
+/* Font Style
+   ========================================================================== */
+
+.u-normal { font-style: italic !important; font-weight: normal !important; }
+.u-i      { font-style: italic !important; }
+
+
+
+
+
+/* Font Weight
+   ========================================================================== */
+
+.u-b      { font-weight: bold !important; }
+.u-fw1    { font-weight: 100 !important; }
+.u-fw2    { font-weight: 200 !important; }
+.u-fw3    { font-weight: 300 !important; }
+.u-fw4    { font-weight: 400 !important; }
+.u-fw5    { font-weight: 500 !important; }
+.u-fw6    { font-weight: 600 !important; }
+.u-fw7    { font-weight: 700 !important; }
+.u-fw8    { font-weight: 800 !important; }
+.u-fw9    { font-weight: 900 !important; }
+
+
+
+
+
+/* Text Transform
+   ========================================================================== */
+
+.u-ttc { text-transform: capitalize !important; }
+.u-ttl { text-transform: lowercase !important; }
+.u-ttu { text-transform: uppercase !important; }
+.u-ttn { text-transform: none !important; }
+
+
+
+
+
+/* Line Height
+   ========================================================================== */
+
+.u-lh-solid { line-height: 1 !important;}
+.u-lh-title { line-height: $base-line-height * .8 !important;}
+.u-lh-copy  { line-height: $base-line-height !important;}
+
+
+
+
+
+/* Letter Spacing
+   ========================================================================== */
+
+.u-ls-tight { letter-spacing: -0.5em !important; }
+.u-ls       { letter-spacing: .1em !important; }
+.u-ls-loose { letter-spacing: .25em !important; }
+
+
+
+
+
+/* Truncate
+   ========================================================================== */
+   
+// Combine this class with a width to truncate text (or just leave as 
+// is to truncate at width of containing element.
+.u-truncate {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+
+
+
+
+/* Measure
+   ========================================================================== */
+   
+/**
+ * Measure refers to the length of a line of text. It is one of the most 
+ * important aspects of readability. 
+ * 
+ * Provide 3 classes for setting measure:
+ *  .measure = line lengths ~66 characters
+ *  .measure-narrow = line lengths ~45 characters
+ *  .measure-wide = line lengths ~80 characters
+ * 
+ * http://tachyons.io/docs/typography/measure/
+ */
+
+.u-measure        { max-width: 30em !important; } // Measure is limited to ~66 characters
+.u-measure-narrow { max-width: 20em !important; } // easure is limited to ~45 characters
+.u-measure-wide   { max-width: 34em !important; } // Measure is limited to ~80 characters
