@@ -103,8 +103,8 @@ $inuit-widths-breakpoint-separator: \@ !default;
       @if ($inuit-offsets == true) {
 
         /**
-        * 1. Reset any leftover or conflicting `left`/`right` values.
-        */
+         * 1. Reset any leftover or conflicting `left`/`right` values.
+         */
 
         // Build a class in the format `.u-push-1/2[@<breakpoint>]`.
         .u-push-#{$numerator}#{$inuit-widths-delimiter}#{$denominator}#{$breakpoint} {
