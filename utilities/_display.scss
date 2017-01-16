@@ -28,6 +28,17 @@
 .u-dn  { display: none !important; }
 .u-db  { display: block !important; }
 .u-dib { display: inline-block !important; }
+.u-dit { display: inline-table; }
+.u-dt  { display: table; }
+.u-dtc { display: table-cell; }
+
+/*
+ * Sets table to full width and table cells to equal widths.
+*/
+.u-dt--fixed {
+  table-layout: fixed;
+  width: 100%;
+}
 
 
 /**
