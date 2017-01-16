@@ -5,14 +5,17 @@
 
 // Breakpoints are declared in rems for maximum flexibility
 // HTML font size set to 62.5% so that 1rem is generally equal to 10px
+// 
+// https://gist.github.com/davidgilbertson/ad24b42b0eddde2dc6b1b51f9460af11
+// https://medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
 
 $mq-breakpoints: (
-	phone   : 0 !default,
-	tablet-v: 60rem !default,
-	tablet-h: 90rem !default,
-	desktop : 120rem !default,
-	wide    : 180rem !default
-);
+	phone   : 0,
+	tablet-v: 60rem,
+	tablet-h: 90rem,
+	desktop : 120rem,
+	wide    : 180rem
+) !default;
 
 
 
