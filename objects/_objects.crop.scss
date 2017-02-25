@@ -71,6 +71,7 @@ $inuit-crops: (
 
 /**
  * Generate a series of crop classes to be used like so:
+ *  1. Removes decimal point for classname generation ---> 2.66:1 ratio generates ".o-crop--266/1" class
  *
  *   <div class="o-crop  o-crop--16:9">
  *
@@ -88,7 +89,10 @@ $inuit-crops: (
       @error "`#{$consequent}` needs to be a number."
     }
 
-    .o-crop--#{$antecedent}\:#{$consequent} {
+    $antecedent-str: str-replace(inspect($antecedent), ".", ""); // [1]
+    $consequent-str: str-replace(inspect($consequent), ".", "");
+
+    .o-crop--#{$antecedent-str}\:#{$consequent-str} {
       padding-bottom: ($consequent/$antecedent) * 100%;
     }
 
