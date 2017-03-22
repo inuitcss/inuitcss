@@ -83,3 +83,22 @@ $inuit-ratios: (
 }
 
 /* stylelint-enable */
+
+
+
+
+
+/* Contain modifiers.
+   ========================================================================== */
+
+.o-ratio--contain {
+
+  > .o-ratio__content:before {
+    height: auto;
+    margin: auto;
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+  }
+
+}
