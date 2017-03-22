@@ -20,6 +20,12 @@ You can use inuitcss in your project by installing it using a package manager
 $ npm install inuitcss --save
 ```
 
+**yarn:**
+
+```
+$ yarn add inuitcss
+```
+
 **Bower:**
 
 ```
