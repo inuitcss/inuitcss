@@ -116,6 +116,16 @@ $inuit-use-markup-fix: false !default;
 /* Gutter size modifiers.
    ========================================================================== */
 
+.o-layout--flush {
+  margin-left: 0;
+
+  > .o-layout__item {
+    padding-left: 0;
+  }
+
+}
+
+
 .o-layout--tiny {
   margin-left: -$inuit-global-spacing-unit-tiny;
 
@@ -154,17 +164,6 @@ $inuit-use-markup-fix: false !default;
   }
 
 }
-
-
-.o-layout--flush {
-  margin-left: 0;
-
-  > .o-layout__item {
-    padding-left: 0;
-  }
-
-}
-
 
 
 

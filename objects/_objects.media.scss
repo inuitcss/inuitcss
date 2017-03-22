@@ -39,13 +39,27 @@
 
 
 
-/* Size variants
+/* Size variants.
    ========================================================================== */
 
 /**
  * Modify the amount of space between our image and our text. We also have
  * reversible options for all available sizes.
  */
+
+
+/* Gutterless media objects.
+  ========================================================================== */
+
+.o-media--flush {
+
+  > .o-media__img {
+    margin-right: 0;
+    margin-left: 0;
+ }
+
+}
+
 
 .o-media--tiny {
 
@@ -57,7 +71,7 @@
 
     > .o-media__img {
       margin-right: 0;
-      margin-left:  $inuit-global-spacing-unit-tiny;
+      margin-left: $inuit-global-spacing-unit-tiny;
     }
 
   }
@@ -75,7 +89,7 @@
 
     > .o-media__img {
       margin-right: 0;
-      margin-left:  $inuit-global-spacing-unit-small;
+      margin-left: $inuit-global-spacing-unit-small;
     }
 
   }
@@ -93,7 +107,7 @@
 
     > .o-media__img {
       margin-right: 0;
-      margin-left:  $inuit-global-spacing-unit-large;
+      margin-left: $inuit-global-spacing-unit-large;
     }
 
   }
@@ -111,7 +125,7 @@
 
     > .o-media__img {
       margin-right: 0;
-      margin-left:  $inuit-global-spacing-unit-huge;
+      margin-left: $inuit-global-spacing-unit-huge;
     }
 
   }
@@ -120,9 +134,7 @@
 
 
 
-
-
-/* Reversed media objects
+/* Reversed media objects.
    ========================================================================== */
 
 .o-media--reverse {
@@ -131,22 +143,6 @@
     float: right;
     margin-right: 0;
     margin-left: $inuit-global-spacing-unit;
-  }
-
-}
-
-
-
-
-
-/* Gutterless media objects
-   ========================================================================== */
-
-.o-media--flush {
-
-  > .o-media__img {
-    margin-right: 0;
-    margin-left:  0;
   }
 
 }
