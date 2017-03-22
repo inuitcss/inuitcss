@@ -81,6 +81,16 @@
 /* Size variants.
    ========================================================================== */
 
+.o-flag--flush {
+
+  > .o-flag__img {
+    padding-right: 0;
+    padding-left:  0;
+  }
+
+}
+
+
 .o-flag--tiny {
 
   > .o-flag__img {
@@ -97,6 +107,7 @@
   }
 
 }
+
 
 .o-flag--small {
 
@@ -115,6 +126,7 @@
 
 }
 
+
 .o-flag--large {
 
   > .o-flag__img {
@@ -132,6 +144,7 @@
 
 }
 
+
 .o-flag--huge {
 
   > .o-flag__img {
@@ -148,16 +161,6 @@
   }
 
 }
-
-.o-flag--flush {
-
-  > .o-flag__img {
-    padding-right: 0;
-    padding-left:  0;
-  }
-
-}
-
 
 
 
@@ -205,6 +208,7 @@
   }
 
 }
+
 
 .o-flag--bottom {
 
