@@ -68,6 +68,8 @@
  * Headings.............Reassigning our heading styles to helper classes.
  * Spacings.............Nudge bits of the DOM around with these spacing
  *                      classes.
+ * Responsive-Spacings..Enhances the function of normal spacings for
+ *                      responsive usage.
  * Print................Reset-like styles taken from the HTML5 Boilerplate.
  * Hide.................Helper classes to hide content
  */
@@ -147,5 +149,6 @@ $inuit-offsets: true;
 @import "utilities/utilities.widths";
 @import "utilities/utilities.headings";
 @import "utilities/utilities.spacings";
+@import "utilities/utilities.responsive-spacings";
 @import "utilities/utilities.print";
 @import "utilities/utilities.hide";
