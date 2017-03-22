@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "postinstall": "exec ./bin/postinstall.sh bower",
+  }
+}

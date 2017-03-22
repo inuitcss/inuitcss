@@ -28,6 +28,7 @@
   ],
   "license": "Apache-2.0",
   "dependencies": {
-    "sass-mq": "^3.2.9"
+    "sass-mq": "^3.2.9",
+    "normalize-css": "normalize.css#^5.0.0"
   }
 }
