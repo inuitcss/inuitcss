@@ -30,21 +30,21 @@ $inuit-widths-breakpoint-separator: \@ !default;
 
 
 
-/* stylelint-disable string-quotes, max-nesting-depth */
 
 $inuit-responsive-spacing-directions: (
-  '-bottom': '-bottom',
+  "-bottom": "-bottom",
 ) !default;
 
 $inuit-responsive-spacing-properties: (
-  'margin': 'margin',
+  "margin": "margin",
 ) !default;
 
 $inuit-responsive-spacing-sizes: (
-  '-none': 0
+  "-none": 0
 ) !default;
 
 
+/* stylelint-disable max-nesting-depth */
 
 @each $property-namespace, $property in $inuit-responsive-spacing-properties {
 
@@ -74,4 +74,4 @@ $inuit-responsive-spacing-sizes: (
 
 }
 
-/* stylelint-enable string-quotes, max-nesting-depth */
+/* stylelint-enable max-nesting-depth */
