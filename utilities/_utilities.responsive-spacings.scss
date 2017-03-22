@@ -20,7 +20,12 @@
 // When using Sass-MQ, this defines the separator for the breakpoints suffix
 // in the class name. By default, we are generating the responsive suffixes
 // for the classes with a `@` symbol so you get classes like:
-// <div class="u-margin-bottom@mobile">
+//
+//   <div class="u-margin-bottom@mobile">
+//
+// Be aware that since the `@` symbol is a reserved symbol in CSS, it has to be
+// escaped with a `\`. In the markup though, you write your classes without the
+// backslash (e.g. `u-margin-bottom@mobile`).
 $inuit-widths-breakpoint-separator: \@ !default;
 
 
