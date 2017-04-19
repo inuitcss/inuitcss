@@ -51,3 +51,15 @@ fieldset {
   min-width: 0; /* [1] */
   border: 0;
 }
+
+/**
+ * Set the font-size for form elements to inherit from html.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit;
+}
