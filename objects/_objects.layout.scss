@@ -211,6 +211,10 @@ $inuit-use-markup-fix: false !default;
     display: flex;
   }
 
+  &.o-layout--center {
+    justify-content: center;
+  }
+
 }
 
 
