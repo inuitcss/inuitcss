@@ -109,7 +109,11 @@ $inuit-crops: (
  * Content stretches to fill it's container while maintaining aspect-ratio.
  */
 
-.o-crop__content--fill {
-  min-height: 100%;
-  min-width: 100%;
+.o-crop--fill {
+
+  > .o-crop__content {
+    min-height: 100%;
+    min-width: 100%;
+  }
+
 }
