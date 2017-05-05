@@ -1,6 +1,6 @@
 # ![inuitcss](http://inuitcss.com/img/logo-small.png)
 
-[![CircleCI](https://img.shields.io/circleci/project/inuitcss/inuitcss.svg?maxAge=2592000?style=flat-square)](https://circleci.com/gh/inuitcss/inuitcss)
+[![CircleCI](https://img.shields.io/circleci/project/inuitcss/inuitcss/master.svg?maxAge=2592000?style=flat-square)](https://circleci.com/gh/inuitcss/inuitcss)
 
 **Extensible, scalable, Sass-based, OOCSS framework for large and long-lasting
 UI projects.**
@@ -18,6 +18,12 @@ You can use inuitcss in your project by installing it using a package manager
 
 ```
 $ npm install inuitcss --save
+```
+
+**yarn:**
+
+```
+$ yarn add inuitcss
 ```
 
 **Bower:**
@@ -88,7 +94,7 @@ Copy this file into your own `css/settings/` directory and rename it
 **N.B.** If you downloaded inuitcss, you do not need to move this this file; you
 can simply rename it.
 
-### [`_example.settings.global.scss`](https://github.com/inuitcss/inuitcss/blob/master/components/_example.settings.global.scss)
+### [`_example.settings.global.scss`](https://github.com/inuitcss/inuitcss/blob/master/settings/_example.settings.global.scss)
 
 This is an example globals file; it contains any settings that are available to
 your entire project. These variables and settings could be font families,
