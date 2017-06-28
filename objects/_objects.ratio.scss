@@ -91,6 +91,10 @@ $inuit-ratios: (
 /* Contain modifiers.
    ========================================================================== */
 
+/**
+ * Only works with image content.
+ */
+
 .o-ratio--contain {
 
   > .o-ratio__content:before {
