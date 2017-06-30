@@ -4,6 +4,9 @@
 
 ## [Unreleased]
 
+### New features
+- Add `.o-crop--fill` modifier. [[#278](https://github.com/inuitcss/inuitcss/issues/278)]
+
 
 
 ## [6.0.0-beta.5] - 2017-06-27
