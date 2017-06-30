@@ -6,6 +6,21 @@
 
 
 
+## [6.0.0-beta.4] - 2016-10-18
+
+### New features
+- Add customization for delimiter and breakpoint-separator in the widths-classes to circumvent possible HTML processor issues. [[#166](https://github.com/inuitcss/inuitcss/issues/166)]
+- Add customization for spacing class names. [[#159](https://github.com/inuitcss/inuitcss/issues/159)]
+- Add basic form reset styles. [[#156](https://github.com/inuitcss/inuitcss/issues/156)]
+
+### Fixes
+- Fix push/pull `left`/`right` property override issue. [[#200](https://github.com/inuitcss/inuitcss/issues/200)]
+
+### Also:
+Lots of tidy-ups, code-formatting and small improvements not worth mentioning :)
+
+
+
 ## [6.0.0-beta.3] - 2016-08-30
 
 ### Breaking features
