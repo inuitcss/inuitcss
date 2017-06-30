@@ -6,6 +6,30 @@
 
 
 
+## [6.0.0-beta.5] - 2017-06-27
+
+### Breaking changes
+- Remove `inuit-rem` function/mixin. [[#204](https://github.com/inuitcss/inuitcss/issues/204)]
+- Remove `.o-list-inline--delimited` modifier. [[#223](https://github.com/inuitcss/inuitcss/issues/223)]
+- Rename pack objects revers modifier to `.o-pack--reverse`. [[#234](https://github.com/inuitcss/inuitcss/issues/234)]
+- Rename spacings utility file to `_utilities.spacings`. [[#260](https://github.com/inuitcss/inuitcss/issues/260)]
+
+### New features
+- **Finally provide responsive spacings**. [[#217](https://github.com/inuitcss/inuitcss/issues/217)]
+- The default vertical alignment of pack items (i.e. `.o-pack__item`) is now `top`. [[#220](https://github.com/inuitcss/inuitcss/issues/220)]
+- Generating spacing classes that care about multiple directions is now possible. [[#228](https://github.com/inuitcss/inuitcss/issues/228)]
+- Add `.o-layout--left` modifier. [[#245](https://github.com/inuitcss/inuitcss/issues/245)]
+- Add `.o-layout--stretch` modifier. [[#264](https://github.com/inuitcss/inuitcss/issues/264)]
+- Add `.o-layout--auto` modifier. [[#266](https://github.com/inuitcss/inuitcss/issues/266)]
+- Add `.o-pack--default` modifier. [[#249](https://github.com/inuitcss/inuitcss/issues/249)]
+- By providing the `.o-list-bare__item` class, we can now use the bare-list on any HTML element we want. [[#280](https://github.com/inuitcss/inuitcss/issues/280)]
+- Update normalize.css to version 7.0.0. [[#295](https://github.com/inuitcss/inuitcss/issues/295)]
+
+### Fixes
+- Fix `border-spacing` issue when the flag object is nested inside other specific components. [[#254](https://github.com/inuitcss/inuitcss/issues/254)]
+
+
+
 ## [6.0.0-beta.4] - 2016-10-18
 
 ### New features
