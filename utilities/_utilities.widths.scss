@@ -126,6 +126,19 @@ $inuit-widths-breakpoint-separator: \@ !default;
 
   }
 
+  @if ($inuit-offsets == true) {
+
+    // Create auto push and pull classes.
+    .u-push-none#{$breakpoint} {
+      left: auto !important;
+    }
+
+    .u-pull-none#{$breakpoint} {
+      right: auto !important;
+    }
+
+  }
+
 }
 
 
