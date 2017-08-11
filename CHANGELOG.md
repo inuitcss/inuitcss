@@ -14,7 +14,7 @@
 ### Breaking changes
 - Remove `inuit-rem` function/mixin. [[#204](https://github.com/inuitcss/inuitcss/issues/204)]
 - Remove `.o-list-inline--delimited` modifier. [[#223](https://github.com/inuitcss/inuitcss/issues/223)]
-- Rename pack objects revers modifier to `.o-pack--reverse`. [[#234](https://github.com/inuitcss/inuitcss/issues/234)]
+- Rename pack objects reverse modifier to `.o-pack--reverse`. [[#234](https://github.com/inuitcss/inuitcss/issues/234)]
 - Rename spacings utility file to `_utilities.spacings`. [[#260](https://github.com/inuitcss/inuitcss/issues/260)]
 
 ### New features
@@ -50,11 +50,11 @@ Lots of tidy-ups, code-formatting and small improvements not worth mentioning :)
 
 ## [6.0.0-beta.3] - 2016-08-30
 
-### Breaking features
+### Breaking changes
 - `_settings.global.scss` is renamed to `_settings.core.scss`.   
 The rather opinionated example variables `$inuit-global-radius` and `$inuit-global-transition` are transfered to the new `_example.settings.global.scss` file and renamed to `$global-radius` and `$global-transition`. [[#83](https://github.com/inuitcss/inuitcss/issues/83)]
 - The `hidden-visually` mixin is now prefixed with `inuit-`. Call the mixin with `@include inuit-hidden-visually();` from now on. [[#105](https://github.com/inuitcss/inuitcss/issues/105)]
-- The default fractions for the widths-classes have changed. [[#101](https://github.com/inuitcss/inuitcss/issues/101)] 
+- The default fractions for the widths-classes have changed. [[#101](https://github.com/inuitcss/inuitcss/issues/101)]
     We now provide:   
     - `1/1`
     - `1/2`, `2/2`
@@ -66,8 +66,8 @@ The rather opinionated example variables `$inuit-global-radius` and `$inuit-glob
     $inuit-fractions: 1 2 3 4 5 12 16 !default;
     @import "utilities/utilities.widths";
     ```
-- The reverse modifier of the flag objects is renamed from `.o-flag-rev` to `.o-frag--reverse`. [[#114](https://github.com/inuitcss/inuitcss/issues/114)] 
-- Split the `_tools.functions.scss` and `_tools.mixins.scss` files into individual files. [[#5](https://github.com/inuitcss/inuitcss/issues/5)] 
+- The reverse modifier of the flag objects is renamed from `.o-flag-rev` to `.o-frag--reverse`. [[#114](https://github.com/inuitcss/inuitcss/issues/114)]
+- Split the `_tools.functions.scss` and `_tools.mixins.scss` files into individual files. [[#5](https://github.com/inuitcss/inuitcss/issues/5)]
     Alter the import of these files in your Sass main stylesheet as follows:
     ```scss
     @import "tools/tools.rem";
@@ -75,11 +75,11 @@ The rather opinionated example variables `$inuit-global-radius` and `$inuit-glob
     @import "tools/tools.clearfix";
     @import "tools/tools.hidden";
     ```
-- Remove `inuit-halve` Sass function. [[#5](https://github.com/inuitcss/inuitcss/issues/5)] 
-- Remove `inuit-hocus` Sass function. [[#5](https://github.com/inuitcss/inuitcss/issues/5)] 
-- Remove `_tools.widths.scss` file and integrate its content into `_utilities.widths.scss`. [[#117](https://github.com/inuitcss/inuitcss/issues/117)] 
+- Remove `inuit-halve` Sass function. [[#5](https://github.com/inuitcss/inuitcss/issues/5)]
+- Remove `inuit-hocus` Sass function. [[#5](https://github.com/inuitcss/inuitcss/issues/5)]
+- Remove `_tools.widths.scss` file and integrate its content into `_utilities.widths.scss`. [[#117](https://github.com/inuitcss/inuitcss/issues/117)]
     This means that you have to remove the import of the tools file in your Sass main stylesheet.
-- Put offsets (i.e. push and pull classes) behind a feature switch. [[#104](https://github.com/inuitcss/inuitcss/issues/104)] 
+- Put offsets (i.e. push and pull classes) behind a feature switch. [[#104](https://github.com/inuitcss/inuitcss/issues/104)]
     If you use `u-push-` and/or `u-pull-` classes, switch them on in your Sass main stylesheet:
     ```scss
     $inuit-offsets: true;
@@ -90,7 +90,7 @@ The rather opinionated example variables `$inuit-global-radius` and `$inuit-glob
 - Add [Sass MQ](https://github.com/sass-mq/sass-mq) as default media-query management tool. [[#80](https://github.com/inuitcss/inuitcss/issues/80)]
 - Add table object. [[#97](https://github.com/inuitcss/inuitcss/issues/97)]
 - Add pack object. [[#98](https://github.com/inuitcss/inuitcss/issues/98)]
-- Add new button variations for the example button component. 
+- Add new button variations for the example button component.
 - Add `CONTRIBUTING` file. [[#14](https://github.com/inuitcss/inuitcss/issues/14)]
 - Provide `box-sizing: border-box;` for layout object by default to make dependency of generic.box-sizing partial obsolete. [[#89](https://github.com/inuitcss/inuitcss/issues/89)]
 
