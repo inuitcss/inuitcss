@@ -54,7 +54,7 @@ Lots of tidy-ups, code-formatting and small improvements not worth mentioning :)
 - `_settings.global.scss` is renamed to `_settings.core.scss`.   
 The rather opinionated example variables `$inuit-global-radius` and `$inuit-global-transition` are transfered to the new `_example.settings.global.scss` file and renamed to `$global-radius` and `$global-transition`. [[#83](https://github.com/inuitcss/inuitcss/issues/83)]
 - The `hidden-visually` mixin is now prefixed with `inuit-`. Call the mixin with `@include inuit-hidden-visually();` from now on. [[#105](https://github.com/inuitcss/inuitcss/issues/105)]
-- The default fractions for the widths-classes have changed. [[#101](https://github.com/inuitcss/inuitcss/issues/101)]
+- The default fractions for the widths-classes have changed. [[#101](https://github.com/inuitcss/inuitcss/issues/101)]   
     We now provide:   
     - `1/1`
     - `1/2`, `2/2`
@@ -67,7 +67,7 @@ The rather opinionated example variables `$inuit-global-radius` and `$inuit-glob
     @import "utilities/utilities.widths";
     ```
 - The reverse modifier of the flag objects is renamed from `.o-flag-rev` to `.o-frag--reverse`. [[#114](https://github.com/inuitcss/inuitcss/issues/114)]
-- Split the `_tools.functions.scss` and `_tools.mixins.scss` files into individual files. [[#5](https://github.com/inuitcss/inuitcss/issues/5)]
+- Split the `_tools.functions.scss` and `_tools.mixins.scss` files into individual files. [[#5](https://github.com/inuitcss/inuitcss/issues/5)]   
     Alter the import of these files in your Sass main stylesheet as follows:
     ```scss
     @import "tools/tools.rem";
@@ -77,9 +77,9 @@ The rather opinionated example variables `$inuit-global-radius` and `$inuit-glob
     ```
 - Remove `inuit-halve` Sass function. [[#5](https://github.com/inuitcss/inuitcss/issues/5)]
 - Remove `inuit-hocus` Sass function. [[#5](https://github.com/inuitcss/inuitcss/issues/5)]
-- Remove `_tools.widths.scss` file and integrate its content into `_utilities.widths.scss`. [[#117](https://github.com/inuitcss/inuitcss/issues/117)]
+- Remove `_tools.widths.scss` file and integrate its content into `_utilities.widths.scss`. [[#117](https://github.com/inuitcss/inuitcss/issues/117)]   
     This means that you have to remove the import of the tools file in your Sass main stylesheet.
-- Put offsets (i.e. push and pull classes) behind a feature switch. [[#104](https://github.com/inuitcss/inuitcss/issues/104)]
+- Put offsets (i.e. push and pull classes) behind a feature switch. [[#104](https://github.com/inuitcss/inuitcss/issues/104)]   
     If you use `u-push-` and/or `u-pull-` classes, switch them on in your Sass main stylesheet:
     ```scss
     $inuit-offsets: true;
