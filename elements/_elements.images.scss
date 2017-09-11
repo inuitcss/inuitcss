@@ -18,11 +18,11 @@ img {
 
 
 /**
- * 1. If a `width` and/or `height` attribute have been explicitly defined, let’s
- *    not make the image fluid.
+ * If a `width` and/or `height` attribute have been explicitly defined, let’s
+ * not make the image fluid.
  */
 
-img[width], /* [1] */
-img[height] {  /* [1] */
+img[width],
+img[height] {
   max-width: none;
 }
