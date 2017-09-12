@@ -51,7 +51,7 @@
      * 1. Fixes problem with images disappearing.
      */
 
-    > img {
+    img {
       max-width: none; /* [1] */
     }
 
