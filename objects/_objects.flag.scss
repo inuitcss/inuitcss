@@ -49,6 +49,15 @@
 
     /**
      * 1. Fixes problem with images disappearing.
+     *    The > needs to remain in order for nested flag objects to not inherit 
+     *    their parent’s formatting. In case the image must be linked, try wrapping
+     *    the whole o-flag__img object into an anchor tag.
+     *    E.g.: 
+     *    <a href="/">
+     *      <div class="o-flag__img">
+     *        <img src="./link/to/image.jpg" alt="image alt text">
+     *      </div>
+     *    </a>
      */
 
     > img {
