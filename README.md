@@ -292,6 +292,6 @@ But just because we are not willing to include a module you consider being usefu
 
 We'd love to see that the framework gets extended through the contribution of you and your plugins!
 
-## Prerequisities
+## Prerequisites
 
 Make sure you have at least Sass v3.3 installed.
