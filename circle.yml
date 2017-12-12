@@ -1,11 +1,10 @@
 machine:
   node:
-    version: 8.4.0
+    version: 8.9.3
   ruby:
     version: 2.3.1
 dependencies:
   pre:
-    - npm install npm -g
     - gem install sass true
     - npm install
 test:
