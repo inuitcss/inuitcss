@@ -26,7 +26,8 @@ $inuit-spacing-directions: null !default;
 // to indicate this.
 @if $inuit-spacing-directions == null {
   @error "In order to use responsive spacings, you also need to include `_utilities.spacings.scss`!";
-} @else {
+}
+@else {
 
 
 
