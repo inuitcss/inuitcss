@@ -68,6 +68,12 @@ follow work through the issue/pull request process.
 5. **Open a pull request into `develop`.** Our main branch is `develop`, and
    this is where we want new work to be merged into. `master` is a release
    branch only.
+6. **Update `CHANGELOG.md` in your branch.** Add the pull-request number and 
+   link, and a brief, one line description under the next tag title. Make sure 
+   the reason for the change can be understood. If this change has a chance of 
+   making an existent project's build fail, or cause unexpected changes in the 
+   output, group it under the "Possible breaking changes" title. New features
+   also have their place in the file.
 
 Example:
 [`f000350`](https://github.com/inuitcss/inuitcss/commit/f000350dd23b92cb403142f4a8af84d92d300cf7).
