@@ -7,6 +7,12 @@
 ### New features
 - Add `.o-crop--fill` modifier. [[#278](https://github.com/inuitcss/inuitcss/issues/278)]
 
+### Fixes
+- Fix `o-layout--stretch` in conjunction with `o-layout--center`, `o-layout--right` and `o-layout--left`. [[#293](https://github.com/inuitcss/inuitcss/issues/293)]
+
+### Minor changes
+- Provide opt-out mechanism of static images when `width`/`height` attribute is assigned on `<img>`s. [[#328](https://github.com/inuitcss/inuitcss/issues/328)]
+
 
 
 ## [6.0.0-beta.5] - 2017-06-27
