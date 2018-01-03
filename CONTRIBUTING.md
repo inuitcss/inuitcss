@@ -65,7 +65,10 @@ follow work through the issue/pull request process.
 4. **Start all commit messages with `[refs #<issue-number>]`.** If you’re
    working on issue 99, all of your commits should begin with `[refs #0099]`.
    This allows us to link every commit back to both an issue and a branch.
-5. **Open a pull request into `develop`.** Our main branch is `develop`, and
+5. **Delineate your changes in `CHANGELOG.md`.** Under “[Unreleased]”, make an 
+   entry in the the appropriate section, i.e. “Breaking changes”, “Fixes”,
+   “New features” or “Minor changes”.
+6. **Open a pull request into `develop`.** Our main branch is `develop`, and
    this is where we want new work to be merged into. `master` is a release
    branch only.
 
