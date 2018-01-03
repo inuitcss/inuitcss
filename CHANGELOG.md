@@ -4,6 +4,9 @@
 
 ## [Unreleased]
 
+### Breaking changes
+- Remove all `.o-wrapper` modifier and return to the initial, bare wrapper object. [[#299](https://github.com/inuitcss/inuitcss/issues/299)]
+
 ### New features
 - Add `.o-crop--fill` modifier. [[#278](https://github.com/inuitcss/inuitcss/issues/278)]
 
