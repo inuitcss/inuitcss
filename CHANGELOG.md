@@ -9,6 +9,7 @@
 
 ### New features
 - Add `.o-crop--fill` modifier. [[#278](https://github.com/inuitcss/inuitcss/issues/278)]
+- Add more positioning modifier classes for the crop object. [[#298](https://github.com/inuitcss/inuitcss/issues/298)]
 
 ### Fixes
 - Fix `o-layout--stretch` in conjunction with `o-layout--center`, `o-layout--right` and `o-layout--left`. [[#293](https://github.com/inuitcss/inuitcss/issues/293)]
