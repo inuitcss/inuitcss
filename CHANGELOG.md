@@ -16,6 +16,7 @@
 
 ### Minor changes
 - Provide opt-out mechanism of static images when `width`/`height` attribute is assigned on `<img>`s. [[#328](https://github.com/inuitcss/inuitcss/issues/328)]
+- Provide possibility to reset push/pull. [[#316](https://github.com/inuitcss/inuitcss/issues/316)]
 
 
 
