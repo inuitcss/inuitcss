@@ -27,7 +27,6 @@
     "block-closing-brace-space-before": "always-single-line",
 
     "block-no-empty": true,
-    "block-no-single-line": true,
 
     "block-opening-brace-newline-after": "always-multi-line",
     "block-opening-brace-space-after": "always-single-line",
@@ -43,7 +42,6 @@
 
     "declaration-bang-space-after": "never",
 
-    "declaration-block-no-ignored-properties": true,
     "declaration-block-no-shorthand-property-overrides": true,
 
     "declaration-block-semicolon-newline-after": "always-multi-line",
@@ -84,7 +82,6 @@
     "media-feature-colon-space-after": "always",
     "media-feature-colon-space-before": "never",
     "media-feature-name-case": "lower",
-    "media-feature-no-missing-punctuation": true,
     "media-feature-parentheses-space-inside": "never",
     "media-feature-range-operator-space-after": "always",
     "media-feature-range-operator-space-before": "always",
@@ -97,7 +94,6 @@
     "no-empty-source": true,
     "no-eol-whitespace": true,
     "no-extra-semicolons": true,
-    "no-indistinguishable-colors": true,
     "no-missing-end-of-source-newline": true,
     "no-unknown-animations": true,
 
@@ -108,11 +104,7 @@
     "property-case": "lower",
     "property-no-unknown": true,
 
-    "root-no-standard-properties": true,
-
-    "rule-nested-empty-line-before": ["always", {
-      ignore: ["after-comment"]
-    }],
+    "rule-empty-line-before": "always",
 
     "selector-attribute-brackets-space-inside": "never",
     "selector-attribute-operator-space-after": "never",
@@ -137,7 +129,6 @@
     "selector-pseudo-element-colon-notation": "single",
     "selector-pseudo-element-no-unknown": true,
 
-    "selector-root-no-composition": true,
     "selector-type-case": "lower",
     "selector-type-no-unknown": true,
 

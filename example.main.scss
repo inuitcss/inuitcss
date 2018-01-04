@@ -135,7 +135,7 @@
 
 // COMPONENTS
 //
-// Build and include your project’s UI Compoments here.
+// Build and include your project’s UI components here.
 @import "components/example.components.buttons";
 
 
@@ -145,6 +145,9 @@
 // UTILITIES
 @import "utilities/utilities.clearfix";
 
+// Be aware that enabling offsets produces a large chunk of classes which might
+// bloat your CSS, depending of the amount of breakpoints you defined.
+// Only set this to `true` if you are absolutely sure about what you are doing.
 $inuit-offsets: true;
 @import "utilities/utilities.widths";
 @import "utilities/utilities.headings";

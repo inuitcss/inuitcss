@@ -16,9 +16,7 @@
 
   *,
   *:before,
-  *:after,
-  *:first-letter,
-  *:first-line {
+  *:after {
     background: transparent !important;
     color: #000 !important; /* [1] */
     box-shadow: none !important;
@@ -41,7 +39,7 @@
 
 
   /**
-   * Don't show links that are fragment identifiers, or use the `javascript:`
+   * Don’t show links that are fragment identifiers, or use the `javascript:`
    * pseudo protocol.
    */
 
