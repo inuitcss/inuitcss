@@ -8,6 +8,7 @@
 // .usage {
 //   @include inuit-clearfix();
 // }
+
 @mixin inuit-clearfix() {
 
   &:after {
