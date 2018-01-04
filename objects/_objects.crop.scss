@@ -57,42 +57,54 @@ $inuit-crops: (
    *
    */
 
-  .o-crop__content--top {
-    top: 0;
-    bottom: auto;
+  .o-crop__content--left-top {
+    left: 0;
   }
 
-  .o-crop__content--right {
-    right: 0;
-    left: auto;
+  .o-crop__content--left-center {
+    top: 50%;
+    transform: translateY(-50%);
   }
 
-  .o-crop__content--bottom {
+  .o-crop__content--left-bottom {
     top: auto;
     bottom: 0;
   }
 
-  .o-crop__content--left {
-    left: 0;
-    right: auto;
+  .o-crop__content--right-top {
+    right: 0;
+    left: auto;
   }
 
-  .o-crop__content--middle {
+  .o-crop__content--right-center {
     top: 50%;
-    bottom: auto;
     transform: translateY(-50%);
   }
 
-  .o-crop__content--center {
-    right: auto;
+  .o-crop__content--right-bottom {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: auto;
+  }
+
+  .o-crop__content--center-top {
     left: 50%;
     transform: translateX(-50%);
   }
 
-  .o-crop__content--centered {
+  .o-crop__content--center,
+  .o-crop__content--center-center {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  .o-crop__content--center-bottom {
+    top: auto;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
 
