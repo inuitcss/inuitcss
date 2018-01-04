@@ -44,17 +44,6 @@ $inuit-crops: (
 
   /**
    * We can position the media in different locations within the cropping area.
-   *
-   * You can compose the focuspoint individually by assigning the equivalent
-   * modifier class(es) on `.o-crop__content`, e.g.:
-   *
-   *   class="o-crop__content  o-crop__content--right  o-crop__content--top"
-   *
-   * To position the content in dead center, you can assign
-   * `o-crop__content--centered`:
-   *
-   *   class="o-crop__content  o-crop__content--centered"
-   *
    */
 
   .o-crop__content--left-top {
