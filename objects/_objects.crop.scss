@@ -67,6 +67,8 @@ $inuit-crops: (
 
   .o-crop__content--right-center {
     top: 50%;
+    right: 0;
+    left: auto;
     transform: translateY(-50%);
   }
 
