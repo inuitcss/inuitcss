@@ -8,6 +8,7 @@ $inuit-crops: (
   (2:1),
   (4:3),
   (16:9),
+  (1.618:1),
 ) !default;
 
 
@@ -90,7 +91,21 @@ $inuit-crops: (
       @error "`#{$consequent}` needs to be a number."
     }
 
-    .o-crop--#{$antecedent}\:#{$consequent} {
+    $antecedent-class: $antecedent;
+    @if str-index(inspect($antecedent), ".") {
+      $antecedent-integer: str-slice(inspect($antecedent), 1, str-index(inspect($antecedent), ".") - 1);
+      $antecedent-decimal: str-slice(inspect($antecedent), str-index(inspect($antecedent), ".") + 1);
+      $antecedent-class: $antecedent-integer + "\\." + $antecedent-decimal;
+    }
+
+    $consequent-class: $consequent;
+    @if str-index(inspect($consequent), ".") {
+      $consequent-integer: str-slice(inspect($consequent), 1, str-index(inspect($consequent), ".") - 1);
+      $consequent-decimal: str-slice(inspect($consequent), str-index(inspect($consequent), ".") + 1);
+      $consequent-class: $consequent-integer + "\\." + $consequent-decimal;
+    }
+
+    .o-crop--#{$antecedent-class}\:#{$consequent-class} {
       padding-bottom: ($consequent/$antecedent) * 100%;
     }
 

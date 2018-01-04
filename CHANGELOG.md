@@ -9,6 +9,7 @@
 
 ### New features
 - Add `.o-crop--fill` modifier. [[#278](https://github.com/inuitcss/inuitcss/issues/278)]
+- `.o-crop` and `.o-ratio` objects now support decimals as ratios (e.g. `1.618:1` etc.). [[#276](https://github.com/inuitcss/inuitcss/issues/276)]
 
 ### Fixes
 - Fix `o-layout--stretch` in conjunction with `o-layout--center`, `o-layout--right` and `o-layout--left`. [[#293](https://github.com/inuitcss/inuitcss/issues/293)]
