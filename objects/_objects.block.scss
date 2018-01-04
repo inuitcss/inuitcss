@@ -12,12 +12,11 @@
   text-align: center;
 }
 
-
   .o-block__img {
     margin-bottom: $inuit-global-spacing-unit;
 
 
-    /* Size variants.
+    /* Size variants
        ====================================================================== */
 
     .o-block--flush > & {
@@ -42,7 +41,6 @@
 
   }
 
-
   .o-block__body {
     display: block;
   }
@@ -51,7 +49,7 @@
 
 
 
-/* Alignment variants.
+/* Alignment variants
    ========================================================================== */
 
 .o-block--right {
