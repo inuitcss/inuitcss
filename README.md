@@ -164,7 +164,7 @@ Following this structure allows you to intersperse inuitcss’ code with your ow
 @import "node_modules/inuitcss/objects/objects.list-inline";
 @import "node_modules/inuitcss/objects/objects.box";
 @import "node_modules/inuitcss/objects/objects.block";
-@import "node_modules/inuitcss/objects/objects.tables";
+@import "node_modules/inuitcss/objects/objects.table";
 
 // COMPONENTS
 @import "components/components.buttons";

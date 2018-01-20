@@ -15,6 +15,7 @@
 ### Fixes
 - Fix `o-layout--stretch` in conjunction with `o-layout--center`, `o-layout--right` and `o-layout--left`. [[#293](https://github.com/inuitcss/inuitcss/issues/293)]
 - Update to Sass’ `@else if` syntax according to current spec. [[#331](https://github.com/inuitcss/inuitcss/issues/331)]
+- Corrected filename for _objects.table.scss in README.md example. [[#347](https://github.com/inuitcss/inuitcss/issues/347)]
 
 ### Minor changes
 - Provide opt-out mechanism of static images when `width`/`height` attribute is assigned on `<img>`s. [[#328](https://github.com/inuitcss/inuitcss/issues/328)]
