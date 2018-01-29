@@ -50,7 +50,39 @@
       @include expect {
         font-size: 21px !important;
         font-size: 1.3125rem !important;
-        line-height: 1.14286 !important;
+        line-height: 1.42857 !important;
+      }
+    }
+  }
+
+  @include test("it should output a bigger line-height when passing a positive modifier") {
+
+    @include assert() {
+
+      @include output {
+        @include inuit-font-size(24px, $modifier: +2);
+      }
+
+      @include expect {
+        font-size: 24px;
+        font-size: 1.5rem;
+        line-height: 1.75;
+      }
+    }
+  }
+
+  @include test("it should output a lower line-height when passing a negative modifier") {
+
+    @include assert() {
+
+      @include output {
+        @include inuit-font-size(32px, $modifier: -1);
+      }
+
+      @include expect {
+        font-size: 32px;
+        font-size: 2rem;
+        line-height: 1.125;
       }
     }
   }
