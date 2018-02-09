@@ -49,6 +49,20 @@
 
 
 
+// The responsive spacings just make sense and work properly when the ‘normal’
+// spacings are included, too. In case they're not, we set `_utilities.spacings`
+// to `null`.
+$inuit-spacing-directions: null !default;
+
+// If the ‘normal’ spacings partial is not included, we provide an error message
+// to indicate this.
+@if $inuit-spacing-directions == null {
+  @error "In order to use responsive spacings, you also need to include `_utilities.spacings.scss`!";
+}
+@else {
+
+
+
 // When using Sass-MQ, this defines the separator for the breakpoints suffix
 // in the class name. By default, we are generating the responsive suffixes
 // for the classes with a `@` symbol so you get classes like:
@@ -106,3 +120,5 @@ $inuit-responsive-spacing-sizes: null !default;
 }
 
 /* stylelint-enable max-nesting-depth */
+
+}
