@@ -5,6 +5,22 @@
 ## [Unreleased]
 
 ### Breaking changes
+- Responsive spacings are off by default, now. If you used the class `.u-margin-bottom-none@[BREAKPOINT]` as the only responsive spacing class in your markup, please make sure that the respective CSS is still generated. If it's not, please define the according classes as follows in your Sass:
+```scss
+$inuit-responsive-spacing-directions: (
+  "-bottom": "-bottom",
+);
+
+$inuit-responsive-spacing-properties: (
+  "margin": "margin",
+);
+
+$inuit-responsive-spacing-sizes: (
+  "-none": 0
+);
+```
+If you already altered your responsive spacings in any way, you don't have to worry. [[#312](https://github.com/inuitcss/inuitcss/issues/312)]
+
 - Remove all `.o-wrapper` modifier and return to the initial, bare wrapper object. [[#299](https://github.com/inuitcss/inuitcss/issues/299)]
 
 ### New features
