@@ -3,13 +3,16 @@
    ========================================================================== */
 
 // A list of cropping ratios that get generated as modifier classes.
+// You should predefine it with only the ratios and names your project needs.
 
 $inuit-crops: (
-  (2:1),
-  (4:3),
-  (16:9),
-  (1.618:1),
+  "2\\:1"         : (2:1),
+  "4-by-3"        : (4:3),
+  "full-hd"       : (16:9),
+  "golden-ratio"  : (1.618:1)
 ) !default;
+
+
 
 
 
@@ -103,65 +106,35 @@ $inuit-crops: (
 
 
 
-/* stylelint-disable */
-
 /* Crop-ratio variants
    ========================================================================== */
 
 /**
  * Generate a series of crop classes to be used like so:
  *
- *   <div class="o-crop  o-crop--16:9">
+ *   <div class="o-crop  o-crop--golden-ratio">
  *
  */
 
-@each $crop in $inuit-crops {
+@each $crop-name, $crop-value in $inuit-crops {
 
-  @each $antecedent, $consequent in $crop {
+  @each $antecedent, $consequent in $crop-value {
 
     @if (type-of($antecedent) != number) {
-      @error "`#{$antecedent}` needs to be a number."
+      @error "`#{$antecedent}` needs to be a number.";
     }
 
     @if (type-of($consequent) != number) {
-      @error "`#{$consequent}` needs to be a number."
+      @error "`#{$consequent}` needs to be a number.";
     }
 
-    // Use `$antecedent` for the generated class by default.
-    $antecedent-class: $antecedent;
-
-    // If `$antecedent` contains a “.”, we need to prefix it with a “\”.
-    @if str-index(inspect($antecedent), ".") {
-      // Get everything before the “.”
-      $antecedent-integer: str-slice(inspect($antecedent), 1, str-index(inspect($antecedent), ".") - 1);
-      // Get everything after the “.”
-      $antecedent-decimal: str-slice(inspect($antecedent), str-index(inspect($antecedent), ".") + 1);
-      // Put the number back together with a “\”-prefixed decimal separator.
-      $antecedent-class: $antecedent-integer + "\\." + $antecedent-decimal;
-    }
-
-    // Use `$consequent` for the generated class by default.
-    $consequent-class: $consequent;
-
-    // If the `$consequent` contains a “.”, we need to prefix it with a “\”.
-    @if str-index(inspect($consequent), ".") {
-      // Get everything before the “.”
-      $consequent-integer: str-slice(inspect($consequent), 1, str-index(inspect($consequent), ".") - 1);
-      // Get everything after the “.”
-      $consequent-decimal: str-slice(inspect($consequent), str-index(inspect($consequent), ".") + 1);
-      // Put the number back together with a “\”-prefixed decimal separator.
-      $consequent-class: $consequent-integer + "\\." + $consequent-decimal;
-    }
-
-    .o-crop--#{$antecedent-class}\:#{$consequent-class} {
+    .o-ratio--#{$crop-name} {
       padding-bottom: ($consequent/$antecedent) * 100%;
     }
 
   }
 
 }
-
-/* stylelint-enable */
 
 
 
