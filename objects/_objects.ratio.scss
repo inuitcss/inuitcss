@@ -95,7 +95,7 @@ $inuit-ratios: (
  * Only works with image content.
  */
 
-.o-ratio--contain {
+.o-ratio--img-contain {
 
   > .o-ratio__content:before {
     height: auto;
