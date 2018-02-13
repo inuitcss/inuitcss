@@ -93,6 +93,7 @@ $inuit-ratios: (
 
 /**
  * Only works with image content.
+ * Contains the image to the boundaries, without cropping or stretching it.
  */
 
 .o-ratio--img-contain {
