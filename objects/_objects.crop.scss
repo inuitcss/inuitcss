@@ -128,7 +128,7 @@ $inuit-crops: (
       @error "`#{$consequent}` needs to be a number.";
     }
 
-    .o-ratio--#{$crop-name} {
+    .o-crop--#{$crop-name} {
       padding-bottom: ($consequent/$antecedent) * 100%;
     }
 
