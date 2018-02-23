@@ -3,6 +3,7 @@
 //   ======================================================================== */
 
 // Mixin to quickly apply accessible hiding to elements.
+
 @mixin inuit-hidden-visually() {
   border: 0 !important;
   clip: rect(0 0 0 0) !important;

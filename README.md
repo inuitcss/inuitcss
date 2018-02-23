@@ -164,7 +164,7 @@ Following this structure allows you to intersperse inuitcss’ code with your ow
 @import "node_modules/inuitcss/objects/objects.list-inline";
 @import "node_modules/inuitcss/objects/objects.box";
 @import "node_modules/inuitcss/objects/objects.block";
-@import "node_modules/inuitcss/objects/objects.tables";
+@import "node_modules/inuitcss/objects/objects.table";
 
 // COMPONENTS
 @import "components/components.buttons";
@@ -177,7 +177,7 @@ Following this structure allows you to intersperse inuitcss’ code with your ow
 // UTILITIES
 @import "node_modules/inuitcss/utilities/utilities.widths";
 @import "node_modules/inuitcss/utilities/utilities.headings";
-@import "node_modules/inuitcss/utilities/utilities.spacing";
+@import "node_modules/inuitcss/utilities/utilities.spacings";
 ```
 
 **NOTE:** Every `@import` above which begins with "node_modules" is inuitcss core. When you installed inuitcss via bower, these imports would begin with "bower_components".
@@ -292,6 +292,6 @@ But just because we are not willing to include a module you consider being usefu
 
 We'd love to see that the framework gets extended through the contribution of you and your plugins!
 
-## Prerequisities
+## Prerequisites
 
 Make sure you have at least Sass v3.3 installed.

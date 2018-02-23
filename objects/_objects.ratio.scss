@@ -8,6 +8,7 @@ $inuit-ratios: (
   (2:1),
   (4:3),
   (16:9),
+  (1.618:1),
 ) !default;
 
 
@@ -24,7 +25,6 @@ $inuit-ratios: (
 .o-ratio {
   position: relative;
   display: block;
-  overflow: hidden;
 
   &:before {
     content: "";
@@ -74,7 +74,33 @@ $inuit-ratios: (
       @error "`#{$consequent}` needs to be a number."
     }
 
-    .o-ratio--#{$antecedent}\:#{$consequent}:before {
+    // Use `$antecedent` for the generated class by default.
+    $antecedent-class: $antecedent;
+
+    // If `$antecedent` contains a “.”, we need to prefix it with a “\”.
+    @if str-index(inspect($antecedent), ".") {
+      // Get everything before the “.”
+      $antecedent-integer: str-slice(inspect($antecedent), 1, str-index(inspect($antecedent), ".") - 1);
+      // Get everything after the “.”
+      $antecedent-decimal: str-slice(inspect($antecedent), str-index(inspect($antecedent), ".") + 1);
+      // Put the number back together with a “\”-prefixed decimal separator.
+      $antecedent-class: $antecedent-integer + "\\." + $antecedent-decimal;
+    }
+
+    // Use `$consequent` for the generated class by default.
+    $consequent-class: $consequent;
+
+    // If the `$consequent` contains a “.”, we need to prefix it with a “\”.
+    @if str-index(inspect($consequent), ".") {
+      // Get everything before the “.”
+      $consequent-integer: str-slice(inspect($consequent), 1, str-index(inspect($consequent), ".") - 1);
+      // Get everything after the “.”
+      $consequent-decimal: str-slice(inspect($consequent), str-index(inspect($consequent), ".") + 1);
+      // Put the number back together with a “\”-prefixed decimal separator.
+      $consequent-class: $consequent-integer + "\\." + $consequent-decimal;
+    }
+
+    .o-ratio--#{$antecedent-class}\:#{$consequent-class}:before {
       padding-bottom: ($consequent/$antecedent) * 100%;
     }
 

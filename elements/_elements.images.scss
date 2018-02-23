@@ -17,12 +17,23 @@ img {
 }
 
 
-/**
- * 1. If a `width` and/or `height` attribute have been explicitly defined, let’s
- *    not make the image fluid.
- */
 
-img[width], /* [1] */
-img[height] {  /* [1] */
-  max-width: none;
+// In case you don't have control over generated `width` and `height` attributes
+// on `<img>` elements in your markup, but still want the images to be fluid,
+// set this to `false`.
+
+$inuit-static-images: true !default;
+
+  @if ($inuit-static-images == true) {
+
+  /**
+   * If a `width` and/or `height` attribute has been explicitly defined, let’s
+   * not make the image fluid.
+   */
+
+  img[width],
+  img[height] {
+    max-width: none;
+  }
+
 }

@@ -96,6 +96,7 @@ $inuit-widths-breakpoint-separator: \@ !default;
     @for $numerator from 1 through $denominator {
 
       // Build a class in the format `.u-3/4[@<breakpoint>]`.
+
       .u-#{$numerator}#{$inuit-widths-delimiter}#{$denominator}#{$breakpoint} {
         width: ($numerator / $denominator) * 100% !important;
       }
@@ -107,6 +108,7 @@ $inuit-widths-breakpoint-separator: \@ !default;
          */
 
         // Build a class in the format `.u-push-1/2[@<breakpoint>]`.
+
         .u-push-#{$numerator}#{$inuit-widths-delimiter}#{$denominator}#{$breakpoint} {
           position: relative !important;
           right: auto !important; /* [1] */
@@ -114,6 +116,7 @@ $inuit-widths-breakpoint-separator: \@ !default;
         }
 
         // Build a class in the format `.u-pull-5/6[@<breakpoint>]`.
+
         .u-pull-#{$numerator}#{$inuit-widths-delimiter}#{$denominator}#{$breakpoint} {
           position: relative !important;
           right: ($numerator / $denominator) * 100% !important;
@@ -126,7 +129,22 @@ $inuit-widths-breakpoint-separator: \@ !default;
 
   }
 
+  @if ($inuit-offsets == true and $breakpoint != null) {
+
+    // Create auto push and pull classes.
+
+    .u-push-none#{$breakpoint} {
+      left: auto !important;
+    }
+
+    .u-pull-none#{$breakpoint} {
+      right: auto !important;
+    }
+
+  }
+
 }
+
 
 
 
