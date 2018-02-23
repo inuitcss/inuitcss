@@ -23,9 +23,11 @@ $inuit-responsive-spacing-sizes: (
 If you already altered your responsive spacings in any way, you don't have to worry. [[#312](https://github.com/inuitcss/inuitcss/issues/312)]
 
 - Remove all `.o-wrapper` modifier and return to the initial, bare wrapper object. [[#299](https://github.com/inuitcss/inuitcss/issues/299)]
+- `.o-crop` and `.o-ratio` configurable maps now have a different structure, to include named modifiers. [[#346](https://github.com/inuitcss/inuitcss/issues/346)]
 
 ### New features
 - Add `.o-crop--fill` modifier. [[#278](https://github.com/inuitcss/inuitcss/issues/278)]
+- `.o-crop` and `.o-ratio` objects now receive user defined strings for the ratio modifiers class names. [[#346](https://github.com/inuitcss/inuitcss/issues/346)]
 - `.o-crop` and `.o-ratio` objects now support decimals as ratios (e.g. `1.618:1` etc.). [[#276](https://github.com/inuitcss/inuitcss/issues/276)]
 - Add more positioning modifier classes for the crop object. [[#298](https://github.com/inuitcss/inuitcss/issues/298)]
 
