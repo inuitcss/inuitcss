@@ -95,3 +95,27 @@ $inuit-ratios: (
   }
 
 }
+
+
+
+
+
+/* Contain modifier.
+   ========================================================================== */
+
+/**
+ * Only works with image content.
+ * Contains the image to the boundaries, without cropping or stretching it.
+ */
+
+.o-ratio--img-contain {
+
+  > .o-ratio__content:before {
+    height: auto;
+    margin: auto;
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+  }
+
+}
