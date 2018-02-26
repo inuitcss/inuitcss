@@ -8,11 +8,9 @@
 
 $inuit-wrapper-width: 1200px !default;
 
-/* stylelint-disable */
 @if (type-of($inuit-wrapper-width) != number) {
-  @error "`#{$inuit-wrapper-width}` needs to be a number."
+  @error "`#{$inuit-wrapper-width}` needs to be a number.";
 }
-/* stylelint-enable */
 
 .o-wrapper {
   @include inuit-clearfix();
