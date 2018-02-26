@@ -16,14 +16,11 @@
 //     "golden-ratio"  : (1.618:1) -> non-integers are okay
 //   ) !default;
 
-
 $inuit-ratios: (
   "2\\:1"   : (2:1),
   "4\\:3"   : (4:3),
   "16\\:9"  : (16:9)
 ) !default;
-
-
 
 
 
@@ -48,7 +45,6 @@ $inuit-ratios: (
   }
 
 }
-
 
   .o-ratio__content,
   .o-ratio > iframe,

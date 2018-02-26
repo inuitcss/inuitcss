@@ -16,14 +16,11 @@
 //     "golden-ratio"  : (1.618:1) -> non-integers are okay
 //   ) !default;
 
-
 $inuit-crops: (
   "2\\:1"   : (2:1),
   "4\\:3"   : (4:3),
   "16\\:9"  : (16:9)
 ) !default;
-
-
 
 
 
@@ -41,7 +38,6 @@ $inuit-crops: (
   overflow: hidden; /* [2] */
 }
 
-
   /**
    * Apply this class to the content (usually `img`) that needs cropping.
    *
@@ -55,6 +51,7 @@ $inuit-crops: (
     left: 0; /* [1] */
     max-width: none; /* [2] */
   }
+
 
 
   /**

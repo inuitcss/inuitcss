@@ -21,7 +21,6 @@
   border-spacing: 0; /* [3] */
 }
 
-
   /**
    * Items within a flag object. There should only ever be one of each.
    *
@@ -34,7 +33,6 @@
     vertical-align: middle; /* [1] */
   }
 
-
   /**
    * Flag images have a space between them and the body of the object.
    *
@@ -45,7 +43,6 @@
   .o-flag__img {
     width: 1px; /* [1] */
     padding-right: $inuit-global-spacing-unit;
-
 
     /**
      * 1. Fixes problem with images disappearing.
@@ -70,7 +67,6 @@
     }
 
   }
-
 
   /**
    * The container for the main content of the flag object.

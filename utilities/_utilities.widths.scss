@@ -31,8 +31,6 @@
 
 
 
-
-
 // Which fractions would you like in your grid system(s)? By default, inuitcss
 // provides you fractions of one whole, halves, thirds, quarters and fifths,
 // e.g.:
@@ -161,6 +159,7 @@ $inuit-widths-breakpoint-separator: \@ !default;
  */
 
 @include inuit-widths($inuit-fractions);
+
 
 
 
