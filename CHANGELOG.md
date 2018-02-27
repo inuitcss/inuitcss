@@ -5,6 +5,8 @@
 ## [Unreleased]
 
 
+### Fixes
+- Fix `$inuit-responsive-spacing-directions` documentation in `_utilities.responsive-spacings.scss`. [[#354](https://github.com/inuitcss/inuitcss/issues/354)]
 
 ## [6.0.0] - 2018-02-26
 
