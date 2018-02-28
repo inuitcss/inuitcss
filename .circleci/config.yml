@@ -1,0 +1,55 @@
+version: 2
+
+jobs:
+  build:
+    working_directory: ~/yourownmood/inuitcss
+    parallelism: 1
+    shell: /bin/bash --login
+
+    environment:
+      CIRCLE_ARTIFACTS: /tmp/circleci-artifacts
+      CIRCLE_TEST_REPORTS: /tmp/circleci-test-results
+      LC_ALL: en_US.UTF-8
+      LANG: en_US.UTF-8
+
+    docker:
+      - image: circleci/build-image:ubuntu-14.04-XXL-upstart-1189-5614f37
+        command: /sbin/init
+
+    steps:
+    - checkout
+    - run: mkdir -p $CIRCLE_ARTIFACTS $CIRCLE_TEST_REPORTS
+    - run:
+        working_directory: ~/yourownmood/inuitcss
+        command: nvm install 8.9.3 && nvm alias default 8.9.3
+    - run:
+        working_directory: ~/yourownmood/inuitcss
+        command: rm -f yourownmood/inuitcss/.rvmrc; echo 2.3.1 > yourownmood/inuitcss/.ruby-version; rvm use 2.3.1 --default
+    - restore_cache:
+        keys:
+        # This branch if available
+        - v1-dep-{{ .Branch }}-
+        # Default branch if not
+        - v1-dep-master-
+        # Any branch if there are none on the default branch - this should be unnecessary if you have your default branch configured correctly
+        - v1-dep-
+    - run: gem install sass true
+    - run: npm install
+    - run: if [ -z "${NODE_ENV:-}" ]; then export NODE_ENV=test; fi
+    - run: export PATH="~/yourownmood/inuitcss/node_modules/.bin:$PATH"
+    - run: npm install
+    - save_cache:
+        key: v1-dep-{{ .Branch }}-{{ epoch }}
+        paths:
+          - ./node_modules
+    - run: sass example.main.scss test/example.main.css --sourcemap=none -E "UTF-8"
+    - run: true-cli test/tests.scss
+    - run: npm rebuild node-sass
+    - run: node-sass example.main.scss -o test/
+    - run: npm test
+    - store_test_results:
+        path: /tmp/circleci-test-results
+    - store_artifacts:
+        path: /tmp/circleci-artifacts
+    - store_artifacts:
+        path: /tmp/circleci-test-results
