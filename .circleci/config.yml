@@ -1,0 +1,48 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/inuitcss/inuitcss
+    parallelism: 1
+    shell: /bin/bash --login
+    environment:
+      CIRCLE_ARTIFACTS: /tmp/circleci-artifacts
+      CIRCLE_TEST_REPORTS: /tmp/circleci-test-results
+      LC_ALL: en_US.UTF-8
+      LANG: en_US.UTF-8
+    docker:
+      - image: circleci/build-image:ubuntu-14.04-XXL-upstart-1189-5614f37
+        command: /sbin/init
+    steps:
+      - checkout
+      - run: mkdir -p $CIRCLE_ARTIFACTS $CIRCLE_TEST_REPORTS
+      - run:
+          working_directory: ~/inuitcss/inuitcss
+          command: nvm install 8 && nvm alias default 8
+      - run:
+          working_directory: ~/inuitcss/inuitcss
+          command: rm -f inuitcss/inuitcss/.rvmrc; echo 2.3.1 > inuitcss/inuitcss/.ruby-version; rvm use 2.3.1 --default
+      - restore_cache:
+          keys:
+          - v1-dep-{{ .Branch }}-
+          - v1-dep-master-
+          - v1-dep-
+      - run: gem install sass true
+      - run: npm install
+      - run: if [ -z "${NODE_ENV:-}" ]; then export NODE_ENV=test; fi
+      - run: export PATH="~/inuitcss/inuitcss/node_modules/.bin:$PATH"
+      - run: npm install
+      - save_cache:
+          key: v1-dep-{{ .Branch }}-{{ epoch }}
+          paths:
+            - ./node_modules
+      - run: sass example.main.scss test/example.main.css --sourcemap=none -E "UTF-8"
+      - run: true-cli test/tests.scss
+      - run: npm rebuild node-sass
+      - run: ~/inuitcss/inuitcss/node_modules/.bin/node-sass example.main.scss -o test/
+      - run: npm test
+      - store_test_results:
+          path: /tmp/circleci-test-results
+      - store_artifacts:
+          path: /tmp/circleci-artifacts
+      - store_artifacts:
+          path: /tmp/circleci-test-results
