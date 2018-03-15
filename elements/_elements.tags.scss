@@ -18,7 +18,7 @@ $inuit-font-size-text: 12px !default;
 
 p {
   @include inuit-font-size($inuit-font-size-p);
-  margin: 0px;
+  margin: 0;
 }
 
 span {
