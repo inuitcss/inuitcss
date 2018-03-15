@@ -1,0 +1,30 @@
+/* ==========================================================================
+   #TAGS
+   ========================================================================== */
+
+/**
+ * Simple default styles for tags. Anything more opinionated
+ * than simple font-size changes should likely be applied via classes .
+ */
+
+// We have all of our basic tags font sizes defined here. Passing these pixel
+// values into our `inuit-font-size()` mixin will generate a rem-based
+// `font-size` with a pixel fallback, as well as generating a `line-height` that
+// will sit on our baseline grid.
+
+$inuit-font-size-p: 14px !default;
+$inuit-font-size-span: 12px !default;
+$inuit-font-size-text: 12px !default;
+
+p {
+  @include inuit-font-size($inuit-font-size-p);
+  margin: 0;
+}
+
+span {
+  @include inuit-font-size($inuit-font-size-span);
+}
+
+text {
+  @include inuit-font-size($inuit-font-size-text);
+}
