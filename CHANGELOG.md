@@ -4,6 +4,8 @@
 
 ## [Unreleased]
 
+### New features
+- Add viewport height utility. [[#368](https://github.com/inuitcss/inuitcss/issues/368)]
 
 ### Fixes
 - Fix `$inuit-responsive-spacing-directions` documentation in `_utilities.responsive-spacings.scss`. [[#354](https://github.com/inuitcss/inuitcss/issues/354)]
