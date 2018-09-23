@@ -1,0 +1,23 @@
+@import "true";
+@import "../utilities/utilities.viewport-heights";
+
+
+
+@include test-module("[mixin] viewport heights") {
+
+  @include test("it should output viewport height classes for a given set of percentages") {
+
+    @include assert() {
+
+      @include output {
+        @include inuit-viewport-heights(25 50 100);
+      }
+
+      @include expect {
+        .u-vh-25 { height: 25vh; }
+        .u-vh-50 { height: 50vh; }
+        .u-vh-100 { height: 100vh; }
+      }
+    }
+  }
+}

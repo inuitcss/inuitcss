@@ -1,0 +1,129 @@
+/* ==========================================================================
+   #VIEWPORT-HEIGHTS
+   ========================================================================== */
+
+/**
+ * inuitcss generates a series of utility classes that give a height based on
+ * viewport height unit 'vh' to whichever element they’re applied, e.g.:
+ *
+ *   <div class="u-vh-100">
+ *
+ * By default, this will also generate responsive variants of each of these
+ * classes by using your Sass MQ configuration, e.g.:
+ *
+ *   <div class="c-section  u-vh-100@device">
+ */
+
+
+
+// Which heights in percentage would you like in your height(s)? By default,
+// inuitcss provides you screen viewport percentages of 25, 50, 75 and 100 percent
+// e.g.:
+//
+//   .u-vh-25
+//   .u-vh-50
+//   .u-vh-75
+//   .u-vh-100
+
+$inuit-viewport-percentages: 25 50 75 100 !default;
+
+
+
+
+
+// Optionally, inuitcss can generate classes to apply min viewport heights which
+// will allow elements to expand if required. Would you like to generate these
+// types of class as well? E.g.:
+//
+//   .u-vh-min-25
+//   .u-vh-min-50
+//   .u-vh-min-75
+//   .u-vh-min-100
+
+$inuit-viewport-height-expandable: false !default;
+
+
+
+
+
+// When using Sass-MQ, this defines the separator for the breakpoints suffix
+// in the class name. By default, we are generating the responsive suffixes
+// for the classes with a `@` symbol so you get classes like:
+// <div class="u-vh-75@mobile">
+
+$inuit-viewports-breakpoint-separator: \@ !default;
+
+
+
+
+
+// A mixin to spit out our height classes. Pass in the percentages we want the
+// heights to have, and an optional suffix for responsive heights. E.g. to
+// create 50vh and 100vh for a small breakpoint:
+//
+// @include inuit-viewport-heights(50 100, -sm);
+
+@mixin inuit-viewport-heights($percentages, $breakpoint: null) {
+
+  // Loop through the percentages to generate height classes
+  @each $percentage in $percentages {
+
+    // Build a class in the format `.u-vh-75[@<breakpoint>]`.
+
+    .u-vh-#{$percentage}#{$breakpoint} {
+      height: #{$percentage}vh;
+    }
+
+    @if ($inuit-viewport-height-expandable == true) {
+
+      // Create min height classes
+
+      .u-vh-min-#{$percentage}#{$breakpoint} {
+        min-height: #{$percentage}vh;
+      }
+
+    }
+
+  }
+
+}
+
+
+
+
+
+/**
+ * A series of viewport height helper classes that you can use to size things
+ * like sections or containers. Classes take a percentage format
+ * (e.g. `.u-vh-50`). Use these in your markup:
+ *
+ * <div class="u-vh-50">
+ *
+ * The following will generate viewport heights helper classes based on the
+ * percentage heights defined in the `$inuit-viewport-percentages` list.
+ */
+
+@include inuit-viewport-heights($inuit-viewport-percentages);
+
+
+
+
+
+/**
+ * If we’re using Sass-MQ, automatically generate viewport height(s) for each
+ * of our defined breakpoints, and give them a Responsive Suffix, e.g.:
+ *
+ * <div class="u-vh-50@mobile">
+ */
+
+@if (variable-exists(mq-breakpoints)) {
+
+  @each $inuit-bp-name, $inuit-bp-value in $mq-breakpoints {
+
+    @include mq($from: $inuit-bp-name) {
+      @include inuit-viewport-heights($inuit-viewport-percentages, #{$inuit-widths-breakpoint-separator}#{$inuit-bp-name});
+    }
+
+  }
+
+}
