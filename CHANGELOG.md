@@ -6,6 +6,7 @@
 
 
 ### Fixes
+- Fix `o-ratio--img-contain` selector and centering. [[#304](https://github.com/inuitcss/inuitcss/issues/304)]
 - Fix `$inuit-responsive-spacing-directions` documentation in `_utilities.responsive-spacings.scss`. [[#354](https://github.com/inuitcss/inuitcss/issues/354)]
 - Fix minor typo in `example.main.scss`.
 
