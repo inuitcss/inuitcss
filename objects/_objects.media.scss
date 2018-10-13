@@ -8,23 +8,15 @@
  */
 
 .o-media {
-  @include inuit-clearfix();
-  display: block;
+  display: flex;
 }
 
   .o-media__img {
-    float: left;
     margin-right: $inuit-global-spacing-unit;
-
-    > img {
-      display: block;
-    }
-
   }
 
   .o-media__body {
-    overflow: hidden;
-    display: block;
+    flex: 1 1 0%;
 
     &,
     > :last-child {
@@ -136,7 +128,7 @@
 .o-media--reverse {
 
   > .o-media__img {
-    float: right;
+    order: 1;
     margin-right: 0;
     margin-left: $inuit-global-spacing-unit;
   }
