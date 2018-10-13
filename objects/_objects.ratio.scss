@@ -54,6 +54,7 @@ $inuit-ratios: (
     top:    0;
     bottom: 0;
     left:   0;
+    right:  0;
     height: 100%;
     width:  100%;
   }
@@ -106,7 +107,7 @@ $inuit-ratios: (
 
 .o-ratio--img-contain {
 
-  > .o-ratio__content:before {
+  > .o-ratio__content {
     height: auto;
     margin: auto;
     max-height: 100%;
