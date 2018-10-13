@@ -59,18 +59,18 @@
    ========================================================================== */
 
 /**
- * 1. Allows us to use the layout object on any type of element.
- * 2. We need to defensively reset any box-model properties.
+ * 1. Defensively reset browser default of element.
+ * 2. Allows us to use the layout object on list element.
  * 3. Use the negative margin trick for multi-row grids:
  *    http://csswizardry.com/2011/08/building-better-grid-systems/
  */
 
-.o-layout {
-  display: flex; /* [1] */
+ .o-layout {
+  display: flex;
   flex-wrap: wrap;
-  margin:  0; /* [2] */
-  padding: 0; /* [2] */
-  list-style: none; /* [1] */
+  margin:  0; /* [1] */
+  padding: 0; /* [1] */
+  list-style: none; /* [2] */
   margin-left: -$inuit-global-spacing-unit; /* [3] */
 }
 
@@ -85,7 +85,6 @@
 
     > * {
       box-sizing: border-box; /* [1] */
-      flex-basis: auto;
       padding-left: $inuit-global-spacing-unit; /* [3] */
       width: 100%; /* [2] */
     }
