@@ -37,7 +37,7 @@ $inuit-ratios: (
   position: relative;
   display: block;
 
-  &:before {
+  &::before {
     content: "";
     display: block;
     width: 100%;
@@ -85,7 +85,7 @@ $inuit-ratios: (
       @error "`#{$consequent}` needs to be a number.";
     }
 
-    .o-ratio--#{$ratio-name}:before {
+    .o-ratio--#{$ratio-name}::before {
       padding-bottom: ($consequent/$antecedent) * 100%;
     }
 
