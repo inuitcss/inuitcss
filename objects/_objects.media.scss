@@ -29,6 +29,38 @@
 
 
 
+/* Vertical alignment modifiers.
+   ========================================================================== */
+
+.o-media--middle {
+  align-items: center;
+}
+
+.o-media--bottom {
+  align-items: flex-end;
+}
+
+
+
+
+
+/* Reversed media objects
+   ========================================================================== */
+
+.o-media--reverse {
+
+  > .o-media__img {
+    order: 1;
+    margin-right: 0;
+    margin-left: $inuit-global-spacing-unit;
+  }
+
+}
+
+
+
+
+
 /* Size variants
    ========================================================================== */
 
@@ -116,37 +148,4 @@
 
   }
 
-}
-
-
-
-
-
-/* Reversed media objects
-   ========================================================================== */
-
-.o-media--reverse {
-
-  > .o-media__img {
-    order: 1;
-    margin-right: 0;
-    margin-left: $inuit-global-spacing-unit;
-  }
-
-}
-
-
-
-
-
-
-/* Vertical alignment modifiers.
-   ========================================================================== */
-
-.o-media--middle {
-  align-items: center;
-}
-
-.o-media--bottom {
-  align-items: flex-end;
 }
