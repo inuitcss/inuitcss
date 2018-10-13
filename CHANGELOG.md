@@ -7,6 +7,7 @@
 ### Breaking changes
 - Update `normalize.css` to 8.0.0 [[#353](https://github.com/inuitcss/inuitcss/issues/353)]
 - Remove bower support. [[#376](https://github.com/inuitcss/inuitcss/issues/376)]
+- Remove `objects.flag`. [[#379](https://github.com/inuitcss/inuitcss/issues/304)]
 - Remove `.o-pack` object. [[#381](https://github.com/inuitcss/inuitcss/issues/381)]
 - Spacings are now defined in a global Sass map and used via a dedicated `inuit-spacing()` function. [[#400](https://github.com/inuitcss/inuitcss/issues/400)]
 - Simplify our reset file. [[#387](https://github.com/inuitcss/inuitcss/issues/387)]
