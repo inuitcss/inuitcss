@@ -5,6 +5,7 @@
 ## [Unreleased]
 
 ### Breaking changes
+- Remove bower support. [[#376](https://github.com/inuitcss/inuitcss/issues/376)]
 - Remove `o-pack` object. [[#381](https://github.com/inuitcss/inuitcss/issues/381)]
 
 ### Fixes
