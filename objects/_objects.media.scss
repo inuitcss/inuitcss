@@ -134,3 +134,19 @@
   }
 
 }
+
+
+
+
+
+
+/* Vertical alignment modifiers.
+   ========================================================================== */
+
+.o-media--middle {
+  align-items: center;
+}
+
+.o-media--bottom {
+  align-items: flex-end;
+}
