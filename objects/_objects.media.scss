@@ -41,6 +41,21 @@ $inuit-media-huge-spacing:  inuit-spacing(huge) !default;
 
 
 
+/* Vertical alignment modifiers.
+   ========================================================================== */
+
+.o-media--middle {
+  align-items: center;
+}
+
+.o-media--bottom {
+  align-items: flex-end;
+}
+
+
+
+
+
 /* Size variants
    ========================================================================== */
 
@@ -145,20 +160,4 @@ $inuit-media-huge-spacing:  inuit-spacing(huge) !default;
     margin-left: $inuit-media-spacing;
   }
 
-}
-
-
-
-
-
-
-/* Vertical alignment modifiers.
-   ========================================================================== */
-
-.o-media--middle {
-  align-items: center;
-}
-
-.o-media--bottom {
-  align-items: flex-end;
 }
