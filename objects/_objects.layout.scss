@@ -173,36 +173,6 @@
 }
 
 
-/**
- * Stretch all grid items of each row to have an equal-height.
- * Please be aware that this modifier class doesn’t take any effect in IE9 and
- * below and other older browsers due to the lack of `display: flex` support.
- */
-
- .o-layout--stretch {
-  display: flex;
-  flex-wrap: wrap;
-
-  > .o-layout__item {
-    display: flex;
-  }
-
-  &.o-layout--center {
-    justify-content: center;
-  }
-
-  &.o-layout--right {
-    justify-content: flex-end;
-  }
-
-  &.o-layout--left {
-    justify-content: flex-start;
-  }
-
-}
-
-
-
 
 
 
