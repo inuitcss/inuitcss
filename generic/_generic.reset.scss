@@ -12,18 +12,52 @@ main {
 
 
 /**
- * A very simple reset that sits on top of Normalize.css.
+ * Removes the default spacing and border for appropriate elements.
  */
 
-body,
-h1, h2, h3, h4, h5, h6,
-blockquote, p, pre,
-dl, dd, ol, ul,
+blockquote,
+dd,
+dl,
 figure,
+h1, h2, h3, h4, h5, h6,
 hr,
-fieldset, legend {
-  margin:  0;
+p,
+pre {
+  margin: 0;
+}
+
+button {
+  background: transparent;
+  border: 0;
   padding: 0;
+}
+
+/**
+ * Work around a Firefox/IE bug where the transparent `button` background
+ * results in a loss of the default `button` focus styles.
+ */
+
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+/**
+ * 1. Reset Chrome and Firefox behaviour which sets a `min-width: min-content;`
+ *    on fieldsets.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  min-width: 0; /* [1] */
+  padding: 0;
+}
+
+ol,
+ul {
+  margin: 0;
+  padding-left: 0;
 }
 
 
@@ -50,16 +84,4 @@ li > {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}
-
-
-
-/**
- * 1. Reset Chrome and Firefox behaviour which sets a `min-width: min-content;`
- *    on fieldsets.
- */
-
-fieldset {
-  min-width: 0; /* [1] */
-  border: 0;
 }
