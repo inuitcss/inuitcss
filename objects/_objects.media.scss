@@ -14,8 +14,7 @@ $inuit-media-huge-spacing:  inuit-spacing(huge) !default;
  */
 
 .o-media {
-  @include inuit-clearfix();
-  display: block;
+  display: flex;
 }
 
   .o-media__img {
@@ -29,8 +28,7 @@ $inuit-media-huge-spacing:  inuit-spacing(huge) !default;
   }
 
   .o-media__body {
-    overflow: hidden;
-    display: block;
+    flex: 1 1 0%;
 
     &,
     > :last-child {
@@ -142,7 +140,7 @@ $inuit-media-huge-spacing:  inuit-spacing(huge) !default;
 .o-media--reverse {
 
   > .o-media__img {
-    float: right;
+    order: 1;
     margin-right: 0;
     margin-left: $inuit-media-spacing;
   }
