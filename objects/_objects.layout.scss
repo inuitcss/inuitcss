@@ -72,7 +72,7 @@
   padding: 0; /* [1] */
   list-style: none; /* [2] */
   margin-left: -$inuit-global-spacing-unit; /* [3] */
-}
+
 
   /**
    * 1. Required in order to combine fluid widths with fixed gutters.
@@ -81,15 +81,13 @@
    *    http://csswizardry.com/2011/08/building-better-grid-systems/
    */
 
-  .o-layout {
-
-    > * {
-      box-sizing: border-box; /* [1] */
-      padding-left: $inuit-global-spacing-unit; /* [3] */
-      width: 100%; /* [2] */
-    }
-
+  > * {
+    box-sizing: border-box; /* [1] */
+    padding-left: $inuit-global-spacing-unit; /* [3] */
+    width: 100%; /* [2] */
   }
+
+}
 
 
 
