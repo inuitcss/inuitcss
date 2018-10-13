@@ -4,6 +4,8 @@
 
 ## [Unreleased]
 
+### Breaking changes
+- Remove bower support. [[#376](https://github.com/inuitcss/inuitcss/issues/376)]
 
 ### Fixes
 - Fix `o-ratio--img-contain` selector and centering. [[#304](https://github.com/inuitcss/inuitcss/issues/304)]
