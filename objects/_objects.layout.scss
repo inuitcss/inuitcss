@@ -263,7 +263,7 @@
 
 .o-layout--auto {
 
-  > .o-layout__item {
+  > * {
     width: auto;
   }
 
