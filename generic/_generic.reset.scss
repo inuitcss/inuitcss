@@ -3,6 +3,15 @@
    ========================================================================== */
 
 /**
+ * Add the correct display in IE.
+ */
+
+main {
+  display: block;
+}
+
+
+/**
  * A very simple reset that sits on top of Normalize.css.
  */
 
