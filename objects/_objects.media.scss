@@ -8,23 +8,15 @@
  */
 
 .o-media {
-  @include inuit-clearfix();
-  display: block;
+  display: flex;
 }
 
   .o-media__img {
-    float: left;
     margin-right: $inuit-global-spacing-unit;
-
-    > img {
-      display: block;
-    }
-
   }
 
   .o-media__body {
-    overflow: hidden;
-    display: block;
+    flex: 1 1 0%;
 
     &,
     > :last-child {
@@ -32,6 +24,38 @@
     }
 
   }
+
+
+
+
+
+/* Vertical alignment modifiers.
+   ========================================================================== */
+
+.o-media--middle {
+  align-items: center;
+}
+
+.o-media--bottom {
+  align-items: flex-end;
+}
+
+
+
+
+
+/* Reversed media objects
+   ========================================================================== */
+
+.o-media--reverse {
+
+  > .o-media__img {
+    order: 1;
+    margin-right: 0;
+    margin-left: $inuit-global-spacing-unit;
+  }
+
+}
 
 
 
@@ -122,23 +146,6 @@
       margin-left: $inuit-global-spacing-unit-huge;
     }
 
-  }
-
-}
-
-
-
-
-
-/* Reversed media objects
-   ========================================================================== */
-
-.o-media--reverse {
-
-  > .o-media__img {
-    float: right;
-    margin-right: 0;
-    margin-left: $inuit-global-spacing-unit;
   }
 
 }

@@ -4,6 +4,12 @@
 
 ## [Unreleased]
 
+### New features
+- Add vertical alignement modifiers in `objects.media`. [[#379](https://github.com/inuitcss/inuitcss/issues/379)]
+
+### Breaking changes
+- Use flexbox in `objects.media`. [[#379](https://github.com/inuitcss/inuitcss/issues/379)]
+- Remove `objects.flag`. [[#379](https://github.com/inuitcss/inuitcss/issues/379)]
 
 ### Fixes
 - Fix `o-ratio--img-contain` selector and centering. [[#304](https://github.com/inuitcss/inuitcss/issues/304)]
