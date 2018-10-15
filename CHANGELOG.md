@@ -4,6 +4,8 @@
 
 ## [Unreleased]
 
+### Breaking changes
+- `objects.layout` use `flexbox` instead of `inline-block` so we remove `o-layout__item` and `o-layout--stretch` because they are no longer needed. [[#380](https://github.com/inuitcss/inuitcss/issues/380)]
 
 ### Fixes
 - Fix `o-ratio--img-contain` selector and centering. [[#304](https://github.com/inuitcss/inuitcss/issues/304)]
