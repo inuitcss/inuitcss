@@ -56,7 +56,6 @@
  * Ratio................A container for maintaining aspect ratio of content.
  * Crop.................Provide a cropping context for media (images, etc.).
  * Table................Classes for manipulating `table`s.
- * Pack.................Pack items into available horizontal space.
  *
  * COMPONENTS
  * Buttons..............An example button component, and how it fits into the
@@ -127,7 +126,6 @@
 @import "objects/objects.ratio";
 @import "objects/objects.crop";
 @import "objects/objects.table";
-@import "objects/objects.pack";
 
 
 
