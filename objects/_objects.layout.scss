@@ -216,6 +216,15 @@
 
 .o-layout--reverse {
   flex-direction: row-reverse;
+
+  &.o-layout--right {
+    justify-content: flex-start;
+  }
+
+  &.o-layout--left {
+    justify-content: flex-end;
+  }
+
 }
 
 
