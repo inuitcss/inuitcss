@@ -1,6 +1,6 @@
 # ![inuitcss](http://inuitcss.com/img/logo-small.png)
 
-[![CircleCI](https://img.shields.io/circleci/project/inuitcss/inuitcss/master.svg?maxAge=2592000?style=flat-square)](https://circleci.com/gh/inuitcss/inuitcss)
+[![CircleCI](https://circleci.com/gh/inuitcss/inuitcss/tree/master.svg?style=shield)](https://circleci.com/gh/inuitcss/inuitcss.nl/tree/master)
 
 **Extensible, scalable, Sass-based, OOCSS framework for large and long-lasting
 UI projects.**
