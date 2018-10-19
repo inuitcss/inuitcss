@@ -10,6 +10,7 @@
 - Fix `$inuit-responsive-spacing-directions` documentation in `_utilities.responsive-spacings.scss`. [[#354](https://github.com/inuitcss/inuitcss/issues/354)]
 - Fix minor typo in `example.main.scss`.
 - Update to CircleCi 2.0 configuration. [[#357](https://github.com/inuitcss/inuitcss/issues/357)]
+- Update dependencies [[#373](https://github.com/inuitcss/inuitcss/issues/373)]
 
 ## [6.0.0] - 2018-02-26
 
