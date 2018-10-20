@@ -26,12 +26,6 @@ $ npm install inuitcss --save
 $ yarn add inuitcss
 ```
 
-**Bower:**
-
-```
-$ bower install inuitcss --save
-```
-
 **Copy/paste (not recommended):**
 
 You can download inuitcss and save it into your project’s `css/` directory. This
