@@ -18,15 +18,11 @@ jobs:
       - run:
           working_directory: ~/inuitcss/inuitcss
           command: nvm install 8 && nvm alias default 8
-      - run:
-          working_directory: ~/inuitcss/inuitcss
-          command: rm -f inuitcss/inuitcss/.rvmrc; echo 2.3.1 > inuitcss/inuitcss/.ruby-version; rvm use 2.3.1 --default
       - restore_cache:
           keys:
           - v1-dep-{{ .Branch }}-
           - v1-dep-master-
           - v1-dep-
-      - run: gem install sass true
       - run: npm install
       - run: if [ -z "${NODE_ENV:-}" ]; then export NODE_ENV=test; fi
       - run: export PATH="~/inuitcss/inuitcss/node_modules/.bin:$PATH"
@@ -35,9 +31,8 @@ jobs:
           key: v1-dep-{{ .Branch }}-{{ epoch }}
           paths:
             - ./node_modules
-      - run: sass example.main.scss test/example.main.css --sourcemap=none -E "UTF-8"
-      - run: true-cli test/tests.scss
       - run: npm rebuild node-sass
+      - run: ~/inuitcss/inuitcss/node_modules/.bin/node-sass example.main.scss test/example.main.css --sourcemap=none -E "UTF-8"
       - run: ~/inuitcss/inuitcss/node_modules/.bin/node-sass example.main.scss -o test/
       - run: npm test
       - store_test_results:
