@@ -5,7 +5,7 @@
 ## [Unreleased]
 
 ### New features
-- Add vertical alignement modifiers in `objects.flag`. [[#379](https://github.com/inuitcss/inuitcss/issues/379)]
+- Add vertical alignement modifiers in `objects.media`. [[#379](https://github.com/inuitcss/inuitcss/issues/379)]
 
 ### Breaking changes
 - Update `normalize.css` to 8.0.0 [[#353](https://github.com/inuitcss/inuitcss/issues/353)]
@@ -19,7 +19,6 @@
 - Switch `.o-list-inline` to flexbox. This eliminates the whitespace between list items. Also, you don’t need to add the `.o-list-inline__item` to the list items in markup the anymore. [[#414](https://github.com/inuitcss/inuitcss/issues/414)]
 - Add module specific spacing variables for more adaptability control. [[#411](https://github.com/inuitcss/inuitcss/issues/411)]
 - Use flexbox in `objects.media`. [[#379](https://github.com/inuitcss/inuitcss/issues/379)]
-- Use flexbox in `objects.flag`. [[#379](https://github.com/inuitcss/inuitcss/issues/379)]
 
 ### Fixes
 - Fix `.o-ratio--img-contain` selector and centering. [[#304](https://github.com/inuitcss/inuitcss/issues/304)]
