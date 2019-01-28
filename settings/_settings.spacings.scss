@@ -24,7 +24,7 @@
 $inuit-global-responsive-spacer-sizes: (
   null: (
     null: $inuit-global-spacing-unit-small,
-    'device': $inuit-global-spacing-unit,
-    'desk': $inuit-global-spacing-unit-large
+    'mobile': $inuit-global-spacing-unit,
+    'desktop': $inuit-global-spacing-unit-large
   )
 );

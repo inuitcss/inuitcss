@@ -18,24 +18,60 @@
  * <div class="o-vertical-spacer--large" />
  */
 
-@each $_size, $_spacer-size-map in $inuit-global-responsive-spacer-sizes {
+  @each $_size, $_spacer-size-map in $inuit-global-responsive-spacer-sizes {
 
-  @if $_size == null {
+    @if $_size == null {
 
-    .o-vertical-spacer {
+      .o-vertical-spacer {
 
-      @each $_breakpoint-from, $_padding-value in $_spacer-size-map {
+        @each $_breakpoint-from, $_padding-value in $_spacer-size-map {
 
-        @if $_breakpoint-from == null {
-          padding-bottom: $_padding-value;
-          padding-top: $_padding-value;
-        }
-
-        @else {
-
-          @include mq($from: $_breakpoint-from) {
+          @if $_breakpoint-from == null {
             padding-bottom: $_padding-value;
             padding-top: $_padding-value;
+          }
+
+          @else {
+
+            @if (variable-exists(mq-breakpoints)) {
+
+              @include mq($from: $_breakpoint-from) {
+                padding-bottom: $_padding-value;
+                padding-top: $_padding-value;
+              }
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+    @else {
+
+      .o-vertical-spacer--#{$_size} {
+
+        @each $_breakpoint-from, $_padding-value in $_spacer-size-map {
+
+          @if $_breakpoint-from == null {
+            padding-bottom: $_padding-value;
+            padding-top: $_padding-value;
+          }
+
+          @else {
+
+            @if (variable-exists(mq-breakpoints)) {
+
+              @include mq($from: $_breakpoint-from) {
+                padding-bottom: $_padding-value;
+                padding-top: $_padding-value;
+              }
+
+            }
+
           }
 
         }
@@ -45,31 +81,3 @@
     }
 
   }
-
-  @else {
-
-    .o-vertical-spacer--#{$_size} {
-
-      @each $_breakpoint-from, $_padding-value in $_spacer-size-map {
-
-        @if $_breakpoint-from == null {
-          padding-bottom: $_padding-value;
-          padding-top: $_padding-value;
-        }
-
-        @else {
-
-          @include mq($from: $_breakpoint-from) {
-            padding-bottom: $_padding-value;
-            padding-top: $_padding-value;
-          }
-
-        }
-
-      }
-
-    }
-
-  }
-
-}
