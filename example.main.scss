@@ -21,6 +21,7 @@
  * Config...............Project-level configuration and feature switches.
  * Core.................inuitcss’ core and setup settings.
  * Global...............Project-wide variables and settings.
+ * Spacings.............Project-wide responsive spacing maps.
  *
  * TOOLS
  * Font-size............A mixin which guarantees baseline-friendly line-heights.
@@ -57,6 +58,7 @@
  * Crop.................Provide a cropping context for media (images, etc.).
  * Table................Classes for manipulating `table`s.
  * Pack.................Pack items into available horizontal space.
+ * Vertical-spacer......Responsive vertical padding object.
  *
  * COMPONENTS
  * Buttons..............An example button component, and how it fits into the
@@ -78,6 +80,7 @@
 @import "settings/example.settings.config";
 @import "settings/settings.core";
 @import "settings/example.settings.global";
+@import "settings/settings.spacings";
 
 
 
@@ -128,6 +131,7 @@
 @import "objects/objects.crop";
 @import "objects/objects.table";
 @import "objects/objects.pack";
+@import "objects/objects.vertical-spacer";
 
 
 
