@@ -1,0 +1,68 @@
+///* ========================================================================
+//   #SPACING
+//   ======================================================================== */
+
+// Mixin to apply responsive spacing to an element.
+//
+// By default, the mixin applies both vertical and horizontal padding but
+// these can be turned on and off by passing a true/false parameter.
+//
+// The values applied are configured in the $global-responsive-spacing-sizes
+// variable. Please configure this this setting before using this mixin
+// within your styles.
+//
+// .default-usage {
+//   @include inuit-responsive-spacing('responsive-map-name');
+// }
+//
+// .vertical-spacing-only-usage {
+//   @include inuit-responsive-spacing('responsive-map-name', $horizontal: false);
+// }
+
+@mixin inuit-responsive-spacing($map_key: null, $vertical: true, $horizontal: true) {
+
+  @if (variable-exists(global-responsive-spacing-sizes)) {
+
+    $_spacing-map: map-get($global-responsive-spacing-sizes, $map_key);
+
+    @each $_breakpoint-from, $_padding-value in $_spacing-map {
+
+      @if $_breakpoint-from == null {
+
+        @if $vertical == true {
+          padding-bottom: $_padding-value;
+          padding-top: $_padding-value;
+        }
+
+        @if $horizontal == true {
+          padding-left: $_padding-value;
+          padding-right: $_padding-value;
+        }
+
+      } @else {
+
+        @if (variable-exists(mq-breakpoints)) {
+
+          @include mq($from: $_breakpoint-from) {
+
+            @if $vertical == true {
+              padding-bottom: $_padding-value;
+              padding-top: $_padding-value;
+            }
+
+            @if $horizontal == true {
+              padding-left: $_padding-value;
+              padding-right: $_padding-value;
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
