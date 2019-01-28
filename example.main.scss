@@ -21,7 +21,6 @@
  * Config...............Project-level configuration and feature switches.
  * Core.................inuitcss’ core and setup settings.
  * Global...............Project-wide variables and settings.
- * Spacings.............Project-wide responsive spacing maps.
  *
  * TOOLS
  * Font-size............A mixin which guarantees baseline-friendly line-heights.
@@ -79,7 +78,6 @@
 @import "settings/example.settings.config";
 @import "settings/settings.core";
 @import "settings/example.settings.global";
-@import "settings/settings.spacings";
 
 
 
@@ -89,6 +87,7 @@
 @import "tools/tools.font-size";
 @import "tools/tools.clearfix";
 @import "tools/tools.hidden";
+@import "tools/tools.spacing";
 @import "node_modules/sass-mq/mq";
 
 
@@ -129,7 +128,6 @@
 @import "objects/objects.ratio";
 @import "objects/objects.crop";
 @import "objects/objects.table";
-@import "objects/objects.vertical-spacer";
 
 
 
