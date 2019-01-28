@@ -3,8 +3,8 @@
 
 
 ## [Unreleased]
-- Add spacing settings file. [[#408](https://github.com/inuitcss/inuitcss/issues/408)]
-- Add `o-vertical-spacer` object. [[#408](https://github.com/inuitcss/inuitcss/issues/408)]
+- Add $global-responsive-spacing-sizes global settings variable. [[#408](https://github.com/inuitcss/inuitcss/issues/408)]
+- Add inuit-responsive-spacing mixin. [[#408](https://github.com/inuitcss/inuitcss/issues/408)]
 
 ### Breaking changes
 
