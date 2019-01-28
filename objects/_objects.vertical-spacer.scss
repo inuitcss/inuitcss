@@ -18,7 +18,7 @@
  * <div class="o-vertical-spacer--large" />
  */
 
-@each $_size, $_spacer-size-map in $global-responsive-spacer-sizes {
+@each $_size, $_spacer-size-map in $inuit-global-responsive-spacer-sizes {
 
   @if $_size == null {
 
