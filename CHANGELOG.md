@@ -6,6 +6,11 @@
 - Add spacing settings file. [[#408](https://github.com/inuitcss/inuitcss/issues/408)]
 - Add `o-vertical-spacer` object. [[#408](https://github.com/inuitcss/inuitcss/issues/408)]
 
+### Breaking changes
+
+- Remove `o-pack` object. [[#381](https://github.com/inuitcss/inuitcss/issues/381)]
+- Remove bower support. [[#376](https://github.com/inuitcss/inuitcss/issues/376)]
+- Update `normalize.css` to 8.0.0. [[#353](https://github.com/inuitcss/inuitcss/issues/353)]
 
 ### Fixes
 - Fix `o-ratio--img-contain` selector and centering. [[#304](https://github.com/inuitcss/inuitcss/issues/304)]
