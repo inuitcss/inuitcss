@@ -16,43 +16,52 @@
 // }
 //
 // .vertical-spacing-only-usage {
-//   @include inuit-responsive-spacing('responsive-map-name', $horizontal: false);
+//   @include inuit-responsive-spacing('responsive-map-name', $horizontal-direction: false);
 // }
 
-@mixin inuit-responsive-spacing($map_key: null, $vertical: true, $horizontal: true) {
+@mixin inuit-responsive-spacing($map_key: null, $vertical-direction: true, $horizontal-direction: true) {
 
-  @if (variable-exists(global-responsive-spacing-sizes)) {
+  @if (map_has_key($global-responsive-spacing-sizes, $map_key) == false) {
 
-    $_spacing-map: map-get($global-responsive-spacing-sizes, $map_key);
+    @error "You forgot to set `#{$map_key}` in the $global-responsive-spacing-sizes map.";
 
-    @each $_breakpoint-from, $_padding-value in $_spacing-map {
+  } @else {
 
-      @if $_breakpoint-from == null {
+    $spacing-map: map-get($global-responsive-spacing-sizes, $map_key);
 
-        @if $vertical == true {
-          padding-bottom: $_padding-value;
-          padding-top: $_padding-value;
+    @each $inuit-bp-name, $spacing-value in $spacing-map {
+
+      @if $inuit-bp-name == null {
+
+        @if $vertical-direction == true {
+          padding-bottom: $spacing-value;
+          padding-top: $spacing-value;
         }
 
-        @if $horizontal == true {
-          padding-left: $_padding-value;
-          padding-right: $_padding-value;
+        @if $horizontal-direction == true {
+          padding-left: $spacing-value;
+          padding-right: $spacing-value;
         }
 
       } @else {
 
-        @if (variable-exists(mq-breakpoints)) {
+        @if (map_has_key($mq-breakpoints, $inuit-bp-name) == false) {
 
-          @include mq($from: $_breakpoint-from) {
+          @error "The `#{$inuit-bp-name}` responsive size is not defined in $mq-breakpoints map.";
 
-            @if $vertical == true {
-              padding-bottom: $_padding-value;
-              padding-top: $_padding-value;
+        } @else {
+        // @if (variable-exists(mq-breakpoints)) {
+
+          @include mq($from: $inuit-bp-name) {
+
+            @if $vertical-direction == true {
+              padding-bottom: $spacing-value;
+              padding-top: $spacing-value;
             }
 
-            @if $horizontal == true {
-              padding-left: $_padding-value;
-              padding-right: $_padding-value;
+            @if $horizontal-direction == true {
+              padding-left: $spacing-value;
+              padding-right: $spacing-value;
             }
 
           }
