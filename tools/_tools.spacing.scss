@@ -4,12 +4,13 @@
 
 // Mixin to apply responsive spacing to an element.
 //
-// By default, the mixin applies both vertical and horizontal padding but
+// By default, the mixin applies both vertical and horizontal spacing but
 // these can be turned on and off by passing a true/false parameter.
 //
-// The values applied are configured in the $global-responsive-spacing-sizes
-// variable. Please configure this this setting before using this mixin
-// within your styles.
+// The values applied are configured in the $inuit-responsive-spacing-maps
+// variable found in settings/_settings.responsive.
+//
+// Please configure this this setting before using this mixin.
 //
 // .default-usage {
 //   @include inuit-responsive-spacing('responsive-map-name');
@@ -18,37 +19,43 @@
 // .vertical-spacing-only-usage {
 //   @include inuit-responsive-spacing('responsive-map-name', $horizontal-direction: false);
 // }
+//
+// .horizontal-margin-spacing-usage {
+//   @include inuit-responsive-spacing('responsive-map-name', $spacing-property: 'margin', $vertical-direction: false);
+// }
 
 
 
 @mixin inuit-responsive-spacing($map_key: null, $spacing-property: 'padding', $vertical-direction: true, $horizontal-direction: true) {
 
-  @if (map_has_key($global-responsive-spacing-sizes, $map_key) == false) {
+  @if (map_has_key($inuit-responsive-spacing-maps, $map_key) == false) {
 
-    @error "You forgot to set `#{$map_key}` in the $global-responsive-spacing-sizes map.";
+    @error "You forgot to set `#{$map_key}` in the $inuit-responsive-spacing-maps map.";
 
   } @else {
 
-    @if (map_has_key($inuit-responsive-spacing-properties, $spacing-property) == false) {
+    $inuit-responsive-spacing-map: map-get($inuit-responsive-spacing-maps, $map_key);
+
+    @if ($inuit-responsive-spacing-properties == null
+      or map_has_key($inuit-responsive-spacing-properties, $spacing-property) == false
+    ) {
 
       @error "You forgot to set `#{$spacing-property}` in the $inuit-responsive-spacing-properties map.";
 
     } @else {
 
-      $spacing-map: map-get($global-responsive-spacing-sizes, $map_key);
-
-      @each $inuit-bp-name, $spacing-value in $spacing-map {
+      @each $inuit-bp-name, $spacing-value in $inuit-responsive-spacing-map {
 
         @if $inuit-bp-name == null {
 
           @if $vertical-direction == true {
-            padding-bottom: $spacing-value;
-            padding-top: $spacing-value;
+            #{$spacing-property}-bottom: $spacing-value;
+            #{$spacing-property}-top: $spacing-value;
           }
 
           @if $horizontal-direction == true {
-            padding-left: $spacing-value;
-            padding-right: $spacing-value;
+            #{$spacing-property}-left: $spacing-value;
+            #{$spacing-property}-right: $spacing-value;
           }
 
         } @else {
@@ -58,18 +65,17 @@
             @error "The `#{$inuit-bp-name}` responsive size is not defined in $mq-breakpoints map.";
 
           } @else {
-          // @if (variable-exists(mq-breakpoints)) {
 
             @include mq($from: $inuit-bp-name) {
 
               @if $vertical-direction == true {
-                padding-bottom: $spacing-value;
-                padding-top: $spacing-value;
+                #{$spacing-property}-bottom: $spacing-value;
+                #{$spacing-property}-top: $spacing-value;
               }
 
               @if $horizontal-direction == true {
-                padding-left: $spacing-value;
-                padding-right: $spacing-value;
+                #{$spacing-property}-left: $spacing-value;
+                #{$spacing-property}-right: $spacing-value;
               }
 
             }
