@@ -1,0 +1,109 @@
+///* ========================================================================
+//   #RESPONSIVE
+//   ======================================================================== */
+
+// This settings file sets up inuitcss’ responsive setup variables. They
+// help aid the framework functions when considering responsive styling.
+
+
+
+// Breakpoints should be defined to fit with the content, not device sizes
+// We encourage the below to be changed to suit your projects visual design
+
+$mq-breakpoints: (
+    mobile:  320px,
+    tablet:  740px,
+    desktop: 980px,
+    wide:    1300px
+) !default;
+
+
+
+// When using Sass-MQ, this defines the separator for the breakpoints suffix
+// in the class name. By default, we are generating the responsive suffixes
+// for the classes with a `@` symbol so you get classes like:
+//
+//   <div class="u-margin-bottom@device">
+//
+// Be aware that since the `@` symbol is a reserved symbol in CSS, it has to be
+// escaped with a `\`. In the markup though, you write your classes without the
+// backslash (e.g. `u-margin-bottom@device`).
+
+$inuit-widths-breakpoint-separator: \@ !default;
+
+
+
+// This setting allows you to define the direction used by responsive spacing
+// utilities. By default, these are set to the `normal` spacing properties.
+//
+// Example:
+// $inuit-responsive-spacing-directions: (
+//   "-bottom": "-bottom",
+//   "-left": "-left",
+// );
+
+$inuit-responsive-spacing-directions: null !default;
+
+
+
+// This setting allows you to define the spacing properties used by tools and
+// utilities across the framework. By default, these are set to the `normal`
+// spacing properties.
+//
+// Example custom setting
+// $inuit-responsive-spacing-properties: (
+//  "padding": "padding",
+//  "margin": "margin",
+//);
+
+$inuit-responsive-spacing-properties: null !default;
+
+
+
+// This setting allows you to define the spacing sizes used by responsive
+// spacing utilities. By default, these are set to the `normal` size value.
+//
+// Example custom sizes setting:
+// $inuit-responsive-spacing-sizes: (
+//   "-small": $inuit-global-spacing-unit-small,
+//   "-large": $inuit-global-spacing-unit-large,
+// );
+
+$inuit-responsive-spacing-sizes: null !default;
+
+
+// You can change the generated CSS classes by further extending the
+// Sass maps (example maps in above comment blocks).
+//
+// If you want every ‘normal’ spacing ($inuit-default-spacing-* variables)
+// also as a responsive version, you can just mirror the ‘normal’ spacings:
+//
+//   $inuit-responsive-spacing-directions: $inuit-default-spacing-directions !default;
+//
+//   $inuit-responsive-spacing-properties: $inuit-default-spacing-properties !default;
+//
+//   $inuit-responsive-spacing-sizes: $inuit-default-spacing-sizes !default;
+//
+// BUT BE AWARE: This can generate a huge chunk of extra CSS, depending on the
+// amount of breakpoints you defined. So please check your CSS’ output and
+// filesize!
+
+
+// Responsive spacings maps are used to define common spacing patterns across
+// a site where the size of the spacing changes based on breakpoint.
+// Each spacing size within a single map is indexed by it's `from` $mq-breakpoint
+// with the default size indexed with `null`.
+//
+// By default, this setting is set to null. It is common and recommended that you
+// define these size settings with your designer to retain consistency.
+//
+// Example map:
+// $inuit-responsive-spacing-maps: (
+//   null: (
+//     null: $inuit-global-spacing-unit-small,
+//     'device': $inuit-global-spacing-unit,
+//     'desktop': $inuit-global-spacing-unit-large
+//   )
+// )
+
+$inuit-responsive-spacing-maps: null !default;

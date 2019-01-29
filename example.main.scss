@@ -20,6 +20,7 @@
  * SETTINGS
  * Config...............Project-level configuration and feature switches.
  * Core.................inuitcss’ core and setup settings.
+ * Responsive...........inuitcss’ responsive setup settings.
  * Global...............Project-wide variables and settings.
  *
  * TOOLS
@@ -76,6 +77,7 @@
 // SETTINGS
 @import "settings/example.settings.config";
 @import "settings/settings.core";
+@import "settings/settings.responsive";
 @import "settings/example.settings.global";
 
 
