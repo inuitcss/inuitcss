@@ -11,14 +11,3 @@
 
 $global-radius: 3px !default;
 $global-transition: all 300ms ease-in-out !default;
-
-
-// Responsive Spacings
-
-$global-responsive-spacing-sizes: (
-  null: (
-    null: $inuit-global-spacing-unit-small,
-    'mobile': $inuit-global-spacing-unit,
-    'desktop': $inuit-global-spacing-unit-large
-  )
-) !default;
