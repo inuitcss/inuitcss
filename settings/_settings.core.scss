@@ -38,6 +38,49 @@ $inuit-global-spacing-unit-huge:  $inuit-global-baseline * $inuit-global-spacing
 
 
 
+// Default spacing directions are defined to allow spacing utilities and tools to produce
+// spacing CSS in the mapped directions. By default, all directions are set but it is
+// highly recommended that you refine this setting by removing un-required directions.
+
+$inuit-default-spacing-directions: (
+  null: null,
+  "-top": "-top",
+  "-right": "-right",
+  "-bottom": "-bottom",
+  "-left": "-left",
+  "-horizontal": "-left" "-right",
+  "-vertical": "-top" "-bottom",
+) !default;
+
+
+
+// Default spacing properties are defined to allow spacing utilities and tools to produce
+// spacing CSS using the set properties. By default, all spaceing properties are set
+// but it is highly recommended that you refine this setting by removing un-required properties.
+
+$inuit-default-spacing-properties: (
+  "padding": "padding",
+  "margin": "margin",
+) !default;
+
+
+
+// Default spacing size are defined to allow spacing utilities and tools to produce
+// spacing CSS using the set inuit spacing units. Below is an example map of spacing
+// sizes but it is highly recommended that you refine this setting by
+// removing un-required properties.
+
+$inuit-default-spacing-sizes: (
+  null: $inuit-global-spacing-unit,
+  "-tiny": $inuit-global-spacing-unit-tiny,
+  "-small": $inuit-global-spacing-unit-small,
+  "-large": $inuit-global-spacing-unit-large,
+  "-huge": $inuit-global-spacing-unit-huge,
+  "-none": 0
+) !default;
+
+
+
 // Base typographical styles.
 
 $inuit-global-font-size:    16px !default;
