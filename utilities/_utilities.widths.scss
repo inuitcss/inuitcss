@@ -68,16 +68,6 @@ $inuit-widths-delimiter: \/ !default;
 
 
 
-// When using Sass-MQ, this defines the separator for the breakpoints suffix
-// in the class name. By default, we are generating the responsive suffixes
-// for the classes with a `@` symbol so you get classes like:
-// <div class="u-3/12@mobile">
-$inuit-widths-breakpoint-separator: \@ !default;
-
-
-
-
-
 // A mixin to spit out our width classes. Pass in the columns we want the widths
 // to have, and an optional suffix for responsive widths. E.g. to create thirds
 // and quarters for a small breakpoint:
