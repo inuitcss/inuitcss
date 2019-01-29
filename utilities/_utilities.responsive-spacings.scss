@@ -6,22 +6,14 @@
  * Utility classes enhancing the normal spacing classes by adding responsiveness
  * to them. By default, there are not responsive spacings defined. You can
  * generate responsive spacings by adding entries to the following three Sass
- * maps, e.g.:
+ * maps which are found in settings/_settings.responsive.scss:
  *
- *   $inuit-responsive-spacing-directions: (
- *     null: null,
- *     "-bottom": "-bottom",
- *   );
+ * - $inuit-responsive-spacing-directions
+ * - $inuit-responsive-spacing-properties
+ * - $inuit-responsive-spacing-sizes
  *
- *   $inuit-responsive-spacing-properties: (
- *     "margin": "margin",
- *   );
- *
- *   $inuit-responsive-spacing-sizes: (
- *     "-small": $inuit-global-spacing-unit-small,
- *   );
- *
- * This would bring us the following classes:
+ * Defining these responsive settings can produce the following
+ * exmaple classes:
  *
  *   .u-margin-small@mobile {}
  *   .u-margin-small@tablet {}
@@ -31,20 +23,6 @@
  *   .u-margin-bottom-small@tablet {}
  *   .u-margin-bottom-small@desktop {}
  *   .u-margin-bottom-small@wide {}
- *
- * You can change the generated CSS classes by further extending the Sass maps.
- * If you want every ‘normal’ spacing (those from `utilities.spacings`) also as
- * a responsive version, you can just mirror the ‘normal’ spacings:
- *
- *   $inuit-responsive-spacing-directions: $inuit-spacing-directions !default;
- *
- *   $inuit-responsive-spacing-properties: $inuit-spacing-properties !default;
- *
- *   $inuit-responsive-spacing-sizes: $inuit-spacing-sizes !default;
- *
- * BUT BE AWARE: This can generate a huge chunk of extra CSS, depending on the
- * amount of breakpoints you defined. So please check your CSS’ output and
- * filesize!
  */
 
 
@@ -61,26 +39,6 @@ $inuit-spacing-directions: null !default;
 }
 @else {
 
-
-
-// When using Sass-MQ, this defines the separator for the breakpoints suffix
-// in the class name. By default, we are generating the responsive suffixes
-// for the classes with a `@` symbol so you get classes like:
-//
-//   <div class="u-margin-bottom@mobile">
-//
-// Be aware that since the `@` symbol is a reserved symbol in CSS, it has to be
-// escaped with a `\`. In the markup though, you write your classes without the
-// backslash (e.g. `u-margin-bottom@mobile`).
-$inuit-widths-breakpoint-separator: \@ !default;
-
-
-
-$inuit-responsive-spacing-directions: null !default;
-
-$inuit-responsive-spacing-properties: null !default;
-
-$inuit-responsive-spacing-sizes: null !default;
 
 
 
