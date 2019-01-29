@@ -47,10 +47,9 @@ $inuit-responsive-spacing-directions: null !default;
 
 
 // This setting allows you to define the spacing properties used by tools and
-// utilities across the framework. By default, these are set to the `normal`
-// spacing properties.
+// utilities across the framework.
 //
-// Example custom setting
+// Example setting
 // $inuit-responsive-spacing-properties: (
 //  "padding": "padding",
 //  "margin": "margin",
@@ -61,9 +60,9 @@ $inuit-responsive-spacing-properties: null !default;
 
 
 // This setting allows you to define the spacing sizes used by responsive
-// spacing utilities. By default, these are set to the `normal` size value.
+// spacing utilities.
 //
-// Example custom sizes setting:
+// Example setting:
 // $inuit-responsive-spacing-sizes: (
 //   "-small": $inuit-global-spacing-unit-small,
 //   "-large": $inuit-global-spacing-unit-large,
