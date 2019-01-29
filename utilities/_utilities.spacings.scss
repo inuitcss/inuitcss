@@ -15,29 +15,54 @@
  *   .u-padding-vertical-small {}
  */
 
-$inuit-spacing-directions: (
-  null: null,
-  "-top": "-top",
-  "-right": "-right",
-  "-bottom": "-bottom",
-  "-left": "-left",
-  "-horizontal": "-left" "-right",
-  "-vertical": "-top" "-bottom",
-) !default;
+// NOTE: The following settings use the `normal` spacing settings by default.
+// It is highly recommended that refine the spacing maps to meet your
+// site requirements to help keep CSS lean and light as possible
 
-$inuit-spacing-properties: (
-  "padding": "padding",
-  "margin": "margin",
-) !default;
 
-$inuit-spacing-sizes: (
-  null: $inuit-global-spacing-unit,
-  "-tiny": $inuit-global-spacing-unit-tiny,
-  "-small": $inuit-global-spacing-unit-small,
-  "-large": $inuit-global-spacing-unit-large,
-  "-huge": $inuit-global-spacing-unit-huge,
-  "-none": 0
-) !default;
+// Use the following commented out map as a guide to customising and
+// refining the spacing directions setting:
+//
+// $inuit-spacing-directions: (
+//   null: null,
+//   "-top": "-top",
+//   "-right": "-right",
+//   "-bottom": "-bottom",
+//   "-left": "-left",
+//   "-horizontal": "-left" "-right",
+//   "-vertical": "-top" "-bottom",
+// ) !default;
+
+$inuit-spacing-directions: $inuit-default-spacing-directions !default;
+
+
+
+// Use the following commented out map as a guide to customising and
+// refining the spacing properties setting:
+//
+// $inuit-spacing-properties: (
+//   "padding": "padding",
+//   "margin": "margin",
+// ) !default;
+$inuit-spacing-properties: $inuit-default-spacing-properties !default;
+
+
+
+// Use the following commented out map as a guide to customising and
+// refining the spacing sizes setting:
+//
+// $inuit-spacing-sizes: (
+//   null: $inuit-global-spacing-unit,
+//   "-tiny": $inuit-global-spacing-unit-tiny,
+//   "-small": $inuit-global-spacing-unit-small,
+//   "-large": $inuit-global-spacing-unit-large,
+//   "-huge": $inuit-global-spacing-unit-huge,
+//   "-none": 0
+// ) !default;
+//
+$inuit-spacing-sizes: $inuit-default-spacing-sizes !default;
+
+
 
 @each $property-namespace, $property in $inuit-spacing-properties {
 
