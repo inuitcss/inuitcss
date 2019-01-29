@@ -19,7 +19,9 @@
 //   @include inuit-responsive-spacing('responsive-map-name', $horizontal-direction: false);
 // }
 
-@mixin inuit-responsive-spacing($map_key: null, $vertical-direction: true, $horizontal-direction: true) {
+
+
+@mixin inuit-responsive-spacing($map_key: null, $spacing-property: 'padding', $vertical-direction: true, $horizontal-direction: true) {
 
   @if (map_has_key($global-responsive-spacing-sizes, $map_key) == false) {
 
@@ -27,41 +29,49 @@
 
   } @else {
 
-    $spacing-map: map-get($global-responsive-spacing-sizes, $map_key);
+    @if (map_has_key($inuit-responsive-spacing-properties, $spacing-property) == false) {
 
-    @each $inuit-bp-name, $spacing-value in $spacing-map {
+      @error "You forgot to set `#{$spacing-property}` in the $inuit-responsive-spacing-properties map.";
 
-      @if $inuit-bp-name == null {
+    } @else {
 
-        @if $vertical-direction == true {
-          padding-bottom: $spacing-value;
-          padding-top: $spacing-value;
-        }
+      $spacing-map: map-get($global-responsive-spacing-sizes, $map_key);
 
-        @if $horizontal-direction == true {
-          padding-left: $spacing-value;
-          padding-right: $spacing-value;
-        }
+      @each $inuit-bp-name, $spacing-value in $spacing-map {
 
-      } @else {
+        @if $inuit-bp-name == null {
 
-        @if (map_has_key($mq-breakpoints, $inuit-bp-name) == false) {
+          @if $vertical-direction == true {
+            padding-bottom: $spacing-value;
+            padding-top: $spacing-value;
+          }
 
-          @error "The `#{$inuit-bp-name}` responsive size is not defined in $mq-breakpoints map.";
+          @if $horizontal-direction == true {
+            padding-left: $spacing-value;
+            padding-right: $spacing-value;
+          }
 
         } @else {
-        // @if (variable-exists(mq-breakpoints)) {
 
-          @include mq($from: $inuit-bp-name) {
+          @if (map_has_key($mq-breakpoints, $inuit-bp-name) == false) {
 
-            @if $vertical-direction == true {
-              padding-bottom: $spacing-value;
-              padding-top: $spacing-value;
-            }
+            @error "The `#{$inuit-bp-name}` responsive size is not defined in $mq-breakpoints map.";
 
-            @if $horizontal-direction == true {
-              padding-left: $spacing-value;
-              padding-right: $spacing-value;
+          } @else {
+          // @if (variable-exists(mq-breakpoints)) {
+
+            @include mq($from: $inuit-bp-name) {
+
+              @if $vertical-direction == true {
+                padding-bottom: $spacing-value;
+                padding-top: $spacing-value;
+              }
+
+              @if $horizontal-direction == true {
+                padding-left: $spacing-value;
+                padding-right: $spacing-value;
+              }
+
             }
 
           }
