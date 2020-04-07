@@ -2,6 +2,12 @@
    #MEDIA
    ========================================================================== */
 
+$inuit-media-spacing:       $inuit-global-spacing-unit !default;
+$inuit-media-tiny-spacing:  $inuit-global-spacing-unit-tiny !default;
+$inuit-media-small-spacing: $inuit-global-spacing-unit-small !default;
+$inuit-media-large-spacing: $inuit-global-spacing-unit-large !default;
+$inuit-media-huge-spacing:  $inuit-global-spacing-unit-huge !default;
+
 /**
  * Place any image- and text-like content side-by-side, as per:
  * http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
@@ -14,7 +20,7 @@
 
   .o-media__img {
     float: left;
-    margin-right: $inuit-global-spacing-unit;
+    margin-right: $inuit-media-spacing;
 
     > img {
       display: block;
@@ -58,14 +64,14 @@
 .o-media--tiny {
 
   > .o-media__img {
-    margin-right: $inuit-global-spacing-unit-tiny;
+    margin-right: $inuit-media-tiny-spacing;
   }
 
   &.o-media--reverse {
 
     > .o-media__img {
       margin-right: 0;
-      margin-left: $inuit-global-spacing-unit-tiny;
+      margin-left: $inuit-media-tiny-spacing;
     }
 
   }
@@ -76,14 +82,14 @@
 .o-media--small {
 
   > .o-media__img {
-    margin-right: $inuit-global-spacing-unit-small;
+    margin-right: $inuit-media-small-spacing;
   }
 
   &.o-media--reverse {
 
     > .o-media__img {
       margin-right: 0;
-      margin-left: $inuit-global-spacing-unit-small;
+      margin-left: $inuit-media-small-spacing;
     }
 
   }
@@ -94,14 +100,14 @@
 .o-media--large {
 
   > .o-media__img {
-    margin-right: $inuit-global-spacing-unit-large;
+    margin-right: $inuit-media-large-spacing;
   }
 
   &.o-media--reverse {
 
     > .o-media__img {
       margin-right: 0;
-      margin-left: $inuit-global-spacing-unit-large;
+      margin-left: $inuit-media-large-spacing;
     }
 
   }
@@ -112,14 +118,14 @@
 .o-media--huge {
 
   > .o-media__img {
-    margin-right: $inuit-global-spacing-unit-huge;
+    margin-right: $inuit-media-huge-spacing;
   }
 
   &.o-media--reverse {
 
     > .o-media__img {
       margin-right: 0;
-      margin-left: $inuit-global-spacing-unit-huge;
+      margin-left: $inuit-media-huge-spacing;
     }
 
   }
@@ -138,7 +144,7 @@
   > .o-media__img {
     float: right;
     margin-right: 0;
-    margin-left: $inuit-global-spacing-unit;
+    margin-left: $inuit-media-spacing;
   }
 
 }

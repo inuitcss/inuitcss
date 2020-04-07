@@ -2,11 +2,12 @@
    #WRAPPER
    ========================================================================== */
 
+$inuit-wrapper-width:   1200px !default;
+$inuit-wrapper-padding: $inuit-global-spacing-unit !default;
+
 /**
  * Page-level constraining and wrapping elements.
  */
-
-$inuit-wrapper-width: 1200px !default;
 
 @if (type-of($inuit-wrapper-width) != number) {
   @error "`#{$inuit-wrapper-width}` needs to be a number.";
@@ -14,8 +15,8 @@ $inuit-wrapper-width: 1200px !default;
 
 .o-wrapper {
   @include inuit-clearfix();
-  padding-right: $inuit-global-spacing-unit;
-  padding-left:  $inuit-global-spacing-unit;
+  padding-right: $inuit-wrapper-padding;
+  padding-left:  $inuit-wrapper-padding;
   margin-right: auto;
   margin-left:  auto;
   max-width: $inuit-wrapper-width;

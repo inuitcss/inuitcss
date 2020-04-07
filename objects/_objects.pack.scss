@@ -2,6 +2,12 @@
    #PACK
    ========================================================================== */
 
+$inuit-pack-item-spacing:       $inuit-global-spacing-unit !default;
+$inuit-pack-tiny-item-spacing:  $inuit-global-spacing-unit-tiny !default;
+$inuit-pack-small-item-spacing: $inuit-global-spacing-unit-small !default;
+$inuit-pack-large-item-spacing: $inuit-global-spacing-unit-large !default;
+$inuit-pack-huge-item-spacing:  $inuit-global-spacing-unit-huge !default;
+
 /**
  * The pack object simply causes any number of elements pack up horizontally to
  * automatically fill an equal, fluid width of their parent.
@@ -60,23 +66,23 @@
    ========================================================================== */
 
 .o-pack--tiny {
-  border-spacing: $inuit-global-spacing-unit-tiny;
+  border-spacing: $inuit-pack-tiny-item-spacing;
 }
 
 .o-pack--small {
-  border-spacing: $inuit-global-spacing-unit-small;
+  border-spacing: $inuit-pack-small-item-spacing;
 }
 
 .o-pack--default {
-  border-spacing: $inuit-global-spacing-unit;
+  border-spacing: $inuit-pack-item-spacing;
 }
 
 .o-pack--large {
-  border-spacing: $inuit-global-spacing-unit-large;
+  border-spacing: $inuit-pack-large-item-spacing;
 }
 
 .o-pack--huge {
-  border-spacing: $inuit-global-spacing-unit-huge;
+  border-spacing: $inuit-pack-huge-item-spacing;
 }
 
 

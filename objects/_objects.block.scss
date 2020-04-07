@@ -2,6 +2,12 @@
    #BLOCK
    ========================================================================== */
 
+$inuit-block-spacing:       $inuit-global-spacing-unit !default;
+$inuit-block-tiny-spacing:  $inuit-global-spacing-unit-tiny !default;
+$inuit-block-small-spacing: $inuit-global-spacing-unit-small !default;
+$inuit-block-large-spacing: $inuit-global-spacing-unit-large !default;
+$inuit-block-huge-spacing:  $inuit-global-spacing-unit-huge !default;
+
 /**
  * Stacked image-with-text object. A simple abstraction to cover a very commonly
  * occurring design pattern.
@@ -13,7 +19,7 @@
 }
 
   .o-block__img {
-    margin-bottom: $inuit-global-spacing-unit;
+    margin-bottom: $inuit-block-spacing;
 
 
     /* Size variants
@@ -24,19 +30,19 @@
     }
 
     .o-block--tiny > & {
-      margin-bottom: $inuit-global-spacing-unit-tiny;
+      margin-bottom: $inuit-block-tiny-spacing;
     }
 
     .o-block--small > & {
-      margin-bottom: $inuit-global-spacing-unit-small;
+      margin-bottom: $inuit-block-small-spacing;
     }
 
     .o-block--large > & {
-      margin-bottom: $inuit-global-spacing-unit-large;
+      margin-bottom: $inuit-block-large-spacing;
     }
 
     .o-block--huge > & {
-      margin-bottom: $inuit-global-spacing-unit-huge;
+      margin-bottom: $inuit-block-huge-spacing;
     }
 
   }
