@@ -1,0 +1,22 @@
+///* ========================================================================
+//   #SPACING
+//   ======================================================================== */
+
+// Function to assign spacings to elements.
+//
+// .usage {
+//   margin-bottom: inuit-spacing(large);
+// }
+//
+// Possible arguments for the function are defined in the
+// `$inuit-global-spacings` map in `_settings.core.scss`.
+
+@function inuit-spacing($spacing) {
+  $_factor: map-get($inuit-global-spacings, $spacing);
+
+  @if not (map-has-key($inuit-global-spacings, $spacing)) {
+      @error "`#{$spacing}` is not defined in the `$inuit-global-spacings` map. Only use spacings that are defined in that map.";
+  }
+
+  @return $_factor * $inuit-global-baseline;
+}

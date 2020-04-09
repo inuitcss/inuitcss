@@ -19,7 +19,7 @@ figure,
 hr,
 table,
 fieldset {
-  margin-bottom: $inuit-global-spacing-unit;
+  margin-bottom: inuit-spacing(base);
 }
 
 
@@ -29,5 +29,5 @@ fieldset {
  */
 
 dd, ol, ul {
-  margin-left: $inuit-global-spacing-unit;
+  margin-left: inuit-spacing(base);
 }

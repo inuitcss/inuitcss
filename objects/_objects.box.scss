@@ -2,11 +2,11 @@
    #BOX
    ========================================================================== */
 
-$inuit-box-padding:       $inuit-global-spacing-unit !default;
-$inuit-box-tiny-padding:  $inuit-global-spacing-unit-tiny !default;
-$inuit-box-small-padding: $inuit-global-spacing-unit-small !default;
-$inuit-box-large-padding: $inuit-global-spacing-unit-large !default;
-$inuit-box-huge-padding:  $inuit-global-spacing-unit-huge !default;
+$inuit-box-padding:       inuit-spacing(base) !default;
+$inuit-box-tiny-padding:  inuit-spacing(tiny) !default;
+$inuit-box-small-padding: inuit-spacing(small) !default;
+$inuit-box-large-padding: inuit-spacing(large) !default;
+$inuit-box-huge-padding:  inuit-spacing(huge) !default;
 
 /**
  * The box object simply boxes off content. Extend with cosmetic styles in the

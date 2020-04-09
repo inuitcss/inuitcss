@@ -3,7 +3,7 @@
    ========================================================================== */
 
 $inuit-wrapper-width:   1200px !default;
-$inuit-wrapper-padding: $inuit-global-spacing-unit !default;
+$inuit-wrapper-padding: inuit-spacing(base) !default;
 
 /**
  * Page-level constraining and wrapping elements.

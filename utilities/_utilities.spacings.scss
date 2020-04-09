@@ -31,11 +31,11 @@ $inuit-spacing-properties: (
 ) !default;
 
 $inuit-spacing-sizes: (
-  null: $inuit-global-spacing-unit,
-  "-tiny": $inuit-global-spacing-unit-tiny,
-  "-small": $inuit-global-spacing-unit-small,
-  "-large": $inuit-global-spacing-unit-large,
-  "-huge": $inuit-global-spacing-unit-huge,
+  null: inuit-spacing(base),
+  "-tiny": inuit-spacing(tiny),
+  "-small": inuit-spacing(small),
+  "-large": inuit-spacing(large),
+  "-huge": inuit-spacing(huge),
   "-none": 0
 ) !default;
 

@@ -7,16 +7,16 @@
  * that make up your UI. Component classes are prefixed with a `c-`.
  */
 
-$inuit-button-padding-vertical:         $inuit-global-spacing-unit-small !default;
-$inuit-button-padding-horizontal:       $inuit-global-spacing-unit !default;
+$inuit-button-padding-vertical:         inuit-spacing(small) !default;
+$inuit-button-padding-horizontal:       inuit-spacing(base) !default;
 $inuit-button-transition:               $global-transition !default;
 $inuit-button-radius:                   $global-radius !default;
 
-$inuit-button-small-padding-vertical:   $inuit-global-spacing-unit-tiny !default;
-$inuit-button-small-padding-horizontal: $inuit-global-spacing-unit-small !default;
+$inuit-button-small-padding-vertical:   inuit-spacing(tiny) !default;
+$inuit-button-small-padding-horizontal: inuit-spacing(small) !default;
 
-$inuit-button-large-padding-vertical:   $inuit-global-spacing-unit !default;
-$inuit-button-large-padding-horizontal: $inuit-global-spacing-unit-large !default;
+$inuit-button-large-padding-vertical:   inuit-spacing(base) !default;
+$inuit-button-large-padding-horizontal: inuit-spacing(large) !default;
 
 $inuit-button-ghost-border-width:       2px;
 
