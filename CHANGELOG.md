@@ -9,6 +9,9 @@
 - Remove bower support. [[#376](https://github.com/inuitcss/inuitcss/issues/376)]
 - Remove `.o-pack` object. [[#381](https://github.com/inuitcss/inuitcss/issues/381)]
 
+### New features
+- Switch `.o-list-inline` to flexbox. This eliminates the whitespace between list items. Also, you don’t need to add the `.o-list-inline__item` to the list items in markup the anymore. [[#414](https://github.com/inuitcss/inuitcss/issues/414)]
+
 ### Fixes
 - Fix `.o-ratio--img-contain` selector and centering. [[#304](https://github.com/inuitcss/inuitcss/issues/304)]
 - Fix `$inuit-responsive-spacing-directions` documentation in `_utilities.responsive-spacings.scss`. [[#354](https://github.com/inuitcss/inuitcss/issues/354)]
@@ -16,6 +19,8 @@
 - Update to CircleCi 2.0 configuration. [[#357](https://github.com/inuitcss/inuitcss/issues/357)]
 - Update dependencies [[#373](https://github.com/inuitcss/inuitcss/issues/373)]
 - Update CircleCi status badge [[#398](https://github.com/inuitcss/inuitcss/issues/398)]
+
+
 
 ## [6.0.0] - 2018-02-26
 
