@@ -11,3 +11,10 @@ $inuit-font-size-h3:  24px !default;
 $inuit-font-size-h4:  20px !default;
 $inuit-font-size-h5:  18px !default;
 $inuit-font-size-h6:  16px !default;
+
+
+
+// Standardise some UI treatments.
+
+$global-radius: 3px !default;
+$global-transition: all 300ms ease-in-out !default;
