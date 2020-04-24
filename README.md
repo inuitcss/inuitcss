@@ -141,7 +141,7 @@ Following this structure allows you to intersperse inuitcss’ code with your ow
 
 // GENERIC
 @import "node_modules/inuitcss/generic/generic.box-sizing";
-@import "node_modules/inuitcss/generic/generic.normalize";
+@import "node_modules/normalize.css/normalize";
 @import "node_modules/inuitcss/generic/generic.shared";
 
 // ELEMENTS
