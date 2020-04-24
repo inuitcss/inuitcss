@@ -7,6 +7,19 @@
  * that make up your UI. Component classes are prefixed with a `c-`.
  */
 
+$inuit-button-padding-vertical:         $inuit-global-spacing-unit-small !default;
+$inuit-button-padding-horizontal:       $inuit-global-spacing-unit !default;
+$inuit-button-transition:               $global-transition !default;
+$inuit-button-radius:                   $global-radius !default;
+
+$inuit-button-small-padding-vertical:   $inuit-global-spacing-unit-tiny !default;
+$inuit-button-small-padding-horizontal: $inuit-global-spacing-unit-small !default;
+
+$inuit-button-large-padding-vertical:   $inuit-global-spacing-unit !default;
+$inuit-button-large-padding-horizontal: $inuit-global-spacing-unit-large !default;
+
+$inuit-button-ghost-border-width:       2px;
+
 /**
  * 1. Allow us to style box model properties.
  * 2. Line different sized buttons up a little nicer.
@@ -23,9 +36,9 @@
   text-align: center; /* [4] */
   margin: 0; /* [4] */
   cursor: pointer; /* [5] */
-  padding: $inuit-global-spacing-unit-small $inuit-global-spacing-unit;
-  transition: $global-transition;
-  border-radius: $global-radius;
+  padding: $inuit-button-padding-vertical $inuit-button-padding-horizontal;
+  transition: $inuit-button-transition;
+  border-radius: $inuit-button-radius;
 }
 
 
@@ -100,11 +113,11 @@
    ========================================================================== */
 
 .c-btn--small {
-  padding: $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit-small;
+  padding: $inuit-button-small-padding-vertical $inuit-button-small-padding-horizontal;
 }
 
 .c-btn--large {
-  padding: $inuit-global-spacing-unit $inuit-global-spacing-unit-large;
+  padding: $inuit-button-large-padding-vertical $inuit-button-large-padding-horizontal;
 }
 
 
@@ -118,11 +131,9 @@
  * Ghost buttons have see-through backgrounds and are bordered.
  */
 
-$btn-ghost-border-width: 2px;
-
 .c-btn--ghost {
-  border: $btn-ghost-border-width solid currentColor;
-  padding: ($inuit-global-spacing-unit-small - $btn-ghost-border-width) ($inuit-global-spacing-unit - $btn-ghost-border-width);
+  border: $inuit-button-ghost-border-width solid currentColor;
+  padding: ($inuit-button-padding-vertical - $inuit-button-ghost-border-width) ($inuit-button-padding-horizontal - $inuit-button-ghost-border-width);
 
   &,
   &:hover,
@@ -132,11 +143,11 @@ $btn-ghost-border-width: 2px;
   }
 
   &.c-btn--small {
-    padding: ($inuit-global-spacing-unit-tiny - $btn-ghost-border-width) ($inuit-global-spacing-unit-small - $btn-ghost-border-width);
+    padding: ($inuit-button-small-padding-vertical - $inuit-button-ghost-border-width) ($inuit-button-small-padding-horizontal - $inuit-button-ghost-border-width);
   }
 
   &.c-btn--large {
-    padding: ($inuit-global-spacing-unit - $btn-ghost-border-width) ($inuit-global-spacing-unit-large - $btn-ghost-border-width);
+    padding: ($inuit-button-large-padding-vertical - $inuit-button-ghost-border-width) ($inuit-button-large-padding-horizontal - $inuit-button-ghost-border-width);
   }
 
   &.c-btn--primary {

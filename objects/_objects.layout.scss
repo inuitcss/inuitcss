@@ -2,6 +2,12 @@
    #LAYOUT
    ========================================================================== */
 
+$inuit-layout-gutter:       $inuit-global-spacing-unit !default;
+$inuit-layout-tiny-gutter:  $inuit-global-spacing-unit-tiny !default;
+$inuit-layout-small-gutter: $inuit-global-spacing-unit-small !default;
+$inuit-layout-large-gutter: $inuit-global-spacing-unit-large !default;
+$inuit-layout-huge-gutter:  $inuit-global-spacing-unit-huge !default;
+
 /**
  * Grid-like layout system.
  *
@@ -74,7 +80,7 @@ $inuit-use-markup-fix: false !default;
   margin:  0; /* [2] */
   padding: 0; /* [2] */
   list-style: none; /* [1] */
-  margin-left: -$inuit-global-spacing-unit; /* [3] */
+  margin-left: -$inuit-layout-gutter; /* [3] */
 
   @if ($inuit-use-markup-fix == false) {
     font-size: 0;
@@ -99,7 +105,7 @@ $inuit-use-markup-fix: false !default;
     display: inline-block; /* [2] */
     vertical-align: top; /* [3] */
     width: 100%; /* [4] */
-    padding-left: $inuit-global-spacing-unit; /* [5] */
+    padding-left: $inuit-layout-gutter; /* [5] */
 
     @if ($inuit-use-markup-fix == false) {
       font-size: $inuit-global-font-size; /* [6] */
@@ -126,40 +132,40 @@ $inuit-use-markup-fix: false !default;
 
 
 .o-layout--tiny {
-  margin-left: -$inuit-global-spacing-unit-tiny;
+  margin-left: -$inuit-layout-tiny-gutter;
 
   > .o-layout__item {
-    padding-left: $inuit-global-spacing-unit-tiny;
+    padding-left: $inuit-layout-tiny-gutter;
   }
 
 }
 
 
 .o-layout--small {
-  margin-left: -$inuit-global-spacing-unit-small;
+  margin-left: -$inuit-layout-small-gutter;
 
   > .o-layout__item {
-    padding-left: $inuit-global-spacing-unit-small;
+    padding-left: $inuit-layout-small-gutter;
   }
 
 }
 
 
 .o-layout--large {
-  margin-left: -$inuit-global-spacing-unit-large;
+  margin-left: -$inuit-layout-large-gutter;
 
   > .o-layout__item {
-    padding-left: $inuit-global-spacing-unit-large;
+    padding-left: $inuit-layout-large-gutter;
   }
 
 }
 
 
 .o-layout--huge {
-  margin-left: -$inuit-global-spacing-unit-huge;
+  margin-left: -$inuit-layout-huge-gutter;
 
   > .o-layout__item {
-    padding-left: $inuit-global-spacing-unit-huge;
+    padding-left: $inuit-layout-huge-gutter;
   }
 
 }

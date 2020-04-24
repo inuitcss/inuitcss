@@ -2,6 +2,12 @@
    #FLAG
    ========================================================================== */
 
+$inuit-flag-spacing:       $inuit-global-spacing-unit !default;
+$inuit-flag-tiny-spacing:  $inuit-global-spacing-unit-tiny !default;
+$inuit-flag-small-spacing: $inuit-global-spacing-unit-small !default;
+$inuit-flag-large-spacing: $inuit-global-spacing-unit-large !default;
+$inuit-flag-huge-spacing:  $inuit-global-spacing-unit-huge !default;
+
 /**
  * The flag object is a design pattern similar to the media object, however it
  * utilises `display: table[-cell];` to give us control over the vertical
@@ -42,7 +48,7 @@
 
   .o-flag__img {
     width: 1px; /* [1] */
-    padding-right: $inuit-global-spacing-unit;
+    padding-right: $inuit-flag-spacing;
 
     /**
      * 1. Fixes problem with images disappearing.
@@ -104,14 +110,14 @@
 .o-flag--tiny {
 
   > .o-flag__img {
-    padding-right: $inuit-global-spacing-unit-tiny;
+    padding-right: $inuit-flag-tiny-spacing;
   }
 
   &.o-flag--reverse {
 
     > .o-flag__img {
       padding-right: 0;
-      padding-left: $inuit-global-spacing-unit-tiny;
+      padding-left: $inuit-flag-tiny-spacing;
     }
 
   }
@@ -122,14 +128,14 @@
 .o-flag--small {
 
   > .o-flag__img {
-    padding-right: $inuit-global-spacing-unit-small;
+    padding-right: $inuit-flag-small-spacing;
   }
 
   &.o-flag--reverse {
 
     > .o-flag__img {
       padding-right: 0;
-      padding-left: $inuit-global-spacing-unit-small;
+      padding-left: $inuit-flag-small-spacing;
     }
 
   }
@@ -140,14 +146,14 @@
 .o-flag--large {
 
   > .o-flag__img {
-    padding-right: $inuit-global-spacing-unit-large;
+    padding-right: $inuit-flag-large-spacing;
   }
 
   &.o-flag--reverse {
 
     > .o-flag__img {
       padding-right: 0;
-      padding-left: $inuit-global-spacing-unit-large;
+      padding-left: $inuit-flag-large-spacing;
     }
 
   }
@@ -158,14 +164,14 @@
 .o-flag--huge {
 
   > .o-flag__img {
-    padding-right: $inuit-global-spacing-unit-huge;
+    padding-right: $inuit-flag-huge-spacing;
   }
 
   &.o-flag--reverse {
 
     > .o-flag__img {
       padding-right: 0;
-      padding-left: $inuit-global-spacing-unit-huge;
+      padding-left: $inuit-flag-huge-spacing;
     }
 
   }
@@ -195,7 +201,7 @@
 
   > .o-flag__img {
     padding-right: 0; /* [3] */
-    padding-left: $inuit-global-spacing-unit; /* [3] */
+    padding-left: $inuit-flag-spacing; /* [3] */
   }
 
 }

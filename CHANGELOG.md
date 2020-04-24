@@ -13,6 +13,9 @@
 - Update dependencies [[#373](https://github.com/inuitcss/inuitcss/issues/373)]
 - Update CircleCi status badge [[#398](https://github.com/inuitcss/inuitcss/issues/398)]
 
+### New features
+- Add module specific spacing variables for more adaptability control. [[#411](https://github.com/inuitcss/inuitcss/issues/411)]
+
 ## [6.0.0] - 2018-02-26
 
 ### Breaking changes
