@@ -2,10 +2,10 @@
    #TABLE
    ========================================================================== */
 
-$inuit-table-tiny-cell-padding:  $inuit-global-spacing-unit-tiny !default;
-$inuit-table-small-cell-padding: $inuit-global-spacing-unit-small !default;
-$inuit-table-large-cell-padding: $inuit-global-spacing-unit-large !default;
-$inuit-table-huge-cell-padding:  $inuit-global-spacing-unit-huge !default;
+$inuit-table-tiny-cell-padding:  inuit-spacing(tiny) !default;
+$inuit-table-small-cell-padding: inuit-spacing(small) !default;
+$inuit-table-large-cell-padding: inuit-spacing(large) !default;
+$inuit-table-huge-cell-padding:  inuit-spacing(huge) !default;
 
 /**
  * A simple object for manipulating the structure of HTML `table`s.

@@ -24,6 +24,7 @@
  *
  * TOOLS
  * Font-size............A mixin which guarantees baseline-friendly line-heights.
+ * Spacing..............Function to assign spacings to elements.
  * Clearfix.............Micro clearfix mixin.
  * Hidden...............Mixin for hiding elements.
  * Sass MQ..............inuitcss’ default media query manager.
@@ -84,6 +85,7 @@
 
 // TOOLS
 @import "tools/tools.font-size";
+@import "tools/tools.spacing";
 @import "tools/tools.clearfix";
 @import "tools/tools.hidden";
 @import "node_modules/sass-mq/mq";

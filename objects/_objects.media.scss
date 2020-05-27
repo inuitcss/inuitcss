@@ -2,11 +2,11 @@
    #MEDIA
    ========================================================================== */
 
-$inuit-media-spacing:       $inuit-global-spacing-unit !default;
-$inuit-media-tiny-spacing:  $inuit-global-spacing-unit-tiny !default;
-$inuit-media-small-spacing: $inuit-global-spacing-unit-small !default;
-$inuit-media-large-spacing: $inuit-global-spacing-unit-large !default;
-$inuit-media-huge-spacing:  $inuit-global-spacing-unit-huge !default;
+$inuit-media-spacing:       inuit-spacing(base) !default;
+$inuit-media-tiny-spacing:  inuit-spacing(tiny) !default;
+$inuit-media-small-spacing: inuit-spacing(small) !default;
+$inuit-media-large-spacing: inuit-spacing(large) !default;
+$inuit-media-huge-spacing:  inuit-spacing(huge) !default;
 
 /**
  * Place any image- and text-like content side-by-side, as per:

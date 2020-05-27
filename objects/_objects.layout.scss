@@ -2,11 +2,11 @@
    #LAYOUT
    ========================================================================== */
 
-$inuit-layout-gutter:       $inuit-global-spacing-unit !default;
-$inuit-layout-tiny-gutter:  $inuit-global-spacing-unit-tiny !default;
-$inuit-layout-small-gutter: $inuit-global-spacing-unit-small !default;
-$inuit-layout-large-gutter: $inuit-global-spacing-unit-large !default;
-$inuit-layout-huge-gutter:  $inuit-global-spacing-unit-huge !default;
+$inuit-layout-gutter:       inuit-spacing(base) !default;
+$inuit-layout-tiny-gutter:  inuit-spacing(tiny) !default;
+$inuit-layout-small-gutter: inuit-spacing(small) !default;
+$inuit-layout-large-gutter: inuit-spacing(large) !default;
+$inuit-layout-huge-gutter:  inuit-spacing(huge) !default;
 
 /**
  * Grid-like layout system.
