@@ -21,8 +21,13 @@ $inuit-media-huge-spacing:  inuit-spacing(huge) !default;
     margin-right: $inuit-media-spacing;
   }
 
+  /**
+   * 1. Explicitly use percentage unit to provide IE support.
+   *    https://github.com/philipwalton/flexbugs/blob/6e720da852c3d566a84f3d82eb500e6f53f0a326/README.md#flexbug-4
+   */
+
   .o-media__body {
-    flex: 1 1 0%;
+    flex: 1 1 0%; /* [1] */
 
     &,
     > :last-child {
