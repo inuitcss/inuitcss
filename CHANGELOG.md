@@ -7,16 +7,16 @@
 ### Breaking changes
 - Update `normalize.css` to 8.0.0 [[#353](https://github.com/inuitcss/inuitcss/issues/353)]
 - Remove bower support. [[#376](https://github.com/inuitcss/inuitcss/issues/376)]
-- Remove `objects.flag`. [[#379](https://github.com/inuitcss/inuitcss/issues/304)]
+- Remove `.o-flag` object. [[#379](https://github.com/inuitcss/inuitcss/issues/379)]
 - Remove `.o-pack` object. [[#381](https://github.com/inuitcss/inuitcss/issues/381)]
 - Spacings are now defined in a global Sass map and used via a dedicated `inuit-spacing()` function. [[#400](https://github.com/inuitcss/inuitcss/issues/400)]
 - Simplify our reset file. [[#387](https://github.com/inuitcss/inuitcss/issues/387)]
 
 ### New features
-- Add vertical alignement modifiers in `objects.media`. [[#379](https://github.com/inuitcss/inuitcss/issues/379)]
+- Add vertical alignment modifiers to `.o-media` object. [[#379](https://github.com/inuitcss/inuitcss/issues/379)]
 - Switch `.o-list-inline` to flexbox. This eliminates the whitespace between list items. Also, you don’t need to add the `.o-list-inline__item` to the list items in markup the anymore. [[#414](https://github.com/inuitcss/inuitcss/issues/414)]
 - Add module specific spacing variables for more adaptability control. [[#411](https://github.com/inuitcss/inuitcss/issues/411)]
-- Use flexbox in `objects.media`. [[#379](https://github.com/inuitcss/inuitcss/issues/379)]
+
 
 ### Fixes
 - Fix `.o-ratio--img-contain` selector and centering. [[#304](https://github.com/inuitcss/inuitcss/issues/304)]
