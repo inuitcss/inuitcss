@@ -56,11 +56,6 @@ $inuit-layout-huge-gutter:  inuit-spacing(huge) !default;
  * There are plenty more options available to us: explore them below.
  */
 
-// By default we use the `font-size: 0;` trick to remove whitespace between
-// items. Set this to true in order to use a markup-based strategy like
-// commenting out whitespace or minifying HTML.
-$inuit-use-markup-fix: false !default;
-
 
 
 
@@ -69,49 +64,35 @@ $inuit-use-markup-fix: false !default;
    ========================================================================== */
 
 /**
- * 1. Allows us to use the layout object on any type of element.
- * 2. We need to defensively reset any box-model properties.
+ * 1. We need to defensively reset any box-model properties.
+ * 2. Allows us to use the layout object on any type of element.
  * 3. Use the negative margin trick for multi-row grids:
  *    http://csswizardry.com/2011/08/building-better-grid-systems/
  */
 
 .o-layout {
-  display: block; /* [1] */
-  margin:  0; /* [2] */
-  padding: 0; /* [2] */
-  list-style: none; /* [1] */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0; /* [1] */
+  padding: 0; /* [1] */
+  list-style: none; /* [2] */
   margin-left: -$inuit-layout-gutter; /* [3] */
-
-  @if ($inuit-use-markup-fix == false) {
-    font-size: 0;
-  }
-
 }
 
   /**
    * 1. Required in order to combine fluid widths with fixed gutters.
-   * 2. Allows us to manipulate grids vertically, with text-level properties,
-   *    etc.
-   * 3. Default item alignment is with the tops of each other, like most
-   *    traditional grid/layout systems.
-   * 4. By default, all layout items are full-width (mobile first).
-   * 5. Gutters provided by left padding:
+   * 2. By default, all layout items are full-width (mobile first).
+   * 3. Gutters provided by left padding:
    *    http://csswizardry.com/2011/08/building-better-grid-systems/
-   * 6. Fallback for old IEs not supporting `rem` values.
    */
 
   .o-layout__item {
     box-sizing: border-box; /* [1] */
-    display: inline-block; /* [2] */
-    vertical-align: top; /* [3] */
-    width: 100%; /* [4] */
-    padding-left: $inuit-layout-gutter; /* [5] */
-
-    @if ($inuit-use-markup-fix == false) {
-      font-size: $inuit-global-font-size; /* [6] */
-      font-size: 1rem;
-    }
-
+    width: 100%; /* [2] */
+    padding-left: $inuit-layout-gutter; /* [3] */
   }
 
 
@@ -182,11 +163,7 @@ $inuit-use-markup-fix: false !default;
  */
 
 .o-layout--middle {
-
-  > .o-layout__item {
-    vertical-align: middle;
-  }
-
+  align-items: center;
 }
 
 
@@ -195,38 +172,27 @@ $inuit-use-markup-fix: false !default;
  */
 
 .o-layout--bottom {
-
-  > .o-layout__item {
-    vertical-align: bottom;
-  }
-
+  align-items: flex-end;
 }
 
 
 /**
  * Stretch all grid items of each row to have an equal-height.
- * Please be aware that this modifier class doesn’t take any effect in IE9 and
- * below and other older browsers due to the lack of `display: flex` support.
+ *
+ * 1. Force direct child elements of the `.o-layout__item` to be full width of
+ *    the item.
  */
 
 .o-layout--stretch {
-  display: flex;
-  flex-wrap: wrap;
+  align-items: stretch;
 
   > .o-layout__item {
     display: flex;
-  }
 
-  &.o-layout--center {
-    justify-content: center;
-  }
+    > * {
+      width: 100%; /* [1] */
+    }
 
-  &.o-layout--right {
-    justify-content: flex-end;
-  }
-
-  &.o-layout--left {
-    justify-content: flex-start;
   }
 
 }
@@ -243,12 +209,7 @@ $inuit-use-markup-fix: false !default;
  */
 
 .o-layout--center {
-  text-align: center;
-
-  > .o-layout__item {
-    text-align: left;
-  }
-
+  justify-content: center;
 }
 
 
@@ -257,25 +218,24 @@ $inuit-use-markup-fix: false !default;
  */
 
 .o-layout--right {
-  text-align: right;
+  justify-content: flex-end;
 
-  > .o-layout__item {
-    text-align: left;
+  &.o-layout--reverse {
+    justify-content: flex-start;
   }
 
 }
 
 
 /**
- * Fill up the layout system from the left-hand side. This will likely only be
- * needed when using in conjunction with `.o-layout--reverse`.
+ * Fill up the layout system from the left-hand side.
  */
 
 .o-layout--left {
-  text-align: left;
+  justify-content: flex-start;
 
-  > .o-layout__item {
-    text-align: left;
+  &.o-layout--reverse {
+    justify-content: flex-end;
   }
 
 }
@@ -286,12 +246,7 @@ $inuit-use-markup-fix: false !default;
  */
 
 .o-layout--reverse {
-  direction: rtl;
-
-  > .o-layout__item {
-    direction: ltr;
-  }
-
+  flex-direction: row-reverse;
 }
 
 
