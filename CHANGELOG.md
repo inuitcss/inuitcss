@@ -17,7 +17,6 @@
 - Switch `.o-list-inline` to flexbox. This eliminates the whitespace between list items. Also, you don’t need to add the `.o-list-inline__item` to the list items in markup the anymore. [[#414](https://github.com/inuitcss/inuitcss/issues/414)]
 - Add module specific spacing variables for more adaptability control. [[#411](https://github.com/inuitcss/inuitcss/issues/411)]
 
-
 ### Fixes
 - Fix `.o-ratio--img-contain` selector and centering. [[#304](https://github.com/inuitcss/inuitcss/issues/304)]
 - Fix `$inuit-responsive-spacing-directions` documentation in `_utilities.responsive-spacings.scss`. [[#354](https://github.com/inuitcss/inuitcss/issues/354)]
