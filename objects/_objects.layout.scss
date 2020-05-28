@@ -87,12 +87,57 @@ $inuit-layout-huge-gutter:  inuit-spacing(huge) !default;
    * 2. By default, all layout items are full-width (mobile first).
    * 3. Gutters provided by left padding:
    *    http://csswizardry.com/2011/08/building-better-grid-systems/
+   * 4. Set a default order, so we can increase of decrease that number with
+   *    our `.is-first` and `.is-last` state classes.
    */
 
   .o-layout__item {
     box-sizing: border-box; /* [1] */
     width: 100%; /* [2] */
     padding-left: $inuit-layout-gutter; /* [3] */
+    order: 5; /* [4] */
+
+    &.is-first {
+      order: 1;
+    }
+
+    &.is-last {
+      order: 10;
+    }
+
+    /**
+     * If we’re using Sass-MQ, automatically generate `.is-first` and `.is-last`
+     * state classes for each of our defined breakpoints, and give them a
+     * Responsive Suffix, e.g.:
+     *
+     * <div class="is-first@mobile">
+     */
+
+    // This defines the separator for the breakpoints suffix in the class name.
+    // By default, we are generating the responsive suffixes for the classes
+    // with a `@` symbol.
+    $inuit-layout-breakpoint-separator: \@ !default;
+
+    @if (variable-exists(mq-breakpoints)) {
+
+      @each $inuit-bp-name, $inuit-bp-value in $mq-breakpoints {
+
+        @include mq($from: $inuit-bp-name) {
+
+          &.is-first#{$inuit-layout-breakpoint-separator}#{$inuit-bp-name} {
+            order: 1;
+          }
+
+          &.is-last#{$inuit-layout-breakpoint-separator}#{$inuit-bp-name} {
+            order: 10;
+          }
+
+        }
+
+      }
+
+    }
+
   }
 
 
