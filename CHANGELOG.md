@@ -14,6 +14,7 @@
 ### New features
 - Switch `.o-layout` to flexbox. [[#380](https://github.com/inuitcss/inuitcss/issues/380)]
 - Add individual reordering of `.o-layout__item`s, so we can manipulate the visual order of layout items independently form the markup order. [[#380](https://github.com/inuitcss/inuitcss/issues/380)]
+- Add vertical spacing to `.o-layout__item`s when they are collapsed. [[#380](https://github.com/inuitcss/inuitcss/issues/380)]
 - Switch `.o-list-inline` to flexbox. This eliminates the whitespace between list items. Also, you don’t need to add the `.o-list-inline__item` to the list items in markup the anymore. [[#414](https://github.com/inuitcss/inuitcss/issues/414)]
 - Add module specific spacing variables for more adaptability control. [[#411](https://github.com/inuitcss/inuitcss/issues/411)]
 

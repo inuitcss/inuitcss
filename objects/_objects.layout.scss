@@ -79,13 +79,14 @@ $inuit-layout-huge-gutter:  inuit-spacing(huge) !default;
   margin: 0; /* [1] */
   padding: 0; /* [1] */
   list-style: none; /* [2] */
+  margin-top: -$inuit-layout-gutter; /* [3] */
   margin-left: -$inuit-layout-gutter; /* [3] */
 }
 
   /**
    * 1. Required in order to combine fluid widths with fixed gutters.
    * 2. By default, all layout items are full-width (mobile first).
-   * 3. Gutters provided by left padding:
+   * 3. Gutters provided by left padding on the x-axis and margin on the y-axis:
    *    http://csswizardry.com/2011/08/building-better-grid-systems/
    * 4. Set a default order, so we can increase of decrease that number with
    *    our `.is-first` and `.is-last` state classes.
@@ -94,6 +95,7 @@ $inuit-layout-huge-gutter:  inuit-spacing(huge) !default;
   .o-layout__item {
     box-sizing: border-box; /* [1] */
     width: 100%; /* [2] */
+    margin-top: $inuit-layout-gutter; /* [3] */
     padding-left: $inuit-layout-gutter; /* [3] */
     order: 5; /* [4] */
 
@@ -148,9 +150,11 @@ $inuit-layout-huge-gutter:  inuit-spacing(huge) !default;
    ========================================================================== */
 
 .o-layout--flush {
+  margin-top: 0;
   margin-left: 0;
 
   > .o-layout__item {
+    margin-top: 0;
     padding-left: 0;
   }
 
@@ -158,9 +162,11 @@ $inuit-layout-huge-gutter:  inuit-spacing(huge) !default;
 
 
 .o-layout--tiny {
+  margin-top: -$inuit-layout-tiny-gutter;
   margin-left: -$inuit-layout-tiny-gutter;
 
   > .o-layout__item {
+    margin-top: $inuit-layout-tiny-gutter;
     padding-left: $inuit-layout-tiny-gutter;
   }
 
@@ -168,9 +174,11 @@ $inuit-layout-huge-gutter:  inuit-spacing(huge) !default;
 
 
 .o-layout--small {
+  margin-top: -$inuit-layout-small-gutter;
   margin-left: -$inuit-layout-small-gutter;
 
   > .o-layout__item {
+    margin-top: $inuit-layout-small-gutter;
     padding-left: $inuit-layout-small-gutter;
   }
 
@@ -178,9 +186,11 @@ $inuit-layout-huge-gutter:  inuit-spacing(huge) !default;
 
 
 .o-layout--large {
+  margin-top: -$inuit-layout-large-gutter;
   margin-left: -$inuit-layout-large-gutter;
 
   > .o-layout__item {
+    margin-top: $inuit-layout-large-gutter;
     padding-left: $inuit-layout-large-gutter;
   }
 
@@ -188,9 +198,11 @@ $inuit-layout-huge-gutter:  inuit-spacing(huge) !default;
 
 
 .o-layout--huge {
+  margin-top: -$inuit-layout-huge-gutter;
   margin-left: -$inuit-layout-huge-gutter;
 
   > .o-layout__item {
+    margin-top: $inuit-layout-huge-gutter;
     padding-left: $inuit-layout-huge-gutter;
   }
 
