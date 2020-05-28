@@ -56,11 +56,6 @@ $inuit-layout-huge-gutter:  inuit-spacing(huge) !default;
  * There are plenty more options available to us: explore them below.
  */
 
-// By default we use the `font-size: 0;` trick to remove whitespace between
-// items. Set this to true in order to use a markup-based strategy like
-// commenting out whitespace or minifying HTML.
-$inuit-use-markup-fix: false !default;
-
 
 
 
@@ -69,47 +64,80 @@ $inuit-use-markup-fix: false !default;
    ========================================================================== */
 
 /**
- * 1. Allows us to use the layout object on any type of element.
- * 2. We need to defensively reset any box-model properties.
+ * 1. We need to defensively reset any box-model properties.
+ * 2. Allows us to use the layout object on any type of element.
  * 3. Use the negative margin trick for multi-row grids:
  *    http://csswizardry.com/2011/08/building-better-grid-systems/
  */
 
 .o-layout {
-  display: block; /* [1] */
-  margin:  0; /* [2] */
-  padding: 0; /* [2] */
-  list-style: none; /* [1] */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0; /* [1] */
+  padding: 0; /* [1] */
+  list-style: none; /* [2] */
+  margin-top: -$inuit-layout-gutter; /* [3] */
   margin-left: -$inuit-layout-gutter; /* [3] */
-
-  @if ($inuit-use-markup-fix == false) {
-    font-size: 0;
-  }
-
 }
 
   /**
    * 1. Required in order to combine fluid widths with fixed gutters.
-   * 2. Allows us to manipulate grids vertically, with text-level properties,
-   *    etc.
-   * 3. Default item alignment is with the tops of each other, like most
-   *    traditional grid/layout systems.
-   * 4. By default, all layout items are full-width (mobile first).
-   * 5. Gutters provided by left padding:
+   * 2. By default, all layout items are full-width (mobile first).
+   * 3. Gutters provided by left padding on the x-axis and margin on the y-axis:
    *    http://csswizardry.com/2011/08/building-better-grid-systems/
-   * 6. Fallback for old IEs not supporting `rem` values.
+   * 4. Set a default order, so we can increase of decrease that number with
+   *    our `.is-first` and `.is-last` state classes.
    */
 
   .o-layout__item {
     box-sizing: border-box; /* [1] */
-    display: inline-block; /* [2] */
-    vertical-align: top; /* [3] */
-    width: 100%; /* [4] */
-    padding-left: $inuit-layout-gutter; /* [5] */
+    width: 100%; /* [2] */
+    margin-top: $inuit-layout-gutter; /* [3] */
+    padding-left: $inuit-layout-gutter; /* [3] */
+    order: 5; /* [4] */
 
-    @if ($inuit-use-markup-fix == false) {
-      font-size: $inuit-global-font-size; /* [6] */
-      font-size: 1rem;
+    &.is-first {
+      order: 1;
+    }
+
+    &.is-last {
+      order: 10;
+    }
+
+    /**
+     * If we’re using Sass-MQ, automatically generate `.is-first` and `.is-last`
+     * state classes for each of our defined breakpoints, and give them a
+     * Responsive Suffix, e.g.:
+     *
+     * <div class="is-first@mobile">
+     */
+
+    // This defines the separator for the breakpoints suffix in the class name.
+    // By default, we are generating the responsive suffixes for the classes
+    // with a `@` symbol.
+    $inuit-layout-breakpoint-separator: \@ !default;
+
+    @if (variable-exists(mq-breakpoints)) {
+
+      @each $inuit-bp-name, $inuit-bp-value in $mq-breakpoints {
+
+        @include mq($from: $inuit-bp-name) {
+
+          &.is-first#{$inuit-layout-breakpoint-separator}#{$inuit-bp-name} {
+            order: 1;
+          }
+
+          &.is-last#{$inuit-layout-breakpoint-separator}#{$inuit-bp-name} {
+            order: 10;
+          }
+
+        }
+
+      }
+
     }
 
   }
@@ -122,9 +150,11 @@ $inuit-use-markup-fix: false !default;
    ========================================================================== */
 
 .o-layout--flush {
+  margin-top: 0;
   margin-left: 0;
 
   > .o-layout__item {
+    margin-top: 0;
     padding-left: 0;
   }
 
@@ -132,9 +162,11 @@ $inuit-use-markup-fix: false !default;
 
 
 .o-layout--tiny {
+  margin-top: -$inuit-layout-tiny-gutter;
   margin-left: -$inuit-layout-tiny-gutter;
 
   > .o-layout__item {
+    margin-top: $inuit-layout-tiny-gutter;
     padding-left: $inuit-layout-tiny-gutter;
   }
 
@@ -142,9 +174,11 @@ $inuit-use-markup-fix: false !default;
 
 
 .o-layout--small {
+  margin-top: -$inuit-layout-small-gutter;
   margin-left: -$inuit-layout-small-gutter;
 
   > .o-layout__item {
+    margin-top: $inuit-layout-small-gutter;
     padding-left: $inuit-layout-small-gutter;
   }
 
@@ -152,9 +186,11 @@ $inuit-use-markup-fix: false !default;
 
 
 .o-layout--large {
+  margin-top: -$inuit-layout-large-gutter;
   margin-left: -$inuit-layout-large-gutter;
 
   > .o-layout__item {
+    margin-top: $inuit-layout-large-gutter;
     padding-left: $inuit-layout-large-gutter;
   }
 
@@ -162,9 +198,11 @@ $inuit-use-markup-fix: false !default;
 
 
 .o-layout--huge {
+  margin-top: -$inuit-layout-huge-gutter;
   margin-left: -$inuit-layout-huge-gutter;
 
   > .o-layout__item {
+    margin-top: $inuit-layout-huge-gutter;
     padding-left: $inuit-layout-huge-gutter;
   }
 
@@ -182,11 +220,7 @@ $inuit-use-markup-fix: false !default;
  */
 
 .o-layout--middle {
-
-  > .o-layout__item {
-    vertical-align: middle;
-  }
-
+  align-items: center;
 }
 
 
@@ -195,38 +229,27 @@ $inuit-use-markup-fix: false !default;
  */
 
 .o-layout--bottom {
-
-  > .o-layout__item {
-    vertical-align: bottom;
-  }
-
+  align-items: flex-end;
 }
 
 
 /**
  * Stretch all grid items of each row to have an equal-height.
- * Please be aware that this modifier class doesn’t take any effect in IE9 and
- * below and other older browsers due to the lack of `display: flex` support.
+ *
+ * 1. Force direct child elements of the `.o-layout__item` to be full width of
+ *    the item.
  */
 
 .o-layout--stretch {
-  display: flex;
-  flex-wrap: wrap;
+  align-items: stretch;
 
   > .o-layout__item {
     display: flex;
-  }
 
-  &.o-layout--center {
-    justify-content: center;
-  }
+    > * {
+      width: 100%; /* [1] */
+    }
 
-  &.o-layout--right {
-    justify-content: flex-end;
-  }
-
-  &.o-layout--left {
-    justify-content: flex-start;
   }
 
 }
@@ -243,12 +266,7 @@ $inuit-use-markup-fix: false !default;
  */
 
 .o-layout--center {
-  text-align: center;
-
-  > .o-layout__item {
-    text-align: left;
-  }
-
+  justify-content: center;
 }
 
 
@@ -257,25 +275,24 @@ $inuit-use-markup-fix: false !default;
  */
 
 .o-layout--right {
-  text-align: right;
+  justify-content: flex-end;
 
-  > .o-layout__item {
-    text-align: left;
+  &.o-layout--reverse {
+    justify-content: flex-start;
   }
 
 }
 
 
 /**
- * Fill up the layout system from the left-hand side. This will likely only be
- * needed when using in conjunction with `.o-layout--reverse`.
+ * Fill up the layout system from the left-hand side.
  */
 
 .o-layout--left {
-  text-align: left;
+  justify-content: flex-start;
 
-  > .o-layout__item {
-    text-align: left;
+  &.o-layout--reverse {
+    justify-content: flex-end;
   }
 
 }
@@ -286,12 +303,7 @@ $inuit-use-markup-fix: false !default;
  */
 
 .o-layout--reverse {
-  direction: rtl;
-
-  > .o-layout__item {
-    direction: ltr;
-  }
-
+  flex-direction: row-reverse;
 }
 
 
