@@ -153,7 +153,6 @@ Following this structure allows you to intersperse inuitcss’ code with your ow
 // OBJECTS
 @import "node_modules/inuitcss/objects/objects.layout";
 @import "node_modules/inuitcss/objects/objects.media";
-@import "node_modules/inuitcss/objects/objects.flag";
 @import "node_modules/inuitcss/objects/objects.list-bare";
 @import "node_modules/inuitcss/objects/objects.list-inline";
 @import "node_modules/inuitcss/objects/objects.box";

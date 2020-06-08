@@ -14,23 +14,20 @@ $inuit-media-huge-spacing:  inuit-spacing(huge) !default;
  */
 
 .o-media {
-  @include inuit-clearfix();
-  display: block;
+  display: flex;
 }
 
   .o-media__img {
-    float: left;
     margin-right: $inuit-media-spacing;
-
-    > img {
-      display: block;
-    }
-
   }
 
+  /**
+   * 1. Explicitly use percentage unit to provide IE support.
+   *    https://github.com/philipwalton/flexbugs/blob/6e720da852c3d566a84f3d82eb500e6f53f0a326/README.md#flexbug-4
+   */
+
   .o-media__body {
-    overflow: hidden;
-    display: block;
+    flex: 1 1 0%; /* [1] */
 
     &,
     > :last-child {
@@ -38,6 +35,21 @@ $inuit-media-huge-spacing:  inuit-spacing(huge) !default;
     }
 
   }
+
+
+
+
+
+/* Vertical alignment modifiers.
+   ========================================================================== */
+
+.o-media--middle {
+  align-items: center;
+}
+
+.o-media--bottom {
+  align-items: flex-end;
+}
 
 
 
@@ -142,7 +154,7 @@ $inuit-media-huge-spacing:  inuit-spacing(huge) !default;
 .o-media--reverse {
 
   > .o-media__img {
-    float: right;
+    order: 1;
     margin-right: 0;
     margin-left: $inuit-media-spacing;
   }
