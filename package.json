@@ -36,7 +36,7 @@
   "devDependencies": {
     "glob": "^7.1.3",
     "mocha": "^5.2.0",
-    "node-sass": "^4.9.4",
+    "node-sass": "^7.0.0",
     "sass-true": "^4.0.0",
     "stylelint": "^9.6.0",
     "stylelint-scss": "^3.3.1"
