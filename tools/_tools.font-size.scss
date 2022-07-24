@@ -23,6 +23,8 @@
 //   // subtract 1 line:
 //   @include inuit-font-size(24px, $modifier: -1);
 
+@use "sass:math";
+
 @mixin inuit-font-size($font-size, $line-height: auto, $modifier: 0, $important: false) {
 
   @if (type-of($font-size) == number) {
@@ -43,7 +45,7 @@
 
   // We provide a `px` fallback for old IEs not supporting `rem` values.
   font-size: $font-size $important;
-  font-size: ($font-size / $inuit-global-font-size) * 1rem $important;
+  font-size: math.div($font-size, $inuit-global-font-size) * 1rem $important;
 
   @if ($line-height == "auto") {
 
@@ -51,10 +53,10 @@
     // By default, we set it to the minimum number of lines necessary
     // in order to contain the defined font-size, +1 for some breathing room.
     // This can be modified with the `$modifier` parameter.
-    $lines: ceil($font-size / $inuit-global-baseline) + $modifier + 1;
+    $lines: ceil(math.div($font-size, $inuit-global-baseline)) + $modifier + 1;
     $line-height: $lines * $inuit-global-baseline;
 
-    line-height: ($line-height / $font-size) $important;
+    line-height: math.div($line-height, $font-size) $important;
   }
 
   @else {
