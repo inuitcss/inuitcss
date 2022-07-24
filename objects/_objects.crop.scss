@@ -16,6 +16,8 @@
 //     "golden-ratio"  : (1.618:1) -> non-integers are okay
 //   ) !default;
 
+@use "sass:math";
+
 $inuit-crops: (
   "2\\:1"   : (2:1),
   "4\\:3"   : (4:3),
@@ -137,7 +139,7 @@ $inuit-crops: (
     }
 
     .o-crop--#{$crop-name} {
-      padding-bottom: ($consequent/$antecedent) * 100%;
+      padding-bottom: math.div($consequent, $antecedent) * 100%;
     }
 
   }

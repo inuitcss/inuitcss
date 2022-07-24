@@ -14,9 +14,11 @@
  * 3. Ensure the page always fills at least the entire height of the viewport.
  */
 
+@use "sass:math";
+
 html {
-  font-size: ($inuit-global-font-size / 16px) * 1em; /* [1] */
-  line-height: $inuit-global-line-height / $inuit-global-font-size; /* [1] */
+  font-size: math.div($inuit-global-font-size, 16px) * 1em; /* [1] */
+  line-height: math.div($inuit-global-line-height, $inuit-global-font-size); /* [1] */
   overflow-y: scroll; /* [2] */
   min-height: 100%; /* [3] */
 }
